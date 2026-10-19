@@ -1,6 +1,6 @@
-# OSF pre-registration draft: ABG Education Models Study
+# Study protocol and analysis plan: ABG Education Models Study
 
-Draft for the **OSF Preregistration** template (osf.io > Registries > OSF Preregistration). Each heading below is one field; paste the text under it. Items in [square brackets] need Luke's input. Register before the first (non-pilot) participant.
+Hypotheses, design, sample size and analysis plan, fixed before the first participant. Items in [square brackets] need Luke's input.
 
 ---
 
@@ -19,7 +19,7 @@ Alveolar bone grafting (ABG) fills the bony gap in the upper gum (alveolar cleft
 2. a web page with interactive 3D models and augmented reality (AR), shown on a study tablet;
 3. 3D printed models with removable parts and a printed card with the same text.
 
-Each adult participant sees all three formats in one session, in one of six counterbalanced orders, and rates each format on the UEQ-S and three study-specific understanding items. The design follows the Wisdom Tooth Education Models Study by the same team [OSF link].
+Each adult participant sees all three formats in one session, in one of six counterbalanced orders, and rates each format on the UEQ-S and three study-specific understanding items. The design follows the Wisdom Tooth Education Models Study by the same team.
 
 ### Hypotheses
 Primary outcome: UEQ-S pragmatic quality.
@@ -51,12 +51,6 @@ The written text is identical in all three formats (the printed card leaves out 
 Format order comes from a pre-set list for participant numbers 1 to 100, generated before data collection: the six orders shuffled in blocks of six (Python `random`, seed 20261019; script and list attached). Each new participant receives the next unused number regardless of group or language, so orders stay balanced at every multiple of six. Numbers are never skipped or reused. Pilot participants use separate numbers (901-905) and are not analysed.
 
 ## Sampling plan
-
-### Existing data
-Registration prior to creation of data.
-
-### Explanation of existing data
-Not applicable. Only the five pilot responses (excluded from analysis) exist at registration.
 
 ### Data collection procedures
 - **Setting:** Nagoya University [and Aichi Gakuin University, if covered by the ethics approval]. Convenience sampling by direct approach.
@@ -151,4 +145,4 @@ All questions except comments are required and nothing is saved before submissio
 - **Data handling:** anonymous data exported weekly to Excel and stored on Nagoya University secure storage managed by permanent academic staff; kept at least 10 years after publication, then destroyed. Responses are deleted from Microsoft Forms after the final export.
 - **Reporting:** CROSS and CHERRIES checklists.
 - **Open release (Zenodo, DOI):** anonymised data, analysis code, questionnaires, order list, and the 3D models (STL, GLB, USDZ). The Nagoya University logo is excluded.
-- **Attached files:** order list (`participant_order_list.xlsx` and `.csv`, `make_order_list.py`), form text (`quick-import_EN/JA.docx`, `form-text_EN/JA.docx`), [frozen materials link], [analysis script, if registered with code].
+- **Related files:** order list (`participant_order_list.xlsx` and `.csv`, `make_order_list.py`), form text (`quick-import_EN/JA.docx`, `form-text_EN/JA.docx`), [frozen materials link], [analysis script].
