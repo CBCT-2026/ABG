@@ -305,6 +305,12 @@
           "mode": "hide",
           "on": "Take off the bridge",
           "off": "Put the bridge back"
+        },
+        {
+          "part": "bone",
+          "mode": "xray",
+          "on": "See-through bone",
+          "off": "Solid bone"
         }
       ],
       "hotspots": [

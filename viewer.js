@@ -68,6 +68,10 @@ viewButtons.forEach(b => b.addEventListener('click', () => {
 // Dots marked with data-choice only show for those choices.
 const choiceButtons = [...document.querySelectorAll('.choice')];
 function showChoice(id) {
+  mv.querySelectorAll('.hotspot').forEach(h => {
+    const position = h.getAttribute('data-position-' + id);
+    if (position && mv.updateHotspot) mv.updateHotspot({ name: h.slot, position, normal: h.getAttribute('data-normal-' + id) });
+  });
   mv.querySelectorAll('.hotspot[data-choice]').forEach(h => {
     h.hidden = !h.dataset.choice.split(' ').includes(id);
     if (h.hidden) h.classList.remove('open');

@@ -62,13 +62,21 @@ See the table in [clinical-check.md](clinical-check.md#teeth-each-model-should-s
 | Minimum wall around a socket | 1.2 mm | 1.6 mm |
 
 - Stage 1 soft tissue cover: flexible resin or TPU, 1.5 to 2 mm thick, 2 or 3 pegs into the palate.
-- Stage 2 graft: dovetail sliding up into the cleft from below.
-- Stage 3, one printed base with a removable cleft-side segment (canine to central incisor area), held by a dovetail slide so the segments swap:
-  - Segment A, canine as lateral incisor: canine in the lateral incisor space, first premolar in the canine place. Crown is a friction cap over a reduced canine with a D-shaped key (shows recontouring and a crown).
-  - Segment B, space open: canine in its own place and a gap for the lateral incisor, with a 3 to 4 mm D-shaped socket in the grafted bone.
-  - Implant (fits segment B): post printed in grey, friction fit in the socket; crown is a friction cap on the post's D-shaped abutment, so it comes off to show the post.
-  - Bridge (fits segment B): pontic with one 0.8 to 1 mm palatal wing that clips onto the back of the cleft-side central incisor (snap over the cingulum, 0.10 mm resin / 0.20 mm FDM clearance). One wing only, as in a cantilever resin-bonded bridge.
+- Stage 2 graft: separate piece with a dovetail key on its inner side that slides up into a slot in the bone from below (made, 0.10 mm gap).
+- Stage 3 is printed as three complete models, one per choice, each with its own removable part (made, 0.10 mm gaps; implant socket 0.15 mm):
+  - Canine as lateral incisor: canine in the lateral incisor space, first premolar in the canine place, molars moved forward. The crown is a cap over the canine with its tip ground down (shows recontouring and a crown). The ground canine is not round, so the cap only fits one way.
+  - Implant: space kept open, canine in its own place. Grey post (with abutment) is a friction fit in a socket in the grafted bone; the crown is a cap on the abutment, so it comes off to show the post.
+  - Bridge: space kept open. Pontic with one palatal wing that sits on the back of the cleft-side central incisor. One wing only, as in a cantilever resin-bonded bridge.
+- A single base with a swappable cleft-side segment (dovetail) is possible but not made yet: it needs a test print, because the cut passes close to the central incisor.
 - Print a test coupon in each material first. These are engineering defaults, not values from the clinical literature.
+
+## Built models (19 Oct 2026)
+
+Made in Blender (scripts in `/mnt/project-files/models/<stage>/scripts/`) from the pre-op v4 model, so all stages share the same bone and front teeth:
+
+- `models/short-term/v1`: pre-op bone and soft tissue cover; graft fills the alveolar cleft and the front of the palate (a gap stays further back); baby canine 63 taken out; canine 23 a little lower.
+- `models/long-term/v1`: adult teeth from the pre-op v2 scan (full roots), 17 and 27 added, graft blended into the bone (bone colour), canine window filled. Three files: canine, implant, bridge.
+- Print files are in each folder's `print/`. Previews in `previews/`.
 
 ## Export
 

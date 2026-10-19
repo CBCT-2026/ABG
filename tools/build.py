@@ -152,15 +152,22 @@ def stage_files(stage):
     return [c['file'] for c in stage.get('choices', [])] or [f'abg-{stage["id"]}']
 
 
-def hotspots(stage, points, centre):
+def hotspots(stage, points, centre, per_choice=None):
+    def normal(p):
+        d = p - centre
+        d = d / (np.linalg.norm(d) or 1)
+        return f'{d[0]:.2f} {d[1]:.2f} {d[2]:.2f}'
     out = []
     for h in stage['hotspots']:
         p = points.get(f'hotspot-{h["n"]}')
         pos = ''
         if p is not None:
-            d = p - centre
-            d = d / (np.linalg.norm(d) or 1)
-            pos = f' data-position="{metres(p)}" data-normal="{d[0]:.2f} {d[1]:.2f} {d[2]:.2f}"'
+            pos = f' data-position="{metres(p)}" data-normal="{normal(p)}"'
+        # A dot shared by several choices can sit in a different place in each choice's model.
+        for c_id, pts in (per_choice or {}).items():
+            q = pts.get(f'hotspot-{h["n"]}')
+            if q is not None and 'choice' not in h:
+                pos += f' data-position-{c_id}="{metres(q)}" data-normal-{c_id}="{normal(q)}"'
         notes = ''.join(f'<span>{n}</span>' for n in h['notes'])
         if 'choice' in h:
             pos += f' data-choice="{h["choice"]}"'
@@ -194,11 +201,13 @@ def stage_page(lang, ui, i):
     stage = ui['stages'][i]
     sid = stage['id']
     files = stage_files(stage)
-    points, centre = {}, None
-    for f in files:
+    points, centre, per_choice = {}, None, {}
+    for c_id, f in zip([c['id'] for c in stage.get('choices', [])] or [None], files):
         pts, c = model_points(f)
         points = {**pts, **points}
         centre = c if centre is None else centre
+        if c_id:
+            per_choice[c_id] = pts
     legend = '\n'.join(f'    <li><span class="dot" style="background:{l["color"]}"></span>{l["text"]}</li>' for l in stage['legend'])
     prev = ui['stages'][i - 1] if i > 0 else None
     nxt = ui['stages'][i + 1] if i + 1 < len(ui['stages']) else None
@@ -226,7 +235,7 @@ def stage_page(lang, ui, i):
     camera-controls camera-orbit="{stage["views"][0]["orbit"]}" touch-action="pan-y" interaction-prompt="auto"
     shadow-intensity="1" exposure="1" loading="eager" data-missing="{escape(ui["missing"])}">
     <button slot="ar-button" class="ar-btn">{ui["ar_button"]}</button>
-{hotspots(stage, points, centre)}
+{hotspots(stage, points, centre, per_choice)}
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <div class="info" id="info" aria-live="polite" hidden></div>

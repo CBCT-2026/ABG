@@ -133,3 +133,4 @@ main ul, main ol, .info, .info li, .refs li { text-align: justify; hyphens: auto
 .controls .choices { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
 .controls .choice[aria-pressed="true"] { background: var(--ar); color: var(--ar-text); border-color: var(--ar); }
 .hotspot[hidden] { display: none; }
+.cite + .cite::before { content: ","; }
