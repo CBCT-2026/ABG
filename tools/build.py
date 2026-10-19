@@ -193,7 +193,11 @@ def controls(ui, stage, points):
         extra = f' data-with="{p["with"]}"' if 'with' in p else ''
         out.append(f'    <button type="button" class="part" data-part="{p["part"]}" data-mode="{p["mode"]}"{extra} '
                    f'data-on="{escape(p["on"])}" data-off="{escape(p["off"])}" aria-pressed="false" hidden>{p["on"]}</button>')
-    out.append(f'    <button type="button" id="labels" aria-pressed="false" data-on="{ui["labels_on"]}" data-off="{ui["labels_off"]}">{ui["labels_on"]}</button>')
+    if stage.get('animation'):
+        a = stage['animation']
+        out.append(f'    <button type="button" class="play" id="play" data-anim="{a["name"]}" data-orbit-play="{a["orbit"]}" '
+                   f'data-steps="{escape(json.dumps(a["steps"], ensure_ascii=False))}" data-xray="{a["xray"][0]} {a["xray"][1]}" hidden>{a["button"]}</button>')
+    out.append(f'    <button type="button" id="labels"aria-pressed="false" data-on="{ui["labels_on"]}" data-off="{ui["labels_off"]}">{ui["labels_on"]}</button>')
     return '\n'.join(out)
 
 
@@ -236,6 +240,7 @@ def stage_page(lang, ui, i):
     shadow-intensity="1" exposure="1" loading="eager" data-missing="{escape(ui["missing"])}">
     <button slot="ar-button" class="ar-btn">{ui["ar_button"]}</button>
 {hotspots(stage, points, centre, per_choice)}
+    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <div class="info" id="info" aria-live="polite" hidden></div>

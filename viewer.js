@@ -128,6 +128,64 @@ mv.addEventListener('load', () => {
   partButtons.filter(b => b.dataset.mode === 'swap' && !b.hidden).forEach(b => setAlpha(b.dataset.part, 0));
 });
 
+// Play the stage's animation once (pre-op: the gum cover comes off, then the canine in the bone is shown),
+// with a caption for each step, then go back to the start.
+const play = document.getElementById('play');
+if (play) {
+  const stepText = document.getElementById('anim-step');
+  const steps = JSON.parse(play.dataset.steps);
+  const [xrayFrom, xrayTo] = play.dataset.xray.split(' ').map(Number);
+  const boneButton = partButtons.find(b => b.dataset.part === 'bone');
+  const boneSeeThrough = () => boneButton && boneButton.getAttribute('aria-pressed') === 'true';
+  let xray = false;
+  function setXray(on) {
+    if (on === xray) return;
+    xray = on;
+    if (!boneSeeThrough()) setAlpha('bone', on ? 0.3 : null);
+  }
+  let lastOrbit = null;
+  function showStep(t) {
+    let text = '', orbit = play.dataset.orbitPlay;
+    for (const [start, words, o] of steps) if (t >= start) { text = words; if (o) orbit = o; }
+    // Some steps turn the model to a better view.
+    if (orbit !== lastOrbit) { mv.cameraOrbit = orbit; lastOrbit = orbit; }
+    if (stepText.textContent !== text) stepText.textContent = text;
+    stepText.hidden = !text;
+    setXray(t >= xrayFrom && t < xrayTo);
+  }
+  function stop() {
+    stepText.hidden = true;
+    setXray(false);
+    mv.pause();
+    mv.currentTime = 0;
+    mv.classList.remove('playing');
+    play.disabled = false;
+  }
+  play.addEventListener('click', () => {
+    mv.cameraOrbit = lastOrbit = play.dataset.orbitPlay;
+    mv.cameraTarget = 'auto auto auto';
+    viewButtons.forEach(o => o.setAttribute('aria-pressed', false));
+    mv.animationName = play.dataset.anim;
+    mv.currentTime = 0;
+    mv.classList.add('playing');
+    play.disabled = true;
+    info.hidden = true;
+    mv.interactionPrompt = 'none';
+    mv.play({ repetitions: 1 });
+    let last = 0;
+    const watch = () => {
+      const t = mv.currentTime;
+      if (t < last || t >= mv.duration - 0.05 || mv.paused) return stop();
+      showStep(t);
+      last = t;
+      requestAnimationFrame(watch);
+    };
+    requestAnimationFrame(watch);
+  });
+  // The play button only shows if the model has the animation.
+  mv.addEventListener('load', () => { play.hidden = !mv.availableAnimations.includes(play.dataset.anim); });
+}
+
 // Show a plain message in the viewer box if 3D cannot be shown, instead of an empty box.
 function showProblem(text) {
   let box = mv.querySelector('.problem');

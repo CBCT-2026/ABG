@@ -33,7 +33,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
   <h1>歯そう骨移植　1：手術の前</h1>
   <p class="intro">下は、上あごと歯の3Dモデルです。一部のスマートフォンやタブレットでは、<b>AR（拡張現実）</b>でも見られます。ARは、カメラにうつる実際の部屋の中に、モデルがあるように見せる機能です。</p>
 
-  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。番号の点をタップすると、その部分の説明が出ます。<b>「番号をかくす」</b>で、モデルを見やすくできます。<b>「AR表示」</b>をタップすると、近くの机の上や平らな場所にモデルを置けます。 <b>「歯ぐきのカバーを外す」</b>をタップすると、その下の骨のすき間が見えます。<b>「骨をすかして見る」</b>をタップすると、骨の中の大人の犬歯が見えます。</p>
+  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。番号の点をタップすると、その部分の説明が出ます。<b>「番号をかくす」</b>で、モデルを見やすくできます。<b>「AR表示」</b>をタップすると、近くの机の上や平らな場所にモデルを置けます。 <b>「歯ぐきのカバーを外す」</b>をタップすると、その下の骨のすき間が見えます。<b>「骨をすかして見る」</b>をタップすると、骨の中の大人の犬歯が見えます。<b>「歯ぐきのカバーの下を見る」</b>をタップすると、順番に見られます。</p>
   <p class="hint arnote">ARは、ARに対応した機器とブラウザでだけ使えます。たとえば、iPhoneのSafariや、多くのAndroidスマートフォンのChromeです。ARのボタンが出ないときは、その機器やブラウザではARを使えません。ARでは、すべての部分がついた、モデル全体が表示されます。</p>
 
   <!-- MODEL: models/abg-pre-op.glb (Draco, under 5 MB) and models/abg-pre-op.usdz. See docs/model-spec.md. -->
@@ -45,14 +45,15 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     camera-controls camera-orbit="0deg 75deg auto" touch-action="pan-y" interaction-prompt="auto"
     shadow-intensity="1" exposure="1" loading="eager" data-missing="この時期の3Dモデルは、まだ用意できていません。">
     <button slot="ar-button" class="ar-btn">AR表示（まわりの空間に置く）</button>
-    <button class="hotspot" slot="hotspot-1" data-position="0.0194m 0.0015m 0.0140m" data-normal="0.81 0.06 0.58" data-visibility-attribute="visible" aria-label="1. 歯ぐきの骨のすき間（がくれつ）">1<span class="label">歯ぐきの骨のすき間（がくれつ）</span><span class="note"><span>生まれつきある、上の歯ぐきの骨のすき間です。</span><span>歯そう骨移植で、このすき間をうめます。</span></span></button>
-    <button class="hotspot" slot="hotspot-2" data-position="0.0151m 0.0080m -0.0100m" data-normal="0.76 0.40 -0.50" data-visibility-attribute="visible" aria-label="2. 上あごの天じょうの骨のすき間">2<span class="label">上あごの天じょうの骨のすき間</span><span class="note"><span>上あごの天じょうは赤ちゃんのときに閉じましたが、その下の骨には、すき間が残ることがよくあります。</span><span>やわらかい組織がおおっています。</span></span></button>
-    <button class="hotspot" slot="hotspot-3" data-position="0.0050m 0.0085m -0.0140m" data-normal="0.29 0.50 -0.82" data-visibility-attribute="visible" aria-label="3. 手術で閉じた歯ぐきと口がい（やわらかい組織）">3<span class="label">手術で閉じた歯ぐきと口がい（やわらかい組織）</span><span class="note"><span>赤ちゃんのときの手術で、くちびると上あごの天じょうを閉じました。</span><span>この手術で閉じたのは、やわらかい組織です。骨のすき間は閉じていません。</span><span>このモデルでは、このカバーを外せます。</span></span></button>
-    <button class="hotspot" slot="hotspot-4" data-position="0.0274m 0.0151m 0.0156m" data-normal="0.78 0.43 0.45" data-visibility-attribute="visible" aria-label="4. 大人の犬歯（まだ生えていない）">4<span class="label">大人の犬歯（まだ生えていない）</span><span class="note"><span>すき間のとなりの、骨の中にあります。</span><span>正しい場所に生えるには、まわりに骨が必要です。</span><span>この歯が生える前に、歯そう骨移植をします。</span></span></button>
-    <button class="hotspot" slot="hotspot-5" data-position="0.0194m -0.0080m 0.0190m" data-normal="0.68 -0.28 0.67" data-visibility-attribute="visible" aria-label="5. 側切歯の場所">5<span class="label">側切歯の場所</span><span class="note"><span>かた方に口しん口がいれつがある子どもの約半数では、この歯ができません。</span><span>できたときも、小さかったり、形がちがったりすることがよくあります。</span></span></button>
-    <button class="hotspot" slot="hotspot-6" data-position="0.0090m -0.0100m 0.0317m" data-normal="0.26 -0.29 0.92" data-visibility-attribute="visible" aria-label="6. 前歯（中切歯）">6<span class="label">前歯（中切歯）</span><span class="note"><span>すき間のとなりの前歯は、向きが回っていたり、かたむいていたりすることがあります。</span></span></button>
-    <button class="hotspot" slot="hotspot-7" data-position="0.0348m -0.0121m 0.0045m" data-normal="0.94 -0.33 0.12" data-visibility-attribute="visible" aria-label="7. 乳歯">7<span class="label">乳歯</span><span class="note"><span>この年れいでは、乳歯の犬歯と、乳歯のおく歯がまだあります。</span><span>その上の骨の中で、大人の歯が育っています。</span></span></button>
-    <button class="hotspot" slot="hotspot-8" data-position="0.0402m -0.0076m -0.0180m" data-normal="0.90 -0.17 -0.40" data-visibility-attribute="visible" aria-label="8. 大人の第一大きゅう歯">8<span class="label">大人の第一大きゅう歯</span><span class="note"><span>最初に生える、大人の大きなおく歯です。6才ごろに生えます。</span></span></button>
+    <button class="hotspot" slot="hotspot-1" data-position="0.0194m 0.0015m 0.0140m" data-normal="0.52 -0.35 0.78" data-visibility-attribute="visible" aria-label="1. 歯ぐきの骨のすき間（がくれつ）">1<span class="label">歯ぐきの骨のすき間（がくれつ）</span><span class="note"><span>生まれつきある、上の歯ぐきの骨のすき間です。</span><span>歯そう骨移植で、このすき間をうめます。</span></span></button>
+    <button class="hotspot" slot="hotspot-2" data-position="0.0151m 0.0080m -0.0100m" data-normal="0.52 -0.01 -0.85" data-visibility-attribute="visible" aria-label="2. 上あごの天じょうの骨のすき間">2<span class="label">上あごの天じょうの骨のすき間</span><span class="note"><span>上あごの天じょうは赤ちゃんのときに閉じましたが、その下の骨には、すき間が残ることがよくあります。</span><span>やわらかい組織がおおっています。</span></span></button>
+    <button class="hotspot" slot="hotspot-3" data-position="0.0050m 0.0085m -0.0140m" data-normal="-0.33 0.03 -0.94" data-visibility-attribute="visible" aria-label="3. 手術で閉じた歯ぐきと口がい（やわらかい組織）">3<span class="label">手術で閉じた歯ぐきと口がい（やわらかい組織）</span><span class="note"><span>赤ちゃんのときの手術で、くちびると上あごの天じょうを閉じました。</span><span>この手術で閉じたのは、やわらかい組織です。骨のすき間は閉じていません。</span><span>このモデルでは、このカバーを外せます。</span></span></button>
+    <button class="hotspot" slot="hotspot-4" data-position="0.0274m 0.0151m 0.0156m" data-normal="0.70 0.28 0.65" data-visibility-attribute="visible" aria-label="4. 大人の犬歯（まだ生えていない）">4<span class="label">大人の犬歯（まだ生えていない）</span><span class="note"><span>すき間のとなりの、骨の中にあります。</span><span>正しい場所に生えるには、まわりに骨が必要です。</span><span>この歯が生える前に、歯そう骨移植をします。</span></span></button>
+    <button class="hotspot" slot="hotspot-5" data-position="0.0194m -0.0080m 0.0190m" data-normal="0.36 -0.59 0.73" data-visibility-attribute="visible" aria-label="5. 側切歯の場所">5<span class="label">側切歯の場所</span><span class="note"><span>かた方に口しん口がいれつがある子どもの約半数では、この歯ができません。</span><span>できたときも、小さかったり、形がちがったりすることがよくあります。</span></span></button>
+    <button class="hotspot" slot="hotspot-6" data-position="0.0090m -0.0100m 0.0317m" data-normal="-0.02 -0.49 0.87" data-visibility-attribute="visible" aria-label="6. 前歯（中切歯）">6<span class="label">前歯（中切歯）</span><span class="note"><span>すき間のとなりの前歯は、向きが回っていたり、かたむいていたりすることがあります。</span></span></button>
+    <button class="hotspot" slot="hotspot-7" data-position="0.0348m -0.0121m 0.0045m" data-normal="0.77 -0.62 0.16" data-visibility-attribute="visible" aria-label="7. 乳歯">7<span class="label">乳歯</span><span class="note"><span>この年れいでは、乳歯の犬歯と、乳歯のおく歯がまだあります。</span><span>その上の骨の中で、大人の歯が育っています。</span></span></button>
+    <button class="hotspot" slot="hotspot-8" data-position="0.0402m -0.0076m -0.0180m" data-normal="0.80 -0.41 -0.45" data-visibility-attribute="visible" aria-label="8. 大人の第一大きゅう歯">8<span class="label">大人の第一大きゅう歯</span><span class="note"><span>最初に生える、大人の大きなおく歯です。6才ごろに生えます。</span></span></button>
+    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <div class="info" id="info" aria-live="polite" hidden></div>
@@ -62,7 +63,8 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button type="button" data-orbit="35deg 80deg auto" data-target="0.0274m 0.0151m 0.0156m" aria-pressed="false">犬歯とすき間</button>
     <button type="button" class="part" data-part="soft-tissue" data-mode="hide" data-on="歯ぐきのカバーを外す" data-off="歯ぐきのカバーをもどす" aria-pressed="false" hidden>歯ぐきのカバーを外す</button>
     <button type="button" class="part" data-part="bone" data-mode="xray" data-on="骨をすかして見る" data-off="骨をもとにもどす" aria-pressed="false" hidden>骨をすかして見る</button>
-    <button type="button" id="labels" aria-pressed="false" data-on="番号をかくす" data-off="番号を表示">番号をかくす</button>
+    <button type="button" class="play" id="play" data-anim="reveal" data-orbit-play="10deg 128deg auto" data-steps="[[0, &quot;1. 歯ぐきのカバーを外します&quot;], [2.5, &quot;2. その下の骨には、大きなすき間があります&quot;], [5.5, &quot;3. 大人の犬歯は、まだ骨の中にあります&quot;, &quot;35deg 85deg auto&quot;], [9.5, &quot;&quot;, &quot;10deg 128deg auto&quot;]]" data-xray="5.5 9.5" hidden>歯ぐきのカバーの下を見る</button>
+    <button type="button" id="labels"aria-pressed="false" data-on="番号をかくす" data-off="番号を表示">番号をかくす</button>
   </div>
 
   <ul class="legend" aria-label="色の説明">

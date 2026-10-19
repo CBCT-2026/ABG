@@ -54,6 +54,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button class="hotspot" slot="hotspot-7" data-position="0.0299m -0.0120m 0.0214m" data-normal="0.77 -0.31 0.55" data-choice="implant bridge" data-visibility-attribute="visible" aria-label="7. もとの場所にある犬歯">7<span class="label">もとの場所にある犬歯</span><span class="note"><span>きょう正治りょうで、側切歯の場所をあけておきました。</span></span></button>
     <button class="hotspot" slot="hotspot-8" data-position="0.0076m -0.0140m 0.0322m" data-normal="0.21 -0.39 0.90" data-position-canine="0.0076m -0.0140m 0.0322m" data-normal-canine="0.21 -0.39 0.90" data-position-implant="0.0076m -0.0140m 0.0322m" data-normal-implant="0.21 -0.39 0.90" data-position-bridge="0.0076m -0.0140m 0.0322m" data-normal-bridge="0.21 -0.39 0.90" data-visibility-attribute="visible" aria-label="8. 前歯（中切歯）">8<span class="label">前歯（中切歯）</span><span class="note"><span>きょう正治りょうで、歯ならびを整えました。</span></span></button>
     <button class="hotspot" slot="hotspot-9" data-position="0.0395m -0.0069m -0.0217m" data-normal="0.87 -0.15 -0.48" data-position-canine="0.0395m -0.0069m -0.0217m" data-normal-canine="0.87 -0.15 -0.48" data-position-implant="0.0407m -0.0069m -0.0304m" data-normal-implant="0.79 -0.14 -0.59" data-position-bridge="0.0407m -0.0069m -0.0304m" data-normal-bridge="0.79 -0.14 -0.59" data-visibility-attribute="visible" aria-label="9. 大人の第二大きゅう歯">9<span class="label">大人の第二大きゅう歯</span><span class="note"><span>親知らずのほかは、大人の歯がすべて生えています。</span></span></button>
+    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <div class="info" id="info" aria-live="polite" hidden></div>
@@ -70,7 +71,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button type="button" class="part" data-part="implant-crown" data-mode="hide" data-on="インプラントのかぶせ物を外す" data-off="インプラントのかぶせ物をもどす" aria-pressed="false" hidden>インプラントのかぶせ物を外す</button>
     <button type="button" class="part" data-part="bridge" data-mode="hide" data-on="ブリッジを外す" data-off="ブリッジをもどす" aria-pressed="false" hidden>ブリッジを外す</button>
     <button type="button" class="part" data-part="bone" data-mode="xray" data-on="骨をすかして見る" data-off="骨をもとにもどす" aria-pressed="false" hidden>骨をすかして見る</button>
-    <button type="button" id="labels" aria-pressed="false" data-on="番号をかくす" data-off="番号を表示">番号をかくす</button>
+    <button type="button" id="labels"aria-pressed="false" data-on="番号をかくす" data-off="番号を表示">番号をかくす</button>
   </div>
 
   <ul class="legend" aria-label="色の説明">

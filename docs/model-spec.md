@@ -76,6 +76,7 @@ Made in Blender (scripts in `/mnt/project-files/models/<stage>/scripts/`) from t
 
 - `models/short-term/v1`: pre-op bone and soft tissue cover; graft fills the alveolar cleft and the front of the palate (a gap stays further back); baby canine 63 taken out; canine 23 a little lower.
 - `models/long-term/v1`: adult teeth from the pre-op v2 scan (full roots), 17 and 27 added, graft blended into the bone (bone colour), canine window filled. Three files: canine, implant, bridge.
+- `models/pre-op/v5`: v4 plus one 11-second animation, `reveal`: the gum cover moves off and away (0 to 2.5 s), the bone gap is shown (2.5 to 5.5 s), the canine grows a little twice to draw the eye (5.5 to 9.5 s), and the cover comes back (9.5 to 11 s). On the page, the play button adds step captions, turns the model to the canine and makes the bone see-through during step 3. The USDZ has the same movement, so iPhone AR plays it in a loop (no captions or see-through bone in AR).
 - Print files are in each folder's `print/`. Previews in `previews/`.
 
 ## Export

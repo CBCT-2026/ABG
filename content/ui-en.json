@@ -39,7 +39,7 @@
       "h1": "Alveolar bone grafting, stage 1: before the operation (pre-op)",
       "description": "An interactive 3D model of the upper jaw before alveolar bone grafting, with a gap in the gum bone and an adult canine still in the bone.",
       "alt": "3D model of the upper jaw of a child of about 8 to 10 years, with a gap in the gum bone on one side, a cover of gum and palate, and an adult canine tooth still in the bone",
-      "hint_extra": "Tap <b>Take off the gum cover</b> to see the gap in the bone under it. Tap <b>See-through bone</b> to see the adult canine tooth inside the bone.",
+      "hint_extra": "Tap <b>Take off the gum cover</b> to see the gap in the bone under it. Tap <b>See-through bone</b> to see the adult canine tooth inside the bone. Tap <b>Show what is under the gum cover</b> to see it step by step.",
       "views": [
         {
           "label": "Whole model",
@@ -152,7 +152,36 @@
           "color": "#7fb3d5",
           "text": "Adult canine (not through yet)"
         }
-      ]
+      ],
+      "animation": {
+        "name": "reveal",
+        "button": "Show what is under the gum cover",
+        "orbit": "10deg 128deg auto",
+        "steps": [
+          [
+            0,
+            "1. The gum cover comes off"
+          ],
+          [
+            2.5,
+            "2. Under it, there is a big gap in the bone"
+          ],
+          [
+            5.5,
+            "3. The adult canine is still inside the bone",
+            "35deg 85deg auto"
+          ],
+          [
+            9.5,
+            "",
+            "10deg 128deg auto"
+          ]
+        ],
+        "xray": [
+          5.5,
+          9.5
+        ]
+      }
     },
     {
       "id": "short-term",

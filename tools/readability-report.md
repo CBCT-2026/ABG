@@ -21,8 +21,8 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Title | 9 | 1 | 10.3 | 36.96 |
 | Intro | 40 | 3 | 4.9 | 83.36 |
 | Numbered dots (titles and notes) | 225 | 24 | 2.2 | 95.77 |
-| Viewer and AR tips | 114 | 11 | 2.6 | 94.76 |
-| Buttons | 25 | 4 | 1.0 | 98.92 |
+| Viewer and AR tips | 128 | 12 | 2.7 | 94.45 |
+| Buttons | 32 | 5 | 1.1 | 98.82 |
 | Colour key | 12 | 2 | 0.9 | 99.23 |
 | Every person is different | 56 | 5 | 5.3 | 77.03 |
 | What is a cleft lip and palate? | 56 | 6 | 1.0 | 104.34 |
@@ -34,7 +34,7 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | What happens next | 69 | 6 | 4.2 | 85.18 |
 | Questions to ask the cleft team | 46 | 6 | 1.6 | 97.5 |
 | Disclaimer | 16 | 3 | 3.0 | 83.02 |
-| **Overall** | **1211** | **119** | **2.5** | **94.96** |
+| **Overall** | **1232** | **121** | **2.5** | **94.96** |
 
 ## short-term
 
@@ -64,7 +64,7 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Intro | 40 | 3 | 4.9 | 83.36 |
 | Numbered dots (titles and notes) | 175 | 20 | 3.2 | 87.92 |
 | Viewer and AR tips | 110 | 11 | 2.5 | 95.17 |
-| Buttons | 36 | 6 | -0.4 | 107.69 |
+| Buttons | 38 | 6 | -0.3 | 107.38 |
 | Colour key | 15 | 1 | 4.4 | 90.09 |
 | Every person is different | 56 | 5 | 5.3 | 77.03 |
 | Years after the bone graft | 43 | 5 | 0.7 | 105.05 |
@@ -74,5 +74,5 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Other care in the teen years | 36 | 3 | 5.6 | 76.22 |
 | Questions to ask the cleft team | 53 | 5 | 1.5 | 103.02 |
 | Disclaimer | 16 | 3 | 3.0 | 83.02 |
-| **Overall** | **998** | **96** | **2.6** | **94.76** |
+| **Overall** | **1000** | **96** | **2.6** | **94.76** |
 

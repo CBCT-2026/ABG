@@ -51,6 +51,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button class="hotspot" slot="hotspot-4" data-position="0.0090m -0.0100m 0.0317m" data-normal="0.26 -0.29 0.92" data-visibility-attribute="visible" aria-label="4. Front teeth (central incisors)">4<span class="label">Front teeth (central incisors)</span><span class="note"><span>The bone graft now holds up the front tooth next to the gap.</span></span></button>
     <button class="hotspot" slot="hotspot-5" data-position="0.0348m -0.0121m 0.0045m" data-normal="0.94 -0.33 0.12" data-visibility-attribute="visible" aria-label="5. Baby teeth">5<span class="label">Baby teeth</span><span class="note"><span>Some baby teeth are still in at this age.</span></span></button>
     <button class="hotspot" slot="hotspot-6" data-position="0.0402m -0.0076m -0.0180m" data-normal="0.90 -0.17 -0.40" data-visibility-attribute="visible" aria-label="6. First adult molars">6<span class="label">First adult molars</span><span class="note"><span>The first big adult back teeth.</span></span></button>
+    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <div class="info" id="info" aria-live="polite" hidden></div>
@@ -60,7 +61,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button type="button" data-orbit="35deg 80deg auto" data-target="0.0274m 0.0151m 0.0156m" aria-pressed="false">Bone graft and canine</button>
     <button type="button" class="part" data-part="soft-tissue" data-mode="hide" data-on="Take off the gum cover" data-off="Put the gum cover back" aria-pressed="false" hidden>Take off the gum cover</button>
     <button type="button" class="part" data-part="bone" data-mode="xray" data-on="See-through bone" data-off="Solid bone" aria-pressed="false" hidden>See-through bone</button>
-    <button type="button" id="labels" aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
+    <button type="button" id="labels"aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
   </div>
 
   <ul class="legend" aria-label="Colour key">

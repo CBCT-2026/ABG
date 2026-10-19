@@ -54,6 +54,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button class="hotspot" slot="hotspot-7" data-position="0.0299m -0.0120m 0.0214m" data-normal="0.77 -0.31 0.55" data-choice="implant bridge" data-visibility-attribute="visible" aria-label="7. Canine in its own place">7<span class="label">Canine in its own place</span><span class="note"><span>Braces kept the space of the lateral incisor open.</span></span></button>
     <button class="hotspot" slot="hotspot-8" data-position="0.0076m -0.0140m 0.0322m" data-normal="0.21 -0.39 0.90" data-position-canine="0.0076m -0.0140m 0.0322m" data-normal-canine="0.21 -0.39 0.90" data-position-implant="0.0076m -0.0140m 0.0322m" data-normal-implant="0.21 -0.39 0.90" data-position-bridge="0.0076m -0.0140m 0.0322m" data-normal-bridge="0.21 -0.39 0.90" data-visibility-attribute="visible" aria-label="8. Front teeth (central incisors)">8<span class="label">Front teeth (central incisors)</span><span class="note"><span>Lined up by braces.</span></span></button>
     <button class="hotspot" slot="hotspot-9" data-position="0.0395m -0.0069m -0.0217m" data-normal="0.87 -0.15 -0.48" data-position-canine="0.0395m -0.0069m -0.0217m" data-normal-canine="0.87 -0.15 -0.48" data-position-implant="0.0407m -0.0069m -0.0304m" data-normal-implant="0.79 -0.14 -0.59" data-position-bridge="0.0407m -0.0069m -0.0304m" data-normal-bridge="0.79 -0.14 -0.59" data-visibility-attribute="visible" aria-label="9. Second adult molars">9<span class="label">Second adult molars</span><span class="note"><span>All the adult teeth are in, except the wisdom teeth.</span></span></button>
+    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <div class="info" id="info" aria-live="polite" hidden></div>
@@ -70,7 +71,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button type="button" class="part" data-part="implant-crown" data-mode="hide" data-on="Take off the implant crown" data-off="Put the implant crown back" aria-pressed="false" hidden>Take off the implant crown</button>
     <button type="button" class="part" data-part="bridge" data-mode="hide" data-on="Take off the bridge" data-off="Put the bridge back" aria-pressed="false" hidden>Take off the bridge</button>
     <button type="button" class="part" data-part="bone" data-mode="xray" data-on="See-through bone" data-off="Solid bone" aria-pressed="false" hidden>See-through bone</button>
-    <button type="button" id="labels" aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
+    <button type="button" id="labels"aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
   </div>
 
   <ul class="legend" aria-label="Colour key">

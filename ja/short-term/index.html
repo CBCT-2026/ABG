@@ -51,6 +51,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button class="hotspot" slot="hotspot-4" data-position="0.0090m -0.0100m 0.0317m" data-normal="0.26 -0.29 0.92" data-visibility-attribute="visible" aria-label="4. 前歯（中切歯）">4<span class="label">前歯（中切歯）</span><span class="note"><span>移植した骨が、すき間のとなりの前歯をささえます。</span></span></button>
     <button class="hotspot" slot="hotspot-5" data-position="0.0348m -0.0121m 0.0045m" data-normal="0.94 -0.33 0.12" data-visibility-attribute="visible" aria-label="5. 乳歯">5<span class="label">乳歯</span><span class="note"><span>この年れいでは、まだ乳歯がいくつかあります。</span></span></button>
     <button class="hotspot" slot="hotspot-6" data-position="0.0402m -0.0076m -0.0180m" data-normal="0.90 -0.17 -0.40" data-visibility-attribute="visible" aria-label="6. 大人の第一大きゅう歯">6<span class="label">大人の第一大きゅう歯</span><span class="note"><span>最初に生える、大人の大きなおく歯です。</span></span></button>
+    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <div class="info" id="info" aria-live="polite" hidden></div>
@@ -60,7 +61,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button type="button" data-orbit="35deg 80deg auto" data-target="0.0274m 0.0151m 0.0156m" aria-pressed="false">移植した骨と犬歯</button>
     <button type="button" class="part" data-part="soft-tissue" data-mode="hide" data-on="歯ぐきのカバーを外す" data-off="歯ぐきのカバーをもどす" aria-pressed="false" hidden>歯ぐきのカバーを外す</button>
     <button type="button" class="part" data-part="bone" data-mode="xray" data-on="骨をすかして見る" data-off="骨をもとにもどす" aria-pressed="false" hidden>骨をすかして見る</button>
-    <button type="button" id="labels" aria-pressed="false" data-on="番号をかくす" data-off="番号を表示">番号をかくす</button>
+    <button type="button" id="labels"aria-pressed="false" data-on="番号をかくす" data-off="番号を表示">番号をかくす</button>
   </div>
 
   <ul class="legend" aria-label="色の説明">
