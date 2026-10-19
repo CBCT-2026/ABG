@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alveolar Bone Grafting: Before the Operation</title>
+<meta name="description" content="An interactive 3D model of the upper jaw before alveolar bone grafting, with a gap in the gum bone and an adult canine still in the bone.">
+<meta name="robots" content="noindex">
+<script>
+// Pick light or dark before the page draws: the saved choice, else the device setting.
+try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+// The models are Draco-compressed; the decoder is served from this site.
+self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/', location.href).href };
+</script>
+<link rel="stylesheet" href="../../style.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+<header class="bar">
+  <div class="bar-left">
+    <a class="lang" href="../../ja/pre-op/" lang="ja" hreflang="ja">日本語</a>
+    <button class="theme" id="theme" type="button" data-dark="Dark mode" data-light="Light mode">Dark mode</button>
+  </div>
+    <a class="lang" href="../">All stages</a>
+</header>
+
+<main>
+  <nav class="stepper" aria-label="Stages"><ol>
+    <li><a href="../pre-op/" aria-current="page"><span class="step-num">1</span>Pre-op</a></li>
+    <li><a href="../short-term/"><span class="step-num">2</span>Short-term post-op</a></li>
+    <li><a href="../long-term/"><span class="step-num">3</span>Long-term post-op</a></li>
+  </ol></nav>
+  <h1>Alveolar bone grafting, stage 1: before the operation (pre-op)</h1>
+  <p class="intro">Below is a 3D model of the upper jaw and teeth. Some phones and tablets can also show it in <b>augmented reality (AR)</b>. AR uses the camera to show the model in the real room, as if it were there.</p>
+
+  <p class="hint">Drag to turn the model. Pinch to zoom. Tap a numbered dot to learn about that part. Tap <b>Hide labels</b> for a clear view. Tap <b>View in AR</b> to place the model on a nearby table or flat surface. Tap <b>Take off the gum cover</b> to see the gap in the bone under it. Tap <b>See-through bone</b> to see the adult canine tooth inside the bone.</p>
+  <p class="hint arnote">AR works only on a device and browser that can use it. For example, Safari on an iPhone, or Chrome on many Android phones. If no AR button shows, AR cannot be used on that device or browser. AR shows the whole model, with all parts in place.</p>
+
+  <!-- MODEL: models/abg-pre-op.glb (Draco, under 5 MB) and models/abg-pre-op.usdz. See docs/model-spec.md. -->
+  <model-viewer id="mv"
+    src="../../models/abg-pre-op.glb"
+    ios-src="../../models/abg-pre-op.usdz"
+    alt="3D model of the upper jaw of a child of about 8 to 10 years, with a gap in the gum bone on one side, a cover of gum and palate, and an adult canine tooth still in the bone"
+    ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
+    camera-controls camera-orbit="0deg 75deg auto" touch-action="pan-y" interaction-prompt="auto"
+    shadow-intensity="1" exposure="1" loading="eager" data-missing="The 3D model for this stage is not ready yet.">
+    <button slot="ar-button" class="ar-btn">View in AR (place in the room)</button>
+    <button class="hotspot" slot="hotspot-1" data-visibility-attribute="visible" aria-label="1. Gap in the gum bone (alveolar cleft)">1<span class="label">Gap in the gum bone (alveolar cleft)</span><span class="note"><span>A gap in the bone of the upper gum, there from birth.</span><span>The bone graft will fill this gap.</span></span></button>
+    <button class="hotspot" slot="hotspot-2" data-visibility-attribute="visible" aria-label="2. Repaired gum and palate (soft tissue)">2<span class="label">Repaired gum and palate (soft tissue)</span><span class="note"><span>The lip and the roof of the mouth were closed by operations as a baby.</span><span>These closed the soft tissue, not the gap in the bone.</span><span>On this model, this cover can be taken off.</span></span></button>
+    <button class="hotspot" slot="hotspot-3" data-visibility-attribute="visible" aria-label="3. Adult canine (not through yet)">3<span class="label">Adult canine (not through yet)</span><span class="note"><span>Still inside the bone, next to the gap.</span><span>It needs bone around it to come through in the right place.</span><span>The bone graft is done before it comes through.</span></span></button>
+    <button class="hotspot" slot="hotspot-4" data-visibility-attribute="visible" aria-label="4. Space of the lateral incisor">4<span class="label">Space of the lateral incisor</span><span class="note"><span>In about half of children with a cleft on one side, this tooth never forms.</span><span>When it does form, it is often small or an odd shape.</span></span></button>
+    <button class="hotspot" slot="hotspot-5" data-visibility-attribute="visible" aria-label="5. Front teeth (central incisors)">5<span class="label">Front teeth (central incisors)</span><span class="note"><span>The front tooth next to the gap can be turned or tipped.</span></span></button>
+    <button class="hotspot" slot="hotspot-6" data-visibility-attribute="visible" aria-label="6. Baby teeth">6<span class="label">Baby teeth</span><span class="note"><span>At this age, the baby canines and baby back teeth are still in.</span><span>Adult teeth grow in the bone above them.</span></span></button>
+    <button class="hotspot" slot="hotspot-7" data-visibility-attribute="visible" aria-label="7. First adult molars">7<span class="label">First adult molars</span><span class="note"><span>The first big adult back teeth. They come through at about 6 years of age.</span></span></button>
+    <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
+  </model-viewer>
+  <div class="info" id="info" aria-live="polite" hidden></div>
+  <div class="controls" role="group" aria-label="Model controls">
+    <button type="button" data-orbit="0deg 75deg auto" aria-pressed="true">Whole model</button>
+    <button type="button" data-orbit="0deg 160deg auto" aria-pressed="false">Roof of the mouth</button>
+    <button type="button" data-orbit="35deg 80deg auto" aria-pressed="false">Canine and gap</button>
+    <button type="button" class="part" data-part="soft-tissue" data-mode="hide" data-on="Take off the gum cover" data-off="Put the gum cover back" aria-pressed="false" hidden>Take off the gum cover</button>
+    <button type="button" class="part" data-part="bone" data-mode="xray" data-on="See-through bone" data-off="Solid bone" aria-pressed="false" hidden>See-through bone</button>
+    <button type="button" id="labels" aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
+  </div>
+
+  <ul class="legend" aria-label="Colour key">
+    <li><span class="dot" style="background:#e6dccb"></span>Bone</li>
+    <li><span class="dot" style="background:#f7f4ee"></span>Teeth</li>
+    <li><span class="dot" style="background:#e79a9a"></span>Gum and palate (soft tissue)</li>
+    <li><span class="dot" style="background:#7fb3d5"></span>Adult canine (not through yet)</li>
+  </ul>
+
+  <!-- SHARED TEXT: generated from content/pre-op-en.html by tools/build.py. Edit that file, not this block. -->
+<section class="important">
+  <h2>Every person is different</h2>
+  <p>The size of the gap, the teeth and the plan can be very different from person to person. So the facts here are general. They are not advice for one person. Before any treatment, the cleft team will talk with each person and family in detail about the benefits, risks and choices.</p>
+</section>
+
+<section>
+  <h2>What is a cleft lip and palate?</h2>
+  <p>A <b>cleft</b> is a gap. Some babies are born with a gap in the top lip, the gum and the roof of the mouth (the <b>palate</b>). The gap forms before birth. It can be on one side or on both sides. This model shows a cleft on one side.</p>
+</section>
+
+<section>
+  <h2>Operations as a baby</h2>
+  <p>In the first year of life, operations close the lip and the roof of the mouth. The lip is most often closed at about 3 to 6 months of age. The palate is most often closed at about 6 to 12 months.<sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-2">2</a></sup> In one children's hospital in Australia, the average age was about 5 months for the lip and about 18 months for the palate.<sup class="cite"><a href="#ref-1">1</a></sup></p>
+  <p>These operations close the skin, gum and lining of the mouth. This is the <b>soft tissue</b>. They do not fill the gap in the bone of the gum. In this model, the soft tissue is a cover that can be taken off.</p>
+</section>
+
+<section>
+  <h2>The gap in the gum bone</h2>
+  <p>The upper gum has bone inside it. This bone holds the teeth. Its medical name is the <b>alveolar bone</b>. A gap in this bone is called an <b>alveolar cleft</b>.</p>
+  <p>Sometimes a small hole is left between the mouth and the nose. Food or drink can then go into the nose. This hole is called a <b>fistula</b>.<sup class="cite"><a href="#ref-3">3</a></sup></p>
+</section>
+
+<section>
+  <h2>Why alveolar bone grafting is done</h2>
+  <p><b>Alveolar bone grafting</b> is an operation. It puts new bone into the gap in the gum bone. This new bone is the <b>bone graft</b>. It is the person's own bone, taken from another part of the body.<sup class="cite"><a href="#ref-1">1</a></sup> The bone graft:<sup class="cite"><a href="#ref-3">3</a></sup><sup class="cite"><a href="#ref-1">1</a></sup></p>
+  <ul>
+    <li>gives bone for the adult <b>canine</b> tooth to come through</li>
+    <li>holds up the teeth next to the gap</li>
+    <li>joins the two parts of the upper gum into one</li>
+    <li>closes a fistula, if there is one</li>
+  </ul>
+</section>
+
+<section>
+  <h2>When it is done</h2>
+  <p>It is most often done at about 9 to 12 years of age.<sup class="cite"><a href="#ref-1">1</a></sup> In the same Australian hospital, the average age was about 11.<sup class="cite"><a href="#ref-1">1</a></sup> The time is chosen by how much the root of the adult canine has grown. The best time is when the root is about half to two thirds grown, before the tooth comes through.<sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-4">4</a></sup></p>
+  <p>Before the operation, some children wear braces to make the upper jaw wider.<sup class="cite"><a href="#ref-5">5</a></sup></p>
+</section>
+
+<section>
+  <h2>The missing side tooth</h2>
+  <p>The <b>lateral incisor</b> is the small tooth between the big front tooth and the canine. In about half of children with a cleft on one side, the lateral incisor next to the gap never forms.<sup class="cite"><a href="#ref-6">6</a></sup> A tooth that never forms is called a <b>missing tooth</b>. The medical words are <b>tooth agenesis</b> or <b>hypodontia</b>. When this tooth does form, it is often small or an odd shape.<sup class="cite"><a href="#ref-6">6</a></sup> By the end of treatment, the lateral incisor on the cleft side is often gone. One big hospital found this in more than 9 in 10 children.<sup class="cite"><a href="#ref-7">7</a></sup></p>
+  <p>Missing adult teeth are common with a cleft. A review of 7 studies found that about 1 in 3 people with a cleft lip and palate had at least one.<sup class="cite"><a href="#ref-8">8</a></sup></p>
+</section>
+
+<section>
+  <h2>What happens next</h2>
+  <p>After the bone graft, the adult canine most often comes through the new bone by itself. A review of many studies found this in about 8 in 10.<sup class="cite"><a href="#ref-9">9</a></sup> In a study at a hospital in Melbourne, it came through in 26 of 28.<sup class="cite"><a href="#ref-10">10</a></sup> If the lateral incisor is missing, the canine can move into its space.<sup class="cite"><a href="#ref-7">7</a></sup> Later, most people have braces to line up the teeth.<sup class="cite"><a href="#ref-5">5</a></sup><sup class="cite"><a href="#ref-11">11</a></sup></p>
+</section>
+
+<section>
+  <h2>Questions to ask the cleft team</h2>
+  <ul>
+    <li>How big is the gap in the gum bone?</li>
+    <li>When is the best time for the bone graft?</li>
+    <li>Is the lateral incisor there, or is it missing?</li>
+    <li>Are braces needed before the operation?</li>
+    <li>Where will the new bone come from?</li>
+  </ul>
+</section>
+
+<section class="refs">
+  <h2>Sources</h2>
+  <ol>
+    <li id="ref-1">Jensen ED, Soares G, Cook S, et al. <span class="rt">The burden of cleft surgery: a 36-year reflection of surgical management of children with orofacial clefts in South Australia.</span> Cleft Palate Craniofac J. 2025;63(8):2610-2617. <a href="https://doi.org/10.1177/10556656251387961">doi.org/10.1177/10556656251387961</a></li>
+    <li id="ref-2">Gamble C, Persson C, Willadsen E, et al. <span class="rt">Timing of primary surgery for cleft palate.</span> N Engl J Med. 2023;389(9):795-807. <a href="https://doi.org/10.1056/NEJMoa2215162">doi.org/10.1056/NEJMoa2215162</a></li>
+    <li id="ref-3">Elhaddaoui R, Bahije L, Zaoui F, et al. <span class="rt">Timing of alveolar bone graft and sequences of canine eruption in cases of cleft lip and palate: a systematic review.</span> Orthod Fr. 2017;88(2):193-198. <a href="https://doi.org/10.1051/orthodfr/2017011">doi.org/10.1051/orthodfr/2017011</a></li>
+    <li id="ref-4">Bartzela T, Hoffmann I, Kluge J, et al. <span class="rt">Timing matters: dental development and outcomes on secondary alveolar bone grafting in cleft lip and palate patients.</span> Clin Oral Investig. 2025;29(11):545. <a href="https://doi.org/10.1007/s00784-025-06594-w">doi.org/10.1007/s00784-025-06594-w</a></li>
+    <li id="ref-5">Freitas JA, Garib DG, Oliveira M, et al. <span class="rt">Rehabilitative treatment of cleft lip and palate: experience of the Hospital for Rehabilitation of Craniofacial Anomalies-USP (HRAC-USP), part 2: pediatric dentistry and orthodontics.</span> J Appl Oral Sci. 2012;20(2):268-281. <a href="https://doi.org/10.1590/s1678-77572012000200024">doi.org/10.1590/s1678-77572012000200024</a></li>
+    <li id="ref-6">Gibson TL, Grayson BH, Cutting CB, et al. <span class="rt">Prevalence of dental anomalies in patients with unilateral cleft lip and alveolus treated with gingivoperiosteoplasty.</span> Cleft Palate Craniofac J. 2022;59(8):1017-1023. <a href="https://doi.org/10.1177/10556656211031124">doi.org/10.1177/10556656211031124</a></li>
+    <li id="ref-7">Cassolato SF, Ross B, Daskalogiannakis J, et al. <span class="rt">Treatment of dental anomalies in children with complete unilateral cleft lip and palate at SickKids hospital, Toronto.</span> Cleft Palate Craniofac J. 2009;46(2):166-172. <a href="https://doi.org/10.1597/07-239.1">doi.org/10.1597/07-239.1</a></li>
+    <li id="ref-8">Srivastav S, Hermann NV, Tewari N, et al. <span class="rt">Prevalence of dental anomalies in primary vs. permanent dentition in individuals with non-syndromic cleft lip and palate: a systematic review and meta-analysis.</span> Cleft Palate Craniofac J. 2025;63(9):3069-3081. <a href="https://doi.org/10.1177/10556656251398076">doi.org/10.1177/10556656251398076</a></li>
+    <li id="ref-9">Jahanbin A, Kamyabnezhad E, Raisolsadat MA, et al. <span class="rt">Long-term stability of alveolar bone graft in cleft lip and palate patients: systematic review and meta-analysis.</span> J Craniofac Surg. 2022;33(2):e194-e200. <a href="https://doi.org/10.1097/SCS.0000000000008254">doi.org/10.1097/SCS.0000000000008254</a></li>
+    <li id="ref-10">Kumar R, Heggie A, Shand J, et al. <span class="rt">Secondary bone grafting of alveolar clefts: a review of outcome at two centres in Australia and the UK.</span> Br J Oral Maxillofac Surg. 2017;55(5):496-499. <a href="https://doi.org/10.1016/j.bjoms.2017.02.002">doi.org/10.1016/j.bjoms.2017.02.002</a></li>
+    <li id="ref-11">Clerc MM, Detzen L, Vi-Fane B, et al. <span class="rt">Replacement of missing lateral incisors for patients with cleft lip and palate: a decision-making tree based on a systematic review of the literature.</span> J Prosthet Dent. 2025;134(1):50-60. <a href="https://doi.org/10.1016/j.prosdent.2023.07.023">doi.org/10.1016/j.prosdent.2023.07.023</a></li>
+  </ol>
+</section>
+
+  <nav class="pager">
+    <a class="next" href="../short-term/"><span>Next stage</span>2. Short-term post-op</a>
+  </nav>
+
+  <p class="disclaimer">This page is for a research study at Nagoya University. Draft version 0.1, 19 October 2026.</p>
+</main>
+
+<script src="../../viewer.js"></script>
+</body>
+</html>
