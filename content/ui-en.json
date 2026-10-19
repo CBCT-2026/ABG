@@ -1,0 +1,459 @@
+{
+  "lang": "en",
+  "other": "ja",
+  "other_label": "日本語",
+  "site_title": "Alveolar Bone Grafting",
+  "dark": "Dark mode",
+  "light": "Light mode",
+  "home_link": "All stages",
+  "stage_nav": "Stages",
+  "home": {
+    "h1": "Alveolar bone grafting",
+    "description": "Interactive 3D models of the three stages of alveolar bone grafting for a cleft lip and palate.",
+    "intro": [
+      "This site is about <b>alveolar bone grafting</b> for a cleft lip and palate. Alveolar bone grafting is an operation. It puts new bone into a gap in the bone of the upper gum.",
+      "There are 3 models. Each one shows a stage of care, in order. Tap a stage to see its model and read about it. Start with stage 1."
+    ],
+    "choose": "Choose a stage"
+  },
+  "intro": "Below is a 3D model of the upper jaw and teeth. Some phones and tablets can also show it in <b>augmented reality (AR)</b>. AR uses the camera to show the model in the real room, as if it were there.",
+  "hint": "Drag to turn the model. Pinch to zoom. Tap a numbered dot to learn about that part. Tap <b>Hide labels</b> for a clear view. Tap <b>View in AR</b> to place the model on a nearby table or flat surface.",
+  "arnote": "AR works only on a device and browser that can use it. For example, Safari on an iPhone, or Chrome on many Android phones. If no AR button shows, AR cannot be used on that device or browser. AR shows the whole model, with all parts in place.",
+  "ar_button": "View in AR (place in the room)",
+  "labels_on": "Hide labels",
+  "labels_off": "Show labels",
+  "controls_label": "Model controls",
+  "legend_label": "Colour key",
+  "prev": "Previous stage",
+  "next": "Next stage",
+  "missing": "The 3D model for this stage is not ready yet.",
+  "disclaimer": "This page is for a research study at Nagoya University. Draft version 0.1, 19 October 2026.",
+  "stages": [
+    {
+      "id": "pre-op",
+      "num": 1,
+      "short": "Pre-op",
+      "button": "Pre-op: before the bone graft",
+      "age": "Age about 8 to 10",
+      "title": "Alveolar Bone Grafting: Before the Operation",
+      "h1": "Alveolar bone grafting, stage 1: before the operation (pre-op)",
+      "description": "An interactive 3D model of the upper jaw before alveolar bone grafting, with a gap in the gum bone and an adult canine still in the bone.",
+      "alt": "3D model of the upper jaw of a child of about 8 to 10 years, with a gap in the gum bone on one side, a cover of gum and palate, and an adult canine tooth still in the bone",
+      "hint_extra": "Tap <b>Take off the gum cover</b> to see the gap in the bone under it. Tap <b>See-through bone</b> to see the adult canine tooth inside the bone. Tap <b>Show what is under the gum cover</b> to see it step by step.",
+      "views": [
+        {
+          "label": "Whole model",
+          "orbit": "0deg 75deg auto"
+        },
+        {
+          "label": "Roof of the mouth",
+          "orbit": "0deg 160deg auto"
+        },
+        {
+          "label": "Canine and gap",
+          "orbit": "35deg 80deg auto",
+          "target_node": "view-canine"
+        }
+      ],
+      "parts": [
+        {
+          "part": "soft-tissue",
+          "mode": "hide",
+          "on": "Take off the gum cover",
+          "off": "Put the gum cover back"
+        },
+        {
+          "part": "bone",
+          "mode": "xray",
+          "on": "See-through bone",
+          "off": "Solid bone"
+        }
+      ],
+      "hotspots": [
+        {
+          "n": 1,
+          "label": "Gap in the gum bone (alveolar cleft)",
+          "notes": [
+            "A gap in the bone of the upper gum, there from birth.",
+            "The bone graft will fill this gap."
+          ]
+        },
+        {
+          "n": 2,
+          "label": "Gap in the bone of the roof of the mouth",
+          "notes": [
+            "The roof of the mouth was closed as a baby, but the bone under it often still has a gap.",
+            "The soft tissue covers it."
+          ]
+        },
+        {
+          "n": 3,
+          "label": "Repaired gum and palate (soft tissue)",
+          "notes": [
+            "The lip and the roof of the mouth were closed by operations as a baby.",
+            "These closed the soft tissue, not the gap in the bone.",
+            "On this model, this cover can be taken off."
+          ]
+        },
+        {
+          "n": 4,
+          "label": "Adult canine (not through yet)",
+          "notes": [
+            "Still inside the bone, next to the gap.",
+            "It needs bone around it to come through in the right place.",
+            "The bone graft is done before it comes through."
+          ]
+        },
+        {
+          "n": 5,
+          "label": "Space of the lateral incisor",
+          "notes": [
+            "In about half of children with a cleft on one side, this tooth never forms.",
+            "When it does form, it is often small or an odd shape."
+          ]
+        },
+        {
+          "n": 6,
+          "label": "Front teeth (central incisors)",
+          "notes": [
+            "The front tooth next to the gap can be turned or tipped."
+          ]
+        },
+        {
+          "n": 7,
+          "label": "Baby teeth",
+          "notes": [
+            "At this age, the baby canines and baby back teeth are still in.",
+            "Adult teeth grow in the bone above them."
+          ]
+        },
+        {
+          "n": 8,
+          "label": "First adult molars",
+          "notes": [
+            "The first big adult back teeth. They come through at about 6 years of age."
+          ]
+        }
+      ],
+      "legend": [
+        {
+          "color": "#e6dccb",
+          "text": "Bone"
+        },
+        {
+          "color": "#f7f4ee",
+          "text": "Teeth"
+        },
+        {
+          "color": "#e79a9a",
+          "text": "Gum and palate (soft tissue)"
+        },
+        {
+          "color": "#7fb3d5",
+          "text": "Adult canine (not through yet)"
+        }
+      ],
+      "animation": {
+        "name": "reveal",
+        "button": "Show what is under the gum cover",
+        "orbit": "10deg 128deg auto",
+        "steps": [
+          [
+            0,
+            "1. The gum cover comes off"
+          ],
+          [
+            2.5,
+            "2. Under it, there is a big gap in the bone"
+          ],
+          [
+            5.5,
+            "3. The adult canine is still inside the bone",
+            "35deg 85deg auto"
+          ],
+          [
+            9.5,
+            "",
+            "10deg 128deg auto"
+          ]
+        ],
+        "xray": [
+          5.5,
+          9.5
+        ]
+      }
+    },
+    {
+      "id": "short-term",
+      "num": 2,
+      "short": "Short-term post-op",
+      "button": "Short-term post-op: soon after the bone graft",
+      "age": "Age about 9 to 11",
+      "title": "Alveolar Bone Grafting: Soon After the Operation",
+      "h1": "Alveolar bone grafting, stage 2: soon after the operation (short-term post-op)",
+      "description": "An interactive 3D model of the upper jaw some months after alveolar bone grafting, with the bone graft in the gap and the adult canine still in the bone.",
+      "alt": "3D model of the upper jaw some months after alveolar bone grafting, with the bone graft in a lighter colour filling the gap, and an adult canine tooth still in the bone",
+      "hint_extra": "Tap <b>See-through bone</b> to see the adult canine tooth inside the bone.",
+      "views": [
+        {
+          "label": "Whole model",
+          "orbit": "0deg 75deg auto"
+        },
+        {
+          "label": "Roof of the mouth",
+          "orbit": "0deg 160deg auto"
+        },
+        {
+          "label": "Bone graft and canine",
+          "orbit": "35deg 80deg auto",
+          "target_node": "view-canine"
+        }
+      ],
+      "parts": [
+        {
+          "part": "soft-tissue",
+          "mode": "hide",
+          "on": "Take off the gum cover",
+          "off": "Put the gum cover back"
+        },
+        {
+          "part": "bone",
+          "mode": "xray",
+          "on": "See-through bone",
+          "off": "Solid bone"
+        }
+      ],
+      "hotspots": [
+        {
+          "n": 1,
+          "label": "Bone graft (new bone)",
+          "notes": [
+            "New bone put into the gap in the gum bone.",
+            "Shown in a lighter colour so it is easy to see.",
+            "Over time it joins with the bone around it."
+          ]
+        },
+        {
+          "n": 2,
+          "label": "Adult canine (still not through)",
+          "notes": [
+            "Still under the gum, as is normal soon after the operation.",
+            "Now it has bone to come through.",
+            "Most often it comes through by itself."
+          ]
+        },
+        {
+          "n": 3,
+          "label": "Space of the lateral incisor",
+          "notes": [
+            "If this tooth is missing, the canine can later move into this space."
+          ]
+        },
+        {
+          "n": 4,
+          "label": "Front teeth (central incisors)",
+          "notes": [
+            "The bone graft now holds up the front tooth next to the gap."
+          ]
+        },
+        {
+          "n": 5,
+          "label": "Baby teeth",
+          "notes": [
+            "Some baby teeth are still in at this age."
+          ]
+        },
+        {
+          "n": 6,
+          "label": "First adult molars",
+          "notes": [
+            "The first big adult back teeth."
+          ]
+        }
+      ],
+      "legend": [
+        {
+          "color": "#e6dccb",
+          "text": "Bone"
+        },
+        {
+          "color": "#fbf7ef",
+          "text": "Bone graft (new bone)"
+        },
+        {
+          "color": "#f7f4ee",
+          "text": "Teeth"
+        },
+        {
+          "color": "#7fb3d5",
+          "text": "Adult canine (not through yet)"
+        }
+      ]
+    },
+    {
+      "id": "long-term",
+      "num": 3,
+      "short": "Long-term post-op",
+      "button": "Long-term post-op: years later, after braces",
+      "age": "Age about 15 to 18",
+      "title": "Alveolar Bone Grafting: Years Later, After Braces",
+      "h1": "Alveolar bone grafting, stage 3: years later, after braces (long-term post-op)",
+      "description": "An interactive 3D model of the upper jaw in the teen years after alveolar bone grafting and braces, with the canine moved into the space of a missing lateral incisor and a crown that can be taken off.",
+      "alt": "3D model of the upper jaw of a teenager after alveolar bone grafting and braces, with all adult teeth in. It can show three choices for the missing lateral incisor: the canine with a crown, an implant, or a bridge.",
+      "hint_extra": "Tap <b>Canine as side tooth</b>, <b>Implant</b> or <b>Bridge</b> to see each choice. Then tap the button under it to take that part off.",
+      "views": [
+        {
+          "label": "Whole model",
+          "orbit": "0deg 75deg auto"
+        },
+        {
+          "label": "Front teeth",
+          "orbit": "0deg 85deg auto",
+          "target_node": "view-front"
+        },
+        {
+          "label": "Roof of the mouth",
+          "orbit": "0deg 160deg auto"
+        }
+      ],
+      "parts": [
+        {
+          "part": "crown",
+          "mode": "hide",
+          "on": "Take off the crown",
+          "off": "Put the crown back"
+        },
+        {
+          "part": "implant-crown",
+          "mode": "hide",
+          "on": "Take off the implant crown",
+          "off": "Put the implant crown back"
+        },
+        {
+          "part": "bridge",
+          "mode": "hide",
+          "on": "Take off the bridge",
+          "off": "Put the bridge back"
+        },
+        {
+          "part": "bone",
+          "mode": "xray",
+          "on": "See-through bone",
+          "off": "Solid bone"
+        }
+      ],
+      "hotspots": [
+        {
+          "n": 1,
+          "label": "Grafted bone",
+          "notes": [
+            "The bone graft has joined with the bone around it.",
+            "The canine came through it."
+          ]
+        },
+        {
+          "n": 2,
+          "choice": "canine",
+          "label": "Canine in the place of the lateral incisor",
+          "notes": [
+            "Braces moved the canine forward into the space of the missing lateral incisor."
+          ]
+        },
+        {
+          "n": 3,
+          "choice": "canine",
+          "label": "Crown on the canine",
+          "notes": [
+            "Makes the canine look more like a lateral incisor.",
+            "Shaping the tooth and a tooth-coloured filling are other ways.",
+            "On this model, the crown can be taken off."
+          ]
+        },
+        {
+          "n": 4,
+          "choice": "canine",
+          "label": "First premolar in the place of the canine",
+          "notes": [
+            "The tooth behind the canine moves forward and takes its place."
+          ]
+        },
+        {
+          "n": 5,
+          "choice": "implant",
+          "label": "Implant crown",
+          "notes": [
+            "A false lateral incisor fixed on a small post in the bone.",
+            "On this model, the crown can be taken off to show the post."
+          ]
+        },
+        {
+          "n": 6,
+          "choice": "bridge",
+          "label": "Bridge",
+          "notes": [
+            "A false lateral incisor held by a thin wing.",
+            "The wing is glued to the back of the front tooth next to it."
+          ]
+        },
+        {
+          "n": 7,
+          "choice": "implant bridge",
+          "label": "Canine in its own place",
+          "notes": [
+            "Braces kept the space of the lateral incisor open."
+          ]
+        },
+        {
+          "n": 8,
+          "label": "Front teeth (central incisors)",
+          "notes": [
+            "Lined up by braces."
+          ]
+        },
+        {
+          "n": 9,
+          "label": "Second adult molars",
+          "notes": [
+            "All the adult teeth are in, except the wisdom teeth."
+          ]
+        }
+      ],
+      "legend": [
+        {
+          "color": "#e6dccb",
+          "text": "Bone"
+        },
+        {
+          "color": "#f7f4ee",
+          "text": "Teeth"
+        },
+        {
+          "color": "#f3d27a",
+          "text": "Part that can be taken off (crown, implant crown or bridge)"
+        },
+        {
+          "color": "#9aa3ad",
+          "text": "Implant post"
+        }
+      ],
+      "choices": [
+        {
+          "id": "canine",
+          "file": "abg-long-term-canine",
+          "label": "Canine as side tooth"
+        },
+        {
+          "id": "implant",
+          "file": "abg-long-term-implant",
+          "label": "Implant"
+        },
+        {
+          "id": "bridge",
+          "file": "abg-long-term-bridge",
+          "label": "Bridge"
+        }
+      ],
+      "choices_label": "Choices for the missing lateral incisor"
+    }
+  ]
+}

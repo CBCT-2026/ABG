@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alveolar Bone Grafting: Years Later, After Braces</title>
+<meta name="description" content="An interactive 3D model of the upper jaw in the teen years after alveolar bone grafting and braces, with the canine moved into the space of a missing lateral incisor and a crown that can be taken off.">
+<meta name="robots" content="noindex">
+<script>
+// Pick light or dark before the page draws: the saved choice, else the device setting.
+try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+// The models are Draco-compressed; the decoder is served from this site.
+self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/', location.href).href };
+</script>
+<link rel="stylesheet" href="../../style.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+<header class="bar">
+  <div class="bar-left">
+    <a class="lang" href="../../ja/long-term/" lang="ja" hreflang="ja">日本語</a>
+    <button class="theme" id="theme" type="button" data-dark="Dark mode" data-light="Light mode">Dark mode</button>
+  </div>
+    <a class="lang" href="../">All stages</a>
+</header>
+
+<main>
+  <nav class="stepper" aria-label="Stages"><ol>
+    <li><a href="../pre-op/"><span class="step-num">1</span>Pre-op</a></li>
+    <li><a href="../short-term/"><span class="step-num">2</span>Short-term post-op</a></li>
+    <li><a href="../long-term/" aria-current="page"><span class="step-num">3</span>Long-term post-op</a></li>
+  </ol></nav>
+  <h1>Alveolar bone grafting, stage 3: years later, after braces (long-term post-op)</h1>
+  <p class="intro">Below is a 3D model of the upper jaw and teeth. Some phones and tablets can also show it in <b>augmented reality (AR)</b>. AR uses the camera to show the model in the real room, as if it were there.</p>
+
+  <p class="hint">Drag to turn the model. Pinch to zoom. Tap a numbered dot to learn about that part. Tap <b>Hide labels</b> for a clear view. Tap <b>View in AR</b> to place the model on a nearby table or flat surface. Tap <b>Canine as side tooth</b>, <b>Implant</b> or <b>Bridge</b> to see each choice. Then tap the button under it to take that part off.</p>
+  <p class="hint arnote">AR works only on a device and browser that can use it. For example, Safari on an iPhone, or Chrome on many Android phones. If no AR button shows, AR cannot be used on that device or browser. AR shows the whole model, with all parts in place.</p>
+
+  <!-- MODEL: models/abg-long-term-canine.glb (Draco, under 5 MB) and models/abg-long-term-canine.usdz. See docs/model-spec.md. -->
+  <model-viewer id="mv"
+    src="../../models/abg-long-term-canine.glb"
+    ios-src="../../models/abg-long-term-canine.usdz"
+    alt="3D model of the upper jaw of a teenager after alveolar bone grafting and braces, with all adult teeth in. It can show three choices for the missing lateral incisor: the canine with a crown, an implant, or a bridge."
+    ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
+    camera-controls camera-orbit="0deg 75deg auto" touch-action="pan-y" interaction-prompt="auto"
+    shadow-intensity="1" exposure="1" loading="eager" data-missing="The 3D model for this stage is not ready yet.">
+    <button slot="ar-button" class="ar-btn">View in AR (place in the room)</button>
+    <button class="hotspot" slot="hotspot-1" data-position="0.0170m 0.0070m 0.0237m" data-normal="0.57 0.23 0.79" data-position-canine="0.0170m 0.0070m 0.0237m" data-normal-canine="0.57 0.23 0.79" data-position-implant="0.0170m 0.0070m 0.0237m" data-normal-implant="0.57 0.23 0.79" data-position-bridge="0.0170m 0.0070m 0.0237m" data-normal-bridge="0.57 0.23 0.79" data-visibility-attribute="visible" aria-label="1. Grafted bone">1<span class="label">Grafted bone</span><span class="note"><span>The bone graft has joined with the bone around it.</span><span>The canine came through it.</span></span></button>
+    <button class="hotspot" slot="hotspot-2" data-position="0.0211m -0.0020m 0.0260m" data-normal="0.63 -0.06 0.77" data-choice="canine" data-visibility-attribute="visible" aria-label="2. Canine in the place of the lateral incisor">2<span class="label">Canine in the place of the lateral incisor</span><span class="note"><span>Braces moved the canine forward into the space of the missing lateral incisor.</span></span></button>
+    <button class="hotspot" slot="hotspot-3" data-position="0.0211m -0.0140m 0.0263m" data-normal="0.58 -0.38 0.72" data-choice="canine" data-visibility-attribute="visible" aria-label="3. Crown on the canine">3<span class="label">Crown on the canine</span><span class="note"><span>Makes the canine look more like a lateral incisor.</span><span>Shaping the tooth and a tooth-coloured filling are other ways.</span><span>On this model, the crown can be taken off.</span></span></button>
+    <button class="hotspot" slot="hotspot-4" data-position="0.0299m -0.0120m 0.0204m" data-normal="0.78 -0.31 0.54" data-choice="canine" data-visibility-attribute="visible" aria-label="4. First premolar in the place of the canine">4<span class="label">First premolar in the place of the canine</span><span class="note"><span>The tooth behind the canine moves forward and takes its place.</span></span></button>
+    <button class="hotspot" slot="hotspot-5" data-position="0.0211m -0.0140m 0.0274m" data-normal="0.57 -0.38 0.73" data-choice="implant" data-visibility-attribute="visible" aria-label="5. Implant crown">5<span class="label">Implant crown</span><span class="note"><span>A false lateral incisor fixed on a small post in the bone.</span><span>On this model, the crown can be taken off to show the post.</span></span></button>
+    <button class="hotspot" slot="hotspot-6" data-position="0.0211m -0.0140m 0.0274m" data-normal="0.57 -0.38 0.73" data-choice="bridge" data-visibility-attribute="visible" aria-label="6. Bridge">6<span class="label">Bridge</span><span class="note"><span>A false lateral incisor held by a thin wing.</span><span>The wing is glued to the back of the front tooth next to it.</span></span></button>
+    <button class="hotspot" slot="hotspot-7" data-position="0.0299m -0.0120m 0.0214m" data-normal="0.77 -0.31 0.55" data-choice="implant bridge" data-visibility-attribute="visible" aria-label="7. Canine in its own place">7<span class="label">Canine in its own place</span><span class="note"><span>Braces kept the space of the lateral incisor open.</span></span></button>
+    <button class="hotspot" slot="hotspot-8" data-position="0.0076m -0.0140m 0.0322m" data-normal="0.21 -0.39 0.90" data-position-canine="0.0076m -0.0140m 0.0322m" data-normal-canine="0.21 -0.39 0.90" data-position-implant="0.0076m -0.0140m 0.0322m" data-normal-implant="0.21 -0.39 0.90" data-position-bridge="0.0076m -0.0140m 0.0322m" data-normal-bridge="0.21 -0.39 0.90" data-visibility-attribute="visible" aria-label="8. Front teeth (central incisors)">8<span class="label">Front teeth (central incisors)</span><span class="note"><span>Lined up by braces.</span></span></button>
+    <button class="hotspot" slot="hotspot-9" data-position="0.0395m -0.0069m -0.0217m" data-normal="0.87 -0.15 -0.48" data-position-canine="0.0395m -0.0069m -0.0217m" data-normal-canine="0.87 -0.15 -0.48" data-position-implant="0.0407m -0.0069m -0.0304m" data-normal-implant="0.79 -0.14 -0.59" data-position-bridge="0.0407m -0.0069m -0.0304m" data-normal-bridge="0.79 -0.14 -0.59" data-visibility-attribute="visible" aria-label="9. Second adult molars">9<span class="label">Second adult molars</span><span class="note"><span>All the adult teeth are in, except the wisdom teeth.</span></span></button>
+    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
+    <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
+  </model-viewer>
+  <div class="info" id="info" aria-live="polite" hidden></div>
+  <div class="controls" role="group" aria-label="Model controls">
+    <div class="choices" role="group" aria-label="Choices for the missing lateral incisor">
+      <button type="button" class="choice" data-choice="canine" data-src="../../models/abg-long-term-canine.glb" data-ios-src="../../models/abg-long-term-canine.usdz" aria-pressed="true">Canine as side tooth</button>
+      <button type="button" class="choice" data-choice="implant" data-src="../../models/abg-long-term-implant.glb" data-ios-src="../../models/abg-long-term-implant.usdz" aria-pressed="false">Implant</button>
+      <button type="button" class="choice" data-choice="bridge" data-src="../../models/abg-long-term-bridge.glb" data-ios-src="../../models/abg-long-term-bridge.usdz" aria-pressed="false">Bridge</button>
+    </div>
+    <button type="button" data-orbit="0deg 75deg auto" aria-pressed="true">Whole model</button>
+    <button type="button" data-orbit="0deg 85deg auto" data-target="0.0086m -0.0120m 0.0240m" aria-pressed="false">Front teeth</button>
+    <button type="button" data-orbit="0deg 160deg auto" aria-pressed="false">Roof of the mouth</button>
+    <button type="button" class="part" data-part="crown" data-mode="hide" data-on="Take off the crown" data-off="Put the crown back" aria-pressed="false" hidden>Take off the crown</button>
+    <button type="button" class="part" data-part="implant-crown" data-mode="hide" data-on="Take off the implant crown" data-off="Put the implant crown back" aria-pressed="false" hidden>Take off the implant crown</button>
+    <button type="button" class="part" data-part="bridge" data-mode="hide" data-on="Take off the bridge" data-off="Put the bridge back" aria-pressed="false" hidden>Take off the bridge</button>
+    <button type="button" class="part" data-part="bone" data-mode="xray" data-on="See-through bone" data-off="Solid bone" aria-pressed="false" hidden>See-through bone</button>
+    <button type="button" id="labels"aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
+  </div>
+
+  <ul class="legend" aria-label="Colour key">
+    <li><span class="dot" style="background:#e6dccb"></span>Bone</li>
+    <li><span class="dot" style="background:#f7f4ee"></span>Teeth</li>
+    <li><span class="dot" style="background:#f3d27a"></span>Part that can be taken off (crown, implant crown or bridge)</li>
+    <li><span class="dot" style="background:#9aa3ad"></span>Implant post</li>
+  </ul>
+
+  <!-- SHARED TEXT: generated from content/long-term-en.html by tools/build.py. Edit that file, not this block. -->
+<section class="important">
+  <h2>Every person is different</h2>
+  <p>The size of the gap, the teeth and the plan can be very different from person to person. So the facts here are general. They are not advice for one person. Before any treatment, the cleft team will talk with each person and family in detail about the benefits, risks and choices.</p>
+</section>
+
+<section>
+  <h2>Years after the bone graft</h2>
+  <p>This model shows the mouth in the teen years. All the adult teeth have come through, except the wisdom teeth. The <b>bone graft</b> has joined with the bone around it. The adult <b>canine</b> came through the new bone.<sup class="cite"><a href="#ref-1">1</a></sup></p>
+</section>
+
+<section>
+  <h2>Braces</h2>
+  <p>Most people with a cleft lip and palate have full braces once the adult teeth are in.<sup class="cite"><a href="#ref-2">2</a></sup> Braces are small parts glued to the teeth, joined by a wire. They slowly move the teeth.</p>
+  <p>If the <b>lateral incisor</b> is missing, braces can move the canine forward into its space. This closes the gap.<sup class="cite"><a href="#ref-2">2</a></sup><sup class="cite"><a href="#ref-3">3</a></sup> The tooth behind the canine, the <b>first premolar</b>, then takes the place of the canine.<sup class="cite"><a href="#ref-4">4</a></sup> This model shows the teeth after the braces have come off.</p>
+</section>
+
+<section>
+  <h2>Making the canine look like a side tooth</h2>
+  <p>A canine is longer and more pointed than a lateral incisor. So the dentist can change its shape to look more like a lateral incisor:<sup class="cite"><a href="#ref-5">5</a></sup><sup class="cite"><a href="#ref-4">4</a></sup></p>
+  <ul>
+    <li>smooth down the point of the tooth</li>
+    <li>add a tooth-coloured filling, called <b>composite</b></li>
+    <li>if more change is needed, put a thin cover (a <b>veneer</b>) or a <b>crown</b> on the tooth</li>
+  </ul>
+  <p>In this model, the crown is a part that can be taken off. This shows the canine under it.</p>
+</section>
+
+<section>
+  <h2>Other choices: a new tooth in the gap</h2>
+  <p>Instead of closing the gap, braces can keep the space open, with the canine in its own place. A false tooth then fills the space of the lateral incisor.<sup class="cite"><a href="#ref-5">5</a></sup> The cleft team picks the best choice for each person. It depends on the space and on the teeth next to the gap.<sup class="cite"><a href="#ref-5">5</a></sup> The model has a part for each choice.</p>
+  <p><b>Dental implant.</b> A small post is put into the bone, and a false tooth (a crown) is fixed on top.<sup class="cite"><a href="#ref-5">5</a></sup> A review found that about 96 in 100 implant teeth were still in place after 5 years.<sup class="cite"><a href="#ref-5">5</a></sup> An implant is most often put in at about 18 to 21 years of age, when growth has slowed.<sup class="cite"><a href="#ref-6">6</a></sup> In the model, the implant crown can be taken off to show the post.</p>
+  <p><b>Bridge.</b> A false tooth is held by a thin wing. The wing is glued to the back of the tooth next to the gap, often the front tooth.<sup class="cite"><a href="#ref-7">7</a></sup> This type is called a <b>cantilever resin-bonded bridge</b>. It needs little or no drilling of the teeth. A review found it had fewer problems than a bridge glued to the teeth on both sides.<sup class="cite"><a href="#ref-8">8</a></sup> In one large study, about 97 in 100 were still in place after 15 years.<sup class="cite"><a href="#ref-9">9</a></sup> It can be used when an implant is not possible.<sup class="cite"><a href="#ref-5">5</a></sup></p>
+  <p>Both closing the gap and an implant can look good. A review found no clear difference in looks between them.<sup class="cite"><a href="#ref-10">10</a></sup></p>
+</section>
+
+<section>
+  <h2>Other care in the teen years</h2>
+  <p>Some people also have an operation on the jaws, or on the lip or nose. In one Australian hospital, jaw operations were done at an average age of about 16.<sup class="cite"><a href="#ref-11">11</a></sup></p>
+</section>
+
+<section>
+  <h2>Questions to ask the cleft team</h2>
+  <ul>
+    <li>Is it better to close the gap or to keep the space?</li>
+    <li>What can be done to change the shape of the canine?</li>
+    <li>Is a crown, an implant or a bridge best, and when can it be done?</li>
+    <li>What care is needed after the braces come off?</li>
+  </ul>
+</section>
+
+<section class="refs">
+  <h2>Sources</h2>
+  <ol>
+    <li id="ref-1">Jahanbin A, Kamyabnezhad E, Raisolsadat MA, et al. <span class="rt">Long-term stability of alveolar bone graft in cleft lip and palate patients: systematic review and meta-analysis.</span> J Craniofac Surg. 2022;33(2):e194-e200. <a href="https://doi.org/10.1097/SCS.0000000000008254">doi.org/10.1097/SCS.0000000000008254</a></li>
+    <li id="ref-2">Freitas JA, Garib DG, Oliveira M, et al. <span class="rt">Rehabilitative treatment of cleft lip and palate: experience of the Hospital for Rehabilitation of Craniofacial Anomalies-USP (HRAC-USP), part 2: pediatric dentistry and orthodontics.</span> J Appl Oral Sci. 2012;20(2):268-281. <a href="https://doi.org/10.1590/s1678-77572012000200024">doi.org/10.1590/s1678-77572012000200024</a></li>
+    <li id="ref-3">Cassolato SF, Ross B, Daskalogiannakis J, et al. <span class="rt">Treatment of dental anomalies in children with complete unilateral cleft lip and palate at SickKids hospital, Toronto.</span> Cleft Palate Craniofac J. 2009;46(2):166-172. <a href="https://doi.org/10.1597/07-239.1">doi.org/10.1597/07-239.1</a></li>
+    <li id="ref-4">Manfio ASC, Garib D, Flores-Mir C, et al. <span class="rt">Closure of maxillary lateral incisor agenesis space in unilateral cleft lip and palate: a digital model assessment.</span> Dental Press J Orthod. 2023;28(1):e2321331. <a href="https://doi.org/10.1590/2177-6709.28.1.e2321331.oar">doi.org/10.1590/2177-6709.28.1.e2321331.oar</a></li>
+    <li id="ref-5">Clerc MM, Detzen L, Vi-Fane B, et al. <span class="rt">Replacement of missing lateral incisors for patients with cleft lip and palate: a decision-making tree based on a systematic review of the literature.</span> J Prosthet Dent. 2025;134(1):50-60. <a href="https://doi.org/10.1016/j.prosdent.2023.07.023">doi.org/10.1016/j.prosdent.2023.07.023</a></li>
+    <li id="ref-6">Robbins JW. <span class="rt">A case against the implant.</span> Int J Periodontics Restorative Dent. 2024;44(3):250-251. <a href="https://doi.org/10.11607/prd.2024.3.e">doi.org/10.11607/prd.2024.3.e</a></li>
+    <li id="ref-7">Pachiou A, Vraka AM, Andritsakis P, et al. <span class="rt">Minimally invasive cantilever RBFPD using a 270-degree veneer abutment in a young cleft patient: a clinical adhesive technique.</span> Clin Case Rep. 2026;14(5):e72493. <a href="https://doi.org/10.1002/ccr3.72493">doi.org/10.1002/ccr3.72493</a></li>
+    <li id="ref-8">Alqutaibi AY, Alghauli MA, Almuzaini SA, et al. <span class="rt">Failure and complication rates of different materials, designs, and bonding techniques of ceramic cantilever resin-bonded fixed dental prostheses for restoring missing anterior teeth: a systematic review and meta-analysis.</span> J Esthet Restor Dent. 2024;36(10):1396-1411. <a href="https://doi.org/10.1111/jerd.13238">doi.org/10.1111/jerd.13238</a></li>
+    <li id="ref-9">Kern M, Türp L, Yazigi C. <span class="rt">Long-term outcome of anterior cantilever zirconia ceramic resin-bonded fixed dental prostheses: influence of the pontic location.</span> J Prosthet Dent. 2025;133(4):1017-1023. <a href="https://doi.org/10.1016/j.prosdent.2024.12.032">doi.org/10.1016/j.prosdent.2024.12.032</a></li>
+    <li id="ref-10">Migliorati M, Zuffanti A, Capuano M, et al. <span class="rt">Periodontal, occlusal, and aesthetic outcomes of missing maxillary lateral incisor replacement: a systematic review and network meta-analysis.</span> Int Orthod. 2025;23(1):100957. <a href="https://doi.org/10.1016/j.ortho.2024.100957">doi.org/10.1016/j.ortho.2024.100957</a></li>
+    <li id="ref-11">Jensen ED, Soares G, Cook S, et al. <span class="rt">The burden of cleft surgery: a 36-year reflection of surgical management of children with orofacial clefts in South Australia.</span> Cleft Palate Craniofac J. 2025;63(8):2610-2617. <a href="https://doi.org/10.1177/10556656251387961">doi.org/10.1177/10556656251387961</a></li>
+  </ol>
+</section>
+
+  <nav class="pager">
+    <a class="prev" href="../short-term/"><span>Previous stage</span>2. Short-term post-op</a>
+  </nav>
+
+  <p class="disclaimer">This page is for a research study at Nagoya University. Draft version 0.1, 19 October 2026.</p>
+</main>
+
+<script src="../../viewer.js"></script>
+</body>
+</html>
