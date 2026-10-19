@@ -33,40 +33,50 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
   <h1>歯そう骨移植　3：数年後、きょう正治りょうの後</h1>
   <p class="intro">下は、上あごと歯の3Dモデルです。一部のスマートフォンやタブレットでは、<b>AR（拡張現実）</b>でも見られます。ARは、カメラにうつる実際の部屋の中に、モデルがあるように見せる機能です。</p>
 
-  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。番号の点をタップすると、その部分の説明が出ます。<b>「番号をかくす」</b>で、モデルを見やすくできます。<b>「AR表示」</b>をタップすると、近くの机の上や平らな場所にモデルを置けます。 <b>「かぶせ物を外す」</b>をタップすると、その下の犬歯が見えます。</p>
+  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。番号の点をタップすると、その部分の説明が出ます。<b>「番号をかくす」</b>で、モデルを見やすくできます。<b>「AR表示」</b>をタップすると、近くの机の上や平らな場所にモデルを置けます。 <b>「犬歯を横の歯にする」「インプラント」「ブリッジ」</b>をタップすると、それぞれの方法が見られます。その下のボタンで、部品を外せます。</p>
   <p class="hint arnote">ARは、ARに対応した機器とブラウザでだけ使えます。たとえば、iPhoneのSafariや、多くのAndroidスマートフォンのChromeです。ARのボタンが出ないときは、その機器やブラウザではARを使えません。ARでは、すべての部分がついた、モデル全体が表示されます。</p>
 
-  <!-- MODEL: models/abg-long-term.glb (Draco, under 5 MB) and models/abg-long-term.usdz. See docs/model-spec.md. -->
+  <!-- MODEL: models/abg-long-term-canine.glb (Draco, under 5 MB) and models/abg-long-term-canine.usdz. See docs/model-spec.md. -->
   <model-viewer id="mv"
-    src="../../models/abg-long-term.glb"
-    ios-src="../../models/abg-long-term.usdz"
-    alt="歯そう骨移植ときょう正治りょうの後の、10代の上あごの3Dモデル。大人の歯がすべて生えていて、犬歯がない側切歯の場所にあり、犬歯にかぶせ物がついている"
+    src="../../models/abg-long-term-canine.glb"
+    ios-src="../../models/abg-long-term-canine.usdz"
+    alt="歯そう骨移植ときょう正治りょうの後の、10代の上あごの3Dモデル。大人の歯がすべて生えている。ない側切歯をおぎなう3つの方法（かぶせ物をつけた犬歯、インプラント、ブリッジ）を表示できる。"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
     camera-controls camera-orbit="0deg 75deg auto" touch-action="pan-y" interaction-prompt="auto"
     shadow-intensity="1" exposure="1" loading="eager" data-missing="この時期の3Dモデルは、まだ用意できていません。">
     <button slot="ar-button" class="ar-btn">AR表示（まわりの空間に置く）</button>
     <button class="hotspot" slot="hotspot-1" data-visibility-attribute="visible" aria-label="1. 移植した骨">1<span class="label">移植した骨</span><span class="note"><span>移植した骨は、まわりの骨となじみました。</span><span>犬歯は、この骨を通って生えてきました。</span></span></button>
-    <button class="hotspot" slot="hotspot-2" data-visibility-attribute="visible" aria-label="2. 側切歯の場所にある犬歯">2<span class="label">側切歯の場所にある犬歯</span><span class="note"><span>きょう正治りょうで、犬歯を前に動かし、ない側切歯の場所に入れました。</span></span></button>
-    <button class="hotspot" slot="hotspot-3" data-visibility-attribute="visible" aria-label="3. 犬歯のかぶせ物">3<span class="label">犬歯のかぶせ物</span><span class="note"><span>犬歯を、側切歯に近い見た目にします。</span><span>歯の形を整えたり、歯の色のつめ物をしたりする方法もあります。</span><span>このモデルでは、かぶせ物を外せます。</span></span></button>
-    <button class="hotspot" slot="hotspot-4" data-visibility-attribute="visible" aria-label="4. 犬歯の場所にある第一小きゅう歯">4<span class="label">犬歯の場所にある第一小きゅう歯</span><span class="note"><span>犬歯の後ろの歯が前に動いて、犬歯の場所に入ります。</span></span></button>
-    <button class="hotspot" slot="hotspot-5" data-visibility-attribute="visible" aria-label="5. 前歯（中切歯）">5<span class="label">前歯（中切歯）</span><span class="note"><span>きょう正治りょうで、歯ならびを整えました。</span></span></button>
-    <button class="hotspot" slot="hotspot-6" data-visibility-attribute="visible" aria-label="6. 大人の第二大きゅう歯">6<span class="label">大人の第二大きゅう歯</span><span class="note"><span>親知らずのほかは、大人の歯がすべて生えています。</span></span></button>
+    <button class="hotspot" slot="hotspot-2" data-choice="canine" data-visibility-attribute="visible" aria-label="2. 側切歯の場所にある犬歯">2<span class="label">側切歯の場所にある犬歯</span><span class="note"><span>きょう正治りょうで、犬歯を前に動かし、ない側切歯の場所に入れました。</span></span></button>
+    <button class="hotspot" slot="hotspot-3" data-choice="canine" data-visibility-attribute="visible" aria-label="3. 犬歯のかぶせ物">3<span class="label">犬歯のかぶせ物</span><span class="note"><span>犬歯を、側切歯に近い見た目にします。</span><span>歯の形を整えたり、歯の色のつめ物をしたりする方法もあります。</span><span>このモデルでは、かぶせ物を外せます。</span></span></button>
+    <button class="hotspot" slot="hotspot-4" data-choice="canine" data-visibility-attribute="visible" aria-label="4. 犬歯の場所にある第一小きゅう歯">4<span class="label">犬歯の場所にある第一小きゅう歯</span><span class="note"><span>犬歯の後ろの歯が前に動いて、犬歯の場所に入ります。</span></span></button>
+    <button class="hotspot" slot="hotspot-5" data-choice="implant" data-visibility-attribute="visible" aria-label="5. インプラントのかぶせ物">5<span class="label">インプラントのかぶせ物</span><span class="note"><span>骨にうめた小さな柱の上につけた、人工の側切歯です。</span><span>このモデルでは、かぶせ物を外すと柱が見えます。</span></span></button>
+    <button class="hotspot" slot="hotspot-6" data-choice="bridge" data-visibility-attribute="visible" aria-label="6. ブリッジ">6<span class="label">ブリッジ</span><span class="note"><span>うすい板でささえた、人工の側切歯です。</span><span>板は、となりの前歯のうら側にはりつけます。</span></span></button>
+    <button class="hotspot" slot="hotspot-7" data-choice="implant bridge" data-visibility-attribute="visible" aria-label="7. もとの場所にある犬歯">7<span class="label">もとの場所にある犬歯</span><span class="note"><span>きょう正治りょうで、側切歯の場所をあけておきました。</span></span></button>
+    <button class="hotspot" slot="hotspot-8" data-visibility-attribute="visible" aria-label="8. 前歯（中切歯）">8<span class="label">前歯（中切歯）</span><span class="note"><span>きょう正治りょうで、歯ならびを整えました。</span></span></button>
+    <button class="hotspot" slot="hotspot-9" data-visibility-attribute="visible" aria-label="9. 大人の第二大きゅう歯">9<span class="label">大人の第二大きゅう歯</span><span class="note"><span>親知らずのほかは、大人の歯がすべて生えています。</span></span></button>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <div class="info" id="info" aria-live="polite" hidden></div>
   <div class="controls" role="group" aria-label="モデルの操作">
+    <div class="choices" role="group" aria-label="ない側切歯をおぎなう方法">
+      <button type="button" class="choice" data-choice="canine" data-src="../../models/abg-long-term-canine.glb" data-ios-src="../../models/abg-long-term-canine.usdz" aria-pressed="true">犬歯を横の歯にする</button>
+      <button type="button" class="choice" data-choice="implant" data-src="../../models/abg-long-term-implant.glb" data-ios-src="../../models/abg-long-term-implant.usdz" aria-pressed="false">インプラント</button>
+      <button type="button" class="choice" data-choice="bridge" data-src="../../models/abg-long-term-bridge.glb" data-ios-src="../../models/abg-long-term-bridge.usdz" aria-pressed="false">ブリッジ</button>
+    </div>
     <button type="button" data-orbit="0deg 75deg auto" aria-pressed="true">全体</button>
     <button type="button" data-orbit="0deg 85deg auto" aria-pressed="false">前歯</button>
     <button type="button" data-orbit="0deg 160deg auto" aria-pressed="false">上あごの天じょう</button>
     <button type="button" class="part" data-part="crown" data-mode="hide" data-on="かぶせ物を外す" data-off="かぶせ物をもどす" aria-pressed="false" hidden>かぶせ物を外す</button>
-    <button type="button" class="part" data-part="replacement-tooth" data-mode="swap" data-with="crown" data-on="ほかの方法を見る：すき間に新しい歯を入れる" data-off="かぶせ物をつけた犬歯を見る" aria-pressed="false" hidden>ほかの方法を見る：すき間に新しい歯を入れる</button>
+    <button type="button" class="part" data-part="implant-crown" data-mode="hide" data-on="インプラントのかぶせ物を外す" data-off="インプラントのかぶせ物をもどす" aria-pressed="false" hidden>インプラントのかぶせ物を外す</button>
+    <button type="button" class="part" data-part="bridge" data-mode="hide" data-on="ブリッジを外す" data-off="ブリッジをもどす" aria-pressed="false" hidden>ブリッジを外す</button>
     <button type="button" id="labels" aria-pressed="false" data-on="番号をかくす" data-off="番号を表示">番号をかくす</button>
   </div>
 
   <ul class="legend" aria-label="色の説明">
     <li><span class="dot" style="background:#e6dccb"></span>骨</li>
     <li><span class="dot" style="background:#f7f4ee"></span>歯</li>
-    <li><span class="dot" style="background:#f3d27a"></span>かぶせ物（外せる）</li>
+    <li><span class="dot" style="background:#f3d27a"></span>外せる部品（かぶせ物、インプラントのかぶせ物、ブリッジ）</li>
+    <li><span class="dot" style="background:#9aa3ad"></span>インプラントの柱</li>
   </ul>
 
   <!-- SHARED TEXT: generated from content/long-term-ja.html by tools/build.py. Edit that file, not this block. -->
@@ -99,13 +109,15 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
 
 <section>
   <h2>ほかの方法：すき間に新しい歯を入れる</h2>
-  <p>すき間を閉じるかわりに、きょう正治りょうで場所をあけておくこともできます。そこに、人工の歯を入れます。人工の歯は、<b>インプラント</b>（骨にうめる小さな柱）か、となりの歯にはりつける<b>ブリッジ</b>でささえます。<sup class="cite"><a href="#ref-5">5</a></sup> まとめた報告では、5年後も、インプラントの歯の約100本中96本が残っていました。<sup class="cite"><a href="#ref-5">5</a></sup> インプラントは、多くの場合、成長がおだやかになった18〜21才ごろに入れます。<sup class="cite"><a href="#ref-6">6</a></sup></p>
-  <p>どちらの方法でも、よい見た目にできます。まとめた報告では、すき間を閉じる方法とインプラントで、見た目にはっきりしたちがいはありませんでした。<sup class="cite"><a href="#ref-7">7</a></sup> 治りょうチームが、一人一人にいちばん合う方法をえらびます。すき間の大きさや、となりの歯のようすで決まります。<sup class="cite"><a href="#ref-5">5</a></sup></p>
+  <p>すき間を閉じるかわりに、きょう正治りょうで場所をあけておき、犬歯をもとの場所に置くこともできます。そして、側切歯の場所に人工の歯を入れます。<sup class="cite"><a href="#ref-5">5</a></sup> 治りょうチームが、一人一人にいちばん合う方法をえらびます。すき間の大きさや、となりの歯のようすで決まります。<sup class="cite"><a href="#ref-5">5</a></sup> このモデルには、それぞれの方法の部品があります。</p>
+  <p><b>インプラント</b>：骨に小さな柱をうめて、その上に人工の歯（かぶせ物）をつけます。<sup class="cite"><a href="#ref-5">5</a></sup> まとめた報告では、5年後も、インプラントの歯の約100本中96本が残っていました。<sup class="cite"><a href="#ref-5">5</a></sup> インプラントは、多くの場合、成長がおだやかになった18〜21才ごろに入れます。<sup class="cite"><a href="#ref-6">6</a></sup> このモデルでは、インプラントのかぶせ物を外すと、柱が見えます。</p>
+  <p><b>ブリッジ</b>：人工の歯を、うすい板（ウイング）でささえます。この板を、すき間のとなりの歯のうら側にはりつけます。多くの場合、前歯にはりつけます。<sup class="cite"><a href="#ref-7">7</a></sup> この形を<b>片側だけでささえる接着ブリッジ</b>（カンチレバー接着ブリッジ）といいます。歯をほとんど、またはまったくけずりません。まとめた報告では、両側の歯にはりつけるブリッジより、問題が少なくなりました。<sup class="cite"><a href="#ref-8">8</a></sup> ある大きな研究では、15年後も約100本中97本が残っていました。<sup class="cite"><a href="#ref-9">9</a></sup> インプラントができないときに使えます。<sup class="cite"><a href="#ref-5">5</a></sup></p>
+  <p>すき間を閉じる方法とインプラントは、どちらもよい見た目にできます。まとめた報告では、見た目にはっきりしたちがいはありませんでした。<sup class="cite"><a href="#ref-10">10</a></sup></p>
 </section>
 
 <section>
   <h2>10代でのほかの治りょう</h2>
-  <p>あごの手術や、くちびる・鼻の手術を受ける人もいます。オーストラリアのある病院では、あごの手術は、平きん約16才で行われていました。<sup class="cite"><a href="#ref-8">8</a></sup></p>
+  <p>あごの手術や、くちびる・鼻の手術を受ける人もいます。オーストラリアのある病院では、あごの手術は、平きん約16才で行われていました。<sup class="cite"><a href="#ref-11">11</a></sup></p>
 </section>
 
 <section>
@@ -113,7 +125,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
   <ul>
     <li>すき間を閉じるのと、場所をあけておくのでは、どちらがよいですか？</li>
     <li>犬歯の形を変えるには、どんな方法がありますか？</li>
-    <li>かぶせ物、ベニア、インプラントは、いつできますか？</li>
+    <li>かぶせ物、インプラント、ブリッジのどれがよいですか？いつできますか？</li>
     <li>きょう正装置を外した後は、どんな手入れが必要ですか？</li>
   </ul>
 </section>
@@ -127,8 +139,11 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <li id="ref-4">Manfio ASC, Garib D, Flores-Mir C, et al. <span class="rt">Closure of maxillary lateral incisor agenesis space in unilateral cleft lip and palate: a digital model assessment.</span> Dental Press J Orthod. 2023;28(1):e2321331. <a href="https://doi.org/10.1590/2177-6709.28.1.e2321331.oar">doi.org/10.1590/2177-6709.28.1.e2321331.oar</a></li>
     <li id="ref-5">Clerc MM, Detzen L, Vi-Fane B, et al. <span class="rt">Replacement of missing lateral incisors for patients with cleft lip and palate: a decision-making tree based on a systematic review of the literature.</span> J Prosthet Dent. 2025;134(1):50-60. <a href="https://doi.org/10.1016/j.prosdent.2023.07.023">doi.org/10.1016/j.prosdent.2023.07.023</a></li>
     <li id="ref-6">Robbins JW. <span class="rt">A case against the implant.</span> Int J Periodontics Restorative Dent. 2024;44(3):250-251. <a href="https://doi.org/10.11607/prd.2024.3.e">doi.org/10.11607/prd.2024.3.e</a></li>
-    <li id="ref-7">Migliorati M, Zuffanti A, Capuano M, et al. <span class="rt">Periodontal, occlusal, and aesthetic outcomes of missing maxillary lateral incisor replacement: a systematic review and network meta-analysis.</span> Int Orthod. 2025;23(1):100957. <a href="https://doi.org/10.1016/j.ortho.2024.100957">doi.org/10.1016/j.ortho.2024.100957</a></li>
-    <li id="ref-8">Jensen ED, Soares G, Cook S, et al. <span class="rt">The burden of cleft surgery: a 36-year reflection of surgical management of children with orofacial clefts in South Australia.</span> Cleft Palate Craniofac J. 2025;63(8):2610-2617. <a href="https://doi.org/10.1177/10556656251387961">doi.org/10.1177/10556656251387961</a></li>
+    <li id="ref-7">Pachiou A, Vraka AM, Andritsakis P, et al. <span class="rt">Minimally invasive cantilever RBFPD using a 270-degree veneer abutment in a young cleft patient: a clinical adhesive technique.</span> Clin Case Rep. 2026;14(5):e72493. <a href="https://doi.org/10.1002/ccr3.72493">doi.org/10.1002/ccr3.72493</a></li>
+    <li id="ref-8">Alqutaibi AY, Alghauli MA, Almuzaini SA, et al. <span class="rt">Failure and complication rates of different materials, designs, and bonding techniques of ceramic cantilever resin-bonded fixed dental prostheses for restoring missing anterior teeth: a systematic review and meta-analysis.</span> J Esthet Restor Dent. 2024;36(10):1396-1411. <a href="https://doi.org/10.1111/jerd.13238">doi.org/10.1111/jerd.13238</a></li>
+    <li id="ref-9">Kern M, Türp L, Yazigi C. <span class="rt">Long-term outcome of anterior cantilever zirconia ceramic resin-bonded fixed dental prostheses: influence of the pontic location.</span> J Prosthet Dent. 2025;133(4):1017-1023. <a href="https://doi.org/10.1016/j.prosdent.2024.12.032">doi.org/10.1016/j.prosdent.2024.12.032</a></li>
+    <li id="ref-10">Migliorati M, Zuffanti A, Capuano M, et al. <span class="rt">Periodontal, occlusal, and aesthetic outcomes of missing maxillary lateral incisor replacement: a systematic review and network meta-analysis.</span> Int Orthod. 2025;23(1):100957. <a href="https://doi.org/10.1016/j.ortho.2024.100957">doi.org/10.1016/j.ortho.2024.100957</a></li>
+    <li id="ref-11">Jensen ED, Soares G, Cook S, et al. <span class="rt">The burden of cleft surgery: a 36-year reflection of surgical management of children with orofacial clefts in South Australia.</span> Cleft Palate Craniofac J. 2025;63(8):2610-2617. <a href="https://doi.org/10.1177/10556656251387961">doi.org/10.1177/10556656251387961</a></li>
   </ol>
 </section>
 

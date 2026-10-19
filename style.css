@@ -129,3 +129,7 @@ main ul, main ol, .info, .info li, .refs li { text-align: justify; hyphens: auto
 .pager .next { text-align: right; margin-left: auto; }
 .controls .part[hidden] { display: none; }
 .controls .part { border-color: var(--accent); }
+/* Long-term page: one button per choice for the missing lateral incisor; each loads its own model. */
+.controls .choices { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
+.controls .choice[aria-pressed="true"] { background: var(--ar); color: var(--ar-text); border-color: var(--ar); }
+.hotspot[hidden] { display: none; }

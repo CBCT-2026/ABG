@@ -20,21 +20,21 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 |---|---:|---:|---:|---:|
 | Title | 9 | 1 | 10.3 | 36.96 |
 | Intro | 40 | 3 | 4.9 | 83.36 |
-| Numbered dots (titles and notes) | 190 | 21 | 2.1 | 96.18 |
+| Numbered dots (titles and notes) | 225 | 24 | 2.2 | 95.77 |
 | Viewer and AR tips | 114 | 11 | 2.6 | 94.76 |
 | Buttons | 25 | 4 | 1.0 | 98.92 |
 | Colour key | 12 | 2 | 0.9 | 99.23 |
 | Every person is different | 56 | 5 | 5.3 | 77.03 |
 | What is a cleft lip and palate? | 56 | 6 | 1.0 | 104.34 |
-| Operations as a baby | 111 | 9 | 3.4 | 92.83 |
-| The gap in the gum bone | 62 | 8 | 1.6 | 97.4 |
+| Operations as a baby | 182 | 14 | 3.6 | 92.12 |
+| The gap in the gum bone | 78 | 9 | 2.0 | 96.48 |
 | Why alveolar bone grafting is done | 81 | 9 | 2.1 | 96.18 |
 | When it is done | 75 | 6 | 3.4 | 92.63 |
 | The missing side tooth | 127 | 10 | 4.7 | 83.96 |
 | What happens next | 69 | 6 | 4.2 | 85.18 |
 | Questions to ask the cleft team | 46 | 6 | 1.6 | 97.5 |
 | Disclaimer | 16 | 3 | 3.0 | 83.02 |
-| **Overall** | **1089** | **110** | **2.4** | **95.27** |
+| **Overall** | **1211** | **119** | **2.5** | **94.96** |
 
 ## short-term
 
@@ -62,17 +62,17 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 |---|---:|---:|---:|---:|
 | Title | 11 | 1 | 6.4 | 68.77 |
 | Intro | 40 | 3 | 4.9 | 83.36 |
-| Numbered dots (titles and notes) | 110 | 14 | 2.8 | 88.84 |
-| Viewer and AR tips | 98 | 10 | 2.4 | 95.37 |
-| Buttons | 31 | 4 | 0.4 | 105.86 |
-| Colour key | 7 | 1 | 0.1 | 106.67 |
+| Numbered dots (titles and notes) | 175 | 20 | 3.2 | 87.92 |
+| Viewer and AR tips | 110 | 11 | 2.5 | 95.17 |
+| Buttons | 36 | 6 | -0.4 | 107.69 |
+| Colour key | 15 | 1 | 4.4 | 90.09 |
 | Every person is different | 56 | 5 | 5.3 | 77.03 |
 | Years after the bone graft | 43 | 5 | 0.7 | 105.05 |
 | Braces | 80 | 7 | 3.0 | 93.74 |
 | Making the canine look like a side tooth | 82 | 7 | 4.3 | 84.98 |
-| Another choice: a new tooth in the gap | 129 | 10 | 3.6 | 92.22 |
+| Other choices: a new tooth in the gap | 245 | 19 | 3.6 | 92.22 |
 | Other care in the teen years | 36 | 3 | 5.6 | 76.22 |
-| Questions to ask the cleft team | 47 | 5 | 1.1 | 104.23 |
+| Questions to ask the cleft team | 53 | 5 | 1.5 | 103.02 |
 | Disclaimer | 16 | 3 | 3.0 | 83.02 |
-| **Overall** | **786** | **78** | **2.5** | **95.06** |
+| **Overall** | **998** | **96** | **2.6** | **94.76** |
 

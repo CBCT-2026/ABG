@@ -76,8 +76,8 @@ def node_matrix(n):
 
 
 def model_points(stage):
-    """World positions of the named empty nodes in models/abg-<stage>.glb, and the model's centre."""
-    path = ROOT / f'models/abg-{stage}.glb'
+    """World positions of the named empty nodes in models/<stage>.glb, and the model's centre."""
+    path = ROOT / f'models/{stage}.glb'
     if not path.exists():
         return {}, None
     data = path.read_bytes()
@@ -147,6 +147,11 @@ def stepper(ui, current):
     return f'  <nav class="stepper" aria-label="{ui["stage_nav"]}"><ol>\n' + '\n'.join(items) + '\n  </ol></nav>\n'
 
 
+def stage_files(stage):
+    """Model file names for a stage: one per choice, or one for the stage."""
+    return [c['file'] for c in stage.get('choices', [])] or [f'abg-{stage["id"]}']
+
+
 def hotspots(stage, points, centre):
     out = []
     for h in stage['hotspots']:
@@ -157,6 +162,8 @@ def hotspots(stage, points, centre):
             d = d / (np.linalg.norm(d) or 1)
             pos = f' data-position="{metres(p)}" data-normal="{d[0]:.2f} {d[1]:.2f} {d[2]:.2f}"'
         notes = ''.join(f'<span>{n}</span>' for n in h['notes'])
+        if 'choice' in h:
+            pos += f' data-choice="{h["choice"]}"'
         out.append(f'    <button class="hotspot" slot="hotspot-{h["n"]}"{pos} data-visibility-attribute="visible" '
                    f'aria-label="{h["n"]}. {escape(h["label"])}">{h["n"]}<span class="label">{h["label"]}</span>'
                    f'<span class="note">{notes}</span></button>')
@@ -165,6 +172,12 @@ def hotspots(stage, points, centre):
 
 def controls(ui, stage, points):
     out = []
+    if stage.get('choices'):
+        out.append(f'    <div class="choices" role="group" aria-label="{escape(stage["choices_label"])}">')
+        for i, c in enumerate(stage['choices']):
+            out.append(f'      <button type="button" class="choice" data-choice="{c["id"]}" data-src="../../models/{c["file"]}.glb" '
+                       f'data-ios-src="../../models/{c["file"]}.usdz" aria-pressed="{"true" if i == 0 else "false"}">{c["label"]}</button>')
+        out.append('    </div>')
     for i, v in enumerate(stage['views']):
         target = points.get(v.get('target_node', ''))
         t = f' data-target="{metres(target)}"' if target is not None else ''
@@ -180,7 +193,12 @@ def controls(ui, stage, points):
 def stage_page(lang, ui, i):
     stage = ui['stages'][i]
     sid = stage['id']
-    points, centre = model_points(sid)
+    files = stage_files(stage)
+    points, centre = {}, None
+    for f in files:
+        pts, c = model_points(f)
+        points = {**pts, **points}
+        centre = c if centre is None else centre
     legend = '\n'.join(f'    <li><span class="dot" style="background:{l["color"]}"></span>{l["text"]}</li>' for l in stage['legend'])
     prev = ui['stages'][i - 1] if i > 0 else None
     nxt = ui['stages'][i + 1] if i + 1 < len(ui['stages']) else None
@@ -199,10 +217,10 @@ def stage_page(lang, ui, i):
   <p class="hint">{ui["hint"]} {stage["hint_extra"]}</p>
   <p class="hint arnote">{ui["arnote"]}</p>
 
-  <!-- MODEL: models/abg-{sid}.glb (Draco, under 5 MB) and models/abg-{sid}.usdz. See docs/model-spec.md. -->
+  <!-- MODEL: models/{files[0]}.glb (Draco, under 5 MB) and models/{files[0]}.usdz. See docs/model-spec.md. -->
   <model-viewer id="mv"
-    src="../../models/abg-{sid}.glb"
-    ios-src="../../models/abg-{sid}.usdz"
+    src="../../models/{files[0]}.glb"
+    ios-src="../../models/{files[0]}.usdz"
     alt="{escape(stage["alt"])}"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
     camera-controls camera-orbit="{stage["views"][0]["orbit"]}" touch-action="pan-y" interaction-prompt="auto"
@@ -293,7 +311,8 @@ if __name__ == '__main__':
             d = ROOT / lang / s['id']
             d.mkdir(exist_ok=True)
             (d / 'index.html').write_text(stage_page(lang, ui, i))
-            pts, _ = model_points(s['id'])
-            found = sorted(k for k in pts if k.startswith('hotspot-'))
-            print(f'{lang}/{s["id"]}: model {"found" if (ROOT / f"models/abg-{s["id"]}.glb").exists() else "missing"}, '
+            files = stage_files(s)
+            found = {k for f in files for k in model_points(f)[0] if k.startswith('hotspot-')}
+            have = [f for f in files if (ROOT / f'models/{f}.glb').exists()]
+            print(f'{lang}/{s["id"]}: models {len(have)}/{len(files)} found, '
                   f'{len(found)}/{len(s["hotspots"])} dots placed')

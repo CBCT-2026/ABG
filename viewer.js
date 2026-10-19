@@ -64,6 +64,25 @@ viewButtons.forEach(b => b.addEventListener('click', () => {
   viewButtons.forEach(o => o.setAttribute('aria-pressed', o === b));
 }));
 
+// Choice buttons (long-term page): each choice is its own model file, so AR shows the chosen one.
+// Dots marked with data-choice only show for those choices.
+const choiceButtons = [...document.querySelectorAll('.choice')];
+function showChoice(id) {
+  mv.querySelectorAll('.hotspot[data-choice]').forEach(h => {
+    h.hidden = !h.dataset.choice.split(' ').includes(id);
+    if (h.hidden) h.classList.remove('open');
+  });
+  if (!mv.querySelector('.hotspot.open')) info.hidden = true;
+}
+choiceButtons.forEach(b => b.addEventListener('click', () => {
+  choiceButtons.forEach(o => o.setAttribute('aria-pressed', o === b));
+  mv.querySelector('.problem')?.remove();
+  mv.iosSrc = b.dataset.iosSrc;
+  mv.src = b.dataset.src;
+  showChoice(b.dataset.choice);
+}));
+if (choiceButtons.length) showChoice(choiceButtons[0].dataset.choice);
+
 // Removable parts. Each part is a material in the model, named as in docs/model-spec.md.
 // hide: take the part off (and put it back). xray: make it see-through to show what is inside.
 // swap: show this part in place of another one (for example a new tooth instead of the crown).
@@ -100,7 +119,7 @@ partButtons.forEach(b => b.addEventListener('click', () => showPart(b, b.getAttr
 mv.addEventListener('load', () => {
   original.clear();
   // Only show a button if the model has that part.
-  partButtons.forEach(b => { b.hidden = materials(b.dataset.part).length === 0; });
+  partButtons.forEach(b => { b.hidden = materials(b.dataset.part).length === 0; showPartLabel(b, false); b.disabled = false; });
   // A replacement part starts hidden: the model shows the first choice.
   partButtons.filter(b => b.dataset.mode === 'swap' && !b.hidden).forEach(b => setAlpha(b.dataset.part, 0));
 });

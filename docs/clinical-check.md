@@ -4,15 +4,15 @@ Checked 19 Oct 2026 against the sources at the end (found via PubMed). Unilatera
 
 ## Verdict
 
-The three-stage sequence is faithful to real care. Five wording or design points need a change before the text and models are frozen.
+The three-stage sequence is faithful to real care. Five wording or design points need a change before the text and models are frozen. Luke confirmed points 2 and 5 (19 Oct 2026); point 1 was corrected after his question about the hard palate.
 
 | # | What the plan says | What is accurate | Change |
 |---|---|---|---|
-| 1 | ABG repairs the hard tissue defect "in the roof of the mouth" | The palate (including the hard palate) is closed in infancy. ABG fills the **gap in the gum bone at the front of the upper jaw (the alveolar cleft)**, and often closes a small hole left between mouth and nose (fistula) [1,2] | Say "gap in the gum bone" (alveolus), not "roof of the mouth". The bony gap on the model should sit in the tooth-bearing ridge, from the front of the gum back to just behind the incisors |
+| 1 | ABG repairs the hard tissue defect "in the roof of the mouth" | Palate repair in infancy closes the **soft tissue** only (mucoperiosteal flaps, no bone graft). A **bony gap in the hard palate often stays**: none of 66 children had complete bony closure on CT, with about 41% of the hard palate length still cleft on average [17]; 28% complete by age 6 in 46 UCLP children on CBCT [18]. Fistula after palate repair about 11% in recent studies [19]. ABG fills the **alveolar cleft** and the front of the palate next to it, and closes a fistula there if present [1,2] | Text says the gap in the gum bone is the target of the graft, and that the bone of the roof of the mouth can also still have a gap. Pre-op model: bony gap in the alveolus and a residual bony gap in the hard palate under the soft tissue cover (new dot 2). That the back part of the palatal gap stays after ABG, covered by soft tissue, is inferred, not cited |
 | 2 | "Lateral canine" does not develop | The tooth often missing is the **lateral incisor** next to the cleft | Use "lateral incisor" everywhere |
 | 3 | Canine erupts into the space "with help of orthodontics" | Most cleft-side canines come through the graft **on their own**: about 81% in a meta-analysis [3], 70 to 84% in a 2025 cohort [4], 26 of 28 at the Royal Children's Hospital Melbourne [5]. Some need a small operation to uncover the tooth plus braces to pull it in [6] | "The canine usually comes through the new bone by itself. Sometimes it needs help from an operation and braces." Braces afterwards: correct, most patients have fixed braces once the adult teeth are in [7,8] |
 | 4 | Pre-op overlay = "palate soft tissue repaired in infancy" | Correct. Lip at 3 to 6 months, palate at 6 to 12 months [1,9]. The overlay should cover the gum and palate, with the scar line of the repair, and leave the bony gap underneath | Keep. Make the overlay show the gum over the gap, so removing it reveals the bone gap |
-| 5 | Long-term: crown on the canine to look like a lateral incisor | Realistic. Usual first step is reshaping the canine (grinding the tip) plus tooth-coloured filling (composite) build-up; a veneer or crown is used when more change is needed [7,10]. The first premolar then sits in the canine spot. Alternative: keep the space and replace the lateral incisor with an implant or a bonded bridge, usually only once growth has finished [7] | Keep the removable crown/build-up piece. Consider a second removable piece showing a replacement lateral incisor (implant or bridge) so both options can be shown |
+| 5 | Long-term: crown on the canine to look like a lateral incisor | Realistic. Usual first step is reshaping the canine (grinding the tip) plus tooth-coloured filling (composite) build-up; a veneer or crown is used when more change is needed [7,10]. The first premolar then sits in the canine spot. Alternative: keep the space and replace the lateral incisor with an implant or a bonded bridge, usually only once growth has finished [7] | Done: three choices on the page and model (see below) |
 
 ## How often the lateral incisor is missing
 
@@ -45,6 +45,12 @@ There is no national Australian protocol. The best Australian data are a 36-year
 - **Short-term (9 to 11 years):** same teeth; baby canine on the cleft side usually removed before or at the graft; graft fills the gap in a slightly different bone shade; canine still unerupted, now closer to the graft.
 - **Long-term (15 to 18 years), permanent dentition:** all adult teeth except wisdom teeth, including second molars; canine moved forward into the lateral incisor space; premolar in the canine spot; graft blended into normal bone; braces removed (retainer wire behind the front teeth is typical and could be shown). Removable piece: canine crown or build-up shaped like a lateral incisor.
 
+## Replacing the missing lateral incisor
+
+- **Canine as lateral incisor** (space closed): reshape and build up the canine, or veneer or crown it [7,10]. Removable crown/recontour cap on the model.
+- **Implant** (space kept open with braces, canine in its own place): once growth has finished; needs enough grafted bone, sometimes a second graft [7]. Survival 96% at 5 years in cleft patients [7]; usually placed at about 18 to 21 years, once growth has slowed [23].
+- **Bridge**: the usual design is a **cantilever resin-bonded bridge** (one pontic, one wing bonded to the back of one neighbouring tooth), not a conventional 3-unit bridge with two crowns. It needs little or no cutting of healthy teeth, which suits young patients. Single-retainer designs have fewer complications than two-retainer designs [20]; 15-year survival about 97% for anterior cantilever zirconia bridges [21]; used in cleft patients when an implant is not possible [7,22]. In a cleft, the wing usually goes on the central incisor, because the cleft-side canine may have little bone support or still be moving [22]. Model: pontic with one palatal wing that clips onto the central incisor.
+
 ## Removable parts (friction fit or dovetail)
 
 Default clearances for a fit that holds but can be taken off by hand:
@@ -58,6 +64,7 @@ Default clearances for a fit that holds but can be taken off by hand:
 - Soft tissue overlay (pre-op): print in flexible resin or TPU at 1.5 to 2 mm thick; locate with 2 or 3 pegs into the palate, not glue.
 - Graft piece (short-term): dovetail sliding up into the cleft from below, in a lighter or different bone colour.
 - Canine crown (long-term): friction cap over a reduced canine stump with a D-shaped key so it only fits one way.
+- Long-term options: removable cleft-side segment on a dovetail. Segment A has the canine in the lateral incisor place with the crown cap; segment B keeps the space open and takes either the implant (post friction fit in a D-shaped socket, crown cap on the post) or the bridge (pontic with one palatal wing clipping onto the central incisor). Details in model-spec.md.
 - Print one test coupon per material first; clearances vary between printers.
 
 These print values are engineering defaults, not from the clinical literature.
@@ -80,3 +87,10 @@ These print values are engineering defaults, not from the clinical literature.
 14. Srivastav S, Hermann NV, Tewari N, et al. Prevalence of dental anomalies in primary vs. permanent dentition in individuals with non-syndromic cleft lip and palate: a systematic review and meta-analysis. Cleft Palate Craniofac J. 2025;63(9):3069-3081. https://doi.org/10.1177/10556656251398076
 15. Fonseca-Souza G, de Oliveira LB, Wambier LM, et al. Tooth abnormalities associated with non-syndromic cleft lip and palate: systematic review and meta-analysis. Clin Oral Investig. 2022;26(8):5089-5103. https://doi.org/10.1007/s00784-022-04540-8
 16. Bartzela T, Hoffmann I, Kluge J, et al. Timing matters: dental development and outcomes on secondary alveolar bone grafting in cleft lip and palate patients. Clin Oral Investig. 2025;29(11):545. https://doi.org/10.1007/s00784-025-06594-w
+17. Jagasia P, Alter N, Hiller A, Huang J, Pruthi S, Braun S, Galdyn I, Golinko M, Pontell ME. Palatal osteogenesis after cleft palatoplasty: does the bone grow? Cleft Palate Craniofac J. 2026;63(6):1733-1740. https://doi.org/10.1177/10556656251347737
+18. Teblick S, Van de Casteele E, Scheuermann M, Vanreusel I, Renier L, Nadjmi N. Evaluation of palatal bone regeneration in cleft palate patients after a 2-stage palatoplasty using a modified Furlow procedure. Plast Reconstr Surg. 2025;156(2):295-302. https://doi.org/10.1097/PRS.0000000000011817
+19. Ryan IA, Han NA, Chang AE, et al. Global increase in oronasal fistula rates following cleft palate repair: a systematic review and meta-analysis of reported fistula rates. Cleft Palate Craniofac J. 2026;63(8):2626-2634. https://doi.org/10.1177/10556656251382537
+20. Alqutaibi AY, Alghauli MA, Almuzaini SA, Alharbi AF, Alsani AA, Mubarak AM, Alhajj MN. Failure and complication rates of different materials, designs, and bonding techniques of ceramic cantilever resin-bonded fixed dental prostheses for restoring missing anterior teeth: a systematic review and meta-analysis. J Esthet Restor Dent. 2024;36(10):1396-1411. https://doi.org/10.1111/jerd.13238
+21. Kern M, Türp L, Yazigi C. Long-term outcome of anterior cantilever zirconia ceramic resin-bonded fixed dental prostheses: influence of the pontic location. J Prosthet Dent. 2025;133(4):1017-1023. https://doi.org/10.1016/j.prosdent.2024.12.032
+22. Pachiou A, Vraka AM, Andritsakis P, Giannakopoulos NN. Minimally invasive cantilever RBFPD using a 270-degree veneer abutment in a young cleft patient: a clinical adhesive technique. Clin Case Rep. 2026;14(5):e72493. https://doi.org/10.1002/ccr3.72493
+23. Robbins JW. A case against the implant. Int J Periodontics Restorative Dent. 2024;44(3):250-251. https://doi.org/10.11607/prd.2024.3.e
