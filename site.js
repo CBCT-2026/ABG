@@ -11,11 +11,10 @@ themeBtn.addEventListener('click', () => {
 });
 showTheme();
 
-// Device check: a touch screen (finger) or a mouse, and phone, tablet or computer by screen size.
-// The page shows the matching "how to turn the model" hint, and study mode notes the device for the researcher.
+// Device check: a touch screen (finger) or a mouse.
+// The page shows the matching "how to turn the model" hint.
 const touch = matchMedia('(pointer: coarse)').matches || (!matchMedia('(pointer: fine)').matches && navigator.maxTouchPoints > 0);
-const short = Math.min(screen.width, screen.height);
-const device = { input: touch ? 'touch' : 'mouse', kind: !touch ? 'computer' : short < 600 ? 'phone' : 'tablet', size: screen.width + '×' + screen.height };
+const device = { input: touch ? 'touch' : 'mouse' };
 document.documentElement.dataset.input = device.input;
 const hint = document.getElementById('hint');
 if (hint) hint.textContent = hint.dataset[device.input];
@@ -145,9 +144,6 @@ const clearEnds = () => { try { Object.keys(sessionStorage).filter(k => k.starts
   let fallback = 0;
   // Read the end time on every tick, so a page restored by the back button stays in step.
   const endTime = () => { try { return parseInt(sessionStorage.getItem(key), 10) || fallback; } catch (e) { return fallback; } };
-  // Device line on the time-up screen, so the researcher can write it on the study form (nothing is sent anywhere).
-  const dev = document.getElementById('device');
-  if (dev) dev.textContent = `${dev.dataset.label}: ${dev.dataset[device.kind]}, ${dev.dataset[device.input]}, ${device.size}`;
   const tick = () => {
     const s = Math.max(0, Math.ceil((endTime() - Date.now()) / 1000));
     left.textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
