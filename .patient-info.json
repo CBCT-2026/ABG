@@ -1,0 +1,8 @@
+{
+  "files": [{ "glob": "content/*-en.html", "lang": "en" }, { "glob": "content/*-ja.html", "lang": "ja" }],
+  "pairs": [["content/pre-op-en.html", "content/pre-op-ja.html"], ["content/short-term-en.html", "content/short-term-ja.html"], ["content/long-term-en.html", "content/long-term-ja.html"]],
+  "ignore_selectors": ["sup.cite", ".refs"],
+  "address_reader": "you",
+  "ja_address_reader": "omit",
+  "jargon_allow": ["AR"]
+}

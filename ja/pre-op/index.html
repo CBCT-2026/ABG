@@ -1,16 +1,13 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>歯そう骨移植：手術の前</title>
-<meta name="description" content="歯そう骨移植の前の上あごの3Dモデルです。歯ぐきの骨のすき間と、骨の中にある大人の犬歯が見られます。">
+<title>歯ぐきの骨のすき間をうめる手術：3つの段階 · 手術の前</title>
+<meta name="description" content="左側の骨にすき間があり、前歯のとなりの歯がなく、外せるピンクの歯ぐきがある子どもの上あごの3D模型">
 <meta name="robots" content="noindex">
 <script>
-// Pick light or dark before the page draws: the saved choice, else the device setting.
-try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-// The models are Draco-compressed; the decoder is served from this site.
-self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/', location.href).href };
+try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
 </script>
 <link rel="stylesheet" href="../../style.css">
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
@@ -21,149 +18,103 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <a class="lang" href="../../en/pre-op/" lang="en" hreflang="en">English</a>
     <button class="theme" id="theme" type="button" data-dark="ダークモード" data-light="ライトモード">ダークモード</button>
   </div>
-    <a class="lang" href="../">すべての時期</a>
+  <a class="logos" href="../../" aria-label="ホーム">
+    <img class="logo" src="../../images/aichi-gakuin-logo.png" width="44" height="56" alt="Aichi Gakuin University">
+    <img class="logo" src="../../images/nagoya-logo.png" width="74" height="56" alt="Nagoya University">
+  </a>
 </header>
 
 <main>
-  <nav class="stepper" aria-label="時期"><ol>
-    <li><a href="../pre-op/" aria-current="page"><span class="step-num">1</span>手術の前</a></li>
-    <li><a href="../short-term/"><span class="step-num">2</span>手術のすぐ後</a></li>
-    <li><a href="../long-term/"><span class="step-num">3</span>数年後</a></li>
-  </ol></nav>
-  <h1>歯そう骨移植　1：手術の前</h1>
-  <p class="intro">下は、上あごと歯の3Dモデルです。一部のスマートフォンやタブレットでは、<b>AR（拡張現実）</b>でも見られます。ARは、カメラにうつる実際の部屋の中に、モデルがあるように見せる機能です。</p>
-
-  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。番号の点をタップすると、その部分の説明が出ます。<b>「番号をかくす」</b>で、モデルを見やすくできます。<b>「AR表示」</b>をタップすると、近くの机の上や平らな場所にモデルを置けます。 <b>「歯ぐきのカバーを外す」</b>をタップすると、その下の骨のすき間が見えます。<b>「骨をすかして見る」</b>をタップすると、骨の中の大人の犬歯が見えます。<b>「歯ぐきのカバーの下を見る」</b>をタップすると、順番に見られます。</p>
-  <p class="hint arnote">ARは、ARに対応した機器とブラウザでだけ使えます。たとえば、iPhoneのSafariや、多くのAndroidスマートフォンのChromeです。ARのボタンが出ないときは、その機器やブラウザではARを使えません。ARでは、すべての部分がついた、モデル全体が表示されます。</p>
-
-  <!-- MODEL: models/abg-pre-op.glb (Draco, under 5 MB) and models/abg-pre-op.usdz. See docs/model-spec.md. -->
-  <model-viewer id="mv"
-    src="../../models/abg-pre-op.glb"
-    ios-src="../../models/abg-pre-op.usdz"
-    alt="8〜10才ごろの子どもの上あごの3Dモデル。かた方の歯ぐきの骨にすき間があり、歯ぐきと口がいのカバーがあり、大人の犬歯がまだ骨の中にある"
+  <h1>歯ぐきの骨のすき間をうめる手術：3つの段階</h1>
+  <ol class="steps" aria-label="段階"><li><a href="../pre-op/" aria-current="page"><span>段階1</span><b>手術の前</b></a></li><li><a href="../short-term/"><span>段階2</span><b>3か月後</b></a></li><li><a href="../long-term/"><span>段階3</span><b>数年後</b></a></li></ol>
+  <!-- MODEL: placeholder on every stage until the stage models are built. See README. -->
+  <model-viewer id="mv" src="../../models/abg-placeholder.glb" ios-src="../../models/abg-placeholder.usdz"
+    alt="左側の骨にすき間があり、前歯のとなりの歯がなく、外せるピンクの歯ぐきがある子どもの上あごの3D模型"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
-    camera-controls camera-orbit="0deg 75deg auto" touch-action="pan-y" interaction-prompt="auto"
-    shadow-intensity="1" exposure="1" loading="eager" data-missing="この時期の3Dモデルは、まだ用意できていません。">
-    <button slot="ar-button" class="ar-btn">AR表示（まわりの空間に置く）</button>
-    <button class="hotspot" slot="hotspot-1" data-position="0.0194m 0.0015m 0.0140m" data-normal="0.52 -0.35 0.78" data-visibility-attribute="visible" aria-label="1. 歯ぐきの骨のすき間（がくれつ）">1<span class="label">歯ぐきの骨のすき間（がくれつ）</span><span class="note"><span>生まれつきある、上の歯ぐきの骨のすき間です。</span><span>歯そう骨移植で、このすき間をうめます。</span></span></button>
-    <button class="hotspot" slot="hotspot-2" data-position="0.0151m 0.0080m -0.0100m" data-normal="0.52 -0.01 -0.85" data-visibility-attribute="visible" aria-label="2. 上あごの天じょうの骨のすき間">2<span class="label">上あごの天じょうの骨のすき間</span><span class="note"><span>上あごの天じょうは赤ちゃんのときに閉じましたが、その下の骨には、すき間が残ることがよくあります。</span><span>やわらかい組織がおおっています。</span></span></button>
-    <button class="hotspot" slot="hotspot-3" data-position="0.0050m 0.0085m -0.0140m" data-normal="-0.33 0.03 -0.94" data-visibility-attribute="visible" aria-label="3. 手術で閉じた歯ぐきと口がい（やわらかい組織）">3<span class="label">手術で閉じた歯ぐきと口がい（やわらかい組織）</span><span class="note"><span>赤ちゃんのときの手術で、くちびると上あごの天じょうを閉じました。</span><span>この手術で閉じたのは、やわらかい組織です。骨のすき間は閉じていません。</span><span>このモデルでは、このカバーを外せます。</span></span></button>
-    <button class="hotspot" slot="hotspot-4" data-position="0.0274m 0.0151m 0.0156m" data-normal="0.70 0.28 0.65" data-visibility-attribute="visible" aria-label="4. 大人の犬歯（まだ生えていない）">4<span class="label">大人の犬歯（まだ生えていない）</span><span class="note"><span>すき間のとなりの、骨の中にあります。</span><span>正しい場所に生えるには、まわりに骨が必要です。</span><span>この歯が生える前に、歯そう骨移植をします。</span></span></button>
-    <button class="hotspot" slot="hotspot-5" data-position="0.0194m -0.0080m 0.0190m" data-normal="0.36 -0.59 0.73" data-visibility-attribute="visible" aria-label="5. 側切歯の場所">5<span class="label">側切歯の場所</span><span class="note"><span>かた方に口しん口がいれつがある子どもの約半数では、この歯ができません。</span><span>できたときも、小さかったり、形がちがったりすることがよくあります。</span></span></button>
-    <button class="hotspot" slot="hotspot-6" data-position="0.0090m -0.0100m 0.0317m" data-normal="-0.02 -0.49 0.87" data-visibility-attribute="visible" aria-label="6. 前歯（中切歯）">6<span class="label">前歯（中切歯）</span><span class="note"><span>すき間のとなりの前歯は、向きが回っていたり、かたむいていたりすることがあります。</span></span></button>
-    <button class="hotspot" slot="hotspot-7" data-position="0.0348m -0.0121m 0.0045m" data-normal="0.77 -0.62 0.16" data-visibility-attribute="visible" aria-label="7. 乳歯">7<span class="label">乳歯</span><span class="note"><span>この年れいでは、乳歯の犬歯と、乳歯のおく歯がまだあります。</span><span>その上の骨の中で、大人の歯が育っています。</span></span></button>
-    <button class="hotspot" slot="hotspot-8" data-position="0.0402m -0.0076m -0.0180m" data-normal="0.80 -0.41 -0.45" data-visibility-attribute="visible" aria-label="8. 大人の第一大きゅう歯">8<span class="label">大人の第一大きゅう歯</span><span class="note"><span>最初に生える、大人の大きなおく歯です。6才ごろに生えます。</span></span></button>
-    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
+    camera-controls camera-orbit="0deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
+    shadow-intensity="1" exposure="1.05" loading="eager">
+    <button slot="ar-button" class="ar-btn">ARで見る（部屋におく）</button>
+    <div class="hotspot on-gum" slot="hotspot-1" data-position="0.034m 0.008m 0.0226m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="up" style="--len: 60px"><span class="label">歯ぐき<small>外せます</small></span></div>
+    <div class="hotspot off-gum" slot="hotspot-2" data-position="0.019m 0.004m 0.021m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="left" style="--len: 24px"><span class="label">骨のすき間<small>がくれつ</small></span></div>
+    <div class="hotspot off-gum" slot="hotspot-3" data-position="0.036m 0.012m -0.004m" data-normal="0.6 0 0.8" data-visibility-attribute="visible" data-side="up" style="--len: 50px"><span class="label">犬歯の窓</span></div>
+    <div class="hotspot" slot="hotspot-4" data-position="-0.002m -0.012m 0.0316m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 40px"><span class="label">前歯<small>中切歯</small></span></div>
+    <div class="hotspot" slot="hotspot-5" data-position="0.021m -0.010m 0.024m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 18px"><span class="label">ない歯<small>側切歯</small></span></div>
+    <div class="hotspot on-gum" slot="hotspot-6" data-position="0.008m 0.0073m -0.01m" data-normal="0 -1 0" data-visibility-attribute="visible" data-side="left" style="--len: 30px"><span class="label">上あご<small>こうがい</small></span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
-  <div class="info" id="info" aria-live="polite" hidden></div>
-  <div class="controls" role="group" aria-label="モデルの操作">
-    <button type="button" data-orbit="0deg 75deg auto" aria-pressed="true">全体</button>
-    <button type="button" data-orbit="0deg 160deg auto" aria-pressed="false">上あごの天じょう</button>
-    <button type="button" data-orbit="35deg 80deg auto" data-target="0.0274m 0.0151m 0.0156m" aria-pressed="false">犬歯とすき間</button>
-    <button type="button" class="part" data-part="soft-tissue" data-mode="hide" data-on="歯ぐきのカバーを外す" data-off="歯ぐきのカバーをもどす" aria-pressed="false" hidden>歯ぐきのカバーを外す</button>
-    <button type="button" class="part" data-part="bone" data-mode="xray" data-on="骨をすかして見る" data-off="骨をもとにもどす" aria-pressed="false" hidden>骨をすかして見る</button>
-    <button type="button" class="play" id="play" data-anim="reveal" data-orbit-play="10deg 128deg auto" data-steps="[[0, &quot;1. 歯ぐきのカバーを外します&quot;], [2.5, &quot;2. その下の骨には、大きなすき間があります&quot;], [5.5, &quot;3. 大人の犬歯は、まだ骨の中にあります&quot;, &quot;35deg 85deg auto&quot;], [9.5, &quot;&quot;, &quot;10deg 128deg auto&quot;]]" data-xray="5.5 9.5" hidden>歯ぐきのカバーの下を見る</button>
-    <button type="button" id="labels"aria-pressed="false" data-on="番号をかくす" data-off="番号を表示">番号をかくす</button>
+  <div class="controls" role="group" aria-label="模型のそうさ">
+    <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">上あご全体</button>
+    <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">下から</button>
+    <button type="button" data-orbit="40deg 75deg 0.11m" data-target="0.028m 0.006m 0.01m" aria-pressed="false">左側</button>
+    <button type="button" id="labels" aria-pressed="false" data-on="名前をかくす" data-off="名前を出す">名前をかくす</button>
+    <button type="button" id="gum" class="gum" aria-pressed="false" data-off="歯ぐきを外す" data-on="歯ぐきをもどす">歯ぐきを外す</button>
   </div>
 
-  <ul class="legend" aria-label="色の説明">
-    <li><span class="dot" style="background:#e6dccb"></span>骨</li>
-    <li><span class="dot" style="background:#f7f4ee"></span>歯</li>
-    <li><span class="dot" style="background:#e79a9a"></span>歯ぐきと口がい（やわらかい組織）</li>
-    <li><span class="dot" style="background:#7fb3d5"></span>大人の犬歯（まだ生えていない）</li>
-  </ul>
-
-  <!-- SHARED TEXT: generated from content/pre-op-ja.html by tools/build.py. Edit that file, not this block. -->
+  <!-- TEXT: generated from content/pre-op-ja.html by tools/build.py. -->
 <section class="important">
-  <h2>一人一人、ちがいます</h2>
-  <p>すき間の大きさ、歯のようす、治りょうの計画は、人によって大きくちがいます。ここにあるのは、多くの人に向けた情報で、一人一人への助言ではありません。どの治りょうでも、始める前に、治りょうチームが、本人や家族と、利点・危険・ほかの方法について、くわしく話し合います。</p>
+  <p><b>この模型は、生まれつき左側に口の割れ目（こうしんこうがいれつ）がある子どもの上あごです。歯をささえる骨にすき間があります。骨移植という手術で、このすき間を骨でうめます。</b></p>
 </section>
 
 <section>
-  <h2>口しん口がいれつとは？</h2>
-  <p><b>口しん口がいれつ</b>は、すき間がある状態です。上のくちびる、歯ぐき、上あごの天じょう（<b>口がい</b>）にすき間があって生まれてくる赤ちゃんがいます。このすき間は、生まれる前にできます。かた方にある場合と、両方にある場合があります。このモデルは、かた方にある場合です。</p>
+  <h2>この模型で見えるもの</h2>
+  <p>すき間は、前歯のとなりの歯ぐきの骨にあります。医学の名前は<b>がくれつ</b>です。<sup class="cite"><a href="#ref-1">1</a></sup></p>
+  <p>この模型では、左側の歯が一本はえてきませんでした。前歯のとなりの小さい歯（<b>側切歯</b>）です。歯が生まれつきできないことを、医学の名前で<b>先天けつじょ</b>といいます。口の割れ目がある子どもの約半数は、割れ目の側にこの歯がありません。<sup class="cite"><a href="#ref-2">2</a></sup><sup class="cite"><a href="#ref-3">3</a></sup><sup class="cite"><a href="#ref-4">4</a></sup></p>
+  <p>9～10才ごろは、子どもの歯と大人の歯がまざっています。大人の前歯と、いちばんおくの大人の歯は出ています。子どもの犬歯とおくの歯は、まだのこっています。大人の犬歯と、そのおくの歯は、まだ骨の中で育っています。<sup class="cite"><a href="#ref-5">5</a></sup><sup class="cite"><a href="#ref-6">6</a></sup></p>
+  <p>ピンクの部分は歯ぐきです。小さいころにくちびると上あごの手術をした後のように、すき間をおおっています。<sup class="cite"><a href="#ref-1">1</a></sup>「歯ぐきを外す」をおすと、骨のすき間が見えます。</p>
 </section>
 
 <section>
-  <h2>赤ちゃんのときの手術</h2>
-  <p>生まれて1年の間に、手術でくちびると口がいを閉じます。くちびるは、多くの場合、生後3〜6か月ごろに閉じます。口がいは、多くの場合、生後6〜12か月ごろに閉じます。<sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-2">2</a></sup> オーストラリアのある子ども病院では、平きんの年れいは、くちびるが約5か月、口がいが約18か月でした。<sup class="cite"><a href="#ref-1">1</a></sup></p>
-  <p>この手術で閉じるのは、ひふや歯ぐき、口の中の表面です。これを<b>やわらかい組織</b>といいます。すき間に骨を入れるわけではありません。そのため、歯ぐきの骨のすき間は残ります。このモデルでは、やわらかい組織は、外せるカバーになっています。</p>
-  <p>閉じた上あごの天じょうの下でも、骨にすき間が残ることがあります。手術の後に新しい骨が少しできることもありますが、全部は閉じないことがよくあります。66人の子どもを調べた研究では、上あごの天じょうの骨が全部閉じた人はいませんでした。<sup class="cite"><a href="#ref-3">3</a></sup> 46人の子どもを調べた別の研究では、6才までに全部閉じたのは約4人に1人でした。<sup class="cite"><a href="#ref-4">4</a></sup></p>
+  <h2>犬歯</h2>
+  <p>大人の犬歯は、まだすき間のとなりの骨の高い所にあります。すき間の方にかたむいています。根は半分ほどできています。<sup class="cite"><a href="#ref-7">7</a></sup><sup class="cite"><a href="#ref-8">8</a></sup><sup class="cite"><a href="#ref-1">1</a></sup> これから数年かけて下におりてきます。そのためには、おりてくる先に骨が必要です。<sup class="cite"><a href="#ref-1">1</a></sup> 左側の骨にある小さな窓から、犬歯が見えます。</p>
 </section>
 
 <section>
-  <h2>歯ぐきの骨のすき間</h2>
-  <p>上の歯ぐきの中には骨があります。この骨が歯をささえています。医学での名前は<b>歯そう骨</b>（しそうこつ）です。この骨のすき間を<b>がくれつ</b>といいます。</p>
-  <p>口と鼻の間に、小さなあなが残ることがあります。すると、食べ物や飲み物が鼻に入ることがあります。このあなを<b>ろうこう</b>といいます。<sup class="cite"><a href="#ref-5">5</a></sup> 最近の研究では、口がいを閉じた後に、約10人に1人の子どもにろうこうがありました。<sup class="cite"><a href="#ref-6">6</a></sup></p>
-</section>
-
-<section>
-  <h2>歯そう骨移植をする理由</h2>
-  <p><b>歯そう骨移植</b>は手術です。歯ぐきの骨のすき間に、新しい骨を入れます。この新しい骨を<b>移植した骨</b>といいます。本人の体の別の場所からとった骨です。<sup class="cite"><a href="#ref-1">1</a></sup> 移植した骨には、次の役わりがあります。<sup class="cite"><a href="#ref-5">5</a></sup><sup class="cite"><a href="#ref-1">1</a></sup></p>
+  <h2>骨移植をする理由</h2>
+  <p>骨移植の目的は次のとおりです。<sup class="cite"><a href="#ref-9">9</a></sup><sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-10">10</a></sup></p>
   <ul>
-    <li>大人の<b>犬歯</b>（けんし）が生えてくるための骨になる</li>
-    <li>すき間のとなりの歯をささえる</li>
-    <li>2つに分かれた上の歯ぐきを1つにつなぐ</li>
-    <li>ろうこうがあれば、それを閉じる</li>
+    <li>上あごの2つの部分をつなぐ</li>
+    <li>犬歯がおりてくるための骨をつくる</li>
+    <li>すき間のとなりの歯と、鼻の横をささえる</li>
+    <li>口と鼻の間のあなをふさぐ</li>
   </ul>
 </section>
 
 <section>
   <h2>手術をする時期</h2>
-  <p>多くの場合、9〜12才ごろにします。<sup class="cite"><a href="#ref-1">1</a></sup> 同じオーストラリアの病院では、平きんの年れいは約11才でした。<sup class="cite"><a href="#ref-1">1</a></sup> 時期は、大人の犬歯の根がどのくらい育ったかで決めます。根が半分から3分の2ぐらいまで育ち、歯が生える前が、よい時期です。<sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-7">7</a></sup></p>
-  <p>手術の前に、上あごを広げるための、きょう正装置をつける子どももいます。<sup class="cite"><a href="#ref-8">8</a></sup></p>
+  <p>多くのチームは、8～11才ごろに手術をします。年れいではなく、歯の育ち方を見て時期を決めます。<sup class="cite"><a href="#ref-10">10</a></sup><sup class="cite"><a href="#ref-11">11</a></sup><sup class="cite"><a href="#ref-12">12</a></sup></p>
+  <p>いちばんよい時期は、犬歯が歯ぐきから出てくる前で、根が4分の1から3分の2ほどできたころです。この時期に手術をすると、歯のまわりの骨がいちばん多くなります。<sup class="cite"><a href="#ref-13">13</a></sup><sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-11">11</a></sup></p>
 </section>
 
 <section>
-  <h2>ないことがある、横の歯</h2>
-  <p><b>側切歯</b>（そくせっし）は、大きな前歯と犬歯の間にある、小さな歯です。かた方に口しん口がいれつがある子どもの約半数では、すき間のとなりの側切歯ができません。<sup class="cite"><a href="#ref-9">9</a></sup> 歯ができないことを、医学では<b>歯の先天性欠じょ</b>（せんてんせい けつじょ）といいます。この歯ができたときも、小さかったり、形がちがったりすることがよくあります。<sup class="cite"><a href="#ref-9">9</a></sup> 治りょうが終わるころには、すき間のある側の側切歯がないことが多くなります。ある大きな病院では、10人中9人より多くの子どもがそうでした。<sup class="cite"><a href="#ref-10">10</a></sup></p>
-  <p>口しん口がいれつがあると、大人の歯がないことがよくあります。7つの研究をまとめた報告では、口しん口がいれつのある人の約3人に1人で、大人の歯が少なくとも1本ありませんでした。<sup class="cite"><a href="#ref-11">11</a></sup></p>
+  <h2>手術</h2>
+  <p>外科医は、多くの場合こしの骨から、やわらかいスポンジのような骨をとります。それをすき間につめて、上を歯ぐきでとじます。<sup class="cite"><a href="#ref-14">14</a></sup><sup class="cite"><a href="#ref-15">15</a></sup><sup class="cite"><a href="#ref-10">10</a></sup></p>
 </section>
 
-<section>
-  <h2>この後どうなるか</h2>
-  <p>歯そう骨移植の後、大人の犬歯は、多くの場合、新しい骨を通って自然に生えてきます。たくさんの研究をまとめた報告では、10人中約8人でそうでした。<sup class="cite"><a href="#ref-12">12</a></sup> メルボルンの病院の研究では、28人中26人で生えてきました。<sup class="cite"><a href="#ref-13">13</a></sup> 側切歯がないときは、犬歯がその場所に動くことがあります。<sup class="cite"><a href="#ref-10">10</a></sup> その後、多くの人は、歯ならびを整えるために、きょう正治りょうを受けます。<sup class="cite"><a href="#ref-8">8</a></sup><sup class="cite"><a href="#ref-14">14</a></sup></p>
-</section>
-
-<section>
-  <h2>治りょうチームに聞けること</h2>
-  <ul>
-    <li>歯ぐきの骨のすき間は、どのくらいの大きさですか？</li>
-    <li>歯そう骨移植に、いちばんよい時期はいつですか？</li>
-    <li>側切歯はありますか、それともありませんか？</li>
-    <li>手術の前に、きょう正装置は必要ですか？</li>
-    <li>新しい骨は、体のどこからとりますか？</li>
-  </ul>
-</section>
-
-<section class="refs">
-  <h2>参考にした論文</h2>
+  <section class="refs">
+<details>
+  <summary><h2>出典</h2></summary>
   <ol>
-    <li id="ref-1">Jensen ED, Soares G, Cook S, et al. <span class="rt">The burden of cleft surgery: a 36-year reflection of surgical management of children with orofacial clefts in South Australia.</span> Cleft Palate Craniofac J. 2025;63(8):2610-2617. <a href="https://doi.org/10.1177/10556656251387961">doi.org/10.1177/10556656251387961</a></li>
-    <li id="ref-2">Gamble C, Persson C, Willadsen E, et al. <span class="rt">Timing of primary surgery for cleft palate.</span> N Engl J Med. 2023;389(9):795-807. <a href="https://doi.org/10.1056/NEJMoa2215162">doi.org/10.1056/NEJMoa2215162</a></li>
-    <li id="ref-3">Jagasia P, Alter N, Hiller A, et al. Palatal osteogenesis after cleft palatoplasty: does the bone grow? Cleft Palate Craniofac J. 2026;63(6):1733-1740. <a href="https://doi.org/10.1177/10556656251347737">doi.org/10.1177/10556656251347737</a></li>
-    <li id="ref-4">Teblick S, Van de Casteele E, Scheuermann M, et al. <span class="rt">Evaluation of palatal bone regeneration in cleft palate patients after a 2-stage palatoplasty using a modified Furlow procedure.</span> Plast Reconstr Surg. 2025;156(2):295-302. <a href="https://doi.org/10.1097/PRS.0000000000011817">doi.org/10.1097/PRS.0000000000011817</a></li>
-    <li id="ref-5">Elhaddaoui R, Bahije L, Zaoui F, et al. <span class="rt">Timing of alveolar bone graft and sequences of canine eruption in cases of cleft lip and palate: a systematic review.</span> Orthod Fr. 2017;88(2):193-198. <a href="https://doi.org/10.1051/orthodfr/2017011">doi.org/10.1051/orthodfr/2017011</a></li>
-    <li id="ref-6">Ryan IA, Han NA, Chang AE, et al. <span class="rt">Global increase in oronasal fistula rates following cleft palate repair: a systematic review and meta-analysis of reported fistula rates.</span> Cleft Palate Craniofac J. 2026;63(8):2626-2634. <a href="https://doi.org/10.1177/10556656251382537">doi.org/10.1177/10556656251382537</a></li>
-    <li id="ref-7">Bartzela T, Hoffmann I, Kluge J, et al. <span class="rt">Timing matters: dental development and outcomes on secondary alveolar bone grafting in cleft lip and palate patients.</span> Clin Oral Investig. 2025;29(11):545. <a href="https://doi.org/10.1007/s00784-025-06594-w">doi.org/10.1007/s00784-025-06594-w</a></li>
-    <li id="ref-8">Freitas JA, Garib DG, Oliveira M, et al. <span class="rt">Rehabilitative treatment of cleft lip and palate: experience of the Hospital for Rehabilitation of Craniofacial Anomalies-USP (HRAC-USP), part 2: pediatric dentistry and orthodontics.</span> J Appl Oral Sci. 2012;20(2):268-281. <a href="https://doi.org/10.1590/s1678-77572012000200024">doi.org/10.1590/s1678-77572012000200024</a></li>
-    <li id="ref-9">Gibson TL, Grayson BH, Cutting CB, et al. <span class="rt">Prevalence of dental anomalies in patients with unilateral cleft lip and alveolus treated with gingivoperiosteoplasty.</span> Cleft Palate Craniofac J. 2022;59(8):1017-1023. <a href="https://doi.org/10.1177/10556656211031124">doi.org/10.1177/10556656211031124</a></li>
-    <li id="ref-10">Cassolato SF, Ross B, Daskalogiannakis J, et al. <span class="rt">Treatment of dental anomalies in children with complete unilateral cleft lip and palate at SickKids hospital, Toronto.</span> Cleft Palate Craniofac J. 2009;46(2):166-172. <a href="https://doi.org/10.1597/07-239.1">doi.org/10.1597/07-239.1</a></li>
-    <li id="ref-11">Srivastav S, Hermann NV, Tewari N, et al. <span class="rt">Prevalence of dental anomalies in primary vs. permanent dentition in individuals with non-syndromic cleft lip and palate: a systematic review and meta-analysis.</span> Cleft Palate Craniofac J. 2025;63(9):3069-3081. <a href="https://doi.org/10.1177/10556656251398076">doi.org/10.1177/10556656251398076</a></li>
-    <li id="ref-12">Jahanbin A, Kamyabnezhad E, Raisolsadat MA, et al. <span class="rt">Long-term stability of alveolar bone graft in cleft lip and palate patients: systematic review and meta-analysis.</span> J Craniofac Surg. 2022;33(2):e194-e200. <a href="https://doi.org/10.1097/SCS.0000000000008254">doi.org/10.1097/SCS.0000000000008254</a></li>
-    <li id="ref-13">Kumar R, Heggie A, Shand J, et al. <span class="rt">Secondary bone grafting of alveolar clefts: a review of outcome at two centres in Australia and the UK.</span> Br J Oral Maxillofac Surg. 2017;55(5):496-499. <a href="https://doi.org/10.1016/j.bjoms.2017.02.002">doi.org/10.1016/j.bjoms.2017.02.002</a></li>
-    <li id="ref-14">Clerc MM, Detzen L, Vi-Fane B, et al. <span class="rt">Replacement of missing lateral incisors for patients with cleft lip and palate: a decision-making tree based on a systematic review of the literature.</span> J Prosthet Dent. 2025;134(1):50-60. <a href="https://doi.org/10.1016/j.prosdent.2023.07.023">doi.org/10.1016/j.prosdent.2023.07.023</a></li>
+    <li id="ref-1">Lilja J. Alveolar bone grafting. Indian J Plast Surg. 2009;42:S110-S115. <a href="https://doi.org/10.1055/s-0039-1699383">doi.org/10.1055/s-0039-1699383</a></li>
+    <li id="ref-2">Knüppe AL, et al. Developmental characteristics of the permanent upper lateral incisor in unilateral cleft lip and palate. Oral Maxillofac Surg. 2024;28:909-917. <a href="https://doi.org/10.1007/s10006-024-01226-1">doi.org/10.1007/s10006-024-01226-1</a></li>
+    <li id="ref-3">Dentino KM, et al. Is missing maxillary lateral incisor in complete cleft lip and palate a product of genetics or local environment? Angle Orthod. 2012;82:959-963. <a href="https://doi.org/10.2319/012012-49.1">doi.org/10.2319/012012-49.1</a></li>
+    <li id="ref-4">Suzuki A, Takahama Y. Maxillary lateral incisor of subjects with cleft lip and/or palate: Part 1. Cleft Palate Craniofac J. 1992;29:376-379. <a href="https://doi.org/10.1597/1545-1569_1992_029_0376_mliosw_2.3.co_2">doi.org/10.1597/1545-1569(1992)029&lt;0376:MLIOSW&gt;2.3.CO;2</a></li>
+    <li id="ref-5">AlQahtani SJ, Hector MP, Liversidge HM. Brief communication: the London atlas of human tooth development and eruption. Am J Phys Anthropol. 2010;142:481-490. <a href="https://doi.org/10.1002/ajpa.21258">doi.org/10.1002/ajpa.21258</a></li>
+    <li id="ref-6">Hoang L, et al. Factors contributing to canine impaction in unilateral cleft lip and palate patients undergoing alveolar bone grafts. J Oral Maxillofac Surg. 2023;81:1286-1294. <a href="https://doi.org/10.1016/j.joms.2023.06.029">doi.org/10.1016/j.joms.2023.06.029</a></li>
+    <li id="ref-7">Kadi H, et al. CBCT assessment of canine eruption and development following alveolar bone grafting in unilateral cleft lip and palate. Cleft Palate Craniofac J. 2023;60:386-394. <a href="https://doi.org/10.1177/10556656211064477">doi.org/10.1177/10556656211064477</a></li>
+    <li id="ref-8">Caceres Manfio A, et al. Eruption path of permanent maxillary canines after secondary alveolar bone grafting in complete unilateral cleft lip and palate. Am J Orthod Dentofacial Orthop. 2022;161:e416-e428. <a href="https://doi.org/10.1016/j.ajodo.2021.06.019">doi.org/10.1016/j.ajodo.2021.06.019</a></li>
+    <li id="ref-9">Weissler EH, et al. Alveolar bone grafting and cleft lip and palate: a review. Plast Reconstr Surg. 2016;138:1287-1295. <a href="https://doi.org/10.1097/PRS.0000000000002778">doi.org/10.1097/PRS.0000000000002778</a></li>
+    <li id="ref-10">Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a href="https://doi.org/10.1159/000337666">doi.org/10.1159/000337666</a></li>
+    <li id="ref-11">Kaura AS, et al. Optimal timing of alveolar cleft bone grafting. J Craniofac Surg. 2018;29:1551-1557. <a href="https://doi.org/10.1097/SCS.0000000000004680">doi.org/10.1097/SCS.0000000000004680</a></li>
+    <li id="ref-12">Fahradyan A, et al. Optimal timing of secondary alveolar bone grafting: a literature review. J Oral Maxillofac Surg. 2019;77:843-849. <a href="https://doi.org/10.1016/j.joms.2018.11.019">doi.org/10.1016/j.joms.2018.11.019</a></li>
+    <li id="ref-13">Bergland O, Semb G, Abyholm FE. Elimination of the residual alveolar cleft by secondary bone grafting and subsequent orthodontic treatment. Cleft Palate J. 1986;23:175-205. PMID 3524905. <a href="https://pubmed.ncbi.nlm.nih.gov/3524905/">pubmed.ncbi.nlm.nih.gov/3524905</a></li>
+    <li id="ref-14">Boyne PJ, Sands NR. Secondary bone grafting of residual alveolar and palatal clefts. J Oral Surg. 1972;30:87-92. PMID 4550446. <a href="https://pubmed.ncbi.nlm.nih.gov/4550446/">pubmed.ncbi.nlm.nih.gov/4550446</a></li>
+    <li id="ref-15">Pan W, et al. Secondary alveolar bone grafting and iliac cancellous bone harvesting. J Craniofac Surg. 2016;27:883-891. <a href="https://doi.org/10.1097/SCS.0000000000002603">doi.org/10.1097/SCS.0000000000002603</a></li>
   </ol>
-</section>
-
-  <nav class="pager">
-    <a class="next" href="../short-term/"><span>次の時期</span>2. 手術のすぐ後</a>
-  </nav>
-
-  <p class="disclaimer">このページは、名古屋大学の研究のためのものです。下書き 第0.1版（2026年10月19日）。</p>
+</details>
+  </section>
+  <nav class="next" aria-label="段階"><span></span><a href="../short-term/">3か月後 →</a></nav>
+  <p class="disclaimer">このページは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。</p>
 </main>
-
-<script src="../../viewer.js"></script>
+<script src="../../site.js"></script>
 </body>
 </html>

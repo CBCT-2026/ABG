@@ -1,16 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Alveolar Bone Grafting: Soon After the Operation</title>
-<meta name="description" content="An interactive 3D model of the upper jaw some months after alveolar bone grafting, with the bone graft in the gap and the adult canine still in the bone.">
+<title>Bone graft for a cleft in the gum: the three stages · 3 months after</title>
+<meta name="description" content="3D model of the same upper jaw about 3 months after a bone graft">
 <meta name="robots" content="noindex">
 <script>
-// Pick light or dark before the page draws: the saved choice, else the device setting.
-try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-// The models are Draco-compressed; the decoder is served from this site.
-self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/', location.href).href };
+try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
 </script>
 <link rel="stylesheet" href="../../style.css">
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
@@ -21,130 +18,77 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <a class="lang" href="../../ja/short-term/" lang="ja" hreflang="ja">日本語</a>
     <button class="theme" id="theme" type="button" data-dark="Dark mode" data-light="Light mode">Dark mode</button>
   </div>
-    <a class="lang" href="../">All stages</a>
+  <a class="logos" href="../../" aria-label="Home">
+    <img class="logo" src="../../images/aichi-gakuin-logo.png" width="44" height="56" alt="Aichi Gakuin University">
+    <img class="logo" src="../../images/nagoya-logo.png" width="74" height="56" alt="Nagoya University">
+  </a>
 </header>
 
 <main>
-  <nav class="stepper" aria-label="Stages"><ol>
-    <li><a href="../pre-op/"><span class="step-num">1</span>Pre-op</a></li>
-    <li><a href="../short-term/" aria-current="page"><span class="step-num">2</span>Short-term post-op</a></li>
-    <li><a href="../long-term/"><span class="step-num">3</span>Long-term post-op</a></li>
-  </ol></nav>
-  <h1>Alveolar bone grafting, stage 2: soon after the operation (short-term post-op)</h1>
-  <p class="intro">Below is a 3D model of the upper jaw and teeth. Some phones and tablets can also show it in <b>augmented reality (AR)</b>. AR uses the camera to show the model in the real room, as if it were there.</p>
-
-  <p class="hint">Drag to turn the model. Pinch to zoom. Tap a numbered dot to learn about that part. Tap <b>Hide labels</b> for a clear view. Tap <b>View in AR</b> to place the model on a nearby table or flat surface. Tap <b>See-through bone</b> to see the adult canine tooth inside the bone.</p>
-  <p class="hint arnote">AR works only on a device and browser that can use it. For example, Safari on an iPhone, or Chrome on many Android phones. If no AR button shows, AR cannot be used on that device or browser. AR shows the whole model, with all parts in place.</p>
-
-  <!-- MODEL: models/abg-short-term.glb (Draco, under 5 MB) and models/abg-short-term.usdz. See docs/model-spec.md. -->
-  <model-viewer id="mv"
-    src="../../models/abg-short-term.glb"
-    ios-src="../../models/abg-short-term.usdz"
-    alt="3D model of the upper jaw some months after alveolar bone grafting, with the bone graft in a lighter colour filling the gap, and an adult canine tooth still in the bone"
+  <h1>Bone graft for a cleft in the gum: the three stages</h1>
+  <ol class="steps" aria-label="Stages"><li><a href="../pre-op/"><span>Stage 1</span><b>Before surgery</b></a></li><li><a href="../short-term/" aria-current="page"><span>Stage 2</span><b>3 months after</b></a></li><li><a href="../long-term/"><span>Stage 3</span><b>Years later</b></a></li></ol>
+  <!-- MODEL: placeholder on every stage until the stage models are built. See README. -->
+  <model-viewer id="mv" src="../../models/abg-placeholder.glb" ios-src="../../models/abg-placeholder.usdz"
+    alt="3D model of the same upper jaw about 3 months after a bone graft"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
-    camera-controls camera-orbit="0deg 75deg auto" touch-action="pan-y" interaction-prompt="auto"
-    shadow-intensity="1" exposure="1" loading="eager" data-missing="The 3D model for this stage is not ready yet.">
+    camera-controls camera-orbit="0deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
+    shadow-intensity="1" exposure="1.05" loading="eager">
     <button slot="ar-button" class="ar-btn">View in AR (place in the room)</button>
-    <button class="hotspot" slot="hotspot-1" data-position="0.0185m 0.0090m 0.0149m" data-normal="0.73 0.35 0.59" data-visibility-attribute="visible" aria-label="1. Bone graft (new bone)">1<span class="label">Bone graft (new bone)</span><span class="note"><span>New bone put into the gap in the gum bone.</span><span>Shown in a lighter colour so it is easy to see.</span><span>Over time it joins with the bone around it.</span></span></button>
-    <button class="hotspot" slot="hotspot-2" data-position="0.0274m 0.0151m 0.0156m" data-normal="0.78 0.43 0.45" data-visibility-attribute="visible" aria-label="2. Adult canine (still not through)">2<span class="label">Adult canine (still not through)</span><span class="note"><span>Still under the gum, as is normal soon after the operation.</span><span>Now it has bone to come through.</span><span>Most often it comes through by itself.</span></span></button>
-    <button class="hotspot" slot="hotspot-3" data-position="0.0195m -0.0016m 0.0200m" data-normal="0.70 -0.06 0.71" data-visibility-attribute="visible" aria-label="3. Space of the lateral incisor">3<span class="label">Space of the lateral incisor</span><span class="note"><span>If this tooth is missing, the canine can later move into this space.</span></span></button>
-    <button class="hotspot" slot="hotspot-4" data-position="0.0090m -0.0100m 0.0317m" data-normal="0.26 -0.29 0.92" data-visibility-attribute="visible" aria-label="4. Front teeth (central incisors)">4<span class="label">Front teeth (central incisors)</span><span class="note"><span>The bone graft now holds up the front tooth next to the gap.</span></span></button>
-    <button class="hotspot" slot="hotspot-5" data-position="0.0348m -0.0121m 0.0045m" data-normal="0.94 -0.33 0.12" data-visibility-attribute="visible" aria-label="5. Baby teeth">5<span class="label">Baby teeth</span><span class="note"><span>Some baby teeth are still in at this age.</span></span></button>
-    <button class="hotspot" slot="hotspot-6" data-position="0.0402m -0.0076m -0.0180m" data-normal="0.90 -0.17 -0.40" data-visibility-attribute="visible" aria-label="6. First adult molars">6<span class="label">First adult molars</span><span class="note"><span>The first big adult back teeth.</span></span></button>
-    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
+    <div class="placeholder"><span>Placeholder: we are still making the model for this stage</span></div>
+    <div class="hotspot" slot="hotspot-1" data-position="-0.002m -0.012m 0.0316m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 40px"><span class="label">Front tooth<small>central incisor</small></span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
-  <div class="info" id="info" aria-live="polite" hidden></div>
   <div class="controls" role="group" aria-label="Model controls">
-    <button type="button" data-orbit="0deg 75deg auto" aria-pressed="true">Whole model</button>
-    <button type="button" data-orbit="0deg 160deg auto" aria-pressed="false">Roof of the mouth</button>
-    <button type="button" data-orbit="35deg 80deg auto" data-target="0.0274m 0.0151m 0.0156m" aria-pressed="false">Bone graft and canine</button>
-    <button type="button" class="part" data-part="soft-tissue" data-mode="hide" data-on="Take off the gum cover" data-off="Put the gum cover back" aria-pressed="false" hidden>Take off the gum cover</button>
-    <button type="button" class="part" data-part="bone" data-mode="xray" data-on="See-through bone" data-off="Solid bone" aria-pressed="false" hidden>See-through bone</button>
-    <button type="button" id="labels"aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
+    <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">Whole jaw</button>
+    <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">From below</button>
+    <button type="button" data-orbit="40deg 75deg 0.11m" data-target="0.028m 0.006m 0.01m" aria-pressed="false">Left side</button>
+    <button type="button" id="labels" aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
+    <button type="button" id="gum" class="gum" aria-pressed="false" data-off="Take off the gum" data-on="Put the gum back">Take off the gum</button>
   </div>
 
-  <ul class="legend" aria-label="Colour key">
-    <li><span class="dot" style="background:#e6dccb"></span>Bone</li>
-    <li><span class="dot" style="background:#fbf7ef"></span>Bone graft (new bone)</li>
-    <li><span class="dot" style="background:#f7f4ee"></span>Teeth</li>
-    <li><span class="dot" style="background:#7fb3d5"></span>Adult canine (not through yet)</li>
-  </ul>
-
-  <!-- SHARED TEXT: generated from content/short-term-en.html by tools/build.py. Edit that file, not this block. -->
+  <!-- TEXT: generated from content/short-term-en.html by tools/build.py. -->
 <section class="important">
-  <h2>Every person is different</h2>
-  <p>The size of the gap, the teeth and the plan can be very different from person to person. So the facts here are general. They are not advice for one person. Before any treatment, the cleft team will talk with each person and family in detail about the benefits, risks and choices.</p>
+  <p><b>This model shows the same jaw about 3 months after the bone graft. New bone fills the gap, and the gum has healed over it.</b></p>
 </section>
 
 <section>
-  <h2>What was done</h2>
-  <p>In <b>alveolar bone grafting</b>, new bone is put into the gap in the gum bone. This new bone is the <b>bone graft</b>. It is the person's own bone, taken from another part of the body.<sup class="cite"><a href="#ref-1">1</a></sup> The gum is then closed over it.</p>
-  <p>This model shows the mouth some months after the operation. The bone graft is a lighter colour, so it is easy to see. In real life it slowly joins with the bone around it.</p>
+  <h2>What has changed</h2>
+  <p>The graft fills the gap from the floor of the nose down to the gum. It joins the two parts of the upper jaw.<sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-2">2</a></sup></p>
+  <p>The surgeon closed the gum over the graft with stitches. If the wound opens, you can lose some of the graft. Surgeons close the gum with care, because a wound that opens is the main problem after this operation.<sup class="cite"><a href="#ref-3">3</a></sup><sup class="cite"><a href="#ref-4">4</a></sup></p>
+  <p>The eye tooth is still in the bone. It is a little lower than before. Over the next months it moves down toward the graft.<sup class="cite"><a href="#ref-5">5</a></sup><sup class="cite"><a href="#ref-6">6</a></sup></p>
 </section>
 
 <section>
-  <h2>Checking the bone graft</h2>
-  <p>Some months after the operation, an X-ray is often taken. It shows how much new bone has grown in the gap. One study took this X-ray at about 6 months.<sup class="cite"><a href="#ref-2">2</a></sup></p>
-</section>
-
-<section class="risk">
-  <h2>How well does it work?</h2>
-  <p>A review of 8 studies checked the bone graft at least 1 year after the operation. It found:<sup class="cite"><a href="#ref-3">3</a></sup></p>
-  <div class="stats">
-    <div><strong>About 3 in 4</strong><span>bone grafts were a success on X-ray</span></div>
-    <div><strong>About 8 in 10</strong><span>canines came through the new bone by themselves</span></div>
-  </div>
-  <p>Hospitals in Australia and the UK had high success rates, in line with other countries.<sup class="cite"><a href="#ref-4">4</a></sup> Sometimes a second bone graft is needed. In one large study, this was about 1 in 100.<sup class="cite"><a href="#ref-5">5</a></sup></p>
+  <h2>Checks after surgery</h2>
+  <p>You will have an X-ray at about 3 to 6 months. It shows how well the new bone has taken.<sup class="cite"><a href="#ref-7">7</a></sup><sup class="cite"><a href="#ref-8">8</a></sup> Some of the graft shrinks over time. Teeth that move into the graft help keep the bone.<sup class="cite"><a href="#ref-9">9</a></sup><sup class="cite"><a href="#ref-10">10</a></sup></p>
 </section>
 
 <section>
-  <h2>What can make it less likely to work</h2>
-  <p>A review of 9 studies found the bone graft was less likely to work when:<sup class="cite"><a href="#ref-6">6</a></sup></p>
-  <ul>
-    <li>it was done at an older age</li>
-    <li>the teeth were not kept clean</li>
-    <li>a tooth next to the gap had already come through</li>
-  </ul>
-  <p>So the cleft team plans the time with care, and good tooth brushing helps.<sup class="cite"><a href="#ref-6">6</a></sup></p>
+  <h2>The hip</h2>
+  <p>Your hip can be sore for a while after the surgeon takes the bone. In one study, children went back to school about 2 weeks after surgery.<sup class="cite"><a href="#ref-11">11</a></sup></p>
 </section>
 
-<section>
-  <h2>The canine tooth</h2>
-  <p>Soon after the operation, the adult canine is still under the gum. This is normal. Now it has bone to come through. Most often it comes through by itself.<sup class="cite"><a href="#ref-3">3</a></sup> Sometimes it needs help. A small operation can uncover the tooth, and braces can then pull it into place.<sup class="cite"><a href="#ref-7">7</a></sup></p>
-</section>
-
-<section>
-  <h2>Questions to ask the cleft team</h2>
-  <ul>
-    <li>When will the bone graft be checked?</li>
-    <li>How should the teeth be cleaned near the graft?</li>
-    <li>Is the canine on track to come through?</li>
-    <li>When might braces start?</li>
-  </ul>
-</section>
-
-<section class="refs">
-  <h2>Sources</h2>
+  <section class="refs">
+<details>
+  <summary><h2>Sources</h2></summary>
   <ol>
-    <li id="ref-1">Jensen ED, Soares G, Cook S, et al. <span class="rt">The burden of cleft surgery: a 36-year reflection of surgical management of children with orofacial clefts in South Australia.</span> Cleft Palate Craniofac J. 2025;63(8):2610-2617. <a href="https://doi.org/10.1177/10556656251387961">doi.org/10.1177/10556656251387961</a></li>
-    <li id="ref-2">Bartzela T, Hoffmann I, Kluge J, et al. <span class="rt">Timing matters: dental development and outcomes on secondary alveolar bone grafting in cleft lip and palate patients.</span> Clin Oral Investig. 2025;29(11):545. <a href="https://doi.org/10.1007/s00784-025-06594-w">doi.org/10.1007/s00784-025-06594-w</a></li>
-    <li id="ref-3">Jahanbin A, Kamyabnezhad E, Raisolsadat MA, et al. <span class="rt">Long-term stability of alveolar bone graft in cleft lip and palate patients: systematic review and meta-analysis.</span> J Craniofac Surg. 2022;33(2):e194-e200. <a href="https://doi.org/10.1097/SCS.0000000000008254">doi.org/10.1097/SCS.0000000000008254</a></li>
-    <li id="ref-4">Kumar R, Heggie A, Shand J, et al. <span class="rt">Secondary bone grafting of alveolar clefts: a review of outcome at two centres in Australia and the UK.</span> Br J Oral Maxillofac Surg. 2017;55(5):496-499. <a href="https://doi.org/10.1016/j.bjoms.2017.02.002">doi.org/10.1016/j.bjoms.2017.02.002</a></li>
-    <li id="ref-5">Doucet JC, Patel MH, Russell KA, et al. <span class="rt">Evaluation of cleft adjacent canine eruption in patients with alveolar cleft treated with early secondary alveolar bone grafting.</span> Cleft Palate Craniofac J. 2025;63(7):1929-1934. <a href="https://doi.org/10.1177/10556656251356211">doi.org/10.1177/10556656251356211</a></li>
-    <li id="ref-6">Wu J, Zhuang J, Ma Y, et al. <span class="rt">Risk factors associated with the failure of secondary alveolar bone grafting with autologous iliac crest bone in patients with alveolar cleft defects: a systematic review.</span> Front Oral Health. 2025;6:1640933. <a href="https://doi.org/10.3389/froh.2025.1640933">doi.org/10.3389/froh.2025.1640933</a></li>
-    <li id="ref-7">Alhasyimi AA, Ramadhan IPA, Farmasyanti CA, et al. Clinical orthodontic outcomes following secondary alveolar bone grafting in patients with cleft lip and palate: a systematic review. Cleft Palate Craniofac J. 2026. Online ahead of print. <a href="https://doi.org/10.1177/10556656261454065">doi.org/10.1177/10556656261454065</a></li>
+    <li id="ref-1">Boyne PJ, Sands NR. Secondary bone grafting of residual alveolar and palatal clefts. J Oral Surg. 1972;30:87-92. PMID 4550446. <a href="https://pubmed.ncbi.nlm.nih.gov/4550446/">pubmed.ncbi.nlm.nih.gov/4550446</a></li>
+    <li id="ref-2">Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a href="https://doi.org/10.1159/000337666">doi.org/10.1159/000337666</a></li>
+    <li id="ref-3">Siddiqui S, et al. Autologous platelet concentrate during secondary alveolar bone grafting and wound dehiscence: a systematic review. J Craniomaxillofac Surg. 2024;52:895-905. <a href="https://doi.org/10.1016/j.jcms.2024.04.016">doi.org/10.1016/j.jcms.2024.04.016</a></li>
+    <li id="ref-4">Kaura AS, et al. Optimal timing of alveolar cleft bone grafting. J Craniofac Surg. 2018;29:1551-1557. <a href="https://doi.org/10.1097/SCS.0000000000004680">doi.org/10.1097/SCS.0000000000004680</a></li>
+    <li id="ref-5">Desai SK, et al. Observing the eruption of canine after secondary alveolar bone grafting. J Oral Maxillofac Surg. 2021;79:2562-2573. <a href="https://doi.org/10.1016/j.joms.2021.06.021">doi.org/10.1016/j.joms.2021.06.021</a></li>
+    <li id="ref-6">Kadi H, et al. CBCT assessment of canine eruption and development following alveolar bone grafting in unilateral cleft lip and palate. Cleft Palate Craniofac J. 2023;60:386-394. <a href="https://doi.org/10.1177/10556656211064477">doi.org/10.1177/10556656211064477</a></li>
+    <li id="ref-7">Kindelan JD, et al. Radiographic assessment of secondary autogenous alveolar bone grafting. Cleft Palate Craniofac J. 1997;34:195-198. <a href="https://doi.org/10.1597/1545-1569_1997_034_0195_raosaa_2.3.co_2">doi.org/10.1597/1545-1569(1997)034&lt;0195:RAOSAA&gt;2.3.CO;2</a></li>
+    <li id="ref-8">Witherow H, et al. A new scale to assess radiographic success of secondary alveolar bone grafts. Cleft Palate Craniofac J. 2002;39:255-260. <a href="https://doi.org/10.1597/1545-1569_2002_039_0255_anstar_2.0.co_2">doi.org/10.1597/1545-1569(2002)039&lt;0255:ANSTAR&gt;2.0.CO;2</a></li>
+    <li id="ref-9">Jahanbin A, et al. Long-term stability of alveolar bone graft in cleft lip and palate: a systematic review and meta-analysis. J Craniofac Surg. 2022;33:e194-e200. <a href="https://doi.org/10.1097/SCS.0000000000008254">doi.org/10.1097/SCS.0000000000008254</a></li>
+    <li id="ref-10">Schultze-Mosgau S, et al. Bone resorption after secondary alveolar cleft bone grafts before and after canine eruption. J Oral Maxillofac Surg. 2003;61:1245-1248. <a href="https://doi.org/10.1016/s0278-2391(03)00722-5">doi.org/10.1016/s0278-2391(03)00722-5</a></li>
+    <li id="ref-11">Tache A, et al. Pain management at iliac donor sites after grafting of alveolar clefts. Int J Oral Maxillofac Surg. 2022;51:62-69. <a href="https://doi.org/10.1016/j.ijom.2021.05.004">doi.org/10.1016/j.ijom.2021.05.004</a></li>
   </ol>
-</section>
-
-  <nav class="pager">
-    <a class="prev" href="../pre-op/"><span>Previous stage</span>1. Pre-op</a>
-    <a class="next" href="../long-term/"><span>Next stage</span>3. Long-term post-op</a>
-  </nav>
-
-  <p class="disclaimer">This page is for a research study at Nagoya University. Draft version 0.1, 19 October 2026.</p>
+</details>
+  </section>
+  <nav class="next" aria-label="Stages"><a href="../pre-op/">← Before surgery</a><a href="../long-term/">Years later →</a></nav>
+  <p class="disclaimer">This page is for a study at Aichi Gakuin University and Nagoya University. Version 0.1, 22 October 2026.</p>
 </main>
-
-<script src="../../viewer.js"></script>
+<script src="../../site.js"></script>
 </body>
 </html>

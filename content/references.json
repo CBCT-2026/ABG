@@ -1,94 +1,32 @@
 {
-  "jensen": {
-    "text": "Jensen ED, Soares G, Cook S, Seifert ML, Ju X, Moore M, Roberts R, Anderson PJ, Jamieson LM. The burden of cleft surgery: a 36-year reflection of surgical management of children with orofacial clefts in South Australia. Cleft Palate Craniofac J. 2025;63(8):2610-2617.",
-    "doi": "10.1177/10556656251387961"
-  },
-  "gamble": {
-    "text": "Gamble C, Persson C, Willadsen E, et al. Timing of primary surgery for cleft palate. N Engl J Med. 2023;389(9):795-807.",
-    "doi": "10.1056/NEJMoa2215162"
-  },
-  "elhaddaoui": {
-    "text": "Elhaddaoui R, Bahije L, Zaoui F, Rerhrhaye W. Timing of alveolar bone graft and sequences of canine eruption in cases of cleft lip and palate: a systematic review. Orthod Fr. 2017;88(2):193-198.",
-    "doi": "10.1051/orthodfr/2017011"
-  },
-  "bartzela": {
-    "text": "Bartzela T, Hoffmann I, Kluge J, Jäger F, Schmechel M, Opitz C. Timing matters: dental development and outcomes on secondary alveolar bone grafting in cleft lip and palate patients. Clin Oral Investig. 2025;29(11):545.",
-    "doi": "10.1007/s00784-025-06594-w"
-  },
-  "freitas": {
-    "text": "Freitas JA, Garib DG, Oliveira M, et al. Rehabilitative treatment of cleft lip and palate: experience of the Hospital for Rehabilitation of Craniofacial Anomalies-USP (HRAC-USP), part 2: pediatric dentistry and orthodontics. J Appl Oral Sci. 2012;20(2):268-281.",
-    "doi": "10.1590/s1678-77572012000200024"
-  },
-  "gibson": {
-    "text": "Gibson TL, Grayson BH, Cutting CB, Shetye PR. Prevalence of dental anomalies in patients with unilateral cleft lip and alveolus treated with gingivoperiosteoplasty. Cleft Palate Craniofac J. 2022;59(8):1017-1023.",
-    "doi": "10.1177/10556656211031124"
-  },
-  "cassolato": {
-    "text": "Cassolato SF, Ross B, Daskalogiannakis J, Noble J, Tompson B, Paedo D. Treatment of dental anomalies in children with complete unilateral cleft lip and palate at SickKids hospital, Toronto. Cleft Palate Craniofac J. 2009;46(2):166-172.",
-    "doi": "10.1597/07-239.1"
-  },
-  "srivastav": {
-    "text": "Srivastav S, Hermann NV, Tewari N, et al. Prevalence of dental anomalies in primary vs. permanent dentition in individuals with non-syndromic cleft lip and palate: a systematic review and meta-analysis. Cleft Palate Craniofac J. 2025;63(9):3069-3081.",
-    "doi": "10.1177/10556656251398076"
-  },
-  "jahanbin": {
-    "text": "Jahanbin A, Kamyabnezhad E, Raisolsadat MA, Farzanegan F, Bardideh E. Long-term stability of alveolar bone graft in cleft lip and palate patients: systematic review and meta-analysis. J Craniofac Surg. 2022;33(2):e194-e200.",
-    "doi": "10.1097/SCS.0000000000008254"
-  },
-  "kumar": {
-    "text": "Kumar R, Heggie A, Shand J, Dominguez-Gonzalez S, Kilpatrick N, Shah J. Secondary bone grafting of alveolar clefts: a review of outcome at two centres in Australia and the UK. Br J Oral Maxillofac Surg. 2017;55(5):496-499.",
-    "doi": "10.1016/j.bjoms.2017.02.002"
-  },
-  "doucet": {
-    "text": "Doucet JC, Patel MH, Russell KA, et al. Evaluation of cleft adjacent canine eruption in patients with alveolar cleft treated with early secondary alveolar bone grafting. Cleft Palate Craniofac J. 2025;63(7):1929-1934.",
-    "doi": "10.1177/10556656251356211"
-  },
-  "wu": {
-    "text": "Wu J, Zhuang J, Ma Y, Yin L, Wang Y. Risk factors associated with the failure of secondary alveolar bone grafting with autologous iliac crest bone in patients with alveolar cleft defects: a systematic review. Front Oral Health. 2025;6:1640933.",
-    "doi": "10.3389/froh.2025.1640933"
-  },
-  "alhasyimi": {
-    "text": "Alhasyimi AA, Ramadhan IPA, Farmasyanti CA, Noviasari P, Narwidina A. Clinical orthodontic outcomes following secondary alveolar bone grafting in patients with cleft lip and palate: a systematic review. Cleft Palate Craniofac J. 2026. Online ahead of print.",
-    "doi": "10.1177/10556656261454065"
-  },
-  "clerc": {
-    "text": "Clerc MM, Detzen L, Vi-Fane B, et al. Replacement of missing lateral incisors for patients with cleft lip and palate: a decision-making tree based on a systematic review of the literature. J Prosthet Dent. 2025;134(1):50-60.",
-    "doi": "10.1016/j.prosdent.2023.07.023"
-  },
-  "manfio": {
-    "text": "Manfio ASC, Garib D, Flores-Mir C, et al. Closure of maxillary lateral incisor agenesis space in unilateral cleft lip and palate: a digital model assessment. Dental Press J Orthod. 2023;28(1):e2321331.",
-    "doi": "10.1590/2177-6709.28.1.e2321331.oar"
-  },
-  "migliorati": {
-    "text": "Migliorati M, Zuffanti A, Capuano M, Canullo L, Caponio VCA, Menini M. Periodontal, occlusal, and aesthetic outcomes of missing maxillary lateral incisor replacement: a systematic review and network meta-analysis. Int Orthod. 2025;23(1):100957.",
-    "doi": "10.1016/j.ortho.2024.100957"
-  },
-  "robbins": {
-    "text": "Robbins JW. A case against the implant. Int J Periodontics Restorative Dent. 2024;44(3):250-251.",
-    "doi": "10.11607/prd.2024.3.e"
-  },
-  "jagasia": {
-    "text": "Jagasia P, Alter N, Hiller A, Huang J, Pruthi S, Braun S, Galdyn I, Golinko M, Pontell ME. Palatal osteogenesis after cleft palatoplasty: does the bone grow? Cleft Palate Craniofac J. 2026;63(6):1733-1740.",
-    "doi": "10.1177/10556656251347737"
-  },
-  "teblick": {
-    "text": "Teblick S, Van de Casteele E, Scheuermann M, Vanreusel I, Renier L, Nadjmi N. Evaluation of palatal bone regeneration in cleft palate patients after a 2-stage palatoplasty using a modified Furlow procedure. Plast Reconstr Surg. 2025;156(2):295-302.",
-    "doi": "10.1097/PRS.0000000000011817"
-  },
-  "ryan": {
-    "text": "Ryan IA, Han NA, Chang AE, et al. Global increase in oronasal fistula rates following cleft palate repair: a systematic review and meta-analysis of reported fistula rates. Cleft Palate Craniofac J. 2026;63(8):2626-2634.",
-    "doi": "10.1177/10556656251382537"
-  },
-  "alqutaibi": {
-    "text": "Alqutaibi AY, Alghauli MA, Almuzaini SA, Alharbi AF, Alsani AA, Mubarak AM, Alhajj MN. Failure and complication rates of different materials, designs, and bonding techniques of ceramic cantilever resin-bonded fixed dental prostheses for restoring missing anterior teeth: a systematic review and meta-analysis. J Esthet Restor Dent. 2024;36(10):1396-1411.",
-    "doi": "10.1111/jerd.13238"
-  },
-  "kern": {
-    "text": "Kern M, Türp L, Yazigi C. Long-term outcome of anterior cantilever zirconia ceramic resin-bonded fixed dental prostheses: influence of the pontic location. J Prosthet Dent. 2025;133(4):1017-1023.",
-    "doi": "10.1016/j.prosdent.2024.12.032"
-  },
-  "pachiou": {
-    "text": "Pachiou A, Vraka AM, Andritsakis P, Giannakopoulos NN. Minimally invasive cantilever RBFPD using a 270-degree veneer abutment in a young cleft patient: a clinical adhesive technique. Clin Case Rep. 2026;14(5):e72493.",
-    "doi": "10.1002/ccr3.72493"
-  }
+"boyne": "Boyne PJ, Sands NR. Secondary bone grafting of residual alveolar and palatal clefts. J Oral Surg. 1972;30:87-92. PMID 4550446. <a href=\"https://pubmed.ncbi.nlm.nih.gov/4550446/\">pubmed.ncbi.nlm.nih.gov/4550446</a>",
+"bergland": "Bergland O, Semb G, Abyholm FE. Elimination of the residual alveolar cleft by secondary bone grafting and subsequent orthodontic treatment. Cleft Palate J. 1986;23:175-205. PMID 3524905. <a href=\"https://pubmed.ncbi.nlm.nih.gov/3524905/\">pubmed.ncbi.nlm.nih.gov/3524905</a>",
+"semb": "Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a href=\"https://doi.org/10.1159/000337666\">doi.org/10.1159/000337666</a>",
+"weissler": "Weissler EH, et al. Alveolar bone grafting and cleft lip and palate: a review. Plast Reconstr Surg. 2016;138:1287-1295. <a href=\"https://doi.org/10.1097/PRS.0000000000002778\">doi.org/10.1097/PRS.0000000000002778</a>",
+"lilja": "Lilja J. Alveolar bone grafting. Indian J Plast Surg. 2009;42:S110-S115. <a href=\"https://doi.org/10.1055/s-0039-1699383\">doi.org/10.1055/s-0039-1699383</a>",
+"fahradyan": "Fahradyan A, et al. Optimal timing of secondary alveolar bone grafting: a literature review. J Oral Maxillofac Surg. 2019;77:843-849. <a href=\"https://doi.org/10.1016/j.joms.2018.11.019\">doi.org/10.1016/j.joms.2018.11.019</a>",
+"kaura": "Kaura AS, et al. Optimal timing of alveolar cleft bone grafting. J Craniofac Surg. 2018;29:1551-1557. <a href=\"https://doi.org/10.1097/SCS.0000000000004680\">doi.org/10.1097/SCS.0000000000004680</a>",
+"pan": "Pan W, et al. Secondary alveolar bone grafting and iliac cancellous bone harvesting. J Craniofac Surg. 2016;27:883-891. <a href=\"https://doi.org/10.1097/SCS.0000000000002603\">doi.org/10.1097/SCS.0000000000002603</a>",
+"knuppe": "Knüppe AL, et al. Developmental characteristics of the permanent upper lateral incisor in unilateral cleft lip and palate. Oral Maxillofac Surg. 2024;28:909-917. <a href=\"https://doi.org/10.1007/s10006-024-01226-1\">doi.org/10.1007/s10006-024-01226-1</a>",
+"dentino": "Dentino KM, et al. Is missing maxillary lateral incisor in complete cleft lip and palate a product of genetics or local environment? Angle Orthod. 2012;82:959-963. <a href=\"https://doi.org/10.2319/012012-49.1\">doi.org/10.2319/012012-49.1</a>",
+"suzuki": "Suzuki A, Takahama Y. Maxillary lateral incisor of subjects with cleft lip and/or palate: Part 1. Cleft Palate Craniofac J. 1992;29:376-379. <a href=\"https://doi.org/10.1597/1545-1569_1992_029_0376_mliosw_2.3.co_2\">doi.org/10.1597/1545-1569(1992)029&lt;0376:MLIOSW&gt;2.3.CO;2</a>",
+"kadi": "Kadi H, et al. CBCT assessment of canine eruption and development following alveolar bone grafting in unilateral cleft lip and palate. Cleft Palate Craniofac J. 2023;60:386-394. <a href=\"https://doi.org/10.1177/10556656211064477\">doi.org/10.1177/10556656211064477</a>",
+"caceres": "Caceres Manfio A, et al. Eruption path of permanent maxillary canines after secondary alveolar bone grafting in complete unilateral cleft lip and palate. Am J Orthod Dentofacial Orthop. 2022;161:e416-e428. <a href=\"https://doi.org/10.1016/j.ajodo.2021.06.019\">doi.org/10.1016/j.ajodo.2021.06.019</a>",
+"hoang": "Hoang L, et al. Factors contributing to canine impaction in unilateral cleft lip and palate patients undergoing alveolar bone grafts. J Oral Maxillofac Surg. 2023;81:1286-1294. <a href=\"https://doi.org/10.1016/j.joms.2023.06.029\">doi.org/10.1016/j.joms.2023.06.029</a>",
+"vellone": "Vellone V, et al. Canine eruption after secondary alveolar bone graft in unilateral cleft lip and palate patients. J Craniofac Surg. 2017;28:1206-1210. <a href=\"https://doi.org/10.1097/SCS.0000000000003659\">doi.org/10.1097/SCS.0000000000003659</a>",
+"desai": "Desai SK, et al. Observing the eruption of canine after secondary alveolar bone grafting. J Oral Maxillofac Surg. 2021;79:2562-2573. <a href=\"https://doi.org/10.1016/j.joms.2021.06.021\">doi.org/10.1016/j.joms.2021.06.021</a>",
+"kindelan": "Kindelan JD, et al. Radiographic assessment of secondary autogenous alveolar bone grafting. Cleft Palate Craniofac J. 1997;34:195-198. <a href=\"https://doi.org/10.1597/1545-1569_1997_034_0195_raosaa_2.3.co_2\">doi.org/10.1597/1545-1569(1997)034&lt;0195:RAOSAA&gt;2.3.CO;2</a>",
+"witherow": "Witherow H, et al. A new scale to assess radiographic success of secondary alveolar bone grafts. Cleft Palate Craniofac J. 2002;39:255-260. <a href=\"https://doi.org/10.1597/1545-1569_2002_039_0255_anstar_2.0.co_2\">doi.org/10.1597/1545-1569(2002)039&lt;0255:ANSTAR&gt;2.0.CO;2</a>",
+"jahanbin": "Jahanbin A, et al. Long-term stability of alveolar bone graft in cleft lip and palate: a systematic review and meta-analysis. J Craniofac Surg. 2022;33:e194-e200. <a href=\"https://doi.org/10.1097/SCS.0000000000008254\">doi.org/10.1097/SCS.0000000000008254</a>",
+"schultze": "Schultze-Mosgau S, et al. Bone resorption after secondary alveolar cleft bone grafts before and after canine eruption. J Oral Maxillofac Surg. 2003;61:1245-1248. <a href=\"https://doi.org/10.1016/s0278-2391(03)00722-5\">doi.org/10.1016/s0278-2391(03)00722-5</a>",
+"siddiqui": "Siddiqui S, et al. Autologous platelet concentrate during secondary alveolar bone grafting and wound dehiscence: a systematic review. J Craniomaxillofac Surg. 2024;52:895-905. <a href=\"https://doi.org/10.1016/j.jcms.2024.04.016\">doi.org/10.1016/j.jcms.2024.04.016</a>",
+"tache": "Tache A, et al. Pain management at iliac donor sites after grafting of alveolar clefts. Int J Oral Maxillofac Surg. 2022;51:62-69. <a href=\"https://doi.org/10.1016/j.ijom.2021.05.004\">doi.org/10.1016/j.ijom.2021.05.004</a>",
+"rivers": "Rivers J, et al. A clinical index scale for secondary alveolar bone graft success based on canine eruption. Eur J Orthod. 2025;47:cjae065. <a href=\"https://doi.org/10.1093/ejo/cjae065\">doi.org/10.1093/ejo/cjae065</a>",
+"parkin": "Parkin N, et al. Open versus closed surgical exposure of canine teeth that are displaced in the roof of the mouth. Cochrane Database Syst Rev. 2017;(8):CD006966. <a href=\"https://doi.org/10.1002/14651858.CD006966.pub3\">doi.org/10.1002/14651858.CD006966.pub3</a>",
+"kokich": "Kokich VO Jr, Kinzer GA. Managing congenitally missing lateral incisors. Part I: canine substitution. J Esthet Restor Dent. 2005;17:5-10. <a href=\"https://doi.org/10.1111/j.1708-8240.2005.tb00076.x\">doi.org/10.1111/j.1708-8240.2005.tb00076.x</a>",
+"zachrisson": "Zachrisson BU, Rosa M, Toreskog S. Congenitally missing maxillary lateral incisors: canine substitution. Am J Orthod Dentofacial Orthop. 2011;139:434-438. <a href=\"https://doi.org/10.1016/j.ajodo.2011.02.003\">doi.org/10.1016/j.ajodo.2011.02.003</a>",
+"lee2024": "Lee A, et al. Dental rehabilitation of the unilateral cleft dental gap: long-term follow-up. J Craniofac Surg. 2024;35:199-202. <a href=\"https://doi.org/10.1097/SCS.0000000000009802\">doi.org/10.1097/SCS.0000000000009802</a>",
+"clerc": "Clerc MM, et al. Replacement of missing lateral incisors for patients with cleft lip and palate: a decision-making tree based on a systematic review. J Prosthet Dent. 2025;134:50-60. <a href=\"https://doi.org/10.1016/j.prosdent.2023.07.023\">doi.org/10.1016/j.prosdent.2023.07.023</a>",
+"knobloch": "Knobloch LA, et al. Narrow diameter implants for a missing lateral incisor in cleft palate patients: five-year results. J Prosthet Dent. 2025;134:1738-1747. <a href=\"https://doi.org/10.1016/j.prosdent.2024.07.048\">doi.org/10.1016/j.prosdent.2024.07.048</a>",
+"alqahtani": "AlQahtani SJ, Hector MP, Liversidge HM. Brief communication: the London atlas of human tooth development and eruption. Am J Phys Anthropol. 2010;142:481-490. <a href=\"https://doi.org/10.1002/ajpa.21258\">doi.org/10.1002/ajpa.21258</a>"
 }

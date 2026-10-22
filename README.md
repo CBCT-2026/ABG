@@ -1,34 +1,27 @@
 # ABG
 
-Patient education webpages with web AR 3D models for the Alveolar Bone Graft (ABG) Education Models Study, Nagoya University. Three stages of alveolar bone grafting for a cleft lip and palate: before the operation, soon after it, and years later after braces.
+Web pages with web AR 3D models for the study "Seeing the stages: comparing 2D, augmented reality, video and 3D printed education materials to explain alveolar bone grafting in cleft lip and palate" (Aichi Gakuin University and Nagoya University). Three stages in clinical order: before surgery, about 3 months after, and years later. The model shows a left-sided cleft with no left lateral incisor (agenesis).
 
 ## Site layout
 
-- `index.html`: language choice. The QR code points here.
-- `en/`, `ja/`: home page for each language, with one button per stage, in clinical order.
-- `en/pre-op/`, `en/short-term/`, `en/long-term/` (and the same under `ja/`): one page per stage, each with its own 3D model, numbered dots, removable-part buttons, patient text and sources. Each page links to the stages before and after it.
+- `index.html`: home page. Choose the AR web page or the narrated video, in English or Japanese.
+- `en/pre-op/`, `en/short-term/`, `en/long-term/` (and the same under `ja/`): one page per stage, with a 1-2-3 stepper, the 3D model, labels, preset views, AR, the "Take off the gum" animation, patient text and sources. `en/` and `ja/` forward to stage 1.
+- `video/en/`, `video/ja/`: narrated video page (one video per language, one chapter per stage). The video is not made yet.
 - Hosted on GitHub Pages from `main` (Settings > Pages > Deploy from a branch > `main` / root).
+- Design: one 640px column like the wisdom tooth site, neutral slate and steel blue, light mode by default with a dark mode toggle (kept for the browser tab only). Aichi Gakuin University logo first, then Nagoya University.
 
-## Patient text and sources
+## Text and sources
 
-- Page strings, numbered dots, buttons and colour key: `content/ui-en.json`, `content/ui-ja.json`.
-- Patient text for each stage: `content/<stage>-en.html`, `content/<stage>-ja.html`, with citations as `[[key]]` (keys in `content/references.json`).
-- Run `python3 tools/build.py` to write all pages. Do not edit the pages under `en/` and `ja/` by hand.
-- Text is the same in every format (webpage, pamphlet, print card); the pamphlet and print card will be built from these same files.
-- Clinical sequence, Australian ages and sources: `docs/clinical-check.md`.
-
-## Checks
-
-- `python3 tools/readability.py`: Flesch-Kincaid grade of every English section (`tools/readability-report.md`). Every text section is grade 6 or below. Page titles score higher only because of the term "alveolar bone grafting".
-- `python3 tools/wording_check.py`: no "you/your" in English; no あなた or 私 and only kanji taught by grade 6 (MEXT 2020 list) in Japanese.
-- Needs `pip install textstat==0.7.3 beautifulsoup4 numpy`.
+- Patient text: `content/<stage>-en.html` and `content/<stage>-ja.html`, with citations as `[[key]]` (keys in `content/references.json`). Buttons and short strings: `content/ui.json`. Labels on the model: `H` in `tools/build.py`.
+- Run `python3 tools/build.py` to write every page. Do not edit pages under `en/`, `ja/` or `video/` by hand.
+- Checks: [patient-education-toolkit](https://github.com/CBCT-2026/patient-education-toolkit) with `.patient-info.json` (`pitk check`). The text speaks to the reader as "you". English: Flesch-Kincaid grade 1.4 to 1.5 per page, SMOG 4.5 to 5.6. Japanese: kanji taught by grade 6 only, jReadability 4.1 to 4.3. Japanese needs a native-speaker check.
 
 ## 3D models
 
-Put the models in `models/` as `abg-<stage>.glb` (Draco, under 5 MB) and `abg-<stage>.usdz`, then run `tools/build.py`. Part names, numbered-dot empties, colours, teeth per stage and print fits are in `docs/model-spec.md`. Until a stage's model is added, its page says the model is not ready yet.
+- `models/abg-placeholder.glb` / `.usdz`: the placeholder pre-op model (ABG-pre-op-example), used on all three stage pages until the stage models are built. Made with `python3 tools/recolour_model.py ABG-pre-op-example.glb models/abg-placeholder.glb` (bone, tooth and gum colours; gum part animations "remove" and "replace"), then `python3 tools/make_usdz.py models/abg-placeholder.glb models/abg-placeholder.usdz` (needs `pip install trimesh pygltflib usd-core rtree`).
+- To add a stage model: put `abg-<stage>.glb` and `.usdz` in `models/` and point that stage at it in `tools/build.py`. The gum button works on any model with a material named `gum` and animations named `remove` and `replace`. Part and material plan: `docs/model-spec.md`.
 
 ## Licences
 
-- Draco decoder in `vendor/draco/` (from three.js r163, Apache 2.0).
 - 3D viewer: `@google/model-viewer` 3.5.0 (Apache 2.0), loaded from jsDelivr.
-- No Nagoya University logo is used. Images, if added, must be CC0, CC BY or CC BY-SA, credited.
+- `images/aichi-gakuin-logo.png` and `images/nagoya-logo.png` belong to Aichi Gakuin University and Nagoya University. They are **not** covered by any open licence of this project. Use them only as each university's brand guidelines allow.
