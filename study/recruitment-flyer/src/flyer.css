@@ -1,0 +1,69 @@
+/* One-sided A4 recruitment flyer. Colours follow the ABG site: neutral slate and steel blue (#23617f), so neither university colour leads. */
+@font-face { font-family: "Noto Sans JP"; src: url("fonts/NotoSansJP-Regular.ttf"); font-weight: 400 500; }
+@font-face { font-family: "Noto Sans JP"; src: url("fonts/NotoSansJP-Bold.ttf"); font-weight: 600 900; }
+@font-face { font-family: "Inter Flyer"; src: url("fonts/Inter-Regular.otf"); font-weight: 400; }
+@font-face { font-family: "Inter Flyer"; src: url("fonts/Inter-Medium.otf"); font-weight: 500; }
+@font-face { font-family: "Inter Flyer"; src: url("fonts/Inter-SemiBold.otf"); font-weight: 600; }
+@font-face { font-family: "Inter Flyer"; src: url("fonts/Inter-Bold.otf"); font-weight: 700; }
+@font-face { font-family: "Inter Flyer"; src: url("fonts/Inter-ExtraBold.otf"); font-weight: 800 900; }
+@page { size: A4; margin: 0; }
+:root { --accent: #23617f; --accent-dark: #1a4a61; --text: #1c2630; --muted: #56636f; --card: #eef3f6; --line: #dde3e8; --hl: #fff2a8; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #fff; color: var(--text); }
+body { font-family: "Inter Flyer", "Noto Sans JP", sans-serif; font-size: 9.5pt; line-height: 1.38;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+:lang(ja) body, body:lang(ja) { font-family: "Noto Sans JP", sans-serif; font-size: 9.1pt; line-height: 1.5; }
+/* Every piece of text is justified (Luke's rule). */
+p, li, h1, h2, h3, figcaption, .kicker, .sub, .legend, .note, .qr-text, .contact, .approval, .chips span { text-align: justify; text-justify: inter-character; }
+.page { width: 210mm; height: 297mm; padding: 10mm 12mm 0; display: flex; flex-direction: column; overflow: hidden; }
+header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8mm; padding-bottom: 4mm; border-bottom: 1.2mm solid var(--accent); }
+.kicker { display: inline-block; margin-bottom: 2mm !important; background: var(--accent); color: #fff; font-weight: 700; font-size: 9pt; letter-spacing: .06em;
+  padding: 1.2mm 3mm; border-radius: 1.5mm; margin: 0 0 3mm; }
+h1 { font-size: 20pt; line-height: 1.12; margin: 0 0 2mm; color: var(--accent-dark); font-weight: 800; }
+:lang(ja) h1 { font-size: 18pt; line-height: 1.3; }
+.sub { margin: 0; font-size: 10.5pt; color: var(--muted); font-weight: 500; }
+.logos { display: flex; gap: 3mm; flex: none; align-items: center; }
+.logo { height: 20mm; flex: none; }
+h2 { font-size: 12pt; color: var(--accent); margin: 0 0 1.5mm; font-weight: 800; }
+section { margin-top: 3mm; }
+p { margin: 0 0 1.6mm; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; align-items: start; }
+.illus { background: var(--card); border-radius: 3mm; padding: 2.5mm 3mm 2mm; margin: 0; }
+.illus img { width: 100%; display: block; }
+.legend { list-style: none; padding: 0; margin: 1.5mm 0 0; font-size: 9pt; }
+.legend li { margin: .6mm 0; }
+.dot { display: inline-block; width: 4.6mm; height: 4.6mm; line-height: 4.6mm; border-radius: 50%; background: var(--accent); color: #fff;
+  font-size: 7.5pt; font-weight: 700; text-align: center !important; margin-right: 1.5mm; vertical-align: .1mm; }
+.note { font-size: 8.3pt; color: var(--muted); margin: 1mm 0 0; }
+.formats { background: var(--card); border-radius: 3mm; padding: 2mm 4mm; margin: 0; display: grid; grid-template-columns: 1fr 1.45fr 1fr 1fr; gap: 3mm; }
+.formats figure { margin: 0; display: flex; align-items: center; gap: 1.5mm; }
+.formats img { height: 12mm; width: auto; flex: none; }
+.formats figcaption { font-size: 9pt; font-weight: 700; color: var(--accent-dark); line-height: 1.3; }
+.chips { display: flex; flex-wrap: wrap; gap: 1.5mm; margin: 1.5mm 0; padding: 0; list-style: none; }
+.chips li { background: #fff; border: .35mm solid var(--accent); border-radius: 2mm; padding: 1mm 2.3mm; font-size: 9pt; font-weight: 600; line-height: 1.3; }
+.steps { list-style: none; counter-reset: s; padding: 0; margin: 1.5mm 0 0; }
+.steps li { counter-increment: s; position: relative; padding-left: 8mm; margin-bottom: 1.6mm; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: .2mm; width: 5.6mm; height: 5.6mm; line-height: 5.6mm; border-radius: 50%;
+  background: var(--accent); color: #fff; font-weight: 700; font-size: 8.5pt; text-align: center; }
+.good { background: var(--card); border-left: 1.2mm solid var(--accent); border-radius: 0 2.5mm 2.5mm 0; padding: 2.5mm 4mm; }
+.good ul { margin: 0; padding-left: 4.5mm; columns: 2; column-gap: 7mm; }
+.good li { margin-bottom: .6mm; break-inside: avoid; font-size: 9.4pt; }
+footer { margin-top: auto; margin-left: -12mm; margin-right: -12mm; background: var(--accent); color: #fff; padding: 5mm 12mm 6mm;
+  display: grid; grid-template-columns: 36mm 1fr; gap: 7mm; align-items: center; }
+.qr { background: #fff; border-radius: 2.5mm; padding: 2mm; position: relative; width: 36mm; height: 36mm; }
+.qr svg { width: 100%; height: 100%; display: block; }
+.qr .ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.qr .ph span { background: #c62828; color: #fff; font-weight: 800; font-size: 8pt; padding: 1mm 2mm; border-radius: 1mm; transform: rotate(-18deg); text-align: center !important; }
+.qr-text { font-size: 12.5pt; font-weight: 800; margin: 0 0 1.5mm; line-height: 1.25; }
+.contact { margin: 0 0 1.5mm; font-size: 10.5pt; }
+.contact strong { font-size: 11pt; white-space: nowrap; }
+.approval { margin: 0; font-size: 8.4pt; opacity: .95; }
+.hl { background: var(--hl); color: var(--text); padding: 0 1mm; border-radius: .8mm; }
+
+:lang(ja) p, :lang(ja) li { line-break: strict; }
+.row.top { grid-template-columns: 74mm 1fr; }
+.right h2 + p + p + h2, .right .note + h2 { margin-top: 3mm; }
+.formats-wrap { margin-top: 2.5mm; }
+.formats figcaption { width: max-content; max-width: 100%; }
+.illus .legend li { text-align: left; }
+.hl { white-space: nowrap; }

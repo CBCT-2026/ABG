@@ -10,6 +10,13 @@ Web pages with web AR 3D models for the study "Seeing the stages: comparing 2D, 
 - Hosted on GitHub Pages from `main` (Settings > Pages > Deploy from a branch > `main` / root).
 - Design: one 640px column like the wisdom tooth site, neutral slate and steel blue, light mode by default with a dark mode toggle (kept for the browser tab only). Aichi Gakuin University logo first, then Nagoya University.
 
+## Study materials (the same content in all four)
+
+- **A. 2D information sheet:** `sheet/<lang>/<stage>/` (built by `tools/build.py` from the same `content/` text) and print-ready A4 PDFs `sheet/abg-sheet-<n>-<stage>-<lang>.pdf` (`node tools/sheet/pdf.js`). Only sentences about on-screen buttons change (`SHEET_SWAP` in `tools/build.py`). Pictures: `node tools/sheet/render.js` renders the model with the web page labels into `images/sheet-*.png`. Stage 2 and 3 pictures are marked placeholders until those models exist.
+- **B. AR web page:** `en/`, `ja/`.
+- **C. 3D printed model and D. narrated video:** narration script `content/narration.md` (one part per stage, 45 s or less each). `python3 tools/narration.py` writes `video/script-en.json` and `video/script-ja.json` (chapters, scenes, sentences, line labels with the web page names) for the text-to-speech voice and subtitles.
+- **Study files (not on the web page):** `study/recruitment-flyer/` (A4 flyer EN/JA, `build_flyer.py` adds the form QR codes), `study/ms-forms/` (Microsoft Forms text EN/JA, Japanese review copy, setup guide), `study/narration/` (narration review copy). Build with the scripts in each folder.
+
 ## Text and sources
 
 - Patient text: `content/<stage>-en.html` and `content/<stage>-ja.html`, with citations as `[[key]]` (keys in `content/references.json`). Buttons and short strings: `content/ui.json`. Labels on the model: `H` in `tools/build.py`.

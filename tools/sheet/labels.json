@@ -1,0 +1,90 @@
+{
+ "gum": {
+  "pos": "0.034m 0.008m 0.0226m",
+  "normal": "0 0 1",
+  "side": "up",
+  "len": 60,
+  "when": "on-gum",
+  "en": [
+   "Gum",
+   "you can take it off"
+  ],
+  "ja": [
+   "歯ぐき",
+   "外せます"
+  ]
+ },
+ "gap": {
+  "pos": "0.019m 0.004m 0.021m",
+  "normal": "0 0 1",
+  "side": "left",
+  "len": 24,
+  "when": "off-gum",
+  "en": [
+   "Gap in the bone",
+   "alveolar cleft"
+  ],
+  "ja": [
+   "骨のすき間",
+   "がくれつ"
+  ]
+ },
+ "window": {
+  "pos": "0.036m 0.012m -0.004m",
+  "normal": "0.6 0 0.8",
+  "side": "up",
+  "len": 50,
+  "when": "off-gum",
+  "en": [
+   "Eye tooth window",
+   "canine"
+  ],
+  "ja": [
+   "犬歯の窓",
+   ""
+  ]
+ },
+ "central": {
+  "pos": "-0.002m -0.012m 0.0316m",
+  "normal": "0 0 1",
+  "side": "down",
+  "len": 40,
+  "en": [
+   "Front tooth",
+   "central incisor"
+  ],
+  "ja": [
+   "前歯",
+   "中切歯"
+  ]
+ },
+ "missing": {
+  "pos": "0.021m -0.010m 0.024m",
+  "normal": "0 0 1",
+  "side": "down",
+  "len": 18,
+  "en": [
+   "Missing tooth",
+   "lateral incisor"
+  ],
+  "ja": [
+   "ない歯",
+   "側切歯"
+  ]
+ },
+ "palate": {
+  "pos": "0.008m 0.0073m -0.01m",
+  "normal": "0 -1 0",
+  "side": "left",
+  "len": 30,
+  "when": "on-gum",
+  "en": [
+   "Roof of the mouth",
+   "palate"
+  ],
+  "ja": [
+   "上あご",
+   "こうがい"
+  ]
+ }
+}
