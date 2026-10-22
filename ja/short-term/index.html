@@ -10,6 +10,10 @@
 try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
 </script>
 <link rel="stylesheet" href="../../style.css">
+<script>
+// The models are Draco-compressed; the decoder is served from this site, so no outside download is needed.
+self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/', location.href).href };
+</script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
@@ -28,7 +32,7 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
   <h1>歯ぐきの骨のすき間をうめる手術：3つの段階</h1>
   <ol class="steps" aria-label="段階"><li><a href="../pre-op/"><span>段階1</span><b>手術の前</b></a></li><li><a href="../short-term/" aria-current="page"><span>段階2</span><b>3か月後</b></a></li><li><a href="../long-term/"><span>段階3</span><b>数年後</b></a></li></ol>
   <!-- MODEL: placeholder on every stage until the stage models are built. See README. -->
-  <model-viewer id="mv" src="../../models/abg-placeholder.glb" ios-src="../../models/abg-placeholder.usdz"
+  <model-viewer id="mv" src="../../models/abg-placeholder.glb" ios-src="../../models/abg-placeholder.usdz" poster="../../models/abg-placeholder-poster.webp"
     alt="骨移植から約3か月後の同じ上あごの3D模型"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
     camera-controls camera-orbit="0deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
@@ -87,7 +91,10 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
 </details>
   </section>
   <nav class="next" aria-label="段階"><a href="../pre-op/">← 手術の前</a><a href="../long-term/">数年後 →</a></nav>
+  <p class="restart"><button type="button" id="restart" data-home="../pre-op/">はじめからもう一度</button></p>
   <p class="disclaimer">このページは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。</p>
+  <div class="timer" id="timer" hidden><span>のこり時間</span> <b id="timer-left"></b></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>時間になりました。研究の担当者に知らせてください。</p></div>
 </main>
 <script src="../../site.js"></script>
 </body>

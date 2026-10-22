@@ -124,3 +124,14 @@ model-viewer.gum-off .hotspot.on-gum, model-viewer:not(.gum-off) .hotspot.off-gu
   font: 600 13px/1.25 inherit; padding: 6px; text-align: center; }
 .chapters span b { display: block; font-size: 12px; color: var(--muted); font-weight: 500; }
 .next span:empty { flex: 1; }
+.restart { text-align: center; margin: 18px 0 0; }
+.restart button { font: 600 15px/1.2 inherit; padding: 10px 16px; min-height: 44px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: transparent; color: var(--muted); }
+/* Study mode: no language switch and no way back to the home page */
+.study .bar .lang { visibility: hidden; }
+.study .bar .logos { pointer-events: none; }
+.timer { position: fixed; right: max(12px, env(safe-area-inset-right, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 20;
+  background: var(--text); color: var(--bg); border-radius: 999px; padding: 8px 14px; font-size: 15px; font-variant-numeric: tabular-nums; }
+.timeup { position: fixed; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; padding: 24px;
+  background: var(--bg); color: var(--text); font-size: 1.3rem; font-weight: 700; text-align: center; }
+.timeup[hidden], .timer[hidden] { display: none; }

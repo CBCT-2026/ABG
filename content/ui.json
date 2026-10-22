@@ -32,7 +32,10 @@
   "videoNotReady": "The narrated video is not ready yet.",
   "chapters": "Chapters",
   "stages": "Stages",
-  "controls": "Model controls"
+  "controls": "Model controls",
+  "startAgain": "Start again",
+  "timeLeft": "Time left",
+  "timeUp": "Time is up. Please tell the researcher."
  },
  "ja": {
   "title": "歯ぐきの骨のすき間をうめる手術：3つの段階",
@@ -67,6 +70,9 @@
   "videoNotReady": "ナレーション動画は、まだできていません。",
   "chapters": "チャプター",
   "stages": "段階",
-  "controls": "模型のそうさ"
+  "controls": "模型のそうさ",
+  "startAgain": "はじめからもう一度",
+  "timeLeft": "のこり時間",
+  "timeUp": "時間になりました。研究の担当者に知らせてください。"
  }
 }

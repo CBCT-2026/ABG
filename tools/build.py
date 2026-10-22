@@ -48,6 +48,13 @@ try {{ if (sessionStorage.getItem('theme') === 'dark') document.documentElement.
 <link rel="stylesheet" href="{up}style.css">
 '''
 
+def model_head(up):
+    return f'''<script>
+// The models are Draco-compressed; the decoder is served from this site, so no outside download is needed.
+self.ModelViewerElement = {{ dracoDecoderLocation: new URL('{up}vendor/draco/', location.href).href }};
+</script>
+'''
+
 def bar(lang, up, other_href):
     t = UI[lang]; o = 'ja' if lang == 'en' else 'en'
     return f'''<header class="bar">
@@ -80,7 +87,7 @@ def stage_page(lang, i, stage):
     prev = f'<a href="../{STAGES[i - 1]}/">← {t[f"st{n - 1}"]}</a>' if i > 0 else '<span></span>'
     nxt = f'<a href="../{STAGES[i + 1]}/">{t[f"st{n + 1}"]} →</a>' if i < 2 else '<span></span>'
     o = 'ja' if lang == 'en' else 'en'
-    return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + f'''<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+    return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + model_head(up) + f'''<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
 {bar(lang, up, f"{up}{o}/{stage}/")}
@@ -88,7 +95,7 @@ def stage_page(lang, i, stage):
   <h1>{t['title']}</h1>
   {steps(lang, stage, '../')}
   <!-- MODEL: placeholder on every stage until the stage models are built. See README. -->
-  <model-viewer id="mv" src="{up}models/{MODEL}.glb" ios-src="{up}models/{MODEL}.usdz"
+  <model-viewer id="mv" src="{up}models/{MODEL}.glb" ios-src="{up}models/{MODEL}.usdz" poster="{up}models/{MODEL}-poster.webp"
     alt="{html.escape(t[f'alt{n}'])}"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
     camera-controls camera-orbit="0deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
@@ -115,7 +122,10 @@ def stage_page(lang, i, stage):
 </details>
   </section>
   <nav class="next" aria-label="{t['stages']}">{prev}{nxt}</nav>
+  <p class="restart"><button type="button" id="restart" data-home="../pre-op/">{t['startAgain']}</button></p>
   <p class="disclaimer">{t['disclaimer']}</p>
+  <div class="timer" id="timer" hidden><span>{t['timeLeft']}</span> <b id="timer-left"></b></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>{t['timeUp']}</p></div>
 </main>
 <script src="{up}site.js"></script>
 </body>
