@@ -16,7 +16,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
 </script>
 <script type="module" src="../../vendor/model-viewer/model-viewer.min.js"></script>
 </head>
-<body>
+<body data-stage="long-term">
 <header class="bar">
   <div class="bar-left">
     <a class="lang" href="../../ja/long-term/" lang="ja" hreflang="ja">日本語</a>
@@ -43,6 +43,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <p class="hint" id="hint" data-touch="Swipe to turn the model. Pinch to make it bigger or smaller." data-mouse="Drag to turn the model. Scroll to make it bigger or smaller.">Drag to turn the model. Scroll to make it bigger or smaller.</p>
+  <div class="narration"><span id="listen-label">Listen to the narration</span><audio controls preload="none" aria-labelledby="listen-label" src="../../video/audio/en/stage-3.mp3"></audio></div>
   <div class="controls" role="group" aria-label="Model controls">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">Whole jaw</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">From below</button>

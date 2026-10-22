@@ -95,7 +95,7 @@ def stage_page(lang, i, stage):
     o = 'ja' if lang == 'en' else 'en'
     return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + model_head(up) + f'''<script type="module" src="{up}vendor/model-viewer/model-viewer.min.js"></script>
 </head>
-<body>
+<body data-stage="{stage}">
 {bar(lang, up, f"{up}{o}/{stage}/")}
 <main>
   <h1>{t['title']}</h1>
@@ -110,6 +110,7 @@ def stage_page(lang, i, stage):
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <p class="hint" id="hint" data-touch="{t['hintTouch']}" data-mouse="{t['hintMouse']}">{t['hintMouse']}</p>
+  <div class="narration"><span id="listen-label">{t['listen']}</span><audio controls preload="none" aria-labelledby="listen-label" src="{up}video/audio/{lang}/stage-{n}.mp3"></audio></div>
   <div class="controls" role="group" aria-label="{t['controls']}">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">{t['vFront']}</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">{t['vBelow']}</button>
@@ -132,7 +133,7 @@ def stage_page(lang, i, stage):
   <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">{t['startAgain']}</button></p>
   <p class="disclaimer">{t['disclaimer']}</p>
   <div class="timer" id="timer" hidden><span>{t['timeLeft']}</span> <b id="timer-left"></b></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">{t['timeUp']}</p><button type="button" class="again" data-home="../pre-op/">{t['startAgain']}</button><p class="device" id="device" data-label="{t['device']}" data-phone="{t['phone']}" data-tablet="{t['tablet']}" data-computer="{t['computer']}" data-touch="{t['touch']}" data-mouse="{t['mouse']}"></p></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">{t['timeUp'] if i == 2 else t['stageUp']}</p>{'<button type="button" class="again" data-home="../pre-op/">' + t['startAgain'] + '</button>' if i == 2 else '<a class="next-stage" href="../' + STAGES[i + 1] + '/">' + t['nextStage'] + ' →</a>'}<p class="device" id="device" data-label="{t['device']}" data-phone="{t['phone']}" data-tablet="{t['tablet']}" data-computer="{t['computer']}" data-touch="{t['touch']}" data-mouse="{t['mouse']}"></p></div>
 </main>
 <script src="{up}site.js"></script>
 </body>

@@ -43,7 +43,10 @@
   "tablet": "tablet",
   "computer": "computer",
   "touch": "touch",
-  "mouse": "mouse"
+  "mouse": "mouse",
+  "stageUp": "Time for this stage is up.",
+  "nextStage": "Next stage",
+  "listen": "Listen to the narration"
  },
  "ja": {
   "title": "歯ぐきの骨のすき間をうめる手術：3つの段階",
@@ -89,6 +92,9 @@
   "tablet": "タブレット",
   "computer": "パソコン",
   "touch": "タッチ",
-  "mouse": "マウス"
+  "mouse": "マウス",
+  "stageUp": "この段階の時間は終わりです。",
+  "nextStage": "次の段階へ",
+  "listen": "ナレーションを聞く"
  }
 }

@@ -229,7 +229,8 @@ dialog.qr button { margin-top: 16px; font: 600 16px/1.2 var(--font); min-height:
 model-viewer.no-viewer { display: block; position: relative; min-height: 240px; }
 
 /* Review fixes (22 Oct 2026) */
-.study main { padding-bottom: 72px; }  /* room for the timer so it never covers the last button or text */
+.timer { top: 0; left: 0; right: 0; bottom: auto; border-radius: 0; text-align: center; padding: 8px 14px calc(8px); padding-top: max(8px, env(safe-area-inset-top, 0px)); }
+.study body { padding-top: 40px; }  /* the timer is a strip across the top, so it never covers a button or text */
 .timer.soon { background: #b3261e; color: #fff; }
 .cite a { padding: 6px 3px; margin: -6px -1px; }  /* bigger tap area without moving the text */
 .refs summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; }
@@ -239,3 +240,7 @@ model-viewer.no-viewer { display: block; position: relative; min-height: 240px; 
 .pick span.soon small { display: block; font-size: 12px; font-weight: 400; margin-top: 4px; }
 :lang(ja) .controls button, :lang(ja) .theme, :lang(ja) .steps a { word-break: keep-all; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+.narration { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 12px; margin: 10px 0 12px; font-size: 15px; font-weight: 600; }
+.narration audio { width: min(100%, 360px); height: 40px; }
+.timeup .next-stage { margin-top: 18px; font: 600 16px/1.2 var(--font); min-height: 44px; padding: 12px 22px; border-radius: 999px;
+  color: var(--bg); background: var(--accent); text-decoration: none; }

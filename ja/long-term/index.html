@@ -16,7 +16,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
 </script>
 <script type="module" src="../../vendor/model-viewer/model-viewer.min.js"></script>
 </head>
-<body>
+<body data-stage="long-term">
 <header class="bar">
   <div class="bar-left">
     <a class="lang" href="../../en/long-term/" lang="en" hreflang="en">English</a>
@@ -43,6 +43,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <p class="hint" id="hint" data-touch="指でなぞると、模型が回ります。指でつまむと、大きさが変わります。" data-mouse="ドラッグすると、模型が回ります。ホイールを回すと、大きさが変わります。">ドラッグすると、模型が回ります。ホイールを回すと、大きさが変わります。</p>
+  <div class="narration"><span id="listen-label">ナレーションを聞く</span><audio controls preload="none" aria-labelledby="listen-label" src="../../video/audio/ja/stage-3.mp3"></audio></div>
   <div class="controls" role="group" aria-label="模型のそうさ">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">上あご全体</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">下から</button>

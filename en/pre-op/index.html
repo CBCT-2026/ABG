@@ -16,7 +16,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
 </script>
 <script type="module" src="../../vendor/model-viewer/model-viewer.min.js"></script>
 </head>
-<body>
+<body data-stage="pre-op">
 <header class="bar">
   <div class="bar-left">
     <a class="lang" href="../../ja/pre-op/" lang="ja" hreflang="ja">日本語</a>
@@ -47,6 +47,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <p class="hint" id="hint" data-touch="Swipe to turn the model. Pinch to make it bigger or smaller." data-mouse="Drag to turn the model. Scroll to make it bigger or smaller.">Drag to turn the model. Scroll to make it bigger or smaller.</p>
+  <div class="narration"><span id="listen-label">Listen to the narration</span><audio controls preload="none" aria-labelledby="listen-label" src="../../video/audio/en/stage-1.mp3"></audio></div>
   <div class="controls" role="group" aria-label="Model controls">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">Whole jaw</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">From below</button>
@@ -121,7 +122,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
   <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">Start again</button></p>
   <p class="disclaimer">This page is for a study at Aichi Gakuin University and Nagoya University. Version 0.1, 22 October 2026.</p>
   <div class="timer" id="timer" hidden><span>Time left</span> <b id="timer-left"></b></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">Time is up. Please tell the researcher.</p><button type="button" class="again" data-home="../pre-op/">Start again</button><p class="device" id="device" data-label="Device" data-phone="phone" data-tablet="tablet" data-computer="computer" data-touch="touch" data-mouse="mouse"></p></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">Time for this stage is up.</p><a class="next-stage" href="../short-term/">Next stage →</a><p class="device" id="device" data-label="Device" data-phone="phone" data-tablet="tablet" data-computer="computer" data-touch="touch" data-mouse="mouse"></p></div>
 </main>
 <script src="../../site.js"></script>
 </body>

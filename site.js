@@ -115,21 +115,22 @@ document.querySelectorAll('.cite a').forEach(a => a.addEventListener('click', ()
   if (d) d.open = true;
 }));
 
-// Study mode: open any stage page with ?study=1&t=<seconds> (for example /en/pre-op/?study=1&t=120).
-// The same fixed viewing time then covers all three stage pages in this tab. The language switch and the
+// Study mode: open stage 1 with ?study=1&t=<seconds per stage> (for example /en/pre-op/?study=1&t=60).
+// Each stage page gets that viewing time, counted from when it is first opened in this tab. When a stage's time is up,
+// the page asks the participant to go to the next stage; after stage 3 it asks them to tell the researcher. The language switch and the
 // link to the home page are hidden, so every participant sees only this material, in the language of their form.
 // When the time is up, a full-page message asks the participant to tell the researcher.
+const clearEnds = () => { try { Object.keys(sessionStorage).filter(k => k.startsWith('studyEnd')).forEach(k => sessionStorage.removeItem(k)); } catch (e) {} };
 (function study() {
   let cfg = null;
   const q = new URLSearchParams(location.search);
   try {
     if (q.get('study') === '1') {
-      cfg = { t: Math.max(10, parseInt(q.get('t') || '120', 10) || 120) };
+      cfg = { t: Math.max(10, parseInt(q.get('t') || '60', 10) || 60) };
       sessionStorage.setItem('study', JSON.stringify(cfg));
-      // Opening the study link starts a fresh timer; reloading the page or going back keeps the running one.
+      // Opening the study link starts fresh timers; reloading the page or going back keeps the running ones.
       const nav = performance.getEntriesByType('navigation')[0];
-      const fresh = !nav || nav.type === 'navigate';
-      if (fresh || !sessionStorage.getItem('studyEnd')) sessionStorage.setItem('studyEnd', String(Date.now() + cfg.t * 1000));
+      if (!nav || nav.type === 'navigate') clearEnds();
     } else {
       cfg = JSON.parse(sessionStorage.getItem('study') || 'null');
     }
@@ -140,9 +141,10 @@ document.querySelectorAll('.cite a').forEach(a => a.addEventListener('click', ()
   document.querySelectorAll('.bar .lang, .bar .logos').forEach(a => { a.removeAttribute('href'); a.setAttribute('tabindex', '-1'); a.setAttribute('aria-hidden', 'true'); });
   const timer = document.getElementById('timer'), left = document.getElementById('timer-left'), up = document.getElementById('timeup');
   if (!timer) return;
-  const fallback = Date.now() + cfg.t * 1000;
+  const key = 'studyEnd:' + document.body.dataset.stage, fallback = Date.now() + cfg.t * 1000;
+  try { if (!sessionStorage.getItem(key)) sessionStorage.setItem(key, String(fallback)); } catch (e) {}
   // Read the end time on every tick, so a page restored by the back button stays in step.
-  const endTime = () => { try { return parseInt(sessionStorage.getItem('studyEnd'), 10) || fallback; } catch (e) { return fallback; } };
+  const endTime = () => { try { return parseInt(sessionStorage.getItem(key), 10) || fallback; } catch (e) { return fallback; } };
   timer.hidden = false;
   // Device line on the time-up screen, so the researcher can write it on the study form (nothing is sent anywhere).
   const dev = document.getElementById('device');
@@ -152,11 +154,12 @@ document.querySelectorAll('.cite a').forEach(a => a.addEventListener('click', ()
     left.textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
     timer.classList.toggle('soon', s <= 15);
     if (s === 0) {
-      // Time is up: only the message and the researcher's Start again button can be used.
+      // Time is up: only the message and its button (next stage, or the researcher's Start again after stage 3) can be used.
       up.hidden = false; clearInterval(id);
       [...document.body.children].forEach(el => { if (!el.contains(up)) el.inert = true; });
       [...up.parentNode.children].forEach(el => { if (el !== up) el.inert = true; });
-      const again = up.querySelector('.again'); if (again) again.focus();
+      const btn = up.querySelector('.again, .next-stage'); if (btn) btn.focus();
+      document.querySelectorAll('audio').forEach(a => a.pause());
     }
   };
   const id = setInterval(tick, 500); tick();
@@ -167,7 +170,8 @@ document.querySelectorAll('.cite a').forEach(a => a.addEventListener('click', ()
 // In study mode the button at the bottom of the page is hidden, so a participant cannot reset their own timer;
 // the researcher uses the one on the time-up screen.
 document.querySelectorAll('.again').forEach(restart => restart.addEventListener('click', () => {
-  try { sessionStorage.removeItem('theme'); sessionStorage.removeItem('studyEnd'); } catch (e) {}
+  try { sessionStorage.removeItem('theme'); } catch (e) {}
+  clearEnds();
   let study = null;
   try { study = JSON.parse(sessionStorage.getItem('study') || 'null'); } catch (e) {}
   const url = new URL(restart.dataset.home, location.href);
