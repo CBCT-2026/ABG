@@ -46,4 +46,4 @@ Checked with the patient-education-toolkit. The ABG text is plain, but some fixe
 5. Branching on Q1: "do not agree" > End of the form.
 6. Settings: anyone can respond, shuffle off, progress bar on, thank-you message.
 7. Test with Preview on a phone, then delete the test responses.
-8. Put the two form links in both places that use them: the flyer QR codes (`../recruitment-flyer/build_flyer.py --form-en ... --form-ja ...`) and the Microsoft Forms button at the bottom of the site's landing page. The flyer QR codes go to the forms. The site's own expandable QR code goes to the landing page (https://cbct-2026.github.io/ABG/).
+8. Put the two form links in both places that use them: the flyer QR codes (`../recruitment-flyer/build_flyer.py --form-en ... --form-ja ...`) and the site's Microsoft Forms button (paste them into `FORM_EN` and `FORM_JA` at the top of `tools/build.py`, then run `python3 tools/build.py`). The flyer QR codes go to the forms. The site's own expandable QR code goes to the landing page (https://cbct-2026.github.io/ABG/).

@@ -63,7 +63,7 @@
      "labels": [],
      "sentences": [
       "This is the upper jaw of a child, about 9 to 10 years old.",
-      "The child was born with a cleft on the left side."
+      "The child was born with a split in the lip and gum on the left, called a cleft."
      ]
     },
     {
@@ -72,8 +72,7 @@
       "gum"
      ],
      "sentences": [
-      "The pink part is the gum.",
-      "Under it, there is a gap in the bone that holds the teeth."
+      "Under the pink gum, there is a gap in the bone that holds the teeth."
      ]
     },
     {
@@ -93,7 +92,7 @@
       "window"
      ],
      "sentences": [
-      "High up in the bone, the adult eye tooth waits to come down.",
+      "High in the bone, the adult eye tooth waits to come down.",
       "It needs bone to grow into."
      ]
     },
@@ -103,8 +102,8 @@
       "gap"
      ],
      "sentences": [
-      "So, at about 8 to 11 years old, a surgeon fills the gap with bone, most often from the hip.",
-      "This is called a bone graft."
+      "At about 8 to 11 years old, a surgeon fills the gap with bone, most often from the hip.",
+      "This is a bone graft."
      ]
     }
    ]
@@ -211,7 +210,7 @@
    ]
   }
  ],
- "sentence_gap": 0.5,
- "paragraph_gap": 1.8,
+ "sentence_gap": 0.4,
+ "paragraph_gap": 1.2,
  "chapter_gap": 2.5
 }

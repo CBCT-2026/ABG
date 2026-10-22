@@ -1,0 +1,12 @@
+q1: In this model, which side is the cleft on?
+q2: Where is the gap that the operation fills?
+q3: Which tooth is missing in this model, and how common is that in children with a cleft?
+q4: Why does the adult eye tooth need the bone graft?
+q5: At about what age is the bone graft usually done?
+q6: Where does the bone for the graft most often come from?
+q7: What has changed about 3 months after the operation?
+q8: How and when do doctors check that the new bone has taken?
+q9: What might you feel where the bone was taken?
+q10: Years later, where is the eye tooth?
+q11: What lines up the teeth in the later stage?
+q12: What are the choices for the gap left by the tooth that never grew?
