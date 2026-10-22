@@ -1,0 +1,62 @@
+/* 2D information sheet: one side of one A4 sheet, in colour. Same text and pictures as the AR web page.
+   Colours follow the site (neutral slate and steel blue). Aichi Gakuin University logo first, then Nagoya University. */
+:root { --text: #1c2630; --muted: #56636f; --line: #dde3e8; --accent: #23617f; --card: #eef3f6;
+  --important-bg: #eef5fa; --important-line: #8bb3cc; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #fff; color: var(--text); }
+body { font: 15px/1.5 system-ui, -apple-system, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+main { max-width: 820px; margin: 0 auto; padding: 12px; }
+p, li { text-align: justify; hyphens: auto; }
+h2 { color: var(--accent); }
+.sheet-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--accent); color: #fff;
+  border-radius: 10px; padding: 8px 10px 8px 16px; }
+.sheet-head h1 { margin: 0; font-size: 22px; line-height: 1.25; }
+.sheet-head .stage { margin: 0; font-weight: 600; opacity: .9; text-align: left; }
+.logos { display: flex; gap: 6px; flex: none; }
+.logo { height: 52px; background: #fff; border-radius: 6px; padding: 3px 5px; }
+.important { background: var(--important-bg); border: 2px solid var(--important-line); border-radius: 10px; padding: 8px 12px; margin: 8px 0; }
+.important p { margin: 0; text-align: center; text-align-last: center; }
+.visual { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; }
+.visual.n3 { grid-template-columns: 1.25fr 1fr 1fr; } .visual.n4 { grid-template-columns: repeat(4, 1fr); }
+.visual figure { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
+.visual img { width: 100%; object-fit: contain; display: block; min-height: 0; flex: 1 1 auto; }
+.visual figcaption { font-size: 13px; font-weight: 600; color: var(--accent); padding: 2px 8px 5px; }
+.ph { flex: 1 1 auto; min-height: 120px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; text-align: center;
+  background: repeating-linear-gradient(45deg, #fff6f6, #fff6f6 10px, #fde8e8 10px, #fde8e8 20px); border: 2px dashed #c62828; color: #8e1c1c; padding: 8px; }
+.ph b { background: #c62828; color: #fff; padding: 1px 6px; border-radius: 3px; }
+.ph small { color: #56636f; }
+.cite { font-size: .7em; line-height: 0; margin-left: 1px; }
+.cite a { text-decoration: none; color: inherit; }
+.cite + .cite::before { content: ","; }
+.refs ol { font-size: 12px; color: var(--muted); }
+.refs li { text-align: left; overflow-wrap: anywhere; }
+.disclaimer { font-size: 12px; color: var(--muted); }
+
+@page { size: A4; margin: 8mm; }
+@media print {
+  body { font-size: 9pt; line-height: 1.35; }
+  html[lang="ja"] body { font-size: 8.8pt; line-height: 1.45; }
+  main { max-width: none; padding: 0; height: 281mm; display: flex; flex-direction: column; }
+  .sheet-head { padding: 2.5mm 3mm 2.5mm 5mm; }
+  .sheet-head h1 { font-size: 16pt; }
+  .sheet-head .stage { font-size: 10pt; }
+  .logo { height: 13mm; }
+  .important { margin: 2.5mm 0; padding: 2mm 4mm; font-size: 10.5pt; }
+  .visual { gap: 2.5mm; margin-bottom: 2mm; }
+  .visual img, .visual .ph { height: 56mm; }
+  .visual.n4 img, .visual.n4 .ph { height: 58mm; }
+  .visual figcaption { font-size: 8.5pt; padding: .5mm 2mm 1mm; }
+  .text { column-count: 2; column-gap: 6mm; flex: 1 1 auto; }
+  .text section { padding: 0 0 1.6mm; break-inside: avoid; }
+  .text h2 { font-size: 10.5pt; margin: 0 0 .8mm; break-after: avoid; }
+  .text p { margin: 0 0 1.3mm; }
+  .text ul { margin: 0 0 1.3mm; padding-left: 4.5mm; }
+  .refs { border-top: 1px solid var(--line); padding-top: .8mm; text-align: justify; }
+  .refs h2 { display: inline; font-size: 6pt; margin: 0 1mm 0 0; color: var(--text); }
+  .refs ol { display: inline; padding: 0; font-size: 5.4pt; line-height: 1.3; counter-reset: ref; }
+  .refs li { display: inline; margin: 0 1.2mm 0 0; }
+  .refs li::before { counter-increment: ref; content: counter(ref) ". "; font-weight: 700; }
+  .refs a { color: inherit; text-decoration: none; }
+  .disclaimer { font-size: 6pt; margin: .8mm 0 0; }
+}

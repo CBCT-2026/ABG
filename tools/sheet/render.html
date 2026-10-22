@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../style.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+  body { margin: 0; background: #fff; }
+  model-viewer { width: var(--w, 900px); height: var(--h, 600px); max-height: none; border-radius: 0; background: #fff; }
+  .hotspot .label { font-size: 21px; padding: 3px 8px; } .hotspot .label small { font-size: 16px; }
+</style>
+</head>
+<body>
+<!-- Renders the pictures for the 2D information sheets. Driven by tools/sheet/render.js; not part of the site. -->
+<model-viewer id="mv" src="../../models/abg-placeholder.glb" camera-orbit="0deg 80deg auto" interaction-prompt="none"
+  shadow-intensity="1" exposure="1.05" loading="eager"></model-viewer>
+</body>
+</html>

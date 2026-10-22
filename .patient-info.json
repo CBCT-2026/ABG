@@ -1,8 +1,83 @@
 {
-  "files": [{ "glob": "content/*-en.html", "lang": "en" }, { "glob": "content/*-ja.html", "lang": "ja" }],
-  "pairs": [["content/pre-op-en.html", "content/pre-op-ja.html"], ["content/short-term-en.html", "content/short-term-ja.html"], ["content/long-term-en.html", "content/long-term-ja.html"]],
-  "ignore_selectors": ["sup.cite", ".refs"],
+  "files": [
+    {
+      "glob": "content/*-en.html",
+      "lang": "en"
+    },
+    {
+      "glob": "content/*-ja.html",
+      "lang": "ja"
+    },
+    {
+      "glob": "content/narration.md",
+      "lang": "auto"
+    },
+    {
+      "glob": "sheet/en/*/index.html",
+      "lang": "en"
+    },
+    {
+      "glob": "sheet/ja/*/index.html",
+      "lang": "ja"
+    }
+  ],
+  "pairs": [
+    [
+      "content/pre-op-en.html",
+      "content/pre-op-ja.html"
+    ],
+    [
+      "content/short-term-en.html",
+      "content/short-term-ja.html"
+    ],
+    [
+      "content/long-term-en.html",
+      "content/long-term-ja.html"
+    ]
+  ],
+  "ignore_selectors": [
+    "sup.cite",
+    ".refs",
+    ".ph"
+  ],
   "address_reader": "you",
   "ja_address_reader": "omit",
-  "jargon_allow": ["AR"]
+  "jargon_allow": [
+    "AR"
+  ],
+  "spoken": [
+    {
+      "glob": "content/narration.md",
+      "max_seconds": 45,
+      "sections": "^Stage 1 English$"
+    },
+    {
+      "glob": "content/narration.md",
+      "max_seconds": 45,
+      "sections": "^Stage 1 Japanese$"
+    },
+    {
+      "glob": "content/narration.md",
+      "max_seconds": 45,
+      "sections": "^Stage 2 English$"
+    },
+    {
+      "glob": "content/narration.md",
+      "max_seconds": 45,
+      "sections": "^Stage 2 Japanese$"
+    },
+    {
+      "glob": "content/narration.md",
+      "max_seconds": 45,
+      "sections": "^Stage 3 English$"
+    },
+    {
+      "glob": "content/narration.md",
+      "max_seconds": 45,
+      "sections": "^Stage 3 Japanese$"
+    }
+  ],
+  "ignore_sections": [
+    "^Narration script"
+  ]
 }

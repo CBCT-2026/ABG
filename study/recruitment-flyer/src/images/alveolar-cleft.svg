@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 230" font-family="Inter, 'Noto Sans JP', sans-serif">
+  <!-- Simple front view of a child's upper teeth with a cleft in the gum bone on the child's left (right of the picture).
+       Drawn for the ABG recruitment flyer; not the study model. -->
+  <defs>
+    <clipPath id="jaw"><path d="M20 20 H380 V150 H20 Z"/></clipPath>
+  </defs>
+  <g clip-path="url(#jaw)">
+    <!-- bone -->
+    <path d="M20 20 H380 V120 H20 Z" fill="#e6dccb"/>
+    <!-- gum -->
+    <path d="M20 95 Q60 88 100 96 Q140 104 165 100 Q200 96 236 100 L242 100 L242 150 H20 Z" fill="#e3a0a0"/>
+    <path d="M262 100 Q300 92 340 98 Q365 102 380 98 V150 H262 Z" fill="#e3a0a0"/>
+    <!-- the cleft: a gap through gum and bone -->
+    <path d="M238 150 L240 100 Q244 60 250 22 L254 22 Q260 60 264 100 L266 150 Z" fill="#fff"/>
+    <path d="M240 100 Q244 60 250 22 M254 22 Q260 60 264 100" fill="none" stroke="#b9a986" stroke-width="1.5"/>
+  </g>
+  <!-- unerupted adult eye tooth (canine), high in the bone, leaning toward the gap -->
+  <g transform="rotate(-14 292 62)">
+    <path d="M280 30 Q292 22 304 30 L306 72 Q292 96 278 72 Z" fill="#f7f4ee" stroke="#56636f" stroke-width="2" stroke-dasharray="5 4"/>
+  </g>
+  <!-- teeth: picture left = child's right -->
+  <g fill="#fbfaf6" stroke="#8a8f94" stroke-width="1.5">
+    <rect x="34" y="118" width="40" height="40" rx="10"/>
+    <rect x="76" y="118" width="30" height="46" rx="10"/>
+    <rect x="108" y="116" width="26" height="54" rx="10"/>
+    <rect x="136" y="114" width="27" height="62" rx="9"/>
+    <rect x="166" y="112" width="32" height="74" rx="9"/>
+    <rect x="203" y="112" width="32" height="74" rx="9" transform="rotate(5 219 149)"/>
+    <rect x="270" y="116" width="26" height="54" rx="10"/>
+    <rect x="298" y="118" width="30" height="46" rx="10"/>
+    <rect x="330" y="118" width="40" height="40" rx="10"/>
+  </g>
+  <!-- callouts -->
+  <g font-size="13" font-weight="700" fill="#fff" text-anchor="middle">
+    <line x1="252" y1="140" x2="252" y2="205" stroke="#23617f" stroke-width="1.5"/>
+    <circle cx="252" cy="212" r="10" fill="#23617f"/><text x="252" y="216.5">1</text>
+    <line x1="319" y1="52" x2="358" y2="40" stroke="#23617f" stroke-width="1.5"/>
+    <circle cx="366" cy="38" r="10" fill="#23617f"/><text x="366" y="42.5">2</text>
+  </g>
+</svg>
