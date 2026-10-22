@@ -17,12 +17,12 @@ def secs(lang, text):
 
 doc = new_doc('EN', track=True, landscape=False)
 para(doc, 'ABG Education Models Study: narration script (3D printed model and narrated video)', style='Title', justify=False)
-para(doc, 'Version 0.1, 22 October 2026. One part per stage, each spoken in 45 seconds or less by a computer voice '
+para(doc, 'Version 0.1, 22 October 2026. One part per stage, each spoken in 60 seconds or less by a computer voice '
      '(English bf_emma, Japanese jf_alpha, Kokoro-82M, as in the wisdom tooth study). With the 3D printed model it plays as audio only from the study device. The narrated video shows the same '
      'words as subtitles and the line labels in the right column, with the same names as the AR web page and the 2D '
      'information sheet. Track Changes is on: please type edits and add comments directly.')
 para(doc, 'Every sentence comes from, or shortens, the web page text for that stage (cbct-2026.github.io/ABG), with the same '
-     'sources. To fit 45 seconds, it leaves out: the medical names (alveolar cleft, agenesis, lateral incisor), the '
+     'sources. To fit 60 seconds, it leaves out: the medical names (alveolar cleft, agenesis, lateral incisor), the '
      'list of reasons for the graft, the best root stage for timing, wound opening, the return to school, and the '
      'details of each choice for the missing tooth. Source text: content/narration.md in the ABG repo.', color=NOTE, size=9)
 for ce, cj in zip(en['chapters'], ja['chapters']):

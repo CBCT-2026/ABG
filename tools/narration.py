@@ -22,7 +22,7 @@ SCENES = {
 }
 UI = json.load(open('content/ui.json'))
 VOICE = {'en': 'bf_emma', 'ja': 'jf_alpha'}  # Kokoro-82M voices used in the wisdom tooth study
-SPEED = {'en': 1.0, 'ja': 1.1}  # Kokoro's Japanese voice is slow; 1.1 keeps each stage within 45 s
+SPEED = {'en': 1.0, 'ja': 1.1}  # Kokoro's Japanese voice is slow; 1.1 keeps each stage well within 60 s
 text = open('content/narration.md', encoding='utf-8').read()
 parts = {h.strip(): b.strip() for h, b in re.findall(r'^## ([^\n]+)\n(.*?)(?=^## |\Z)', text, re.S | re.M)}
 for lang, name in (('en', 'English'), ('ja', 'Japanese')):
