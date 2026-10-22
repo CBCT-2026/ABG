@@ -100,6 +100,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
   <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">はじめからもう一度</button></p>
   <p class="disclaimer">このページは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。</p>
   <div class="timer" id="timer" hidden><span>のこり時間</span> <b id="timer-left"></b></div>
+  <div class="timeup gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-msg" hidden><p id="gate-msg">じゅんびができたら、スタートをおしてください。</p><button type="button" class="start" id="start">スタート</button></div>
   <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">時間になりました。研究の担当者に知らせてください。</p><button type="button" class="again" data-home="../pre-op/">はじめからもう一度</button><p class="device" id="device" data-label="端末" data-phone="スマートフォン" data-tablet="タブレット" data-computer="パソコン" data-touch="タッチ" data-mouse="マウス"></p></div>
 </main>
 <script src="../../site.js"></script>

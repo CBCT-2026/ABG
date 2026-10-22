@@ -224,7 +224,7 @@ dialog.qr button { margin-top: 16px; font: 600 16px/1.2 var(--font); min-height:
   color: var(--bg); background: var(--accent); border: 0; }
 /* Study mode: the participant cannot reset the timer; the researcher's Start again is on the time-up screen */
 .study .restart { display: none; }
-.timeup .again { margin-top: 18px; font: 600 16px/1.2 var(--font); min-height: 44px; padding: 10px 22px; border-radius: 999px; cursor: pointer;
+.timeup .again, .timeup .start { margin-top: 18px; font: 600 16px/1.2 var(--font); min-height: 44px; padding: 10px 22px; border-radius: 999px; cursor: pointer;
   color: var(--bg); background: var(--accent); border: 0; }
 model-viewer.no-viewer { display: block; position: relative; min-height: 240px; }
 

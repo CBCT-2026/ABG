@@ -141,11 +141,10 @@ const clearEnds = () => { try { Object.keys(sessionStorage).filter(k => k.starts
   document.querySelectorAll('.bar .lang, .bar .logos').forEach(a => { a.removeAttribute('href'); a.setAttribute('tabindex', '-1'); a.setAttribute('aria-hidden', 'true'); });
   const timer = document.getElementById('timer'), left = document.getElementById('timer-left'), up = document.getElementById('timeup');
   if (!timer) return;
-  const key = 'studyEnd:' + document.body.dataset.stage, fallback = Date.now() + cfg.t * 1000;
-  try { if (!sessionStorage.getItem(key)) sessionStorage.setItem(key, String(fallback)); } catch (e) {}
+  const key = 'studyEnd:' + document.body.dataset.stage;
+  let fallback = 0;
   // Read the end time on every tick, so a page restored by the back button stays in step.
   const endTime = () => { try { return parseInt(sessionStorage.getItem(key), 10) || fallback; } catch (e) { return fallback; } };
-  timer.hidden = false;
   // Device line on the time-up screen, so the researcher can write it on the study form (nothing is sent anywhere).
   const dev = document.getElementById('device');
   if (dev) dev.textContent = `${dev.dataset.label}: ${dev.dataset[device.kind]}, ${dev.dataset[device.input]}, ${device.size}`;
@@ -162,7 +161,23 @@ const clearEnds = () => { try { Object.keys(sessionStorage).filter(k => k.starts
       document.querySelectorAll('audio').forEach(a => a.pause());
     }
   };
-  const id = setInterval(tick, 500); tick();
+  let id;
+  const run = () => { timer.hidden = false; id = setInterval(tick, 500); tick(); };
+  // Each stage's time starts when the participant taps Start, so loading time and hand-over don't count.
+  const gate = document.getElementById('gate');
+  if (endTime() || !gate) { if (!endTime()) fallback = Date.now() + cfg.t * 1000; run(); return; }
+  timer.hidden = true;
+  gate.hidden = false;
+  const others = [...document.body.children].filter(el => !el.contains(gate)).concat([...gate.parentNode.children].filter(el => el !== gate));
+  others.forEach(el => { el.inert = true; });
+  const start = document.getElementById('start');
+  start.focus();
+  start.addEventListener('click', () => {
+    fallback = Date.now() + cfg.t * 1000;
+    try { sessionStorage.setItem(key, String(fallback)); } catch (e) {}
+    gate.hidden = true; others.forEach(el => { el.inert = false; });
+    run();
+  });
 })();
 
 // Start again: put everything back as the next participant should find it (light mode, labels on,

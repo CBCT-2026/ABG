@@ -133,6 +133,7 @@ def stage_page(lang, i, stage):
   <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">{t['startAgain']}</button></p>
   <p class="disclaimer">{t['disclaimer']}</p>
   <div class="timer" id="timer" hidden><span>{t['timeLeft']}</span> <b id="timer-left"></b></div>
+  <div class="timeup gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-msg" hidden><p id="gate-msg">{t['ready']}</p><button type="button" class="start" id="start">{t['start']}</button></div>
   <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">{t['timeUp'] if i == 2 else t['stageUp']}</p>{'<button type="button" class="again" data-home="../pre-op/">' + t['startAgain'] + '</button>' if i == 2 else '<a class="next-stage" href="../' + STAGES[i + 1] + '/">' + t['nextStage'] + ' →</a>'}<p class="device" id="device" data-label="{t['device']}" data-phone="{t['phone']}" data-tablet="{t['tablet']}" data-computer="{t['computer']}" data-touch="{t['touch']}" data-mouse="{t['mouse']}"></p></div>
 </main>
 <script src="{up}site.js"></script>
