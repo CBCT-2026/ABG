@@ -14,9 +14,9 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
 // The models are Draco-compressed; the decoder is served from this site, so no outside download is needed.
 self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/', location.href).href };
 </script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script type="module" src="../../vendor/model-viewer/model-viewer.min.js"></script>
 </head>
-<body>
+<body data-stage="long-term">
 <header class="bar">
   <div class="bar-left">
     <a class="lang" href="../../ja/long-term/" lang="ja" hreflang="ja">日本語</a>
@@ -43,6 +43,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <p class="hint" id="hint" data-touch="Swipe to turn the model. Pinch to make it bigger or smaller." data-mouse="Drag to turn the model. Scroll to make it bigger or smaller.">Drag to turn the model. Scroll to make it bigger or smaller.</p>
+  <div class="narration"><span id="listen-label">Listen to the narration</span><audio controls preload="none" aria-labelledby="listen-label" src="../../video/audio/en/stage-3.mp3"></audio></div>
   <div class="controls" role="group" aria-label="Model controls">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">Whole jaw</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">From below</button>
@@ -73,7 +74,6 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <li>an <b>implant</b>: a small post in the bone with a false tooth (a <b>crown</b>) on top</li>
     <li>a <b>bridge</b>: a false tooth with one wing glued to the back of the tooth next to the gap</li>
   </ul>
-  <p>The model has parts you can swap to show each choice. The braces clip on and off.</p>
   <p>Your cleft team will talk with you about which plan suits you.<sup class="cite"><a href="#ref-10">10</a></sup></p>
 </section>
 
@@ -81,25 +81,26 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
 <details>
   <summary><h2>Sources</h2></summary>
   <ol>
-    <li id="ref-1">Bergland O, Semb G, Abyholm FE. Elimination of the residual alveolar cleft by secondary bone grafting and subsequent orthodontic treatment. Cleft Palate J. 1986;23:175-205. PMID 3524905. <a href="https://pubmed.ncbi.nlm.nih.gov/3524905/">pubmed.ncbi.nlm.nih.gov/3524905</a></li>
-    <li id="ref-2">Rivers J, et al. A clinical index scale for secondary alveolar bone graft success based on canine eruption. Eur J Orthod. 2025;47:cjae065. <a href="https://doi.org/10.1093/ejo/cjae065">doi.org/10.1093/ejo/cjae065</a></li>
-    <li id="ref-3">Vellone V, et al. Canine eruption after secondary alveolar bone graft in unilateral cleft lip and palate patients. J Craniofac Surg. 2017;28:1206-1210. <a href="https://doi.org/10.1097/SCS.0000000000003659">doi.org/10.1097/SCS.0000000000003659</a></li>
-    <li id="ref-4">Hoang L, et al. Factors contributing to canine impaction in unilateral cleft lip and palate patients undergoing alveolar bone grafts. J Oral Maxillofac Surg. 2023;81:1286-1294. <a href="https://doi.org/10.1016/j.joms.2023.06.029">doi.org/10.1016/j.joms.2023.06.029</a></li>
-    <li id="ref-5">Parkin N, et al. Open versus closed surgical exposure of canine teeth that are displaced in the roof of the mouth. Cochrane Database Syst Rev. 2017;(8):CD006966. <a href="https://doi.org/10.1002/14651858.CD006966.pub3">doi.org/10.1002/14651858.CD006966.pub3</a></li>
-    <li id="ref-6">Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a href="https://doi.org/10.1159/000337666">doi.org/10.1159/000337666</a></li>
-    <li id="ref-7">Lee A, et al. Dental rehabilitation of the unilateral cleft dental gap: long-term follow-up. J Craniofac Surg. 2024;35:199-202. <a href="https://doi.org/10.1097/SCS.0000000000009802">doi.org/10.1097/SCS.0000000000009802</a></li>
-    <li id="ref-8">Kokich VO Jr, Kinzer GA. Managing congenitally missing lateral incisors. Part I: canine substitution. J Esthet Restor Dent. 2005;17:5-10. <a href="https://doi.org/10.1111/j.1708-8240.2005.tb00076.x">doi.org/10.1111/j.1708-8240.2005.tb00076.x</a></li>
-    <li id="ref-9">Zachrisson BU, Rosa M, Toreskog S. Congenitally missing maxillary lateral incisors: canine substitution. Am J Orthod Dentofacial Orthop. 2011;139:434-438. <a href="https://doi.org/10.1016/j.ajodo.2011.02.003">doi.org/10.1016/j.ajodo.2011.02.003</a></li>
-    <li id="ref-10">Clerc MM, et al. Replacement of missing lateral incisors for patients with cleft lip and palate: a decision-making tree based on a systematic review. J Prosthet Dent. 2025;134:50-60. <a href="https://doi.org/10.1016/j.prosdent.2023.07.023">doi.org/10.1016/j.prosdent.2023.07.023</a></li>
-    <li id="ref-11">Knobloch LA, et al. Narrow diameter implants for a missing lateral incisor in cleft palate patients: five-year results. J Prosthet Dent. 2025;134:1738-1747. <a href="https://doi.org/10.1016/j.prosdent.2024.07.048">doi.org/10.1016/j.prosdent.2024.07.048</a></li>
+    <li id="ref-1">Bergland O, Semb G, Abyholm FE. Elimination of the residual alveolar cleft by secondary bone grafting and subsequent orthodontic treatment. Cleft Palate J. 1986;23:175-205. PMID 3524905. <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/3524905/">pubmed.ncbi.nlm.nih.gov/3524905</a></li>
+    <li id="ref-2">Rivers J, et al. A clinical index scale for secondary alveolar bone graft success based on canine eruption. Eur J Orthod. 2025;47:cjae065. <a target="_blank" rel="noopener" href="https://doi.org/10.1093/ejo/cjae065">doi.org/10.1093/ejo/cjae065</a></li>
+    <li id="ref-3">Vellone V, et al. Canine eruption after secondary alveolar bone graft in unilateral cleft lip and palate patients. J Craniofac Surg. 2017;28:1206-1210. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/SCS.0000000000003659">doi.org/10.1097/SCS.0000000000003659</a></li>
+    <li id="ref-4">Hoang L, et al. Factors contributing to canine impaction in unilateral cleft lip and palate patients undergoing alveolar bone grafts. J Oral Maxillofac Surg. 2023;81:1286-1294. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.joms.2023.06.029">doi.org/10.1016/j.joms.2023.06.029</a></li>
+    <li id="ref-5">Parkin N, et al. Open versus closed surgical exposure of canine teeth that are displaced in the roof of the mouth. Cochrane Database Syst Rev. 2017;(8):CD006966. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/14651858.CD006966.pub3">doi.org/10.1002/14651858.CD006966.pub3</a></li>
+    <li id="ref-6">Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a target="_blank" rel="noopener" href="https://doi.org/10.1159/000337666">doi.org/10.1159/000337666</a></li>
+    <li id="ref-7">Lee A, et al. Dental rehabilitation of the unilateral cleft dental gap: long-term follow-up. J Craniofac Surg. 2024;35:199-202. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/SCS.0000000000009802">doi.org/10.1097/SCS.0000000000009802</a></li>
+    <li id="ref-8">Kokich VO Jr, Kinzer GA. Managing congenitally missing lateral incisors. Part I: canine substitution. J Esthet Restor Dent. 2005;17:5-10. <a target="_blank" rel="noopener" href="https://doi.org/10.1111/j.1708-8240.2005.tb00076.x">doi.org/10.1111/j.1708-8240.2005.tb00076.x</a></li>
+    <li id="ref-9">Zachrisson BU, Rosa M, Toreskog S. Congenitally missing maxillary lateral incisors: canine substitution. Am J Orthod Dentofacial Orthop. 2011;139:434-438. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.ajodo.2011.02.003">doi.org/10.1016/j.ajodo.2011.02.003</a></li>
+    <li id="ref-10">Clerc MM, et al. Replacement of missing lateral incisors for patients with cleft lip and palate: a decision-making tree based on a systematic review. J Prosthet Dent. 2025;134:50-60. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.prosdent.2023.07.023">doi.org/10.1016/j.prosdent.2023.07.023</a></li>
+    <li id="ref-11">Knobloch LA, et al. Narrow diameter implants for a missing lateral incisor in cleft palate patients: five-year results. J Prosthet Dent. 2025;134:1738-1747. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.prosdent.2024.07.048">doi.org/10.1016/j.prosdent.2024.07.048</a></li>
   </ol>
 </details>
   </section>
   <nav class="next" aria-label="Stages"><a href="../short-term/">← 3 months after</a><span></span></nav>
-  <p class="restart"><button type="button" id="restart" data-home="../pre-op/">Start again</button></p>
+  <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">Start again</button></p>
   <p class="disclaimer">This page is for a study at Aichi Gakuin University and Nagoya University. Version 0.1, 22 October 2026.</p>
   <div class="timer" id="timer" hidden><span>Time left</span> <b id="timer-left"></b></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>Time is up. Please tell the researcher.</p><p class="device" id="device" data-label="Device" data-phone="phone" data-tablet="tablet" data-computer="computer" data-touch="touch" data-mouse="mouse"></p></div>
+  <div class="timeup gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-msg" hidden><div class="done-card"><h2 class="done-title">Stage 3: Years later</h2><p id="gate-msg">Tap Start when you are ready.</p><button type="button" class="start" id="start">Start</button></div></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><div class="done-card"><svg class="tick" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25l7 7 13-15"/></svg><h2 class="done-title">Thank you!</h2><p id="timeup-msg">Time is up. Please tell the researcher.</p><button type="button" class="again" data-home="../pre-op/">Start again</button></div><p class="device" id="device" data-label="Device" data-phone="phone" data-tablet="tablet" data-computer="computer" data-touch="touch" data-mouse="mouse"></p></div>
 </main>
 <script src="../../site.js"></script>
 </body>

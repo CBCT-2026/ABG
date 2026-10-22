@@ -14,9 +14,9 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
 // The models are Draco-compressed; the decoder is served from this site, so no outside download is needed.
 self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/', location.href).href };
 </script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script type="module" src="../../vendor/model-viewer/model-viewer.min.js"></script>
 </head>
-<body>
+<body data-stage="pre-op">
 <header class="bar">
   <div class="bar-left">
     <a class="lang" href="../../en/pre-op/" lang="en" hreflang="en">English</a>
@@ -47,6 +47,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <p class="hint" id="hint" data-touch="指でなぞると、模型が回ります。指でつまむと、大きさが変わります。" data-mouse="ドラッグすると、模型が回ります。ホイールを回すと、大きさが変わります。">ドラッグすると、模型が回ります。ホイールを回すと、大きさが変わります。</p>
+  <div class="narration"><span id="listen-label">ナレーションを聞く</span><audio controls preload="none" aria-labelledby="listen-label" src="../../video/audio/ja/stage-1.mp3"></audio></div>
   <div class="controls" role="group" aria-label="模型のそうさ">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">上あご全体</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">下から</button>
@@ -99,29 +100,30 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
 <details>
   <summary><h2>出典</h2></summary>
   <ol>
-    <li id="ref-1">Lilja J. Alveolar bone grafting. Indian J Plast Surg. 2009;42:S110-S115. <a href="https://doi.org/10.1055/s-0039-1699383">doi.org/10.1055/s-0039-1699383</a></li>
-    <li id="ref-2">Knüppe AL, et al. Developmental characteristics of the permanent upper lateral incisor in unilateral cleft lip and palate. Oral Maxillofac Surg. 2024;28:909-917. <a href="https://doi.org/10.1007/s10006-024-01226-1">doi.org/10.1007/s10006-024-01226-1</a></li>
-    <li id="ref-3">Dentino KM, et al. Is missing maxillary lateral incisor in complete cleft lip and palate a product of genetics or local environment? Angle Orthod. 2012;82:959-963. <a href="https://doi.org/10.2319/012012-49.1">doi.org/10.2319/012012-49.1</a></li>
-    <li id="ref-4">Suzuki A, Takahama Y. Maxillary lateral incisor of subjects with cleft lip and/or palate: Part 1. Cleft Palate Craniofac J. 1992;29:376-379. <a href="https://doi.org/10.1597/1545-1569_1992_029_0376_mliosw_2.3.co_2">doi.org/10.1597/1545-1569(1992)029&lt;0376:MLIOSW&gt;2.3.CO;2</a></li>
-    <li id="ref-5">AlQahtani SJ, Hector MP, Liversidge HM. Brief communication: the London atlas of human tooth development and eruption. Am J Phys Anthropol. 2010;142:481-490. <a href="https://doi.org/10.1002/ajpa.21258">doi.org/10.1002/ajpa.21258</a></li>
-    <li id="ref-6">Hoang L, et al. Factors contributing to canine impaction in unilateral cleft lip and palate patients undergoing alveolar bone grafts. J Oral Maxillofac Surg. 2023;81:1286-1294. <a href="https://doi.org/10.1016/j.joms.2023.06.029">doi.org/10.1016/j.joms.2023.06.029</a></li>
-    <li id="ref-7">Kadi H, et al. CBCT assessment of canine eruption and development following alveolar bone grafting in unilateral cleft lip and palate. Cleft Palate Craniofac J. 2023;60:386-394. <a href="https://doi.org/10.1177/10556656211064477">doi.org/10.1177/10556656211064477</a></li>
-    <li id="ref-8">Caceres Manfio A, et al. Eruption path of permanent maxillary canines after secondary alveolar bone grafting in complete unilateral cleft lip and palate. Am J Orthod Dentofacial Orthop. 2022;161:e416-e428. <a href="https://doi.org/10.1016/j.ajodo.2021.06.019">doi.org/10.1016/j.ajodo.2021.06.019</a></li>
-    <li id="ref-9">Weissler EH, et al. Alveolar bone grafting and cleft lip and palate: a review. Plast Reconstr Surg. 2016;138:1287-1295. <a href="https://doi.org/10.1097/PRS.0000000000002778">doi.org/10.1097/PRS.0000000000002778</a></li>
-    <li id="ref-10">Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a href="https://doi.org/10.1159/000337666">doi.org/10.1159/000337666</a></li>
-    <li id="ref-11">Kaura AS, et al. Optimal timing of alveolar cleft bone grafting. J Craniofac Surg. 2018;29:1551-1557. <a href="https://doi.org/10.1097/SCS.0000000000004680">doi.org/10.1097/SCS.0000000000004680</a></li>
-    <li id="ref-12">Fahradyan A, et al. Optimal timing of secondary alveolar bone grafting: a literature review. J Oral Maxillofac Surg. 2019;77:843-849. <a href="https://doi.org/10.1016/j.joms.2018.11.019">doi.org/10.1016/j.joms.2018.11.019</a></li>
-    <li id="ref-13">Bergland O, Semb G, Abyholm FE. Elimination of the residual alveolar cleft by secondary bone grafting and subsequent orthodontic treatment. Cleft Palate J. 1986;23:175-205. PMID 3524905. <a href="https://pubmed.ncbi.nlm.nih.gov/3524905/">pubmed.ncbi.nlm.nih.gov/3524905</a></li>
-    <li id="ref-14">Boyne PJ, Sands NR. Secondary bone grafting of residual alveolar and palatal clefts. J Oral Surg. 1972;30:87-92. PMID 4550446. <a href="https://pubmed.ncbi.nlm.nih.gov/4550446/">pubmed.ncbi.nlm.nih.gov/4550446</a></li>
-    <li id="ref-15">Pan W, et al. Secondary alveolar bone grafting and iliac cancellous bone harvesting. J Craniofac Surg. 2016;27:883-891. <a href="https://doi.org/10.1097/SCS.0000000000002603">doi.org/10.1097/SCS.0000000000002603</a></li>
+    <li id="ref-1">Lilja J. Alveolar bone grafting. Indian J Plast Surg. 2009;42:S110-S115. <a target="_blank" rel="noopener" href="https://doi.org/10.1055/s-0039-1699383">doi.org/10.1055/s-0039-1699383</a></li>
+    <li id="ref-2">Knüppe AL, et al. Developmental characteristics of the permanent upper lateral incisor in unilateral cleft lip and palate. Oral Maxillofac Surg. 2024;28:909-917. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s10006-024-01226-1">doi.org/10.1007/s10006-024-01226-1</a></li>
+    <li id="ref-3">Dentino KM, et al. Is missing maxillary lateral incisor in complete cleft lip and palate a product of genetics or local environment? Angle Orthod. 2012;82:959-963. <a target="_blank" rel="noopener" href="https://doi.org/10.2319/012012-49.1">doi.org/10.2319/012012-49.1</a></li>
+    <li id="ref-4">Suzuki A, Takahama Y. Maxillary lateral incisor of subjects with cleft lip and/or palate: Part 1. Cleft Palate Craniofac J. 1992;29:376-379. <a target="_blank" rel="noopener" href="https://doi.org/10.1597/1545-1569_1992_029_0376_mliosw_2.3.co_2">doi.org/10.1597/1545-1569(1992)029&lt;0376:MLIOSW&gt;2.3.CO;2</a></li>
+    <li id="ref-5">AlQahtani SJ, Hector MP, Liversidge HM. Brief communication: the London atlas of human tooth development and eruption. Am J Phys Anthropol. 2010;142:481-490. <a target="_blank" rel="noopener" href="https://doi.org/10.1002/ajpa.21258">doi.org/10.1002/ajpa.21258</a></li>
+    <li id="ref-6">Hoang L, et al. Factors contributing to canine impaction in unilateral cleft lip and palate patients undergoing alveolar bone grafts. J Oral Maxillofac Surg. 2023;81:1286-1294. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.joms.2023.06.029">doi.org/10.1016/j.joms.2023.06.029</a></li>
+    <li id="ref-7">Kadi H, et al. CBCT assessment of canine eruption and development following alveolar bone grafting in unilateral cleft lip and palate. Cleft Palate Craniofac J. 2023;60:386-394. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/10556656211064477">doi.org/10.1177/10556656211064477</a></li>
+    <li id="ref-8">Caceres Manfio A, et al. Eruption path of permanent maxillary canines after secondary alveolar bone grafting in complete unilateral cleft lip and palate. Am J Orthod Dentofacial Orthop. 2022;161:e416-e428. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.ajodo.2021.06.019">doi.org/10.1016/j.ajodo.2021.06.019</a></li>
+    <li id="ref-9">Weissler EH, et al. Alveolar bone grafting and cleft lip and palate: a review. Plast Reconstr Surg. 2016;138:1287-1295. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/PRS.0000000000002778">doi.org/10.1097/PRS.0000000000002778</a></li>
+    <li id="ref-10">Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a target="_blank" rel="noopener" href="https://doi.org/10.1159/000337666">doi.org/10.1159/000337666</a></li>
+    <li id="ref-11">Kaura AS, et al. Optimal timing of alveolar cleft bone grafting. J Craniofac Surg. 2018;29:1551-1557. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/SCS.0000000000004680">doi.org/10.1097/SCS.0000000000004680</a></li>
+    <li id="ref-12">Fahradyan A, et al. Optimal timing of secondary alveolar bone grafting: a literature review. J Oral Maxillofac Surg. 2019;77:843-849. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.joms.2018.11.019">doi.org/10.1016/j.joms.2018.11.019</a></li>
+    <li id="ref-13">Bergland O, Semb G, Abyholm FE. Elimination of the residual alveolar cleft by secondary bone grafting and subsequent orthodontic treatment. Cleft Palate J. 1986;23:175-205. PMID 3524905. <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/3524905/">pubmed.ncbi.nlm.nih.gov/3524905</a></li>
+    <li id="ref-14">Boyne PJ, Sands NR. Secondary bone grafting of residual alveolar and palatal clefts. J Oral Surg. 1972;30:87-92. PMID 4550446. <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/4550446/">pubmed.ncbi.nlm.nih.gov/4550446</a></li>
+    <li id="ref-15">Pan W, et al. Secondary alveolar bone grafting and iliac cancellous bone harvesting. J Craniofac Surg. 2016;27:883-891. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/SCS.0000000000002603">doi.org/10.1097/SCS.0000000000002603</a></li>
   </ol>
 </details>
   </section>
   <nav class="next" aria-label="段階"><span></span><a href="../short-term/">3か月後 →</a></nav>
-  <p class="restart"><button type="button" id="restart" data-home="../pre-op/">はじめからもう一度</button></p>
+  <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">はじめからもう一度</button></p>
   <p class="disclaimer">このページは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。</p>
   <div class="timer" id="timer" hidden><span>のこり時間</span> <b id="timer-left"></b></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>時間になりました。研究の担当者に知らせてください。</p><p class="device" id="device" data-label="端末" data-phone="スマートフォン" data-tablet="タブレット" data-computer="パソコン" data-touch="タッチ" data-mouse="マウス"></p></div>
+  <div class="timeup gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-msg" hidden><div class="done-card"><h2 class="done-title">段階1: 手術の前</h2><p id="gate-msg">じゅんびができたら、スタートをおしてください。</p><button type="button" class="start" id="start">スタート</button></div></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><div class="done-card"><svg class="tick" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25l7 7 13-15"/></svg><h2 class="done-title">段階1、おわり</h2><p id="timeup-msg">この段階の時間は終わりです。</p><a class="next-stage" href="../short-term/">次の段階へ →</a></div><p class="device" id="device" data-label="端末" data-phone="スマートフォン" data-tablet="タブレット" data-computer="パソコン" data-touch="タッチ" data-mouse="マウス"></p></div>
 </main>
 <script src="../../site.js"></script>
 </body>
