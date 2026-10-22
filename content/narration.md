@@ -1,6 +1,6 @@
 # Narration script: 3D printed model and narrated video
 
-One part per stage, spoken by a computer (text-to-speech) voice. The narrated video uses the same words as subtitles, with the same line labels as the AR web page and the 2D information sheet. Luke reads nothing aloud: the recorded voice plays while the participant looks at the 3D printed model, as in the wisdom tooth study. No card, stickers or labels go with the print, so the script points to parts by colour and position.
+One part per stage, spoken by a computer (text-to-speech) voice. While participants look at the 3D printed model, the narration plays as audio only from Luke's phone or the study device (Luke, 22 October 2026). The narrated video uses the same words as subtitles, with the same line labels as the AR web page and the 2D information sheet. No card, stickers or labels go with the print, so the script points to parts by colour and position.
 
 Every sentence is taken from, or shortens, the web page text for that stage, with the same sources (content/references.json). Each part aims at 45 seconds or less. Japanese needs a native-speaker check before recording.
 

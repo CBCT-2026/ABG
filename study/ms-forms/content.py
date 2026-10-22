@@ -50,12 +50,12 @@ def pages():
          '（手術の前、約3か月後、数年後）を説明する4つの方法をくらべます。', 'New text for ABG.'),
         ('What', 'What happens: Look at the four patient education materials, one after the other, for a short, fixed time each, '
                  'in a randomised order: a 2D information sheet (printed on paper), an augmented reality (AR) model on a web page '
-                 '(shown on the study iPad), a 3D printed model and a narrated video of the 3D model. Each one shows all three '
+                 '(shown on the study iPad), a 3D printed model with a short spoken explanation (audio only) and a narrated video of the 3D model. Each one shows all three '
                  'stages. After all four patient education materials have been seen, answer the questions on this form.',
          '参加の内容：4つのかん者向け説明資料を、ランダムな順番で1つずつ、決められた短い時間で見ます：2D説明シート（紙に印刷）、'
-         'ウェブページ上の拡張現実（AR）モデル（研究用のiPadで見ます）、3Dプリントモデル、3Dモデルのナレーション付き動画。'
+         'ウェブページ上の拡張現実（AR）モデル（研究用のiPadで見ます）、短い音声の説明が付いた3Dプリントモデル、3Dモデルのナレーション付き動画。'
          'どの資料も3つの段階すべてを説明しています。4つすべてを見たあとで、このフォームの質問に答えます。',
-         'Viewing time per material is set in the pilot, so no seconds are given. Materials listed in study order A-D.'),
+         'Viewing time per material is set in the pilot, so no seconds are given. Materials listed in study order A-D. The print plays the narration as audio only from the study device (Luke, 22 Oct 2026).'),
         ('Choice', 'Free choice: Taking part is your choice. Saying no does not change study, work or care at Aichi Gakuin '
                    'University or Nagoya University. To stop and not participate, close this form. Nothing is saved until the '
                    '"Submit" button is pressed.',
