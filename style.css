@@ -198,3 +198,4 @@ model-viewer.gum-off .hotspot.on-gum, model-viewer:not(.gum-off) .hotspot.off-gu
 }
 .hero p, .hero .lead { text-align: center !important; }
 .important p b { font-weight: 500; }
+.timeup p { text-align: center !important; max-width: 22em; }
