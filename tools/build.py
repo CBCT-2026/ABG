@@ -154,15 +154,21 @@ def home():
     t, j = UI['en'], UI['ja']
     lst = ''.join(f'<li><b>{i}</b><span>{t[f"st{i}long"]}<br><span lang="ja">{j[f"st{i}long"]}</span></span></li>' for i in (1, 2, 3))
     return head('en', f'{t["title"]} / {j["title"]}', '') + f'''</head>
-<body>
-<main>
-  <div class="top"><button class="theme" id="theme" type="button" data-dark="Dark mode / ダークモード" data-light="Light mode / ライトモード">Dark mode / ダークモード</button></div>
-  <div class="home-logos">
-    <img class="logo" src="images/aichi-gakuin-logo.png" width="60" height="76" alt="Aichi Gakuin University">
-    <img class="logo" src="images/nagoya-logo.png" width="101" height="76" alt="Nagoya University">
+<body class="home">
+<header class="bar">
+  <div class="bar-left">
+    <button class="theme" id="theme" type="button" data-dark="Dark mode / ダークモード" data-light="Light mode / ライトモード">Dark mode / ダークモード</button>
   </div>
-  <h1>{t['title']}<br><span lang="ja">{j['title']}</span></h1>
-  <p class="lead">{t['choose']}<br><span lang="ja">{t['choose2']}</span></p>
+  <div class="logos">
+    <img class="logo" src="images/aichi-gakuin-logo.png" width="44" height="56" alt="Aichi Gakuin University">
+    <img class="logo" src="images/nagoya-logo.png" width="74" height="56" alt="Nagoya University">
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <h1>{t['title']}<span class="h1-ja" lang="ja">{j['title']}</span></h1>
+    <p class="lead">{t['choose']}<span lang="ja">{t['choose2']}</span></p>
+  </div>
   <section class="choice" aria-labelledby="ar">
     <h2 id="ar">AR web page<span lang="ja">ARウェブページ</span></h2>
     <div class="pick"><a href="en/pre-op/">English</a><a href="ja/pre-op/" lang="ja">日本語</a></div>
@@ -171,7 +177,10 @@ def home():
     <h2 id="video">Narrated video<span lang="ja">ナレーション動画</span></h2>
     <div class="pick"><a href="video/en/">English</a><a href="video/ja/" lang="ja">日本語</a></div>
   </section>
-  <ol class="stage-list">{lst}</ol>
+  <section class="stages-card" aria-labelledby="stages-h">
+    <h2 id="stages-h">The three stages<span lang="ja">3つの段階</span></h2>
+    <ol class="stage-list">{lst}</ol>
+  </section>
   <p class="disclaimer">{t['disclaimer']}<br><span lang="ja">{j['disclaimer']}</span></p>
 </main>
 <script src="site.js"></script>

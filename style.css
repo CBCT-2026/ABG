@@ -135,3 +135,66 @@ model-viewer.gum-off .hotspot.on-gum, model-viewer:not(.gum-off) .hotspot.off-gu
 .timeup { position: fixed; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; padding: 24px;
   background: var(--bg); color: var(--text); font-size: 1.3rem; font-weight: 700; text-align: center; }
 .timeup[hidden], .timer[hidden] { display: none; }
+
+/* Phones: smaller type and tighter spacing so a phone screen shows more at once */
+@media (max-width: 600px) {
+  body { font-size: 16px; line-height: 1.55; }
+  h1 { font-size: 1.2rem; margin: 12px 0 8px; }
+  h2 { font-size: 1.05rem; }
+  .bar { padding-block: 6px; }
+  .logo { height: 40px; }
+  .theme, .lang { font-size: 14px; padding: 6px 10px; min-height: 40px; }
+  .lead { font-size: 15px; }
+  .choice { margin-top: 14px; padding: 14px; border-radius: 12px; }
+  .choice h2 { font-size: 17px; margin-bottom: 10px; }
+  .choice h2 span { font-size: 14px; }
+  .pick { gap: 8px; }
+  .pick a { font-size: 16px; padding: 12px 8px; border-radius: 10px; }
+  .home-logos { margin: 10px 0 4px; }
+  .home-logos .logo { height: 56px; }
+  .stage-list { font-size: 14px; }
+  .steps a { min-height: 48px; font-size: 13px; }
+  .steps a span { font-size: 11px; }
+  .controls button { font-size: 14px; min-height: 40px; padding: 6px 10px; }
+  .important { padding: 10px 12px; }
+  section { padding: 14px 0; }
+  .disclaimer { font-size: 13px; }
+  model-viewer { height: 48vh; min-height: 280px; }
+}
+
+/* Layout tidy-up: one alignment per block, equal-width controls, left-aligned reading text */
+.hero { text-align: center; padding: 8px 0 4px; }
+.hero h1 { margin: 12px 0 6px; }
+.h1-ja, .lead span, .choice h2 span, .stages-card h2 span { display: block; }
+.h1-ja { font-size: .82em; font-weight: 600; color: var(--muted); margin-top: 4px; }
+.lead { margin: 6px 0 0; color: var(--muted); font-weight: 500; }
+.choice, .stages-card { border-top: 1px solid var(--line); }
+.stages-card { margin-top: 16px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 16px; }
+.stages-card h2 { text-align: center; margin: 0 0 8px; }
+.stages-card h2 span { font-size: .85em; font-weight: 600; color: var(--muted); }
+.stage-list { margin: 0; }
+.stage-list li { padding: 8px 0; border-top: 1px solid var(--line); }
+.stage-list li:first-child { border-top: 0; }
+.stage-list li > span span { color: var(--muted); }
+.home .disclaimer { text-align: center; text-align-last: center; }
+.controls { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.controls button { grid-column: span 2; }
+.controls #labels, .controls #gum { grid-column: span 3; }
+.controls #gum[hidden] { display: none; }
+.controls #gum[hidden] ~ *, .controls #labels:last-child { grid-column: span 6; }
+.next { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.next a { text-align: center; }
+.next a:only-child, .next span + a { grid-column: 2; }
+.important p { font-weight: 400; }
+.important p b { font-weight: 600; }
+.bar { flex-wrap: nowrap; }
+@media (max-width: 600px) {
+  main p, main li { text-align: left; hyphens: manual; }
+  .important p { text-align: left; text-align-last: auto; }
+  .hero h1 { font-size: 1.25rem; }
+  .stages-card { padding: 12px 14px; }
+  .next a { font-size: 14px; padding: 10px 8px; }
+  .home .theme { font-size: 13px; }
+}
+.hero p, .hero .lead { text-align: center !important; }
+.important p b { font-weight: 500; }
