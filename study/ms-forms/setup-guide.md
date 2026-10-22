@@ -45,4 +45,5 @@ Checked with the patient-education-toolkit. The ABG text is plain, but some fixe
 4. Required on everything except Q48. Restrictions > Number on age (18-120).
 5. Branching on Q1: "do not agree" > End of the form.
 6. Settings: anyone can respond, shuffle off, progress bar on, thank-you message.
-7. Test with Preview on a phone, then delete the test responses. Then make the flyer QR codes: `../recruitment-flyer/build_flyer.py --form-en ... --form-ja ...`.
+7. Test with Preview on a phone, then delete the test responses.
+8. Put the two form links in both places that use them: the flyer QR codes (`../recruitment-flyer/build_flyer.py --form-en ... --form-ja ...`) and the Microsoft Forms button at the bottom of the site's landing page. The flyer QR codes go to the forms. The site's own expandable QR code goes to the landing page (https://cbct-2026.github.io/ABG/).
