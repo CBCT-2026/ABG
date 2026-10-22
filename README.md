@@ -9,7 +9,7 @@ Web pages with web AR 3D models for the study "Seeing the stages: comparing 2D, 
 - `en/pre-op/`, `en/short-term/`, `en/long-term/` (and the same under `ja/`): one page per stage, with a 1-2-3 stepper, the 3D model, labels, preset views, AR, the "Take off the gum" animation, patient text and sources. `en/` and `ja/` forward to stage 1.
 - `video/en/`, `video/ja/`: narrated video page (one video per language, one chapter per stage). The video is not made yet.
 - **Study mode:** open stage 1 with `?study=1&t=<seconds>`, for example `en/pre-op/?study=1&t=120`. One fixed viewing time covers all three stage pages in that browser tab. A countdown shows in the corner, the language switch and home link are hidden, and when time is up a full-page message asks the participant to tell the researcher. Set `t` to the viewing time chosen in the pilot.
-- **Start again:** the button at the bottom of each stage page resets everything for the next participant (light mode, labels on, gum part on, stage 1, and a fresh timer in study mode).
+- **Start again:** resets everything for the next participant (light mode, labels on, gum part on, stage 1, and a fresh timer in study mode). Outside study mode it is at the bottom of each stage page. In study mode it is hidden so a participant cannot reset their own timer; it appears on the time-up screen for the researcher. Opening the study link again in the same tab also starts a fresh timer (a reload keeps the running one).
 - Same content in every material (sheet, AR page, print, video): `docs/feature-parity.md`.
 - Hosted on GitHub Pages from `main` (Settings > Pages > Deploy from a branch > `main` / root).
 - Design: one 640px column like the wisdom tooth site, neutral slate and steel blue, light mode by default with a dark mode toggle (kept for the browser tab only). Aichi Gakuin University logo first, then Nagoya University.
@@ -36,5 +36,6 @@ Web pages with web AR 3D models for the study "Seeing the stages: comparing 2D, 
 ## Licences
 
 - Draco decoder in `vendor/draco/` (from three.js r163, Apache 2.0).
+- `vendor/model-viewer/model-viewer.min.js`: @google/model-viewer 3.5.0 (Apache 2.0, licence in that folder). Served from this site, so the pages make no outside requests.
 - 3D viewer: `@google/model-viewer` 3.5.0 (Apache 2.0), loaded from jsDelivr.
 - `images/aichi-gakuin-logo.png` and `images/nagoya-logo.png` belong to Aichi Gakuin University and Nagoya University. They are **not** covered by any open licence of this project. Use them only as each university's brand guidelines allow.
