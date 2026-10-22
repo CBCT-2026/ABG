@@ -61,32 +61,32 @@
   "spoken": [
     {
       "glob": "content/narration.md",
-      "max_seconds": 45,
+      "max_seconds": 60,
       "sections": "^Stage 1 English$"
     },
     {
       "glob": "content/narration.md",
-      "max_seconds": 45,
+      "max_seconds": 60,
       "sections": "^Stage 1 Japanese$"
     },
     {
       "glob": "content/narration.md",
-      "max_seconds": 45,
+      "max_seconds": 60,
       "sections": "^Stage 2 English$"
     },
     {
       "glob": "content/narration.md",
-      "max_seconds": 45,
+      "max_seconds": 60,
       "sections": "^Stage 2 Japanese$"
     },
     {
       "glob": "content/narration.md",
-      "max_seconds": 45,
+      "max_seconds": 60,
       "sections": "^Stage 3 English$"
     },
     {
       "glob": "content/narration.md",
-      "max_seconds": 45,
+      "max_seconds": 60,
       "sections": "^Stage 3 Japanese$"
     }
   ],

@@ -1,7 +1,7 @@
-# Content parity: 2D sheet (= site text) vs 45 s narration (EN; JA mirrors EN)
+# Content parity: 2D sheet (= site text) vs 60 s narration (EN; JA mirrors EN)
 
 The brief asks for the same content in all four materials. The sheets use the live site text; the narration must fit
-45 s per stage, so it carries the core points only. Key: ✓ same, ~ shortened, ✗ not in narration.
+60 s per stage, so it carries the core points only. Key: ✓ same, ~ shortened, ✗ not in narration.
 
 | Stage | Point (sheet / site) | Narration |
 |---|---|---|
@@ -33,10 +33,10 @@ The brief asks for the same content in all four materials. The sheets use the li
 Totals: 11 same, 10 shortened, 3 not in narration (medical names, wound opening, school after 2 weeks).
 
 ## Choice for Luke (not changed)
-1. Keep as is and report it as a limitation: the narration is a 45 s summary of the sheet, so the materials match in
+1. Keep as is and report it as a limitation: the narration is a 60 s summary of the sheet, so the materials match in
    key messages (the reader-panel questions), not in every detail.
 2. Cut the site and sheet text down to the narration content, so all four match exactly (site edits go through the
    website thread).
-3. Allow longer narration: about 60–75 s per stage would cover the ✗ points.
+3. Luke set 60 s per stage (22 Oct 2026). The narration now runs EN 34–36 s, JA 43 s, so the ✗ points could be added and still fit.
 
 The knowledge questions in the form should only test points marked ✓ so no material is favoured.
