@@ -19,6 +19,14 @@
     {
       "glob": "sheet/ja/*/index.html",
       "lang": "ja"
+    },
+    {
+      "glob": "study/recruitment-flyer/src/flyer-en.html",
+      "lang": "en"
+    },
+    {
+      "glob": "study/recruitment-flyer/src/flyer-ja.html",
+      "lang": "ja"
     }
   ],
   "pairs": [
@@ -33,12 +41,17 @@
     [
       "content/long-term-en.html",
       "content/long-term-ja.html"
+    ],
+    [
+      "study/recruitment-flyer/src/flyer-en.html",
+      "study/recruitment-flyer/src/flyer-ja.html"
     ]
   ],
   "ignore_selectors": [
     "sup.cite",
     ".refs",
-    ".ph"
+    ".ph",
+    ".term"
   ],
   "address_reader": "you",
   "ja_address_reader": "omit",
