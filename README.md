@@ -4,7 +4,8 @@ Web pages with web AR 3D models for the study "Seeing the stages: comparing 2D, 
 
 ## Site layout
 
-- `index.html`: home page. Choose the AR web page or the narrated video, in English or Japanese.
+- `index.html`: home page. Choose the AR web page or the narrated video, in English or Japanese. At the bottom: buttons to the study's Microsoft Forms (information sheet and survey; paste the links into `FORM_EN` and `FORM_JA` in `tools/build.py`), and a QR code to this home page that opens full screen when tapped (`images/qr-home.svg`, made by `tools/make_qr.py`).
+- **Device check:** each stage page tells touch screens to swipe and pinch, and mouse users to drag and scroll. In study mode, the time-up screen shows the device (phone, tablet or computer, touch or mouse, screen size) for the researcher to note on the form. Nothing is sent anywhere.
 - `en/pre-op/`, `en/short-term/`, `en/long-term/` (and the same under `ja/`): one page per stage, with a 1-2-3 stepper, the 3D model, labels, preset views, AR, the "Take off the gum" animation, patient text and sources. `en/` and `ja/` forward to stage 1.
 - `video/en/`, `video/ja/`: narrated video page (one video per language, one chapter per stage). The video is not made yet.
 - **Study mode:** open stage 1 with `?study=1&t=<seconds>`, for example `en/pre-op/?study=1&t=120`. One fixed viewing time covers all three stage pages in that browser tab. A countdown shows in the corner, the language switch and home link are hidden, and when time is up a full-page message asks the participant to tell the researcher. Set `t` to the viewing time chosen in the pilot.

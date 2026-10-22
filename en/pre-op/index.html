@@ -46,6 +46,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <div class="hotspot on-gum" slot="hotspot-6" data-position="0.008m 0.0073m -0.01m" data-normal="0 -1 0" data-visibility-attribute="visible" data-side="left" style="--len: 30px"><span class="label">Roof of the mouth<small>palate</small></span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
+  <p class="hint" id="hint" data-touch="Swipe to turn the model. Pinch to make it bigger or smaller." data-mouse="Drag to turn the model. Scroll to make it bigger or smaller.">Drag to turn the model. Scroll to make it bigger or smaller.</p>
   <div class="controls" role="group" aria-label="Model controls">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">Whole jaw</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">From below</button>
@@ -120,7 +121,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
   <p class="restart"><button type="button" id="restart" data-home="../pre-op/">Start again</button></p>
   <p class="disclaimer">This page is for a study at Aichi Gakuin University and Nagoya University. Version 0.1, 22 October 2026.</p>
   <div class="timer" id="timer" hidden><span>Time left</span> <b id="timer-left"></b></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>Time is up. Please tell the researcher.</p></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>Time is up. Please tell the researcher.</p><p class="device" id="device" data-label="Device" data-phone="phone" data-tablet="tablet" data-computer="computer" data-touch="touch" data-mouse="mouse"></p></div>
 </main>
 <script src="../../site.js"></script>
 </body>

@@ -42,6 +42,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <div class="hotspot" slot="hotspot-1" data-position="-0.002m -0.012m 0.0316m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 40px"><span class="label">前歯<small>中切歯</small></span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
+  <p class="hint" id="hint" data-touch="指でなぞると、模型が回ります。指でつまむと、大きさが変わります。" data-mouse="ドラッグすると、模型が回ります。ホイールを回すと、大きさが変わります。">ドラッグすると、模型が回ります。ホイールを回すと、大きさが変わります。</p>
   <div class="controls" role="group" aria-label="模型のそうさ">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">上あご全体</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">下から</button>
@@ -98,7 +99,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
   <p class="restart"><button type="button" id="restart" data-home="../pre-op/">はじめからもう一度</button></p>
   <p class="disclaimer">このページは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。</p>
   <div class="timer" id="timer" hidden><span>のこり時間</span> <b id="timer-left"></b></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>時間になりました。研究の担当者に知らせてください。</p></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>時間になりました。研究の担当者に知らせてください。</p><p class="device" id="device" data-label="端末" data-phone="スマートフォン" data-tablet="タブレット" data-computer="パソコン" data-touch="タッチ" data-mouse="マウス"></p></div>
 </main>
 <script src="../../site.js"></script>
 </body>

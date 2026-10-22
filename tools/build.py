@@ -9,6 +9,10 @@ REFS = json.load(open('content/references.json'))
 STAGES = ['pre-op', 'short-term', 'long-term']
 MODEL = 'abg-placeholder'  # one placeholder model on every stage until the stage models are built
 LANGS = ['en', 'ja']
+SITE_URL = 'https://cbct-2026.github.io/ABG/'  # the QR code on the home page opens this (make it with tools/make_qr.py)
+# Microsoft Forms for the study (information sheet + survey). Paste each link here, then run this script again.
+FORM_EN = ''
+FORM_JA = ''
 
 # Labels on the model: position (metres, model axes), surface normal, side of the leader line.
 # "when" ties a label to the gum part being on (on-gum) or taken off (off-gum).
@@ -103,6 +107,7 @@ def stage_page(lang, i, stage):
     <button slot="ar-button" class="ar-btn">{t['ar']}</button>{placeholder}{spots}
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
+  <p class="hint" id="hint" data-touch="{t['hintTouch']}" data-mouse="{t['hintMouse']}">{t['hintMouse']}</p>
   <div class="controls" role="group" aria-label="{t['controls']}">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">{t['vFront']}</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">{t['vBelow']}</button>
@@ -125,7 +130,7 @@ def stage_page(lang, i, stage):
   <p class="restart"><button type="button" id="restart" data-home="../pre-op/">{t['startAgain']}</button></p>
   <p class="disclaimer">{t['disclaimer']}</p>
   <div class="timer" id="timer" hidden><span>{t['timeLeft']}</span> <b id="timer-left"></b></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>{t['timeUp']}</p></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>{t['timeUp']}</p><p class="device" id="device" data-label="{t['device']}" data-phone="{t['phone']}" data-tablet="{t['tablet']}" data-computer="{t['computer']}" data-touch="{t['touch']}" data-mouse="{t['mouse']}"></p></div>
 </main>
 <script src="{up}site.js"></script>
 </body>
@@ -149,6 +154,11 @@ def video_page(lang):
 </body>
 </html>
 '''
+
+def form_link(url, label, lang):
+    if url:
+        return f'<a href="{url}" lang="{lang}" target="_blank" rel="noopener">{label}</a>'
+    return f'<a lang="{lang}" aria-disabled="true" class="soon">{label}<small>Link coming / リンクは準備中</small></a>'
 
 def home():
     t, j = UI['en'], UI['ja']
@@ -181,6 +191,20 @@ def home():
     <h2 id="stages-h">The three stages<span lang="ja">3つの段階</span></h2>
     <ol class="stage-list">{lst}</ol>
   </section>
+  <section class="choice study-card" aria-labelledby="form-h">
+    <h2 id="form-h">Take part in the study<span lang="ja">研究に参加する</span></h2>
+    <p>The form has the information sheet and the survey.<span lang="ja">フォームには、説明書とアンケートがあります。</span></p>
+    <div class="pick">{form_link(FORM_EN, 'Open the form (English)', 'en')}{form_link(FORM_JA, 'フォームを開く（日本語）', 'ja')}</div>
+  </section>
+  <div class="qr-card">
+    <button type="button" class="qr-open" id="qr-open" aria-haspopup="dialog"><img src="images/qr-home.svg" width="72" height="72" alt=""><span>Show QR code for this site<span lang="ja">このサイトのQRコードを表示</span></span></button>
+  </div>
+  <dialog class="qr" id="qr" aria-label="QR code / QRコード">
+    <img src="images/qr-home.svg" alt="QR code: {SITE_URL}">
+    <p>Scan to open this site<span lang="ja">読み取ると、このサイトが開きます</span></p>
+    <p class="qr-url">{SITE_URL.replace('https://', '')}</p>
+    <form method="dialog"><button type="submit">Close / 閉じる</button></form>
+  </dialog>
   <p class="disclaimer">{t['disclaimer']}<br><span lang="ja">{j['disclaimer']}</span></p>
 </main>
 <script src="site.js"></script>
