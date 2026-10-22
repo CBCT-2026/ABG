@@ -11,6 +11,15 @@ themeBtn.addEventListener('click', () => {
 });
 showTheme();
 
+// Device check: a touch screen (finger) or a mouse, and phone, tablet or computer by screen size.
+// The page shows the matching "how to turn the model" hint, and study mode notes the device for the researcher.
+const touch = matchMedia('(pointer: coarse)').matches || (!matchMedia('(pointer: fine)').matches && navigator.maxTouchPoints > 0);
+const short = Math.min(screen.width, screen.height);
+const device = { input: touch ? 'touch' : 'mouse', kind: !touch ? 'computer' : short < 600 ? 'phone' : 'tablet', size: screen.width + '×' + screen.height };
+document.documentElement.dataset.input = device.input;
+const hint = document.getElementById('hint');
+if (hint) hint.textContent = hint.dataset[device.input];
+
 const mv = document.getElementById('mv');
 if (mv) {
   mv.addEventListener('progress', e => {
@@ -94,3 +103,57 @@ document.querySelectorAll('.cite a').forEach(a => a.addEventListener('click', ()
   const d = document.querySelector('.refs details');
   if (d) d.open = true;
 }));
+
+// Study mode: open any stage page with ?study=1&t=<seconds> (for example /en/pre-op/?study=1&t=120).
+// The same fixed viewing time then covers all three stage pages in this tab. The language switch and the
+// link to the home page are hidden, so every participant sees only this material, in the language of their form.
+// When the time is up, a full-page message asks the participant to tell the researcher.
+(function study() {
+  let cfg = null;
+  const q = new URLSearchParams(location.search);
+  try {
+    if (q.get('study') === '1') {
+      cfg = { t: Math.max(10, parseInt(q.get('t') || '120', 10) || 120) };
+      sessionStorage.setItem('study', JSON.stringify(cfg));
+      if (!sessionStorage.getItem('studyEnd')) sessionStorage.setItem('studyEnd', String(Date.now() + cfg.t * 1000));
+    } else {
+      cfg = JSON.parse(sessionStorage.getItem('study') || 'null');
+    }
+  } catch (e) {}
+  if (!cfg) return;
+  document.documentElement.classList.add('study');
+  const timer = document.getElementById('timer'), left = document.getElementById('timer-left'), up = document.getElementById('timeup');
+  if (!timer) return;
+  let end;
+  try { end = parseInt(sessionStorage.getItem('studyEnd'), 10); } catch (e) {}
+  if (!end) end = Date.now() + cfg.t * 1000;
+  timer.hidden = false;
+  // Device line on the time-up screen, so the researcher can write it on the study form (nothing is sent anywhere).
+  const dev = document.getElementById('device');
+  if (dev) dev.textContent = `${dev.dataset.label}: ${dev.dataset[device.kind]}, ${dev.dataset[device.input]}, ${device.size}`;
+  const tick = () => {
+    const s = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+    left.textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+    if (s === 0) { up.hidden = false; clearInterval(id); }
+  };
+  const id = setInterval(tick, 500); tick();
+})();
+
+// Start again: put everything back as the next participant should find it (light mode, labels on,
+// gum part on, stage 1, and in study mode a fresh timer).
+const restart = document.getElementById('restart');
+if (restart) restart.addEventListener('click', () => {
+  try { sessionStorage.removeItem('theme'); sessionStorage.removeItem('studyEnd'); } catch (e) {}
+  let study = null;
+  try { study = JSON.parse(sessionStorage.getItem('study') || 'null'); } catch (e) {}
+  const url = new URL(restart.dataset.home, location.href);
+  if (study) { url.searchParams.set('study', '1'); url.searchParams.set('t', study.t); }
+  location.href = url.href;
+});
+
+// QR code on the home page: a tap opens it full screen, so someone can scan it from this screen.
+const qrOpen = document.getElementById('qr-open'), qr = document.getElementById('qr');
+if (qrOpen && qr) {
+  qrOpen.addEventListener('click', () => qr.showModal());
+  qr.addEventListener('click', e => { if (e.target === qr) qr.close(); });
+}

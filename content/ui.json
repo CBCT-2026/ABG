@@ -32,7 +32,18 @@
   "videoNotReady": "The narrated video is not ready yet.",
   "chapters": "Chapters",
   "stages": "Stages",
-  "controls": "Model controls"
+  "controls": "Model controls",
+  "startAgain": "Start again",
+  "timeLeft": "Time left",
+  "timeUp": "Time is up. Please tell the researcher.",
+  "hintTouch": "Swipe to turn the model. Pinch to make it bigger or smaller.",
+  "hintMouse": "Drag to turn the model. Scroll to make it bigger or smaller.",
+  "device": "Device",
+  "phone": "phone",
+  "tablet": "tablet",
+  "computer": "computer",
+  "touch": "touch",
+  "mouse": "mouse"
  },
  "ja": {
   "title": "歯ぐきの骨のすき間をうめる手術：3つの段階",
@@ -67,6 +78,17 @@
   "videoNotReady": "ナレーション動画は、まだできていません。",
   "chapters": "チャプター",
   "stages": "段階",
-  "controls": "模型のそうさ"
+  "controls": "模型のそうさ",
+  "startAgain": "はじめからもう一度",
+  "timeLeft": "のこり時間",
+  "timeUp": "時間になりました。研究の担当者に知らせてください。",
+  "hintTouch": "指でなぞると、模型が回ります。指でつまむと、大きさが変わります。",
+  "hintMouse": "ドラッグすると、模型が回ります。ホイールを回すと、大きさが変わります。",
+  "device": "端末",
+  "phone": "スマートフォン",
+  "tablet": "タブレット",
+  "computer": "パソコン",
+  "touch": "タッチ",
+  "mouse": "マウス"
  }
 }

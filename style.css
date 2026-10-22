@@ -124,3 +124,101 @@ model-viewer.gum-off .hotspot.on-gum, model-viewer:not(.gum-off) .hotspot.off-gu
   font: 600 13px/1.25 inherit; padding: 6px; text-align: center; }
 .chapters span b { display: block; font-size: 12px; color: var(--muted); font-weight: 500; }
 .next span:empty { flex: 1; }
+.restart { text-align: center; margin: 18px 0 0; }
+.restart button { font: 600 15px/1.2 inherit; padding: 10px 16px; min-height: 44px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: transparent; color: var(--muted); }
+/* Study mode: no language switch and no way back to the home page */
+.study .bar .lang { visibility: hidden; }
+.study .bar .logos { pointer-events: none; }
+.timer { position: fixed; right: max(12px, env(safe-area-inset-right, 0px)); bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 20;
+  background: var(--text); color: var(--bg); border-radius: 999px; padding: 8px 14px; font-size: 15px; font-variant-numeric: tabular-nums; }
+.timeup { position: fixed; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; padding: 24px;
+  background: var(--bg); color: var(--text); font-size: 1.3rem; font-weight: 700; text-align: center; }
+.timeup[hidden], .timer[hidden] { display: none; }
+
+/* Phones: smaller type and tighter spacing so a phone screen shows more at once */
+@media (max-width: 600px) {
+  body { font-size: 16px; line-height: 1.55; }
+  h1 { font-size: 1.2rem; margin: 12px 0 8px; }
+  h2 { font-size: 1.05rem; }
+  .bar { padding-block: 6px; }
+  .logo { height: 40px; }
+  .theme, .lang { font-size: 14px; padding: 6px 10px; min-height: 40px; }
+  .lead { font-size: 15px; }
+  .choice { margin-top: 14px; padding: 14px; border-radius: 12px; }
+  .choice h2 { font-size: 17px; margin-bottom: 10px; }
+  .choice h2 span { font-size: 14px; }
+  .pick { gap: 8px; }
+  .pick a { font-size: 16px; padding: 12px 8px; border-radius: 10px; }
+  .home-logos { margin: 10px 0 4px; }
+  .home-logos .logo { height: 56px; }
+  .stage-list { font-size: 14px; }
+  .steps a { min-height: 48px; font-size: 13px; }
+  .steps a span { font-size: 11px; }
+  .controls button { font-size: 14px; min-height: 40px; padding: 6px 10px; }
+  .important { padding: 10px 12px; }
+  section { padding: 14px 0; }
+  .disclaimer { font-size: 13px; }
+  model-viewer { height: 48vh; min-height: 280px; }
+}
+
+/* Layout tidy-up: one alignment per block, equal-width controls, left-aligned reading text */
+.hero { text-align: center; padding: 8px 0 4px; }
+.hero h1 { margin: 12px 0 6px; }
+.h1-ja, .lead span, .choice h2 span, .stages-card h2 span { display: block; }
+.h1-ja { font-size: .82em; font-weight: 600; color: var(--muted); margin-top: 4px; }
+.lead { margin: 6px 0 0; color: var(--muted); font-weight: 500; }
+.choice, .stages-card { border-top: 1px solid var(--line); }
+.stages-card { margin-top: 16px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 16px; }
+.stages-card h2 { text-align: center; margin: 0 0 8px; }
+.stages-card h2 span { font-size: .85em; font-weight: 600; color: var(--muted); }
+.stage-list { margin: 0; }
+.stage-list li { padding: 8px 0; border-top: 1px solid var(--line); }
+.stage-list li:first-child { border-top: 0; }
+.stage-list li > span span { color: var(--muted); }
+.home .disclaimer { text-align: center; text-align-last: center; }
+.controls { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.controls button { grid-column: span 2; }
+.controls #labels, .controls #gum { grid-column: span 3; }
+.controls #gum[hidden] { display: none; }
+.controls #gum[hidden] ~ *, .controls #labels:last-child { grid-column: span 6; }
+.next { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.next a { text-align: center; }
+.next a:only-child, .next span + a { grid-column: 2; }
+.important p { font-weight: 400; }
+.important p b { font-weight: 600; }
+.bar { flex-wrap: nowrap; }
+@media (max-width: 600px) {
+  main p, main li { text-align: left; hyphens: manual; }
+  .important p { text-align: left; text-align-last: auto; }
+  .hero h1 { font-size: 1.25rem; }
+  .stages-card { padding: 12px 14px; }
+  .next a { font-size: 14px; padding: 10px 8px; }
+  .home .theme { font-size: 13px; }
+}
+.hero p, .hero .lead { text-align: center !important; }
+.important p b { font-weight: 500; }
+.timeup p { text-align: center !important; max-width: 22em; }
+.hint { margin: 8px 0 0; text-align: center; font-size: 14px; color: var(--muted); }
+.timeup { flex-direction: column; }
+.timeup .device { font-size: 14px; font-weight: 400; color: var(--muted); margin-top: 12px; }
+
+/* Home: study form and QR code */
+.study-card h2 { margin-bottom: 8px; }
+.study-card p { margin: 0 0 14px; text-align: center !important; }
+.study-card p span { display: block; color: var(--muted); }
+.pick a.soon { opacity: .55; cursor: default; }
+.pick a small { display: block; font-size: 12px; font-weight: 400; margin-top: 4px; }
+.qr-card { margin: 20px 0; text-align: center; }
+.qr-open { display: inline-flex; align-items: center; gap: 12px; padding: 8px 16px 8px 8px; border-radius: 14px; cursor: pointer;
+  font: 600 15px/1.3 inherit; color: var(--text); background: var(--card); border: 1px solid var(--line); text-align: left; }
+.qr-open img { border-radius: 6px; background: #fff; }
+.qr-open span span { display: block; font-weight: 400; color: var(--muted); }
+dialog.qr { width: min(92vw, 560px); max-height: 96vh; border: 0; border-radius: 20px; padding: 24px; text-align: center; background: var(--bg); color: var(--text); }
+dialog.qr::backdrop { background: rgba(0,0,0,.6); }
+dialog.qr img { width: min(80vw, 80vh, 480px); height: auto; display: block; margin: 0 auto; border-radius: 8px; }
+dialog.qr p { margin: 14px 0 0; font-size: 18px; font-weight: 600; }
+dialog.qr p span { display: block; font-weight: 400; font-size: 16px; color: var(--muted); }
+dialog.qr .qr-url { font-size: 15px; font-weight: 400; color: var(--muted); word-break: break-all; }
+dialog.qr button { margin-top: 16px; font: 600 16px/1.2 inherit; min-height: 44px; padding: 10px 22px; border-radius: 999px; cursor: pointer;
+  color: var(--bg); background: var(--accent); border: 0; }

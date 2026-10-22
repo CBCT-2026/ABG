@@ -11,15 +11,21 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
 </script>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<main>
-  <div class="top"><button class="theme" id="theme" type="button" data-dark="Dark mode / ダークモード" data-light="Light mode / ライトモード">Dark mode / ダークモード</button></div>
-  <div class="home-logos">
-    <img class="logo" src="images/aichi-gakuin-logo.png" width="60" height="76" alt="Aichi Gakuin University">
-    <img class="logo" src="images/nagoya-logo.png" width="101" height="76" alt="Nagoya University">
+<body class="home">
+<header class="bar">
+  <div class="bar-left">
+    <button class="theme" id="theme" type="button" data-dark="Dark mode / ダークモード" data-light="Light mode / ライトモード">Dark mode / ダークモード</button>
   </div>
-  <h1>Bone graft for a cleft in the gum: the three stages<br><span lang="ja">歯ぐきの骨のすき間をうめる手術：3つの段階</span></h1>
-  <p class="lead">Choose a page and language<br><span lang="ja">ページと言語を選んでください</span></p>
+  <div class="logos">
+    <img class="logo" src="images/aichi-gakuin-logo.png" width="44" height="56" alt="Aichi Gakuin University">
+    <img class="logo" src="images/nagoya-logo.png" width="74" height="56" alt="Nagoya University">
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <h1>Bone graft for a cleft in the gum: the three stages<span class="h1-ja" lang="ja">歯ぐきの骨のすき間をうめる手術：3つの段階</span></h1>
+    <p class="lead">Choose a page and language<span lang="ja">ページと言語を選んでください</span></p>
+  </div>
   <section class="choice" aria-labelledby="ar">
     <h2 id="ar">AR web page<span lang="ja">ARウェブページ</span></h2>
     <div class="pick"><a href="en/pre-op/">English</a><a href="ja/pre-op/" lang="ja">日本語</a></div>
@@ -28,7 +34,24 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
     <h2 id="video">Narrated video<span lang="ja">ナレーション動画</span></h2>
     <div class="pick"><a href="video/en/">English</a><a href="video/ja/" lang="ja">日本語</a></div>
   </section>
-  <ol class="stage-list"><li><b>1</b><span>Before surgery: the gap in the bone and the eye tooth waiting to come down<br><span lang="ja">手術の前：骨のすき間と、おりてくるのを待つ犬歯</span></span></li><li><b>2</b><span>About 3 months after: new bone fills the gap<br><span lang="ja">約3か月後：新しい骨がすき間をうめる</span></span></li><li><b>3</b><span>Years later: the eye tooth is through, and braces line up the teeth<br><span lang="ja">数年後：犬歯が出てきて、そうちで歯をならべる</span></span></li></ol>
+  <section class="stages-card" aria-labelledby="stages-h">
+    <h2 id="stages-h">The three stages<span lang="ja">3つの段階</span></h2>
+    <ol class="stage-list"><li><b>1</b><span>Before surgery: the gap in the bone and the eye tooth waiting to come down<br><span lang="ja">手術の前：骨のすき間と、おりてくるのを待つ犬歯</span></span></li><li><b>2</b><span>About 3 months after: new bone fills the gap<br><span lang="ja">約3か月後：新しい骨がすき間をうめる</span></span></li><li><b>3</b><span>Years later: the eye tooth is through, and braces line up the teeth<br><span lang="ja">数年後：犬歯が出てきて、そうちで歯をならべる</span></span></li></ol>
+  </section>
+  <section class="choice study-card" aria-labelledby="form-h">
+    <h2 id="form-h">Take part in the study<span lang="ja">研究に参加する</span></h2>
+    <p>The form has the information sheet and the survey.<span lang="ja">フォームには、説明書とアンケートがあります。</span></p>
+    <div class="pick"><a lang="en" aria-disabled="true" class="soon">Open the form (English)<small>Link coming / リンクは準備中</small></a><a lang="ja" aria-disabled="true" class="soon">フォームを開く（日本語）<small>Link coming / リンクは準備中</small></a></div>
+  </section>
+  <div class="qr-card">
+    <button type="button" class="qr-open" id="qr-open" aria-haspopup="dialog"><img src="images/qr-home.svg" width="72" height="72" alt=""><span>Show QR code for this site<span lang="ja">このサイトのQRコードを表示</span></span></button>
+  </div>
+  <dialog class="qr" id="qr" aria-label="QR code / QRコード">
+    <img src="images/qr-home.svg" alt="QR code: https://cbct-2026.github.io/ABG/">
+    <p>Scan to open this site<span lang="ja">読み取ると、このサイトが開きます</span></p>
+    <p class="qr-url">cbct-2026.github.io/ABG/</p>
+    <form method="dialog"><button type="submit">Close / 閉じる</button></form>
+  </dialog>
   <p class="disclaimer">This page is for a study at Aichi Gakuin University and Nagoya University. Version 0.1, 22 October 2026.<br><span lang="ja">このページは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。</span></p>
 </main>
 <script src="site.js"></script>

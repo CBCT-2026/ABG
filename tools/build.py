@@ -10,6 +10,10 @@ REFS = json.load(open('content/references.json'))
 STAGES = ['pre-op', 'short-term', 'long-term']
 MODEL = 'abg-placeholder'  # one placeholder model on every stage until the stage models are built
 LANGS = ['en', 'ja']
+SITE_URL = 'https://cbct-2026.github.io/ABG/'  # the QR code on the home page opens this (make it with tools/make_qr.py)
+# Microsoft Forms for the study (information sheet + survey). Paste each link here, then run this script again.
+FORM_EN = ''
+FORM_JA = ''
 
 # Labels on the model: position (metres, model axes), surface normal, side of the leader line.
 # "when" ties a label to the gum part being on (on-gum) or taken off (off-gum).
@@ -49,6 +53,13 @@ try {{ if (sessionStorage.getItem('theme') === 'dark') document.documentElement.
 <link rel="stylesheet" href="{up}style.css">
 '''
 
+def model_head(up):
+    return f'''<script>
+// The models are Draco-compressed; the decoder is served from this site, so no outside download is needed.
+self.ModelViewerElement = {{ dracoDecoderLocation: new URL('{up}vendor/draco/', location.href).href }};
+</script>
+'''
+
 def bar(lang, up, other_href):
     t = UI[lang]; o = 'ja' if lang == 'en' else 'en'
     return f'''<header class="bar">
@@ -81,7 +92,7 @@ def stage_page(lang, i, stage):
     prev = f'<a href="../{STAGES[i - 1]}/">← {t[f"st{n - 1}"]}</a>' if i > 0 else '<span></span>'
     nxt = f'<a href="../{STAGES[i + 1]}/">{t[f"st{n + 1}"]} →</a>' if i < 2 else '<span></span>'
     o = 'ja' if lang == 'en' else 'en'
-    return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + f'''<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+    return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + model_head(up) + f'''<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
 {bar(lang, up, f"{up}{o}/{stage}/")}
@@ -89,7 +100,7 @@ def stage_page(lang, i, stage):
   <h1>{t['title']}</h1>
   {steps(lang, stage, '../')}
   <!-- MODEL: placeholder on every stage until the stage models are built. See README. -->
-  <model-viewer id="mv" src="{up}models/{MODEL}.glb" ios-src="{up}models/{MODEL}.usdz"
+  <model-viewer id="mv" src="{up}models/{MODEL}.glb" ios-src="{up}models/{MODEL}.usdz" poster="{up}models/{MODEL}-poster.webp"
     alt="{html.escape(t[f'alt{n}'])}"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
     camera-controls camera-orbit="0deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
@@ -97,6 +108,7 @@ def stage_page(lang, i, stage):
     <button slot="ar-button" class="ar-btn">{t['ar']}</button>{placeholder}{spots}
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
+  <p class="hint" id="hint" data-touch="{t['hintTouch']}" data-mouse="{t['hintMouse']}">{t['hintMouse']}</p>
   <div class="controls" role="group" aria-label="{t['controls']}">
     <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">{t['vFront']}</button>
     <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">{t['vBelow']}</button>
@@ -116,7 +128,10 @@ def stage_page(lang, i, stage):
 </details>
   </section>
   <nav class="next" aria-label="{t['stages']}">{prev}{nxt}</nav>
+  <p class="restart"><button type="button" id="restart" data-home="../pre-op/">{t['startAgain']}</button></p>
   <p class="disclaimer">{t['disclaimer']}</p>
+  <div class="timer" id="timer" hidden><span>{t['timeLeft']}</span> <b id="timer-left"></b></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>{t['timeUp']}</p><p class="device" id="device" data-label="{t['device']}" data-phone="{t['phone']}" data-tablet="{t['tablet']}" data-computer="{t['computer']}" data-touch="{t['touch']}" data-mouse="{t['mouse']}"></p></div>
 </main>
 <script src="{up}site.js"></script>
 </body>
@@ -141,19 +156,30 @@ def video_page(lang):
 </html>
 '''
 
+def form_link(url, label, lang):
+    if url:
+        return f'<a href="{url}" lang="{lang}" target="_blank" rel="noopener">{label}</a>'
+    return f'<a lang="{lang}" aria-disabled="true" class="soon">{label}<small>Link coming / リンクは準備中</small></a>'
+
 def home():
     t, j = UI['en'], UI['ja']
     lst = ''.join(f'<li><b>{i}</b><span>{t[f"st{i}long"]}<br><span lang="ja">{j[f"st{i}long"]}</span></span></li>' for i in (1, 2, 3))
     return head('en', f'{t["title"]} / {j["title"]}', '') + f'''</head>
-<body>
-<main>
-  <div class="top"><button class="theme" id="theme" type="button" data-dark="Dark mode / ダークモード" data-light="Light mode / ライトモード">Dark mode / ダークモード</button></div>
-  <div class="home-logos">
-    <img class="logo" src="images/aichi-gakuin-logo.png" width="60" height="76" alt="Aichi Gakuin University">
-    <img class="logo" src="images/nagoya-logo.png" width="101" height="76" alt="Nagoya University">
+<body class="home">
+<header class="bar">
+  <div class="bar-left">
+    <button class="theme" id="theme" type="button" data-dark="Dark mode / ダークモード" data-light="Light mode / ライトモード">Dark mode / ダークモード</button>
   </div>
-  <h1>{t['title']}<br><span lang="ja">{j['title']}</span></h1>
-  <p class="lead">{t['choose']}<br><span lang="ja">{t['choose2']}</span></p>
+  <div class="logos">
+    <img class="logo" src="images/aichi-gakuin-logo.png" width="44" height="56" alt="Aichi Gakuin University">
+    <img class="logo" src="images/nagoya-logo.png" width="74" height="56" alt="Nagoya University">
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <h1>{t['title']}<span class="h1-ja" lang="ja">{j['title']}</span></h1>
+    <p class="lead">{t['choose']}<span lang="ja">{t['choose2']}</span></p>
+  </div>
   <section class="choice" aria-labelledby="ar">
     <h2 id="ar">AR web page<span lang="ja">ARウェブページ</span></h2>
     <div class="pick"><a href="en/pre-op/">English</a><a href="ja/pre-op/" lang="ja">日本語</a></div>
@@ -162,7 +188,24 @@ def home():
     <h2 id="video">Narrated video<span lang="ja">ナレーション動画</span></h2>
     <div class="pick"><a href="video/en/">English</a><a href="video/ja/" lang="ja">日本語</a></div>
   </section>
-  <ol class="stage-list">{lst}</ol>
+  <section class="stages-card" aria-labelledby="stages-h">
+    <h2 id="stages-h">The three stages<span lang="ja">3つの段階</span></h2>
+    <ol class="stage-list">{lst}</ol>
+  </section>
+  <section class="choice study-card" aria-labelledby="form-h">
+    <h2 id="form-h">Take part in the study<span lang="ja">研究に参加する</span></h2>
+    <p>The form has the information sheet and the survey.<span lang="ja">フォームには、説明書とアンケートがあります。</span></p>
+    <div class="pick">{form_link(FORM_EN, 'Open the form (English)', 'en')}{form_link(FORM_JA, 'フォームを開く（日本語）', 'ja')}</div>
+  </section>
+  <div class="qr-card">
+    <button type="button" class="qr-open" id="qr-open" aria-haspopup="dialog"><img src="images/qr-home.svg" width="72" height="72" alt=""><span>Show QR code for this site<span lang="ja">このサイトのQRコードを表示</span></span></button>
+  </div>
+  <dialog class="qr" id="qr" aria-label="QR code / QRコード">
+    <img src="images/qr-home.svg" alt="QR code: {SITE_URL}">
+    <p>Scan to open this site<span lang="ja">読み取ると、このサイトが開きます</span></p>
+    <p class="qr-url">{SITE_URL.replace('https://', '')}</p>
+    <form method="dialog"><button type="submit">Close / 閉じる</button></form>
+  </dialog>
   <p class="disclaimer">{t['disclaimer']}<br><span lang="ja">{j['disclaimer']}</span></p>
 </main>
 <script src="site.js"></script>
