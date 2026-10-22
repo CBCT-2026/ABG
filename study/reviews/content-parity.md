@@ -30,7 +30,9 @@ The brief asks for the same content in all four materials. The sheets use the li
 | 3 | Keep the space: removable plate while growing, then implant or one-wing bridge | ~ (no definitions of implant/bridge; labels on screen) |
 | 3 | Cleft team helps you choose | ✓ |
 
-Totals: 11 same, 10 shortened, 3 not in narration (medical names, wound opening, school after 2 weeks).
+**Update (22 Oct 2026, 60 s per stage):** the narration now also says: the medical name alveolar cleft, the graft aims, wound opening, back to school after about 2 weeks, almost everyone needs braces, tooth-coloured filling, and what an implant and a bridge are. Remaining gaps: agenesis and lateral incisor names, best root stage for timing, stitches, plate details. The table below is the earlier 45 s version.
+
+Totals (45 s version): 11 same, 10 shortened, 3 not in narration (medical names, wound opening, school after 2 weeks).
 
 ## Choice for Luke (not changed)
 1. Keep as is and report it as a limitation: the narration is a 60 s summary of the sheet, so the materials match in

@@ -72,7 +72,8 @@
       "gum"
      ],
      "sentences": [
-      "Under the pink gum, there is a gap in the bone that holds the teeth."
+      "Under the pink gum, there is a gap in the bone that holds the teeth.",
+      "Its medical name is the alveolar cleft."
      ]
     },
     {
@@ -103,7 +104,8 @@
      ],
      "sentences": [
       "At about 8 to 11 years old, a surgeon fills the gap with bone, most often from the hip.",
-      "This is a bone graft."
+      "This is a bone graft.",
+      "It joins the jaw, holds up the teeth and nose, and closes any hole into the nose."
      ]
     }
    ]
@@ -127,7 +129,8 @@
      "sentences": [
       "New bone now fills the gap, from the floor of the nose down to the gum.",
       "It joins the two parts of the upper jaw.",
-      "The gum has healed over it."
+      "The gum has healed over it.",
+      "If the wound opens early on, you can lose some of the graft."
      ]
     },
     {
@@ -155,7 +158,8 @@
      "scene": "hip",
      "labels": [],
      "sentences": [
-      "Your hip can be sore for a while after surgery."
+      "Your hip can be sore for a while after surgery.",
+      "In one study, children went back to school about 2 weeks after surgery."
      ]
     }
    ]
@@ -189,7 +193,8 @@
       "braces"
      ],
      "sentences": [
-      "Fixed braces line up the teeth."
+      "Fixed braces line up the teeth.",
+      "Almost everyone who has this graft needs them."
      ]
     },
     {
@@ -201,9 +206,11 @@
      ],
      "sentences": [
       "The tooth that never grew leaves a gap.",
-      "Often, braces move the eye tooth into the gap, and the dentist reshapes it.",
+      "Often, braces move the eye tooth into the gap, and the dentist reshapes it with tooth-coloured filling.",
       "Or you keep the gap, with a false tooth on a plate you can take out.",
       "When you stop growing, an implant or a bridge can fill it.",
+      "An implant is a small post with a false tooth on top.",
+      "A bridge is a false tooth glued to the next tooth.",
       "Your cleft team will help you choose."
      ]
     }
