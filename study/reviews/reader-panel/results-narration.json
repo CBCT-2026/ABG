@@ -1,0 +1,585 @@
+{
+ "material": "narration",
+ "questions": [
+  {
+   "id": "q1",
+   "message": "Side of the cleft"
+  },
+  {
+   "id": "q2",
+   "message": "Where the gap is"
+  },
+  {
+   "id": "q3",
+   "message": "Missing tooth"
+  },
+  {
+   "id": "q4",
+   "message": "Why graft: eye tooth"
+  },
+  {
+   "id": "q5",
+   "message": "Age"
+  },
+  {
+   "id": "q6",
+   "message": "Donor site"
+  },
+  {
+   "id": "q7",
+   "message": "Short-term change"
+  },
+  {
+   "id": "q8",
+   "message": "X-ray check"
+  },
+  {
+   "id": "q9",
+   "message": "Hip after surgery"
+  },
+  {
+   "id": "q10",
+   "message": "Eye tooth years later"
+  },
+  {
+   "id": "q11",
+   "message": "Braces"
+  },
+  {
+   "id": "q12",
+   "message": "Missing tooth choices"
+  }
+ ],
+ "readers": [
+  {
+   "persona": "Dental student in year 3, reads quickly and skims.",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  },
+  {
+   "persona": "Medical student with no dental training.",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  },
+  {
+   "persona": "Aged 70, retired, reads slowly and carefully.",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  },
+  {
+   "persona": "Low health literacy; left school at 16 and finds long words hard.",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  },
+  {
+   "persona": "Reads English as a second language at an intermediate level (CEFR B1).",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  },
+  {
+   "persona": "Parent of a 9-year-old with a cleft, a little worried about the operation.",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  },
+  {
+   "persona": "Dyslexic; prefers pictures and short lines and loses track in long paragraphs.",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  },
+  {
+   "persona": "Busy nurse reading or listening between tasks, half-distracted.",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  },
+  {
+   "persona": "Aged 18, born with a cleft, already had treatment years ago.",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  },
+  {
+   "persona": "Dental hygienist who has never worked with cleft patients.",
+   "answers": {
+    "q1": {
+     "found": true,
+     "understood": true
+    },
+    "q2": {
+     "found": true,
+     "understood": true
+    },
+    "q3": {
+     "found": true,
+     "understood": true
+    },
+    "q4": {
+     "found": true,
+     "understood": true
+    },
+    "q5": {
+     "found": true,
+     "understood": true
+    },
+    "q6": {
+     "found": true,
+     "understood": true
+    },
+    "q7": {
+     "found": true,
+     "understood": true
+    },
+    "q8": {
+     "found": true,
+     "understood": true
+    },
+    "q9": {
+     "found": true,
+     "understood": true
+    },
+    "q10": {
+     "found": true,
+     "understood": true
+    },
+    "q11": {
+     "found": true,
+     "understood": true
+    },
+    "q12": {
+     "found": true,
+     "understood": true
+    }
+   }
+  }
+ ]
+}

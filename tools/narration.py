@@ -22,6 +22,7 @@ SCENES = {
 }
 UI = json.load(open('content/ui.json'))
 VOICE = {'en': 'bf_emma', 'ja': 'jf_alpha'}  # Kokoro-82M voices used in the wisdom tooth study
+SPEED = {'en': 1.0, 'ja': 1.1}  # Kokoro's Japanese voice is slow; 1.1 keeps each stage within 45 s
 text = open('content/narration.md', encoding='utf-8').read()
 parts = {h.strip(): b.strip() for h, b in re.findall(r'^## ([^\n]+)\n(.*?)(?=^## |\Z)', text, re.S | re.M)}
 for lang, name in (('en', 'English'), ('ja', 'Japanese')):
@@ -33,7 +34,7 @@ for lang, name in (('en', 'English'), ('ja', 'Japanese')):
         split = (lambda p: re.findall(r'[^。]+。', p)) if lang == 'ja' else (lambda p: re.split(r'(?<=[.?!])\s+', p))
         chapters.append(dict(stage=n, title=f"{UI[lang][f'stage{n}n']}: {UI[lang][f'st{n}']}",
                              paragraphs=[dict(scene=s, labels=l, sentences=split(p)) for (s, l), p in zip(SCENES[n], paras)]))
-    out = dict(lang=lang, voice=VOICE[lang], speed=1.0, title=UI[lang]['title'], labels=labels, chapters=chapters,
-               sentence_gap=0.5, paragraph_gap=1.8, chapter_gap=2.5)
+    out = dict(lang=lang, voice=VOICE[lang], speed=SPEED[lang], title=UI[lang]['title'], labels=labels, chapters=chapters,
+               sentence_gap=0.4, paragraph_gap=1.2, chapter_gap=2.5)
     json.dump(out, open(f'video/script-{lang}.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('wrote', f'video/script-{lang}.json')

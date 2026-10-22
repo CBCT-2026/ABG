@@ -1,0 +1,30 @@
+## sheet
+Reader panel (simulated): pass mark 80% of readers find and understand each message.
+  PASS q1: 10/10 found and understood (10 found). Side of the cleft
+  PASS q2: 10/10 found and understood (10 found). Where the gap is
+  PASS q3: 10/10 found and understood (10 found). Missing tooth
+  PASS q4: 10/10 found and understood (10 found). Why graft: eye tooth
+  PASS q5: 10/10 found and understood (10 found). Age
+  PASS q6: 10/10 found and understood (10 found). Donor site
+  PASS q7: 10/10 found and understood (10 found). Short-term change
+  PASS q8: 10/10 found and understood (10 found). X-ray check
+  PASS q9: 10/10 found and understood (10 found). Hip after surgery
+  PASS q10: 10/10 found and understood (10 found). Eye tooth years later
+  PASS q11: 10/10 found and understood (10 found). Braces
+  PASS q12: 10/10 found and understood (10 found). Missing tooth choices
+Overall: PASS. Simulated readers are a pre-test only, not a substitute for testing with real readers.
+## narration
+Reader panel (simulated): pass mark 80% of readers find and understand each message.
+  PASS q1: 10/10 found and understood (10 found). Side of the cleft
+  PASS q2: 10/10 found and understood (10 found). Where the gap is
+  PASS q3: 10/10 found and understood (10 found). Missing tooth
+  PASS q4: 10/10 found and understood (10 found). Why graft: eye tooth
+  PASS q5: 10/10 found and understood (10 found). Age
+  PASS q6: 10/10 found and understood (10 found). Donor site
+  PASS q7: 10/10 found and understood (10 found). Short-term change
+  PASS q8: 10/10 found and understood (10 found). X-ray check
+  PASS q9: 10/10 found and understood (10 found). Hip after surgery
+  PASS q10: 10/10 found and understood (10 found). Eye tooth years later
+  PASS q11: 10/10 found and understood (10 found). Braces
+  PASS q12: 10/10 found and understood (10 found). Missing tooth choices
+Overall: PASS. Simulated readers are a pre-test only, not a substitute for testing with real readers.

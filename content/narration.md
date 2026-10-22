@@ -6,21 +6,21 @@ Every sentence is taken from, or shortens, the web page text for that stage, wit
 
 ## Stage 1 English
 
-This is the upper jaw of a child, about 9 to 10 years old. The child was born with a cleft on the left side.
+This is the upper jaw of a child, about 9 to 10 years old. The child was born with a split in the lip and gum on the left, called a cleft.
 
-The pink part is the gum. Under it, there is a gap in the bone that holds the teeth.
+Under the pink gum, there is a gap in the bone that holds the teeth.
 
 The small tooth next to the left front tooth never grew. About half of children with a cleft do not have this tooth.
 
-High up in the bone, the adult eye tooth waits to come down. It needs bone to grow into.
+High in the bone, the adult eye tooth waits to come down. It needs bone to grow into.
 
-So, at about 8 to 11 years old, a surgeon fills the gap with bone, most often from the hip. This is called a bone graft.
+At about 8 to 11 years old, a surgeon fills the gap with bone, most often from the hip. This is a bone graft.
 
 ## Stage 1 Japanese
 
-これは、9～10才ごろの子どもの上あごです。生まれつき、左側に口の割れ目があります。
+これは、9～10才ごろの子どもの上あごです。生まれつき、左側のくちびると歯ぐきが割れています。これを口の割れ目といいます。
 
-ピンクの部分は歯ぐきです。その下で、歯をささえる骨にすき間があります。
+ピンクの歯ぐきの下で、歯をささえる骨にすき間があります。
 
 左の前歯のとなりの小さい歯は、はえてきませんでした。口の割れ目がある子どもの約半数は、この歯がありません。
 

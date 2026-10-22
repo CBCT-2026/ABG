@@ -1,0 +1,89 @@
+{
+ "material": "ABG 2D sheets (EN) and narration (EN)",
+ "questions": [
+  {
+   "id": "q1",
+   "message": "Side of the cleft",
+   "question": "In this model, which side is the cleft on?",
+   "expected": "The left side",
+   "where": "Stage 1 first sentence"
+  },
+  {
+   "id": "q2",
+   "message": "Where the gap is",
+   "question": "Where is the gap that the operation fills?",
+   "expected": "In the bone that holds the teeth (gum bone), next to the front teeth, under the gum",
+   "where": "Stage 1"
+  },
+  {
+   "id": "q3",
+   "message": "Missing tooth",
+   "question": "Which tooth is missing in this model, and how common is that in children with a cleft?",
+   "expected": "The small tooth next to the front tooth (lateral incisor); about half of children with a cleft",
+   "where": "Stage 1"
+  },
+  {
+   "id": "q4",
+   "message": "Why graft: eye tooth",
+   "question": "Why does the adult eye tooth need the bone graft?",
+   "expected": "It needs bone to come down / grow into",
+   "where": "Stage 1"
+  },
+  {
+   "id": "q5",
+   "message": "Age",
+   "question": "At about what age is the bone graft usually done?",
+   "expected": "About 8 to 11 years old",
+   "where": "Stage 1"
+  },
+  {
+   "id": "q6",
+   "message": "Donor site",
+   "question": "Where does the bone for the graft most often come from?",
+   "expected": "The hip",
+   "where": "Stage 1"
+  },
+  {
+   "id": "q7",
+   "message": "Short-term change",
+   "question": "What has changed about 3 months after the operation?",
+   "expected": "New bone fills the gap (joins the two parts of the jaw) and the gum has healed over it",
+   "where": "Stage 2"
+  },
+  {
+   "id": "q8",
+   "message": "X-ray check",
+   "question": "How and when do doctors check that the new bone has taken?",
+   "expected": "An X-ray at about 3 to 6 months",
+   "where": "Stage 2"
+  },
+  {
+   "id": "q9",
+   "message": "Hip after surgery",
+   "question": "What might you feel where the bone was taken?",
+   "expected": "The hip can be sore for a while",
+   "where": "Stage 2"
+  },
+  {
+   "id": "q10",
+   "message": "Eye tooth years later",
+   "question": "Years later, where is the eye tooth?",
+   "expected": "It came down through the new bone into the row of teeth",
+   "where": "Stage 3"
+  },
+  {
+   "id": "q11",
+   "message": "Braces",
+   "question": "What lines up the teeth in the later stage?",
+   "expected": "Fixed braces",
+   "where": "Stage 3"
+  },
+  {
+   "id": "q12",
+   "message": "Missing tooth choices",
+   "question": "What are the choices for the gap left by the tooth that never grew?",
+   "expected": "Move the eye tooth into the gap and reshape it; or keep the gap (false tooth on a removable plate while growing, then an implant or a bridge)",
+   "where": "Stage 3"
+  }
+ ]
+}
