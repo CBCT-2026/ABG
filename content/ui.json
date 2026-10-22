@@ -48,7 +48,9 @@
   "nextStage": "Next stage",
   "listen": "Listen to the narration",
   "ready": "Tap Start when you are ready.",
-  "start": "Start"
+  "start": "Start",
+  "stageDone": "Stage {n} done",
+  "thanks": "Thank you!"
  },
  "ja": {
   "title": "歯ぐきの骨のすき間をうめる手術：3つの段階",
@@ -99,6 +101,8 @@
   "nextStage": "次の段階へ",
   "listen": "ナレーションを聞く",
   "ready": "じゅんびができたら、スタートをおしてください。",
-  "start": "スタート"
+  "start": "スタート",
+  "stageDone": "段階{n}、おわり",
+  "thanks": "ありがとうございました！"
  }
 }

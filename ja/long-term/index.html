@@ -74,7 +74,6 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <li><b>インプラント</b>：骨にうめる小さなねじの上に、歯の形のかぶせ物（<b>クラウン</b>）をつけたもの</li>
     <li><b>ブリッジ</b>：つくり物の歯で、一まいの羽を、すき間のとなりの歯のうらに、はりつけたもの</li>
   </ul>
-  <p>模型は、部品をつけかえて、それぞれの方法を見せられます。そうちも、つけたり外したりできます。</p>
   <p>どの方法が合うかは、口の割れ目のチームと話し合います。<sup class="cite"><a href="#ref-10">10</a></sup></p>
 </section>
 
@@ -100,8 +99,8 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
   <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">はじめからもう一度</button></p>
   <p class="disclaimer">このページは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。</p>
   <div class="timer" id="timer" hidden><span>のこり時間</span> <b id="timer-left"></b></div>
-  <div class="timeup gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-msg" hidden><p id="gate-msg">じゅんびができたら、スタートをおしてください。</p><button type="button" class="start" id="start">スタート</button></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">時間になりました。研究の担当者に知らせてください。</p><button type="button" class="again" data-home="../pre-op/">はじめからもう一度</button><p class="device" id="device" data-label="端末" data-phone="スマートフォン" data-tablet="タブレット" data-computer="パソコン" data-touch="タッチ" data-mouse="マウス"></p></div>
+  <div class="timeup gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-msg" hidden><div class="done-card"><h2 class="done-title">段階3: 数年後</h2><p id="gate-msg">じゅんびができたら、スタートをおしてください。</p><button type="button" class="start" id="start">スタート</button></div></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><div class="done-card"><svg class="tick" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25l7 7 13-15"/></svg><h2 class="done-title">ありがとうございました！</h2><p id="timeup-msg">時間になりました。研究の担当者に知らせてください。</p><button type="button" class="again" data-home="../pre-op/">はじめからもう一度</button></div><p class="device" id="device" data-label="端末" data-phone="スマートフォン" data-tablet="タブレット" data-computer="パソコン" data-touch="タッチ" data-mouse="マウス"></p></div>
 </main>
 <script src="../../site.js"></script>
 </body>

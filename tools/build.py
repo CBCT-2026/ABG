@@ -81,7 +81,11 @@ def steps(lang, current, prefix):
 
 def stage_page(lang, i, stage):
     t = UI[lang]; n = i + 1; up = '../../'
-    text, refs = cite(open(f'content/{stage}-{lang}.html').read())
+    src = open(f'content/{stage}-{lang}.html').read()
+    for old, new in WEB_SWAP.get((stage, lang), []):
+        assert old in src, (stage, lang, old)
+        src = src.replace(old, new)
+    text, refs = cite(src)
     refs = refs.replace('<a href=', '<a target="_blank" rel="noopener" href=')  # sources open in a new tab, so the material stays open
     spots = ''
     for k, key in enumerate(LABELS[stage]):
@@ -133,8 +137,8 @@ def stage_page(lang, i, stage):
   <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">{t['startAgain']}</button></p>
   <p class="disclaimer">{t['disclaimer']}</p>
   <div class="timer" id="timer" hidden><span>{t['timeLeft']}</span> <b id="timer-left"></b></div>
-  <div class="timeup gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-msg" hidden><p id="gate-msg">{t['ready']}</p><button type="button" class="start" id="start">{t['start']}</button></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">{t['timeUp'] if i == 2 else t['stageUp']}</p>{'<button type="button" class="again" data-home="../pre-op/">' + t['startAgain'] + '</button>' if i == 2 else '<a class="next-stage" href="../' + STAGES[i + 1] + '/">' + t['nextStage'] + ' →</a>'}<p class="device" id="device" data-label="{t['device']}" data-phone="{t['phone']}" data-tablet="{t['tablet']}" data-computer="{t['computer']}" data-touch="{t['touch']}" data-mouse="{t['mouse']}"></p></div>
+  <div class="timeup gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-msg" hidden><div class="done-card"><h2 class="done-title">{t[f"stage{n}n"]}: {t[f"st{n}"]}</h2><p id="gate-msg">{t['ready']}</p><button type="button" class="start" id="start">{t['start']}</button></div></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><div class="done-card"><svg class="tick" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25l7 7 13-15"/></svg><h2 class="done-title">{t['thanks'] if i == 2 else t['stageDone'].format(n=n)}</h2><p id="timeup-msg">{t['timeUp'] if i == 2 else t['stageUp']}</p>{'<button type="button" class="again" data-home="../pre-op/">' + t['startAgain'] + '</button>' if i == 2 else '<a class="next-stage" href="../' + STAGES[i + 1] + '/">' + t['nextStage'] + ' →</a>'}</div><p class="device" id="device" data-label="{t['device']}" data-phone="{t['phone']}" data-tablet="{t['tablet']}" data-computer="{t['computer']}" data-touch="{t['touch']}" data-mouse="{t['mouse']}"></p></div>
 </main>
 <script src="{up}site.js"></script>
 </body>
@@ -228,6 +232,11 @@ SHEET_SWAP = {
  ('pre-op', 'ja'): [('「歯ぐきを外す」をおすと、骨のすき間が見えます。', '図は、歯ぐきがある時と外した時の上あごです。')],
  ('long-term', 'en'): [('The model has parts you can swap to show each choice. The braces clip on and off.', 'The pictures show each choice.')],
  ('long-term', 'ja'): [('模型は、部品をつけかえて、それぞれの方法を見せられます。そうちも、つけたり外したりできます。', '図は、それぞれの方法を見せています。')],
+}
+# Sentences about the 3D print's parts, which the web page can't do: left out of the web page.
+WEB_SWAP = {
+ ('long-term', 'en'): [('  <p>The model has parts you can swap to show each choice. The braces clip on and off.</p>\n', '')],
+ ('long-term', 'ja'): [('  <p>模型は、部品をつけかえて、それぞれの方法を見せられます。そうちも、つけたり外したりできます。</p>\n', '')],
 }
 # Pictures per stage: (image file or None for a placeholder, English caption, Japanese caption).
 # Stage 1 pictures come from tools/sheet/render.js. Stages 2 and 3 are placeholders until their models are built.

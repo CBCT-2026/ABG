@@ -244,3 +244,17 @@ model-viewer.no-viewer { display: block; position: relative; min-height: 240px; 
 .narration audio { width: min(100%, 360px); height: 40px; }
 .timeup .next-stage { margin-top: 18px; font: 600 16px/1.2 var(--font); min-height: 44px; padding: 12px 22px; border-radius: 999px;
   color: var(--bg); background: var(--accent); text-decoration: none; }
+/* Equal-height stage tabs */
+.steps li { display: flex; }
+.steps a { display: flex; flex-direction: column; justify-content: center; }
+/* Friendlier end-of-stage screen: a card with a tick, a short heading and one clear button */
+.timeup { background: var(--card); }
+.done-card { background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 28px 24px; max-width: 26em; width: 100%;
+  display: flex; flex-direction: column; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+.tick { width: 56px; height: 56px; }
+.tick circle { fill: var(--accent); }
+.tick path { fill: none; stroke: var(--bg); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.done-title { margin: 12px 0 4px; font-size: 1.5rem; }
+.done-card p { font-size: 1.05rem; font-weight: 500; margin: 4px 0 0; }
+.timeup .device { margin-top: 16px; }
+:lang(ja) .done-title { word-break: keep-all; }
