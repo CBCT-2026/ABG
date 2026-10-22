@@ -1,16 +1,13 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>歯そう骨移植：手術のすぐ後</title>
-<meta name="description" content="歯そう骨移植の数か月後の上あごの3Dモデルです。すき間に入れた骨と、まだ骨の中にある大人の犬歯が見られます。">
+<title>歯ぐきの骨のすき間をうめる手術：3つの段階 · 3か月後</title>
+<meta name="description" content="骨移植から約3か月後の同じ上あごの3D模型">
 <meta name="robots" content="noindex">
 <script>
-// Pick light or dark before the page draws: the saved choice, else the device setting.
-try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-// The models are Draco-compressed; the decoder is served from this site.
-self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/', location.href).href };
+try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
 </script>
 <link rel="stylesheet" href="../../style.css">
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
@@ -21,130 +18,77 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <a class="lang" href="../../en/short-term/" lang="en" hreflang="en">English</a>
     <button class="theme" id="theme" type="button" data-dark="ダークモード" data-light="ライトモード">ダークモード</button>
   </div>
-    <a class="lang" href="../">すべての時期</a>
+  <a class="logos" href="../../" aria-label="ホーム">
+    <img class="logo" src="../../images/aichi-gakuin-logo.png" width="44" height="56" alt="Aichi Gakuin University">
+    <img class="logo" src="../../images/nagoya-logo.png" width="74" height="56" alt="Nagoya University">
+  </a>
 </header>
 
 <main>
-  <nav class="stepper" aria-label="時期"><ol>
-    <li><a href="../pre-op/"><span class="step-num">1</span>手術の前</a></li>
-    <li><a href="../short-term/" aria-current="page"><span class="step-num">2</span>手術のすぐ後</a></li>
-    <li><a href="../long-term/"><span class="step-num">3</span>数年後</a></li>
-  </ol></nav>
-  <h1>歯そう骨移植　2：手術のすぐ後</h1>
-  <p class="intro">下は、上あごと歯の3Dモデルです。一部のスマートフォンやタブレットでは、<b>AR（拡張現実）</b>でも見られます。ARは、カメラにうつる実際の部屋の中に、モデルがあるように見せる機能です。</p>
-
-  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。番号の点をタップすると、その部分の説明が出ます。<b>「番号をかくす」</b>で、モデルを見やすくできます。<b>「AR表示」</b>をタップすると、近くの机の上や平らな場所にモデルを置けます。 <b>「骨をすかして見る」</b>をタップすると、骨の中の大人の犬歯が見えます。</p>
-  <p class="hint arnote">ARは、ARに対応した機器とブラウザでだけ使えます。たとえば、iPhoneのSafariや、多くのAndroidスマートフォンのChromeです。ARのボタンが出ないときは、その機器やブラウザではARを使えません。ARでは、すべての部分がついた、モデル全体が表示されます。</p>
-
-  <!-- MODEL: models/abg-short-term.glb (Draco, under 5 MB) and models/abg-short-term.usdz. See docs/model-spec.md. -->
-  <model-viewer id="mv"
-    src="../../models/abg-short-term.glb"
-    ios-src="../../models/abg-short-term.usdz"
-    alt="歯そう骨移植の数か月後の上あごの3Dモデル。すき間をうめた移植した骨が明るい色で表され、大人の犬歯はまだ骨の中にある"
+  <h1>歯ぐきの骨のすき間をうめる手術：3つの段階</h1>
+  <ol class="steps" aria-label="段階"><li><a href="../pre-op/"><span>段階1</span><b>手術の前</b></a></li><li><a href="../short-term/" aria-current="page"><span>段階2</span><b>3か月後</b></a></li><li><a href="../long-term/"><span>段階3</span><b>数年後</b></a></li></ol>
+  <!-- MODEL: placeholder on every stage until the stage models are built. See README. -->
+  <model-viewer id="mv" src="../../models/abg-placeholder.glb" ios-src="../../models/abg-placeholder.usdz"
+    alt="骨移植から約3か月後の同じ上あごの3D模型"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
-    camera-controls camera-orbit="0deg 75deg auto" touch-action="pan-y" interaction-prompt="auto"
-    shadow-intensity="1" exposure="1" loading="eager" data-missing="この時期の3Dモデルは、まだ用意できていません。">
-    <button slot="ar-button" class="ar-btn">AR表示（まわりの空間に置く）</button>
-    <button class="hotspot" slot="hotspot-1" data-position="0.0185m 0.0090m 0.0149m" data-normal="0.73 0.35 0.59" data-visibility-attribute="visible" aria-label="1. 移植した骨（新しい骨）">1<span class="label">移植した骨（新しい骨）</span><span class="note"><span>歯ぐきの骨のすき間に入れた、新しい骨です。</span><span>見やすいように、明るい色で表しています。</span><span>時間がたつと、まわりの骨となじみます。</span></span></button>
-    <button class="hotspot" slot="hotspot-2" data-position="0.0274m 0.0151m 0.0156m" data-normal="0.78 0.43 0.45" data-visibility-attribute="visible" aria-label="2. 大人の犬歯（まだ生えていない）">2<span class="label">大人の犬歯（まだ生えていない）</span><span class="note"><span>手術のすぐ後は、まだ歯ぐきの下にあります。これはふつうのことです。</span><span>これで、生えるための骨ができました。</span><span>多くの場合、自然に生えてきます。</span></span></button>
-    <button class="hotspot" slot="hotspot-3" data-position="0.0195m -0.0016m 0.0200m" data-normal="0.70 -0.06 0.71" data-visibility-attribute="visible" aria-label="3. 側切歯の場所">3<span class="label">側切歯の場所</span><span class="note"><span>この歯がないときは、後で犬歯がこの場所に動くことがあります。</span></span></button>
-    <button class="hotspot" slot="hotspot-4" data-position="0.0090m -0.0100m 0.0317m" data-normal="0.26 -0.29 0.92" data-visibility-attribute="visible" aria-label="4. 前歯（中切歯）">4<span class="label">前歯（中切歯）</span><span class="note"><span>移植した骨が、すき間のとなりの前歯をささえます。</span></span></button>
-    <button class="hotspot" slot="hotspot-5" data-position="0.0348m -0.0121m 0.0045m" data-normal="0.94 -0.33 0.12" data-visibility-attribute="visible" aria-label="5. 乳歯">5<span class="label">乳歯</span><span class="note"><span>この年れいでは、まだ乳歯がいくつかあります。</span></span></button>
-    <button class="hotspot" slot="hotspot-6" data-position="0.0402m -0.0076m -0.0180m" data-normal="0.90 -0.17 -0.40" data-visibility-attribute="visible" aria-label="6. 大人の第一大きゅう歯">6<span class="label">大人の第一大きゅう歯</span><span class="note"><span>最初に生える、大人の大きなおく歯です。</span></span></button>
-    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
+    camera-controls camera-orbit="0deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
+    shadow-intensity="1" exposure="1.05" loading="eager">
+    <button slot="ar-button" class="ar-btn">ARで見る（部屋におく）</button>
+    <div class="placeholder"><span>仮の模型です：この段階の模型は、今作っているところです</span></div>
+    <div class="hotspot" slot="hotspot-1" data-position="-0.002m -0.012m 0.0316m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 40px"><span class="label">前歯<small>中切歯</small></span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
-  <div class="info" id="info" aria-live="polite" hidden></div>
-  <div class="controls" role="group" aria-label="モデルの操作">
-    <button type="button" data-orbit="0deg 75deg auto" aria-pressed="true">全体</button>
-    <button type="button" data-orbit="0deg 160deg auto" aria-pressed="false">上あごの天じょう</button>
-    <button type="button" data-orbit="35deg 80deg auto" data-target="0.0274m 0.0151m 0.0156m" aria-pressed="false">移植した骨と犬歯</button>
-    <button type="button" class="part" data-part="soft-tissue" data-mode="hide" data-on="歯ぐきのカバーを外す" data-off="歯ぐきのカバーをもどす" aria-pressed="false" hidden>歯ぐきのカバーを外す</button>
-    <button type="button" class="part" data-part="bone" data-mode="xray" data-on="骨をすかして見る" data-off="骨をもとにもどす" aria-pressed="false" hidden>骨をすかして見る</button>
-    <button type="button" id="labels"aria-pressed="false" data-on="番号をかくす" data-off="番号を表示">番号をかくす</button>
+  <div class="controls" role="group" aria-label="模型のそうさ">
+    <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">上あご全体</button>
+    <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">下から</button>
+    <button type="button" data-orbit="40deg 75deg 0.11m" data-target="0.028m 0.006m 0.01m" aria-pressed="false">左側</button>
+    <button type="button" id="labels" aria-pressed="false" data-on="名前をかくす" data-off="名前を出す">名前をかくす</button>
+    <button type="button" id="gum" class="gum" aria-pressed="false" data-off="歯ぐきを外す" data-on="歯ぐきをもどす">歯ぐきを外す</button>
   </div>
 
-  <ul class="legend" aria-label="色の説明">
-    <li><span class="dot" style="background:#e6dccb"></span>骨</li>
-    <li><span class="dot" style="background:#fbf7ef"></span>移植した骨（新しい骨）</li>
-    <li><span class="dot" style="background:#f7f4ee"></span>歯</li>
-    <li><span class="dot" style="background:#7fb3d5"></span>大人の犬歯（まだ生えていない）</li>
-  </ul>
-
-  <!-- SHARED TEXT: generated from content/short-term-ja.html by tools/build.py. Edit that file, not this block. -->
+  <!-- TEXT: generated from content/short-term-ja.html by tools/build.py. -->
 <section class="important">
-  <h2>一人一人、ちがいます</h2>
-  <p>すき間の大きさ、歯のようす、治りょうの計画は、人によって大きくちがいます。ここにあるのは、多くの人に向けた情報で、一人一人への助言ではありません。どの治りょうでも、始める前に、治りょうチームが、本人や家族と、利点・危険・ほかの方法について、くわしく話し合います。</p>
+  <p><b>この模型は、骨移植から約3か月後の同じ上あごです。新しい骨がすき間をうめ、その上の歯ぐきは治っています。</b></p>
 </section>
 
 <section>
-  <h2>手術でしたこと</h2>
-  <p><b>歯そう骨移植</b>では、歯ぐきの骨のすき間に、新しい骨を入れます。この新しい骨を<b>移植した骨</b>といいます。本人の体の別の場所からとった骨です。<sup class="cite"><a href="#ref-1">1</a></sup> その後、上から歯ぐきを閉じます。</p>
-  <p>このモデルは、手術の数か月後の口の中を表しています。移植した骨は、見やすいように明るい色で表しています。実際には、ゆっくりとまわりの骨となじんでいきます。</p>
+  <h2>変わったところ</h2>
+  <p>移植した骨が、鼻のそこから歯ぐきまで、すき間をうめています。上あごの2つの部分をつないでいます。<sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-2">2</a></sup></p>
+  <p>歯ぐきは、移植した骨の上でぬってとじました。きずが開くと、骨の一部がなくなることがあります。これがいちばん多い問題なので、歯ぐきはていねいにとじます。<sup class="cite"><a href="#ref-3">3</a></sup><sup class="cite"><a href="#ref-4">4</a></sup></p>
+  <p>犬歯はまだ骨の中にあります。前より少し下にあります。これから数か月かけて、移植した骨の方へおりてきます。<sup class="cite"><a href="#ref-5">5</a></sup><sup class="cite"><a href="#ref-6">6</a></sup></p>
 </section>
 
 <section>
-  <h2>移植した骨の検査</h2>
-  <p>手術の数か月後に、よくレントゲン写真をとります。すき間に新しい骨がどのくらいできたかがわかります。ある研究では、約6か月後にこの写真をとりました。<sup class="cite"><a href="#ref-2">2</a></sup></p>
-</section>
-
-<section class="risk">
-  <h2>どのくらいうまくいきますか？</h2>
-  <p>8つの研究をまとめた報告では、手術から1年以上たってから、移植した骨を調べました。結果は次のとおりです。<sup class="cite"><a href="#ref-3">3</a></sup></p>
-  <div class="stats">
-    <div><strong>約4人に3人</strong><span>レントゲン写真で、骨移植がうまくいっていた</span></div>
-    <div><strong>10人中 約8人</strong><span>犬歯が新しい骨を通って自然に生えてきた</span></div>
-  </div>
-  <p>オーストラリアとイギリスの病院でも、ほかの国と同じように、高い成功率でした。<sup class="cite"><a href="#ref-4">4</a></sup> 2回目の骨移植が必要になることもあります。ある大きな研究では、約100人に1人でした。<sup class="cite"><a href="#ref-5">5</a></sup></p>
+  <h2>手術の後の検査</h2>
+  <p>約3～6か月後にレントゲンをとって、新しい骨がどのくらいついたかを見ます。<sup class="cite"><a href="#ref-7">7</a></sup><sup class="cite"><a href="#ref-8">8</a></sup> 移植した骨は、時間とともに少しへります。歯が移植した骨の中に動いてくると、骨がのこりやすくなります。<sup class="cite"><a href="#ref-9">9</a></sup><sup class="cite"><a href="#ref-10">10</a></sup></p>
 </section>
 
 <section>
-  <h2>うまくいきにくくなること</h2>
-  <p>9つの研究をまとめた報告では、次のような場合に、骨移植がうまくいきにくくなりました。<sup class="cite"><a href="#ref-6">6</a></sup></p>
-  <ul>
-    <li>手術をした年れいが高い</li>
-    <li>歯をきれいにできていない</li>
-    <li>すき間のとなりの歯が、もう生えていた</li>
-  </ul>
-  <p>そのため、治りょうチームは、時期をよく考えて決めます。ていねいな歯みがきも役に立ちます。<sup class="cite"><a href="#ref-6">6</a></sup></p>
+  <h2>こし</h2>
+  <p>骨をとったこしは、しばらくいたむことがあります。ある研究では、子どもは手術から約2週間で学校にもどりました。<sup class="cite"><a href="#ref-11">11</a></sup></p>
 </section>
 
-<section>
-  <h2>犬歯について</h2>
-  <p>手術のすぐ後は、大人の犬歯はまだ歯ぐきの下にあります。これはふつうのことです。これで、生えるための骨ができました。多くの場合、自然に生えてきます。<sup class="cite"><a href="#ref-3">3</a></sup> 助けが必要なこともあります。小さな手術で歯の上を開け、きょう正装置で正しい場所に引っぱることがあります。<sup class="cite"><a href="#ref-7">7</a></sup></p>
-</section>
-
-<section>
-  <h2>治りょうチームに聞けること</h2>
-  <ul>
-    <li>移植した骨の検査は、いつしますか？</li>
-    <li>移植した骨の近くは、どのようにみがけばよいですか？</li>
-    <li>犬歯は、順調に生えてきそうですか？</li>
-    <li>きょう正治りょうは、いつごろ始まりますか？</li>
-  </ul>
-</section>
-
-<section class="refs">
-  <h2>参考にした論文</h2>
+  <section class="refs">
+<details>
+  <summary><h2>出典</h2></summary>
   <ol>
-    <li id="ref-1">Jensen ED, Soares G, Cook S, et al. <span class="rt">The burden of cleft surgery: a 36-year reflection of surgical management of children with orofacial clefts in South Australia.</span> Cleft Palate Craniofac J. 2025;63(8):2610-2617. <a href="https://doi.org/10.1177/10556656251387961">doi.org/10.1177/10556656251387961</a></li>
-    <li id="ref-2">Bartzela T, Hoffmann I, Kluge J, et al. <span class="rt">Timing matters: dental development and outcomes on secondary alveolar bone grafting in cleft lip and palate patients.</span> Clin Oral Investig. 2025;29(11):545. <a href="https://doi.org/10.1007/s00784-025-06594-w">doi.org/10.1007/s00784-025-06594-w</a></li>
-    <li id="ref-3">Jahanbin A, Kamyabnezhad E, Raisolsadat MA, et al. <span class="rt">Long-term stability of alveolar bone graft in cleft lip and palate patients: systematic review and meta-analysis.</span> J Craniofac Surg. 2022;33(2):e194-e200. <a href="https://doi.org/10.1097/SCS.0000000000008254">doi.org/10.1097/SCS.0000000000008254</a></li>
-    <li id="ref-4">Kumar R, Heggie A, Shand J, et al. <span class="rt">Secondary bone grafting of alveolar clefts: a review of outcome at two centres in Australia and the UK.</span> Br J Oral Maxillofac Surg. 2017;55(5):496-499. <a href="https://doi.org/10.1016/j.bjoms.2017.02.002">doi.org/10.1016/j.bjoms.2017.02.002</a></li>
-    <li id="ref-5">Doucet JC, Patel MH, Russell KA, et al. <span class="rt">Evaluation of cleft adjacent canine eruption in patients with alveolar cleft treated with early secondary alveolar bone grafting.</span> Cleft Palate Craniofac J. 2025;63(7):1929-1934. <a href="https://doi.org/10.1177/10556656251356211">doi.org/10.1177/10556656251356211</a></li>
-    <li id="ref-6">Wu J, Zhuang J, Ma Y, et al. <span class="rt">Risk factors associated with the failure of secondary alveolar bone grafting with autologous iliac crest bone in patients with alveolar cleft defects: a systematic review.</span> Front Oral Health. 2025;6:1640933. <a href="https://doi.org/10.3389/froh.2025.1640933">doi.org/10.3389/froh.2025.1640933</a></li>
-    <li id="ref-7">Alhasyimi AA, Ramadhan IPA, Farmasyanti CA, et al. Clinical orthodontic outcomes following secondary alveolar bone grafting in patients with cleft lip and palate: a systematic review. Cleft Palate Craniofac J. 2026. Online ahead of print. <a href="https://doi.org/10.1177/10556656261454065">doi.org/10.1177/10556656261454065</a></li>
+    <li id="ref-1">Boyne PJ, Sands NR. Secondary bone grafting of residual alveolar and palatal clefts. J Oral Surg. 1972;30:87-92. PMID 4550446. <a href="https://pubmed.ncbi.nlm.nih.gov/4550446/">pubmed.ncbi.nlm.nih.gov/4550446</a></li>
+    <li id="ref-2">Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a href="https://doi.org/10.1159/000337666">doi.org/10.1159/000337666</a></li>
+    <li id="ref-3">Siddiqui S, et al. Autologous platelet concentrate during secondary alveolar bone grafting and wound dehiscence: a systematic review. J Craniomaxillofac Surg. 2024;52:895-905. <a href="https://doi.org/10.1016/j.jcms.2024.04.016">doi.org/10.1016/j.jcms.2024.04.016</a></li>
+    <li id="ref-4">Kaura AS, et al. Optimal timing of alveolar cleft bone grafting. J Craniofac Surg. 2018;29:1551-1557. <a href="https://doi.org/10.1097/SCS.0000000000004680">doi.org/10.1097/SCS.0000000000004680</a></li>
+    <li id="ref-5">Desai SK, et al. Observing the eruption of canine after secondary alveolar bone grafting. J Oral Maxillofac Surg. 2021;79:2562-2573. <a href="https://doi.org/10.1016/j.joms.2021.06.021">doi.org/10.1016/j.joms.2021.06.021</a></li>
+    <li id="ref-6">Kadi H, et al. CBCT assessment of canine eruption and development following alveolar bone grafting in unilateral cleft lip and palate. Cleft Palate Craniofac J. 2023;60:386-394. <a href="https://doi.org/10.1177/10556656211064477">doi.org/10.1177/10556656211064477</a></li>
+    <li id="ref-7">Kindelan JD, et al. Radiographic assessment of secondary autogenous alveolar bone grafting. Cleft Palate Craniofac J. 1997;34:195-198. <a href="https://doi.org/10.1597/1545-1569_1997_034_0195_raosaa_2.3.co_2">doi.org/10.1597/1545-1569(1997)034&lt;0195:RAOSAA&gt;2.3.CO;2</a></li>
+    <li id="ref-8">Witherow H, et al. A new scale to assess radiographic success of secondary alveolar bone grafts. Cleft Palate Craniofac J. 2002;39:255-260. <a href="https://doi.org/10.1597/1545-1569_2002_039_0255_anstar_2.0.co_2">doi.org/10.1597/1545-1569(2002)039&lt;0255:ANSTAR&gt;2.0.CO;2</a></li>
+    <li id="ref-9">Jahanbin A, et al. Long-term stability of alveolar bone graft in cleft lip and palate: a systematic review and meta-analysis. J Craniofac Surg. 2022;33:e194-e200. <a href="https://doi.org/10.1097/SCS.0000000000008254">doi.org/10.1097/SCS.0000000000008254</a></li>
+    <li id="ref-10">Schultze-Mosgau S, et al. Bone resorption after secondary alveolar cleft bone grafts before and after canine eruption. J Oral Maxillofac Surg. 2003;61:1245-1248. <a href="https://doi.org/10.1016/s0278-2391(03)00722-5">doi.org/10.1016/s0278-2391(03)00722-5</a></li>
+    <li id="ref-11">Tache A, et al. Pain management at iliac donor sites after grafting of alveolar clefts. Int J Oral Maxillofac Surg. 2022;51:62-69. <a href="https://doi.org/10.1016/j.ijom.2021.05.004">doi.org/10.1016/j.ijom.2021.05.004</a></li>
   </ol>
-</section>
-
-  <nav class="pager">
-    <a class="prev" href="../pre-op/"><span>前の時期</span>1. 手術の前</a>
-    <a class="next" href="../long-term/"><span>次の時期</span>3. 数年後</a>
-  </nav>
-
-  <p class="disclaimer">このページは、名古屋大学の研究のためのものです。下書き 第0.1版（2026年10月19日）。</p>
+</details>
+  </section>
+  <nav class="next" aria-label="段階"><a href="../pre-op/">← 手術の前</a><a href="../long-term/">数年後 →</a></nav>
+  <p class="disclaimer">このページは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。</p>
 </main>
-
-<script src="../../viewer.js"></script>
+<script src="../../site.js"></script>
 </body>
 </html>

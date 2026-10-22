@@ -1,332 +1,185 @@
-"""Build the webpages from the shared text, the page strings and the 3D models.
+"""Write every page of the site from content/.
+Run from the repo root: python3 tools/build.py
+Edit content/*.html, content/ui.json and content/references.json, not the pages under en/, ja/ and video/."""
+import json, re, html, os
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(ROOT)
+UI = json.load(open('content/ui.json'))
+REFS = json.load(open('content/references.json'))
+STAGES = ['pre-op', 'short-term', 'long-term']
+MODEL = 'abg-placeholder'  # one placeholder model on every stage until the stage models are built
+LANGS = ['en', 'ja']
 
-- content/ui-<lang>.json: page strings, numbered dots, buttons and colour key for each stage.
-- content/<stage>-<lang>.html: the patient text for each stage. Citations are written as [[key]]
-  (keys in content/references.json); they are numbered per page in order of first use, with a source list.
-- models/abg-<stage>.glb: if it has empty nodes named hotspot-1, hotspot-2 ... (and view-canine, view-front),
-  their positions are written into the page, so the numbered dots sit on the model. Dots with no node are left out.
+# Labels on the model: position (metres, model axes), surface normal, side of the leader line.
+# "when" ties a label to the gum part being on (on-gum) or taken off (off-gum).
+H = {
+ 'gum':     dict(pos='0.034m 0.008m 0.0226m', normal='0 0 1', side='up', len=60, when='on-gum', en=['Gum', 'you can take it off'], ja=['歯ぐき', '外せます']),
+ 'gap':     dict(pos='0.019m 0.004m 0.021m', normal='0 0 1', side='left', len=24, when='off-gum', en=['Gap in the bone', 'alveolar cleft'], ja=['骨のすき間', 'がくれつ']),
+ 'window':  dict(pos='0.036m 0.012m -0.004m', normal='0.6 0 0.8', side='up', len=50, when='off-gum', en=['Eye tooth window', 'canine'], ja=['犬歯の窓', '']),
+ 'central': dict(pos='-0.002m -0.012m 0.0316m', normal='0 0 1', side='down', len=40, en=['Front tooth', 'central incisor'], ja=['前歯', '中切歯']),
+ 'missing': dict(pos='0.021m -0.010m 0.024m', normal='0 0 1', side='down', len=18, en=['Missing tooth', 'lateral incisor'], ja=['ない歯', '側切歯']),
+ 'palate':  dict(pos='0.008m 0.0073m -0.01m', normal='0 -1 0', side='left', len=30, when='on-gum', en=['Roof of the mouth', 'palate'], ja=['上あご', 'こうがい']),
+}
+LABELS = {'pre-op': ['gum', 'gap', 'window', 'central', 'missing', 'palate'], 'short-term': ['central'], 'long-term': ['central']}
 
-Writes index.html (language choice: the QR code points here), <lang>/index.html (choose a stage)
-and <lang>/<stage>/index.html (one page per stage).
-Run: python3 tools/build.py
-"""
-import json, re, struct
-from html import escape
-from pathlib import Path
-import numpy as np
-
-ROOT = Path(__file__).resolve().parent.parent
-REFS = json.loads((ROOT / 'content/references.json').read_text())
-LANGS = ('en', 'ja')
-REF_TITLE = {'en': 'Sources', 'ja': '参考にした論文'}
-MODEL_VIEWER = 'https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js'
-
-
-# ---------- references ----------
-
-def link(ref):
-    if 'doi' in ref:
-        return f'<a href="https://doi.org/{ref["doi"]}">doi.org/{ref["doi"]}</a>'
-    return f'<a href="{ref["url"]}">{ref["url"].split("://")[1].rstrip("/")}</a>'
-
-
-def short(text):
-    """List up to three authors, then et al."""
-    authors, rest = text.split('. ', 1)
-    names = [n for n in authors.split(', ') if n != 'et al']
-    m = list(re.finditer(r'\. ([^.]+\. \d{4};)', rest))
-    if m:
-        rest = f'<span class="rt">{rest[:m[-1].start() + 1]}</span> {rest[m[-1].start() + 2:]}'
-    return (', '.join(names[:3]) + ', et al' if len(names) > 3 or 'et al' in authors else authors) + '. ' + rest
-
-
-def render_text(lang, stage):
-    text = (ROOT / f'content/{stage}-{lang}.html').read_text()
+def cite(text):
     order = []
-    def cite(m):
-        key = m.group(1)
-        if key not in REFS:
-            raise SystemExit(f'Unknown citation [[{key}]] in content/{stage}-{lang}.html')
-        if key not in order:
-            order.append(key)
-        n = order.index(key) + 1
+    def sub(m):
+        k = m.group(1)
+        if k not in order: order.append(k)
+        n = order.index(k) + 1
         return f'<sup class="cite"><a href="#ref-{n}">{n}</a></sup>'
-    text = re.sub(r'\[\[(\w+)\]\]', cite, text)
-    items = '\n'.join(f'    <li id="ref-{i}">{short(REFS[k]["text"])} {link(REFS[k])}</li>'
-                      for i, k in enumerate(order, 1))
-    refs = f'<section class="refs">\n  <h2>{REF_TITLE[lang]}</h2>\n  <ol>\n{items}\n  </ol>\n</section>'
-    return text.strip() + '\n\n' + refs
+    text = re.sub(r'\[\[([a-z0-9]+)\]\]', sub, text)
+    refs = '\n'.join(f'    <li id="ref-{i + 1}">{REFS[k]}</li>' for i, k in enumerate(order))
+    return text, refs
 
-
-# ---------- model nodes ----------
-
-def node_matrix(n):
-    if 'matrix' in n:
-        return np.array(n['matrix'], dtype=float).reshape(4, 4).T
-    t = np.array(n.get('translation', [0, 0, 0]), dtype=float)
-    x, y, z, w = n.get('rotation', [0, 0, 0, 1])
-    s = np.array(n.get('scale', [1, 1, 1]), dtype=float)
-    r = np.array([[1 - 2*(y*y + z*z), 2*(x*y - z*w), 2*(x*z + y*w)],
-                  [2*(x*y + z*w), 1 - 2*(x*x + z*z), 2*(y*z - x*w)],
-                  [2*(x*z - y*w), 2*(y*z + x*w), 1 - 2*(x*x + y*y)]])
-    m = np.eye(4)
-    m[:3, :3] = r * s
-    m[:3, 3] = t
-    return m
-
-
-def model_points(stage):
-    """World positions of the named empty nodes in models/<stage>.glb, and the model's centre."""
-    path = ROOT / f'models/{stage}.glb'
-    if not path.exists():
-        return {}, None
-    data = path.read_bytes()
-    size = struct.unpack('<I', data[12:16])[0]
-    gltf = json.loads(data[20:20 + size])
-    nodes = gltf.get('nodes', [])
-    points, centre = {}, []
-    def walk(i, parent):
-        m = parent @ node_matrix(nodes[i])
-        name = nodes[i].get('name', '')
-        if re.fullmatch(r'(hotspot-\d+|view-[\w-]+)', name):
-            points[name] = m[:3, 3]
-        if 'mesh' in nodes[i]:
-            centre.append(m[:3, 3])
-        for c in nodes[i].get('children', []):
-            walk(c, m)
-    scene = gltf.get('scenes', [{}])[gltf.get('scene', 0)]
-    for i in scene.get('nodes', []):
-        walk(i, np.eye(4))
-    return points, (np.mean(centre, axis=0) if centre else np.zeros(3))
-
-
-def metres(v):
-    return ' '.join(f'{x:.4f}m' for x in v)
-
-
-# ---------- page parts ----------
-
-def head(lang, title, description, root, model=False):
-    draco = (f"\n// The models are Draco-compressed; the decoder is served from this site.\n"
-             f"self.ModelViewerElement = {{ dracoDecoderLocation: new URL('{root}vendor/draco/', location.href).href }};") if model else ''
-    mv = f'\n<script type="module" src="{MODEL_VIEWER}"></script>' if model else ''
+def head(lang, title, up, desc=''):
     return f'''<!doctype html>
-<html lang="{lang}">
+<html lang="{lang}" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{title}</title>
-<meta name="description" content="{escape(description)}">
+<title>{html.escape(title)}</title>
+{f'<meta name="description" content="{html.escape(desc)}">' if desc else ''}
 <meta name="robots" content="noindex">
 <script>
-// Pick light or dark before the page draws: the saved choice, else the device setting.
-try {{ const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; }} catch (e) {{}}{draco}
+try {{ if (sessionStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; }} catch (e) {{}}
 </script>
-<link rel="stylesheet" href="{root}style.css">{mv}
-</head>
-<body>
+<link rel="stylesheet" href="{up}style.css">
 '''
 
-
-def bar(ui, other_href, home_href=None):
-    home = f'\n    <a class="lang" href="{home_href}">{ui["home_link"]}</a>' if home_href else ''
+def bar(lang, up, other_href):
+    t = UI[lang]; o = 'ja' if lang == 'en' else 'en'
     return f'''<header class="bar">
   <div class="bar-left">
-    <a class="lang" href="{other_href}" lang="{ui["other"]}" hreflang="{ui["other"]}">{ui["other_label"]}</a>
-    <button class="theme" id="theme" type="button" data-dark="{ui["dark"]}" data-light="{ui["light"]}">{ui["dark"]}</button>
-  </div>{home}
+    <a class="lang" href="{other_href}" lang="{o}" hreflang="{o}">{'日本語' if lang == 'en' else 'English'}</a>
+    <button class="theme" id="theme" type="button" data-dark="{t['dark']}" data-light="{t['light']}">{t['dark']}</button>
+  </div>
+  <a class="logos" href="{up}" aria-label="{t['home']}">
+    <img class="logo" src="{up}images/aichi-gakuin-logo.png" width="44" height="56" alt="Aichi Gakuin University">
+    <img class="logo" src="{up}images/nagoya-logo.png" width="74" height="56" alt="Nagoya University">
+  </a>
 </header>
 '''
 
+def steps(lang, current, prefix):
+    t = UI[lang]
+    items = ''.join(f'<li><a href="{prefix}{s}/"{" aria-current=\"page\"" if s == current else ""}><span>{t[f"stage{i + 1}n"]}</span><b>{t[f"st{i + 1}"]}</b></a></li>' for i, s in enumerate(STAGES))
+    return f'<ol class="steps" aria-label="{t["stages"]}">{items}</ol>'
 
-def stepper(ui, current):
-    items = []
-    for s in ui['stages']:
-        cur = ' aria-current="page"' if s['id'] == current else ''
-        items.append(f'    <li><a href="../{s["id"]}/"{cur}><span class="step-num">{s["num"]}</span>{s["short"]}</a></li>')
-    return f'  <nav class="stepper" aria-label="{ui["stage_nav"]}"><ol>\n' + '\n'.join(items) + '\n  </ol></nav>\n'
-
-
-def stage_files(stage):
-    """Model file names for a stage: one per choice, or one for the stage."""
-    return [c['file'] for c in stage.get('choices', [])] or [f'abg-{stage["id"]}']
-
-
-def hotspots(stage, points, centre, per_choice=None):
-    def normal(p):
-        d = p - centre
-        d = d / (np.linalg.norm(d) or 1)
-        return f'{d[0]:.2f} {d[1]:.2f} {d[2]:.2f}'
-    out = []
-    for h in stage['hotspots']:
-        p = points.get(f'hotspot-{h["n"]}')
-        pos = ''
-        if p is not None:
-            pos = f' data-position="{metres(p)}" data-normal="{normal(p)}"'
-        # A dot shared by several choices can sit in a different place in each choice's model.
-        for c_id, pts in (per_choice or {}).items():
-            q = pts.get(f'hotspot-{h["n"]}')
-            if q is not None and 'choice' not in h:
-                pos += f' data-position-{c_id}="{metres(q)}" data-normal-{c_id}="{normal(q)}"'
-        notes = ''.join(f'<span>{n}</span>' for n in h['notes'])
-        if 'choice' in h:
-            pos += f' data-choice="{h["choice"]}"'
-        out.append(f'    <button class="hotspot" slot="hotspot-{h["n"]}"{pos} data-visibility-attribute="visible" '
-                   f'aria-label="{h["n"]}. {escape(h["label"])}">{h["n"]}<span class="label">{h["label"]}</span>'
-                   f'<span class="note">{notes}</span></button>')
-    return '\n'.join(out)
-
-
-def controls(ui, stage, points):
-    out = []
-    if stage.get('choices'):
-        out.append(f'    <div class="choices" role="group" aria-label="{escape(stage["choices_label"])}">')
-        for i, c in enumerate(stage['choices']):
-            out.append(f'      <button type="button" class="choice" data-choice="{c["id"]}" data-src="../../models/{c["file"]}.glb" '
-                       f'data-ios-src="../../models/{c["file"]}.usdz" aria-pressed="{"true" if i == 0 else "false"}">{c["label"]}</button>')
-        out.append('    </div>')
-    for i, v in enumerate(stage['views']):
-        target = points.get(v.get('target_node', ''))
-        t = f' data-target="{metres(target)}"' if target is not None else ''
-        out.append(f'    <button type="button" data-orbit="{v["orbit"]}"{t} aria-pressed="{"true" if i == 0 else "false"}">{v["label"]}</button>')
-    for p in stage['parts']:
-        extra = f' data-with="{p["with"]}"' if 'with' in p else ''
-        out.append(f'    <button type="button" class="part" data-part="{p["part"]}" data-mode="{p["mode"]}"{extra} '
-                   f'data-on="{escape(p["on"])}" data-off="{escape(p["off"])}" aria-pressed="false" hidden>{p["on"]}</button>')
-    if stage.get('animation'):
-        a = stage['animation']
-        out.append(f'    <button type="button" class="play" id="play" data-anim="{a["name"]}" data-orbit-play="{a["orbit"]}" '
-                   f'data-steps="{escape(json.dumps(a["steps"], ensure_ascii=False))}" data-xray="{a["xray"][0]} {a["xray"][1]}" hidden>{a["button"]}</button>')
-    out.append(f'    <button type="button" id="labels"aria-pressed="false" data-on="{ui["labels_on"]}" data-off="{ui["labels_off"]}">{ui["labels_on"]}</button>')
-    return '\n'.join(out)
-
-
-def stage_page(lang, ui, i):
-    stage = ui['stages'][i]
-    sid = stage['id']
-    files = stage_files(stage)
-    points, centre, per_choice = {}, None, {}
-    for c_id, f in zip([c['id'] for c in stage.get('choices', [])] or [None], files):
-        pts, c = model_points(f)
-        points = {**pts, **points}
-        centre = c if centre is None else centre
-        if c_id:
-            per_choice[c_id] = pts
-    legend = '\n'.join(f'    <li><span class="dot" style="background:{l["color"]}"></span>{l["text"]}</li>' for l in stage['legend'])
-    prev = ui['stages'][i - 1] if i > 0 else None
-    nxt = ui['stages'][i + 1] if i + 1 < len(ui['stages']) else None
-    pager = ''
-    if prev:
-        pager += f'    <a class="prev" href="../{prev["id"]}/"><span>{ui["prev"]}</span>{prev["num"]}. {prev["short"]}</a>\n'
-    if nxt:
-        pager += f'    <a class="next" href="../{nxt["id"]}/"><span>{ui["next"]}</span>{nxt["num"]}. {nxt["short"]}</a>\n'
-    return (head(lang, stage['title'], stage['description'], '../../', model=True)
-            + bar(ui, f'../../{ui["other"]}/{sid}/', '../')
-            + f'''
-<main>
-{stepper(ui, sid)}  <h1>{stage["h1"]}</h1>
-  <p class="intro">{ui["intro"]}</p>
-
-  <p class="hint">{ui["hint"]} {stage["hint_extra"]}</p>
-  <p class="hint arnote">{ui["arnote"]}</p>
-
-  <!-- MODEL: models/{files[0]}.glb (Draco, under 5 MB) and models/{files[0]}.usdz. See docs/model-spec.md. -->
-  <model-viewer id="mv"
-    src="../../models/{files[0]}.glb"
-    ios-src="../../models/{files[0]}.usdz"
-    alt="{escape(stage["alt"])}"
-    ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
-    camera-controls camera-orbit="{stage["views"][0]["orbit"]}" touch-action="pan-y" interaction-prompt="auto"
-    shadow-intensity="1" exposure="1" loading="eager" data-missing="{escape(ui["missing"])}">
-    <button slot="ar-button" class="ar-btn">{ui["ar_button"]}</button>
-{hotspots(stage, points, centre, per_choice)}
-    <p class="anim-step" id="anim-step" aria-live="polite" hidden></p>
-    <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
-  </model-viewer>
-  <div class="info" id="info" aria-live="polite" hidden></div>
-  <div class="controls" role="group" aria-label="{ui["controls_label"]}">
-{controls(ui, stage, points)}
-  </div>
-
-  <ul class="legend" aria-label="{ui["legend_label"]}">
-{legend}
-  </ul>
-
-  <!-- SHARED TEXT: generated from content/{sid}-{lang}.html by tools/build.py. Edit that file, not this block. -->
-{render_text(lang, sid)}
-
-  <nav class="pager">
-{pager}  </nav>
-
-  <p class="disclaimer">{ui["disclaimer"]}</p>
-</main>
-
-<script src="../../viewer.js"></script>
-</body>
-</html>
-''')
-
-
-def home_page(lang, ui):
-    intro = '\n'.join(f'  <p class="intro">{p}</p>' for p in ui['home']['intro'])
-    important = re.search(r'<section class="important">.*?</section>', (ROOT / f'content/pre-op-{lang}.html').read_text(), re.S).group(0)
-    buttons = '\n'.join(f'    <a href="{s["id"]}/"><span class="step-num">{s["num"]}</span><span class="pick-text"><b>{s["button"]}</b>'
-                        f'<span>{s["age"]}</span></span></a>' for s in ui['stages'])
-    return (head(lang, ui['site_title'], ui['home']['description'], '../')
-            + bar(ui, f'../{ui["other"]}/')
-            + f'''
-<main>
-  <h1>{ui["home"]["h1"]}</h1>
-{intro}
-  <h2 class="pick-title">{ui["home"]["choose"]}</h2>
-  <div class="stage-pick">
-{buttons}
-  </div>
-{important}
-  <p class="disclaimer">{ui["disclaimer"]}</p>
-</main>
-
-<script src="../viewer.js"></script>
-</body>
-</html>
-''')
-
-
-def language_page():
-    return '''<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alveolar Bone Grafting</title>
-<meta name="robots" content="noindex">
-<link rel="stylesheet" href="style.css">
+def stage_page(lang, i, stage):
+    t = UI[lang]; n = i + 1; up = '../../'
+    text, refs = cite(open(f'content/{stage}-{lang}.html').read())
+    spots = ''
+    for k, key in enumerate(LABELS[stage]):
+        h = H[key]
+        cls = 'hotspot' + (' ' + h['when'] if h.get('when') else '')
+        small = f'<small>{h[lang][1]}</small>' if h[lang][1] else ''
+        spots += f'\n    <div class="{cls}" slot="hotspot-{k + 1}" data-position="{h["pos"]}" data-normal="{h["normal"]}" data-visibility-attribute="visible" data-side="{h["side"]}" style="--len: {h["len"]}px"><span class="label">{h[lang][0]}{small}</span></div>'
+    placeholder = '' if n == 1 else f'\n    <div class="placeholder"><span>{t["placeholder"]}</span></div>'
+    prev = f'<a href="../{STAGES[i - 1]}/">← {t[f"st{n - 1}"]}</a>' if i > 0 else '<span></span>'
+    nxt = f'<a href="../{STAGES[i + 1]}/">{t[f"st{n + 1}"]} →</a>' if i < 2 else '<span></span>'
+    o = 'ja' if lang == 'en' else 'en'
+    return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + f'''<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
+{bar(lang, up, f"{up}{o}/{stage}/")}
 <main>
-  <h1>Choose a language<br><span lang="ja">言語をえらんでください</span></h1>
-  <div class="pick">
-    <a href="en/">English</a>
-    <a href="ja/" lang="ja">日本語</a>
+  <h1>{t['title']}</h1>
+  {steps(lang, stage, '../')}
+  <!-- MODEL: placeholder on every stage until the stage models are built. See README. -->
+  <model-viewer id="mv" src="{up}models/{MODEL}.glb" ios-src="{up}models/{MODEL}.usdz"
+    alt="{html.escape(t[f'alt{n}'])}"
+    ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
+    camera-controls camera-orbit="0deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
+    shadow-intensity="1" exposure="1.05" loading="eager">
+    <button slot="ar-button" class="ar-btn">{t['ar']}</button>{placeholder}{spots}
+    <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
+  </model-viewer>
+  <div class="controls" role="group" aria-label="{t['controls']}">
+    <button type="button" data-orbit="0deg 80deg auto" aria-pressed="true">{t['vFront']}</button>
+    <button type="button" data-orbit="0deg 165deg auto" aria-pressed="false">{t['vBelow']}</button>
+    <button type="button" data-orbit="40deg 75deg 0.11m" data-target="0.028m 0.006m 0.01m" aria-pressed="false">{t['vLeft']}</button>
+    <button type="button" id="labels" aria-pressed="false" data-on="{t['hideLabels']}" data-off="{t['showLabels']}">{t['hideLabels']}</button>
+    <button type="button" id="gum" class="gum" aria-pressed="false" data-off="{t['gumOff']}" data-on="{t['gumOn']}">{t['gumOff']}</button>
   </div>
+
+  <!-- TEXT: generated from content/{stage}-{lang}.html by tools/build.py. -->
+{text}
+  <section class="refs">
+<details>
+  <summary><h2>{t['sources']}</h2></summary>
+  <ol>
+{refs}
+  </ol>
+</details>
+  </section>
+  <nav class="next" aria-label="{t['stages']}">{prev}{nxt}</nav>
+  <p class="disclaimer">{t['disclaimer']}</p>
 </main>
+<script src="{up}site.js"></script>
 </body>
 </html>
 '''
 
+def video_page(lang):
+    t = UI[lang]; up = '../../'; o = 'ja' if lang == 'en' else 'en'
+    ch = ''.join(f'<span class="chapter"><b>{t[f"stage{i}n"]}</b> {t[f"st{i}"]}</span>' for i in (1, 2, 3))
+    return head(lang, t['title'], up) + f'''</head>
+<body>
+{bar(lang, up, f"{up}video/{o}/")}
+<main>
+  <h1>{t['title']}</h1>
+  <!-- VIDEO: one portrait video per language (TTS voice, subtitles, line labels), one chapter per stage. -->
+  <div class="player"><p class="notready">{t['videoNotReady']}</p></div>
+  <div class="chapters" aria-label="{t['chapters']}">{ch}</div>
+  <p class="disclaimer">{t['disclaimer']}</p>
+</main>
+<script src="{up}site.js"></script>
+</body>
+</html>
+'''
 
-if __name__ == '__main__':
-    (ROOT / 'index.html').write_text(language_page())
-    for lang in LANGS:
-        ui = json.loads((ROOT / f'content/ui-{lang}.json').read_text())
-        (ROOT / lang).mkdir(exist_ok=True)
-        (ROOT / f'{lang}/index.html').write_text(home_page(lang, ui))
-        for i, s in enumerate(ui['stages']):
-            d = ROOT / lang / s['id']
-            d.mkdir(exist_ok=True)
-            (d / 'index.html').write_text(stage_page(lang, ui, i))
-            files = stage_files(s)
-            found = {k for f in files for k in model_points(f)[0] if k.startswith('hotspot-')}
-            have = [f for f in files if (ROOT / f'models/{f}.glb').exists()]
-            print(f'{lang}/{s["id"]}: models {len(have)}/{len(files)} found, '
-                  f'{len(found)}/{len(s["hotspots"])} dots placed')
+def home():
+    t, j = UI['en'], UI['ja']
+    lst = ''.join(f'<li><b>{i}</b><span>{t[f"st{i}long"]}<br><span lang="ja">{j[f"st{i}long"]}</span></span></li>' for i in (1, 2, 3))
+    return head('en', f'{t["title"]} / {j["title"]}', '') + f'''</head>
+<body>
+<main>
+  <div class="top"><button class="theme" id="theme" type="button" data-dark="Dark mode / ダークモード" data-light="Light mode / ライトモード">Dark mode / ダークモード</button></div>
+  <div class="home-logos">
+    <img class="logo" src="images/aichi-gakuin-logo.png" width="60" height="76" alt="Aichi Gakuin University">
+    <img class="logo" src="images/nagoya-logo.png" width="101" height="76" alt="Nagoya University">
+  </div>
+  <h1>{t['title']}<br><span lang="ja">{j['title']}</span></h1>
+  <p class="lead">{t['choose']}<br><span lang="ja">{t['choose2']}</span></p>
+  <section class="choice" aria-labelledby="ar">
+    <h2 id="ar">AR web page<span lang="ja">ARウェブページ</span></h2>
+    <div class="pick"><a href="en/pre-op/">English</a><a href="ja/pre-op/" lang="ja">日本語</a></div>
+  </section>
+  <section class="choice" aria-labelledby="video">
+    <h2 id="video">Narrated video<span lang="ja">ナレーション動画</span></h2>
+    <div class="pick"><a href="video/en/">English</a><a href="video/ja/" lang="ja">日本語</a></div>
+  </section>
+  <ol class="stage-list">{lst}</ol>
+  <p class="disclaimer">{t['disclaimer']}<br><span lang="ja">{j['disclaimer']}</span></p>
+</main>
+<script src="site.js"></script>
+</body>
+</html>
+'''
+
+def redirect(to):
+    return f'<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url={to}"><link rel="canonical" href="{to}"><a href="{to}">{to}</a>\n'
+
+def write(path, text):
+    os.makedirs(os.path.dirname(path) or '.', exist_ok=True)
+    open(path, 'w').write(text)
+
+write('index.html', home())
+for lang in LANGS:
+    write(f'{lang}/index.html', redirect('pre-op/'))
+    write(f'video/{lang}/index.html', video_page(lang))
+    for i, s in enumerate(STAGES):
+        write(f'{lang}/{s}/index.html', stage_page(lang, i, s))
+print('built')
