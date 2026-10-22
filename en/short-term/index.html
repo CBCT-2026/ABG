@@ -14,7 +14,7 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
 // The models are Draco-compressed; the decoder is served from this site, so no outside download is needed.
 self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/', location.href).href };
 </script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script type="module" src="../../vendor/model-viewer/model-viewer.min.js"></script>
 </head>
 <body>
 <header class="bar">
@@ -77,25 +77,25 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
 <details>
   <summary><h2>Sources</h2></summary>
   <ol>
-    <li id="ref-1">Boyne PJ, Sands NR. Secondary bone grafting of residual alveolar and palatal clefts. J Oral Surg. 1972;30:87-92. PMID 4550446. <a href="https://pubmed.ncbi.nlm.nih.gov/4550446/">pubmed.ncbi.nlm.nih.gov/4550446</a></li>
-    <li id="ref-2">Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a href="https://doi.org/10.1159/000337666">doi.org/10.1159/000337666</a></li>
-    <li id="ref-3">Siddiqui S, et al. Autologous platelet concentrate during secondary alveolar bone grafting and wound dehiscence: a systematic review. J Craniomaxillofac Surg. 2024;52:895-905. <a href="https://doi.org/10.1016/j.jcms.2024.04.016">doi.org/10.1016/j.jcms.2024.04.016</a></li>
-    <li id="ref-4">Kaura AS, et al. Optimal timing of alveolar cleft bone grafting. J Craniofac Surg. 2018;29:1551-1557. <a href="https://doi.org/10.1097/SCS.0000000000004680">doi.org/10.1097/SCS.0000000000004680</a></li>
-    <li id="ref-5">Desai SK, et al. Observing the eruption of canine after secondary alveolar bone grafting. J Oral Maxillofac Surg. 2021;79:2562-2573. <a href="https://doi.org/10.1016/j.joms.2021.06.021">doi.org/10.1016/j.joms.2021.06.021</a></li>
-    <li id="ref-6">Kadi H, et al. CBCT assessment of canine eruption and development following alveolar bone grafting in unilateral cleft lip and palate. Cleft Palate Craniofac J. 2023;60:386-394. <a href="https://doi.org/10.1177/10556656211064477">doi.org/10.1177/10556656211064477</a></li>
-    <li id="ref-7">Kindelan JD, et al. Radiographic assessment of secondary autogenous alveolar bone grafting. Cleft Palate Craniofac J. 1997;34:195-198. <a href="https://doi.org/10.1597/1545-1569_1997_034_0195_raosaa_2.3.co_2">doi.org/10.1597/1545-1569(1997)034&lt;0195:RAOSAA&gt;2.3.CO;2</a></li>
-    <li id="ref-8">Witherow H, et al. A new scale to assess radiographic success of secondary alveolar bone grafts. Cleft Palate Craniofac J. 2002;39:255-260. <a href="https://doi.org/10.1597/1545-1569_2002_039_0255_anstar_2.0.co_2">doi.org/10.1597/1545-1569(2002)039&lt;0255:ANSTAR&gt;2.0.CO;2</a></li>
-    <li id="ref-9">Jahanbin A, et al. Long-term stability of alveolar bone graft in cleft lip and palate: a systematic review and meta-analysis. J Craniofac Surg. 2022;33:e194-e200. <a href="https://doi.org/10.1097/SCS.0000000000008254">doi.org/10.1097/SCS.0000000000008254</a></li>
-    <li id="ref-10">Schultze-Mosgau S, et al. Bone resorption after secondary alveolar cleft bone grafts before and after canine eruption. J Oral Maxillofac Surg. 2003;61:1245-1248. <a href="https://doi.org/10.1016/s0278-2391(03)00722-5">doi.org/10.1016/s0278-2391(03)00722-5</a></li>
-    <li id="ref-11">Tache A, et al. Pain management at iliac donor sites after grafting of alveolar clefts. Int J Oral Maxillofac Surg. 2022;51:62-69. <a href="https://doi.org/10.1016/j.ijom.2021.05.004">doi.org/10.1016/j.ijom.2021.05.004</a></li>
+    <li id="ref-1">Boyne PJ, Sands NR. Secondary bone grafting of residual alveolar and palatal clefts. J Oral Surg. 1972;30:87-92. PMID 4550446. <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/4550446/">pubmed.ncbi.nlm.nih.gov/4550446</a></li>
+    <li id="ref-2">Semb G. Alveolar bone grafting. Front Oral Biol. 2012;16:124-136. <a target="_blank" rel="noopener" href="https://doi.org/10.1159/000337666">doi.org/10.1159/000337666</a></li>
+    <li id="ref-3">Siddiqui S, et al. Autologous platelet concentrate during secondary alveolar bone grafting and wound dehiscence: a systematic review. J Craniomaxillofac Surg. 2024;52:895-905. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jcms.2024.04.016">doi.org/10.1016/j.jcms.2024.04.016</a></li>
+    <li id="ref-4">Kaura AS, et al. Optimal timing of alveolar cleft bone grafting. J Craniofac Surg. 2018;29:1551-1557. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/SCS.0000000000004680">doi.org/10.1097/SCS.0000000000004680</a></li>
+    <li id="ref-5">Desai SK, et al. Observing the eruption of canine after secondary alveolar bone grafting. J Oral Maxillofac Surg. 2021;79:2562-2573. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.joms.2021.06.021">doi.org/10.1016/j.joms.2021.06.021</a></li>
+    <li id="ref-6">Kadi H, et al. CBCT assessment of canine eruption and development following alveolar bone grafting in unilateral cleft lip and palate. Cleft Palate Craniofac J. 2023;60:386-394. <a target="_blank" rel="noopener" href="https://doi.org/10.1177/10556656211064477">doi.org/10.1177/10556656211064477</a></li>
+    <li id="ref-7">Kindelan JD, et al. Radiographic assessment of secondary autogenous alveolar bone grafting. Cleft Palate Craniofac J. 1997;34:195-198. <a target="_blank" rel="noopener" href="https://doi.org/10.1597/1545-1569_1997_034_0195_raosaa_2.3.co_2">doi.org/10.1597/1545-1569(1997)034&lt;0195:RAOSAA&gt;2.3.CO;2</a></li>
+    <li id="ref-8">Witherow H, et al. A new scale to assess radiographic success of secondary alveolar bone grafts. Cleft Palate Craniofac J. 2002;39:255-260. <a target="_blank" rel="noopener" href="https://doi.org/10.1597/1545-1569_2002_039_0255_anstar_2.0.co_2">doi.org/10.1597/1545-1569(2002)039&lt;0255:ANSTAR&gt;2.0.CO;2</a></li>
+    <li id="ref-9">Jahanbin A, et al. Long-term stability of alveolar bone graft in cleft lip and palate: a systematic review and meta-analysis. J Craniofac Surg. 2022;33:e194-e200. <a target="_blank" rel="noopener" href="https://doi.org/10.1097/SCS.0000000000008254">doi.org/10.1097/SCS.0000000000008254</a></li>
+    <li id="ref-10">Schultze-Mosgau S, et al. Bone resorption after secondary alveolar cleft bone grafts before and after canine eruption. J Oral Maxillofac Surg. 2003;61:1245-1248. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/s0278-2391(03)00722-5">doi.org/10.1016/s0278-2391(03)00722-5</a></li>
+    <li id="ref-11">Tache A, et al. Pain management at iliac donor sites after grafting of alveolar clefts. Int J Oral Maxillofac Surg. 2022;51:62-69. <a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.ijom.2021.05.004">doi.org/10.1016/j.ijom.2021.05.004</a></li>
   </ol>
 </details>
   </section>
   <nav class="next" aria-label="Stages"><a href="../pre-op/">← Before surgery</a><a href="../long-term/">Years later →</a></nav>
-  <p class="restart"><button type="button" id="restart" data-home="../pre-op/">Start again</button></p>
+  <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">Start again</button></p>
   <p class="disclaimer">This page is for a study at Aichi Gakuin University and Nagoya University. Version 0.1, 22 October 2026.</p>
   <div class="timer" id="timer" hidden><span>Time left</span> <b id="timer-left"></b></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>Time is up. Please tell the researcher.</p><p class="device" id="device" data-label="Device" data-phone="phone" data-tablet="tablet" data-computer="computer" data-touch="touch" data-mouse="mouse"></p></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">Time is up. Please tell the researcher.</p><button type="button" class="again" data-home="../pre-op/">Start again</button><p class="device" id="device" data-label="Device" data-phone="phone" data-tablet="tablet" data-computer="computer" data-touch="touch" data-mouse="mouse"></p></div>
 </main>
 <script src="../../site.js"></script>
 </body>

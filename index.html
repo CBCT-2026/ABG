@@ -28,11 +28,11 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
   </div>
   <section class="choice" aria-labelledby="ar">
     <h2 id="ar">AR web page<span lang="ja">ARウェブページ</span></h2>
-    <div class="pick"><a href="en/pre-op/">English</a><a href="ja/pre-op/" lang="ja">日本語</a></div>
+    <div class="pick"><a href="en/pre-op/" aria-label="AR web page, English">English</a><a href="ja/pre-op/" lang="ja" aria-label="ARウェブページ、日本語">日本語</a></div>
   </section>
   <section class="choice" aria-labelledby="video">
     <h2 id="video">Narrated video<span lang="ja">ナレーション動画</span></h2>
-    <div class="pick"><a href="video/en/">English</a><a href="video/ja/" lang="ja">日本語</a></div>
+    <div class="pick"><a href="video/en/" aria-label="Narrated video, English">English</a><a href="video/ja/" lang="ja" aria-label="ナレーション動画、日本語">日本語</a></div>
   </section>
   <section class="stages-card" aria-labelledby="stages-h">
     <h2 id="stages-h">The three stages<span lang="ja">3つの段階</span></h2>
@@ -41,7 +41,7 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
   <section class="choice study-card" aria-labelledby="form-h">
     <h2 id="form-h">Take part in the study<span lang="ja">研究に参加する</span></h2>
     <p>The form has the information sheet and the survey.<span lang="ja">フォームには、説明書とアンケートがあります。</span></p>
-    <div class="pick"><a lang="en" aria-disabled="true" class="soon">Open the form (English)<small>Link coming / リンクは準備中</small></a><a lang="ja" aria-disabled="true" class="soon">フォームを開く（日本語）<small>Link coming / リンクは準備中</small></a></div>
+    <div class="pick"><span lang="en" class="soon">Open the form (English)<small>Link coming / リンクは準備中</small></span><span lang="ja" class="soon">フォームを開く（日本語）<small>Link coming / リンクは準備中</small></span></div>
   </section>
   <div class="qr-card">
     <button type="button" class="qr-open" id="qr-open" aria-haspopup="dialog"><img src="images/qr-home.svg" width="72" height="72" alt=""><span>Show QR code for this site<span lang="ja">このサイトのQRコードを表示</span></span></button>

@@ -43,11 +43,15 @@ if (mv) {
     mv.cameraTarget = b.dataset.target || 'auto auto auto';
     views.forEach(o => o.setAttribute('aria-pressed', o === b));
   }));
+  mv.addEventListener('camera-change', e => {
+    if (e.detail.source === 'user-interaction') views.forEach(o => o.setAttribute('aria-pressed', 'false'));
+  });
 
   // Take the gum part off: it slides down off the jaw (animation "remove" in the model), then fades out.
   // Put it back: it fades in below the jaw, then slides back up ("replace").
   const gum = document.getElementById('gum');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) mv.interactionPrompt = 'none';
   let gumOff = false, busy = false;
   const gumMaterial = () => mv.model && mv.model.materials.find(m => m.name.replace(/\.\d+$/, '') === 'gum');
   function fade(from, to, ms) {
@@ -70,7 +74,10 @@ if (mv) {
     });
   }
   if (gum) {
-    mv.addEventListener('load', () => { if (!gumMaterial() || !mv.availableAnimations.includes('remove')) gum.hidden = true; });
+    // The button works only once the model has loaded; it is hidden if the model has no gum part or fails to load.
+    gum.disabled = true;
+    mv.addEventListener('load', () => { if (!gumMaterial() || !mv.availableAnimations.includes('remove')) gum.hidden = true; else gum.disabled = false; });
+    mv.addEventListener('error', () => { gum.hidden = true; });
     gum.addEventListener('click', async () => {
       if (busy) return; busy = true; gum.disabled = true;
       if (!gumOff) {
@@ -94,8 +101,12 @@ if (mv) {
     : { gl: 'This browser cannot show 3D (WebGL is off). Open the page in another browser.', load: 'The 3D model could not load. Please reload the page.' };
   const problem = text => { const box = document.createElement('div'); box.className = 'problem'; box.textContent = text; mv.appendChild(box); };
   const canvas = document.createElement('canvas');
-  if (!(canvas.getContext('webgl2') || canvas.getContext('webgl'))) problem(msg.gl);
+  const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+  if (!gl) problem(msg.gl);
+  else { const lose = gl.getExtension('WEBGL_lose_context'); if (lose) lose.loseContext(); }
   mv.addEventListener('error', () => problem(msg.load));
+  // If the 3D viewer script itself did not load, say so instead of showing an empty box.
+  setTimeout(() => { if (!customElements.get('model-viewer')) { mv.classList.add('no-viewer'); problem(msg.load); } }, 8000);
 }
 
 // A tap on a source number opens the closed list of sources first.
@@ -115,45 +126,58 @@ document.querySelectorAll('.cite a').forEach(a => a.addEventListener('click', ()
     if (q.get('study') === '1') {
       cfg = { t: Math.max(10, parseInt(q.get('t') || '120', 10) || 120) };
       sessionStorage.setItem('study', JSON.stringify(cfg));
-      if (!sessionStorage.getItem('studyEnd')) sessionStorage.setItem('studyEnd', String(Date.now() + cfg.t * 1000));
+      // Opening the study link starts a fresh timer; reloading the page or going back keeps the running one.
+      const nav = performance.getEntriesByType('navigation')[0];
+      const fresh = !nav || nav.type === 'navigate';
+      if (fresh || !sessionStorage.getItem('studyEnd')) sessionStorage.setItem('studyEnd', String(Date.now() + cfg.t * 1000));
     } else {
       cfg = JSON.parse(sessionStorage.getItem('study') || 'null');
     }
   } catch (e) {}
   if (!cfg) return;
   document.documentElement.classList.add('study');
+  // No way out of the material: the language switch and the home link stop working for mouse, touch and keyboard.
+  document.querySelectorAll('.bar .lang, .bar .logos').forEach(a => { a.removeAttribute('href'); a.setAttribute('tabindex', '-1'); a.setAttribute('aria-hidden', 'true'); });
   const timer = document.getElementById('timer'), left = document.getElementById('timer-left'), up = document.getElementById('timeup');
   if (!timer) return;
-  let end;
-  try { end = parseInt(sessionStorage.getItem('studyEnd'), 10); } catch (e) {}
-  if (!end) end = Date.now() + cfg.t * 1000;
+  const fallback = Date.now() + cfg.t * 1000;
+  // Read the end time on every tick, so a page restored by the back button stays in step.
+  const endTime = () => { try { return parseInt(sessionStorage.getItem('studyEnd'), 10) || fallback; } catch (e) { return fallback; } };
   timer.hidden = false;
   // Device line on the time-up screen, so the researcher can write it on the study form (nothing is sent anywhere).
   const dev = document.getElementById('device');
   if (dev) dev.textContent = `${dev.dataset.label}: ${dev.dataset[device.kind]}, ${dev.dataset[device.input]}, ${device.size}`;
   const tick = () => {
-    const s = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+    const s = Math.max(0, Math.ceil((endTime() - Date.now()) / 1000));
     left.textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
-    if (s === 0) { up.hidden = false; clearInterval(id); }
+    timer.classList.toggle('soon', s <= 15);
+    if (s === 0) {
+      // Time is up: only the message and the researcher's Start again button can be used.
+      up.hidden = false; clearInterval(id);
+      [...document.body.children].forEach(el => { if (!el.contains(up)) el.inert = true; });
+      [...up.parentNode.children].forEach(el => { if (el !== up) el.inert = true; });
+      const again = up.querySelector('.again'); if (again) again.focus();
+    }
   };
   const id = setInterval(tick, 500); tick();
 })();
 
 // Start again: put everything back as the next participant should find it (light mode, labels on,
 // gum part on, stage 1, and in study mode a fresh timer).
-const restart = document.getElementById('restart');
-if (restart) restart.addEventListener('click', () => {
+// In study mode the button at the bottom of the page is hidden, so a participant cannot reset their own timer;
+// the researcher uses the one on the time-up screen.
+document.querySelectorAll('.again').forEach(restart => restart.addEventListener('click', () => {
   try { sessionStorage.removeItem('theme'); sessionStorage.removeItem('studyEnd'); } catch (e) {}
   let study = null;
   try { study = JSON.parse(sessionStorage.getItem('study') || 'null'); } catch (e) {}
   const url = new URL(restart.dataset.home, location.href);
   if (study) { url.searchParams.set('study', '1'); url.searchParams.set('t', study.t); }
   location.href = url.href;
-});
+}));
 
 // QR code on the home page: a tap opens it full screen, so someone can scan it from this screen.
 const qrOpen = document.getElementById('qr-open'), qr = document.getElementById('qr');
 if (qrOpen && qr) {
-  qrOpen.addEventListener('click', () => qr.showModal());
+  qrOpen.addEventListener('click', () => { if (qr.showModal) qr.showModal(); else qr.setAttribute('open', ''); });
   qr.addEventListener('click', e => { if (e.target === qr) qr.close(); });
 }

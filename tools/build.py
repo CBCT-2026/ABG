@@ -82,6 +82,7 @@ def steps(lang, current, prefix):
 def stage_page(lang, i, stage):
     t = UI[lang]; n = i + 1; up = '../../'
     text, refs = cite(open(f'content/{stage}-{lang}.html').read())
+    refs = refs.replace('<a href=', '<a target="_blank" rel="noopener" href=')  # sources open in a new tab, so the material stays open
     spots = ''
     for k, key in enumerate(LABELS[stage]):
         h = H[key]
@@ -92,7 +93,7 @@ def stage_page(lang, i, stage):
     prev = f'<a href="../{STAGES[i - 1]}/">← {t[f"st{n - 1}"]}</a>' if i > 0 else '<span></span>'
     nxt = f'<a href="../{STAGES[i + 1]}/">{t[f"st{n + 1}"]} →</a>' if i < 2 else '<span></span>'
     o = 'ja' if lang == 'en' else 'en'
-    return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + model_head(up) + f'''<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+    return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + model_head(up) + f'''<script type="module" src="{up}vendor/model-viewer/model-viewer.min.js"></script>
 </head>
 <body>
 {bar(lang, up, f"{up}{o}/{stage}/")}
@@ -128,10 +129,10 @@ def stage_page(lang, i, stage):
 </details>
   </section>
   <nav class="next" aria-label="{t['stages']}">{prev}{nxt}</nav>
-  <p class="restart"><button type="button" id="restart" data-home="../pre-op/">{t['startAgain']}</button></p>
+  <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">{t['startAgain']}</button></p>
   <p class="disclaimer">{t['disclaimer']}</p>
   <div class="timer" id="timer" hidden><span>{t['timeLeft']}</span> <b id="timer-left"></b></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-live="assertive" hidden><p>{t['timeUp']}</p><p class="device" id="device" data-label="{t['device']}" data-phone="{t['phone']}" data-tablet="{t['tablet']}" data-computer="{t['computer']}" data-touch="{t['touch']}" data-mouse="{t['mouse']}"></p></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><p id="timeup-msg">{t['timeUp']}</p><button type="button" class="again" data-home="../pre-op/">{t['startAgain']}</button><p class="device" id="device" data-label="{t['device']}" data-phone="{t['phone']}" data-tablet="{t['tablet']}" data-computer="{t['computer']}" data-touch="{t['touch']}" data-mouse="{t['mouse']}"></p></div>
 </main>
 <script src="{up}site.js"></script>
 </body>
@@ -159,7 +160,7 @@ def video_page(lang):
 def form_link(url, label, lang):
     if url:
         return f'<a href="{url}" lang="{lang}" target="_blank" rel="noopener">{label}</a>'
-    return f'<a lang="{lang}" aria-disabled="true" class="soon">{label}<small>Link coming / リンクは準備中</small></a>'
+    return f'<span lang="{lang}" class="soon">{label}<small>Link coming / リンクは準備中</small></span>'
 
 def home():
     t, j = UI['en'], UI['ja']
@@ -182,11 +183,11 @@ def home():
   </div>
   <section class="choice" aria-labelledby="ar">
     <h2 id="ar">AR web page<span lang="ja">ARウェブページ</span></h2>
-    <div class="pick"><a href="en/pre-op/">English</a><a href="ja/pre-op/" lang="ja">日本語</a></div>
+    <div class="pick"><a href="en/pre-op/" aria-label="AR web page, English">English</a><a href="ja/pre-op/" lang="ja" aria-label="ARウェブページ、日本語">日本語</a></div>
   </section>
   <section class="choice" aria-labelledby="video">
     <h2 id="video">Narrated video<span lang="ja">ナレーション動画</span></h2>
-    <div class="pick"><a href="video/en/">English</a><a href="video/ja/" lang="ja">日本語</a></div>
+    <div class="pick"><a href="video/en/" aria-label="Narrated video, English">English</a><a href="video/ja/" lang="ja" aria-label="ナレーション動画、日本語">日本語</a></div>
   </section>
   <section class="stages-card" aria-labelledby="stages-h">
     <h2 id="stages-h">The three stages<span lang="ja">3つの段階</span></h2>
@@ -214,7 +215,8 @@ def home():
 '''
 
 def redirect(to):
-    return f'<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url={to}"><link rel="canonical" href="{to}"><a href="{to}">{to}</a>\n'
+    # The script keeps ?study=1&t=... when someone opens /en/ or /ja/; the meta refresh is the fallback.
+    return f'<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><script>location.replace({to!r} + location.search)</script><meta http-equiv="refresh" content="0; url={to}"><link rel="canonical" href="{to}"><a href="{to}">{to}</a>\n'
 
 
 # 2D information sheet: the same text as the web page, laid out for one side of A4.
