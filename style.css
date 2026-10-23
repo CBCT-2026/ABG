@@ -202,7 +202,6 @@ model-viewer.gum-off .hotspot.on-gum, model-viewer:not(.gum-off) .hotspot.off-gu
 .timeup p { text-align: center !important; max-width: 22em; }
 .hint { margin: 8px 0 0; text-align: center; font-size: 14px; color: var(--muted); }
 .timeup { flex-direction: column; }
-.timeup .device { font-size: 14px; font-weight: 400; color: var(--muted); margin-top: 12px; }
 
 /* Home: study form and QR code */
 .study-card h2 { margin-bottom: 8px; }
@@ -256,5 +255,4 @@ model-viewer.no-viewer { display: block; position: relative; min-height: 240px; 
 .tick path { fill: none; stroke: var(--bg); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
 .done-title { margin: 12px 0 4px; font-size: 1.5rem; }
 .done-card p { font-size: 1.05rem; font-weight: 500; margin: 4px 0 0; }
-.timeup .device { margin-top: 16px; }
 :lang(ja) .done-title { word-break: keep-all; }
