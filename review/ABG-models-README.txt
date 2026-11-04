@@ -101,3 +101,10 @@ Stage 3b - canine substitution (left), alternative to Stage 3 options
   (0.3 mm clearance round the root), flush with the bone surface, and slides out labially along the same tapered
   socket. Everything palatal of the roots stays as bone.
 - Overlay: same TPU design, pins, insertion path (0, 0.6, 0.8) and base plate.
+
+Stage 3 option e - canine substitution (in every format)
+- Print: separate Stage 3b model (ABG-stage-3b-STL), so no whole arch has to be removable.
+- Web/AR: abg-3-long-term.glb now also holds option-substitution-bone, -teeth, -graft and -soft-tissue (the whole
+  Stage 3b arch, same coordinates). Show these instead of bone/teeth/graft/soft-tissue (and hide the other options)
+  when the substitution option is selected. abg-3b-substitution.glb stays as a stand-alone copy.
+- Images for sheet/video: ABG-stage-3-renders\ABG-stage-3_<view>_option-e-canine-substitution[_overlay-off].png.
