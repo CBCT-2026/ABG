@@ -30,44 +30,40 @@ At about 8 to 11 years old, a surgeon fills the gap with bone, most often from t
 
 ## Stage 2 English
 
-This is the same jaw, about 3 months after the bone graft.
+This is the same jaw, about 2 to 3 years after the bone graft. The child is now about 12 to 13 years old.
 
-New bone now fills the gap, from the floor of the nose down to the gum. It joins the two parts of the upper jaw. The gum has healed over it. If the wound opens early on, you can lose some of the graft.
+Bone now joins the two parts of the upper jaw. The eye tooth came down through the new bone into the row of teeth. Some eye teeth get stuck and need a small operation.
 
-The eye tooth is still in the bone. Over the next months, it moves down toward the new bone.
+Fixed braces line up the teeth. Almost everyone who has this graft needs them. A false tooth on the wire fills the gap where the small tooth never grew.
 
-An X-ray at about 3 to 6 months shows how well the new bone has taken. Some of it shrinks over time. Teeth that move into it help keep the bone.
-
-Your hip can be sore for a while after surgery. In one study, children went back to school about 2 weeks after surgery.
+Soon after the operation, the gum healed over the graft. If the wound opens early on, you can lose some of the graft. An X-ray at about 3 to 6 months shows how well the new bone has taken. Your hip can be sore for a while. In one study, children went back to school about 2 weeks after surgery.
 
 ## Stage 2 Japanese
 
-これは、骨移植から約3か月後の同じ上あごです。
+これは、骨移植から約2～3年後の同じ上あごです。子どもは今、12～13才ごろです。
 
-新しい骨が、鼻のそこから歯ぐきまで、すき間をうめています。上あごの2つの部分をつないでいます。その上の歯ぐきは治っています。手術のすぐ後に傷が開くと、移植した骨が少しへることがあります。
+上あごの2つの部分は、骨でつながっています。犬歯は新しい骨を通って、歯のならびまでおりてきました。出てこない犬歯もあり、その時は小さな手術が必要です。
 
-犬歯はまだ骨の中にあります。これから数か月かけて、新しい骨の方へおりてきます。
+歯につける装置で、歯をならべます。この手術を受けた人のほとんどが使います。はえてこなかった小さい歯のすき間には、ワイヤーにつけたつくり物の歯が入っています。
 
-約3～6か月後にレントゲンをとって、新しい骨がどのくらいついたかを見ます。移植した骨は、時間とともに少しへります。歯が骨の中に動いてくると、骨がのこりやすくなります。
-
-骨をとったこしは、手術の後しばらくいたむことがあります。ある研究では、子どもは手術の約2週間後に学校にもどりました。
+手術の後、歯ぐきは治りました。すぐ後に傷が開くと、骨が少しへることがあります。約3～6か月後のレントゲンで、骨のつき方を見ます。こしは、しばらくいたむことがあります。ある研究では、子どもは約2週間後に学校にもどりました。
 
 ## Stage 3 English
 
-This is the same jaw a few years later.
+This is the same jaw in the later teens. The braces are off, and the teeth are in line.
 
-Bone now joins the two parts of the jaw. The eye tooth came down through the new bone into the row of teeth. Some eye teeth get stuck and need a small operation.
+Bone holds the teeth where the gap was. Growth has stopped, so your dentist can now fill the gap for good.
 
-Fixed braces line up the teeth. Almost everyone who has this graft needs them.
+There are three main ways. An implant is a small post in the bone with a false tooth on top. A bridge is a false tooth with one wing glued to the tooth next to it. Or a plate you can take out holds a false tooth.
 
-The tooth that never grew leaves a gap. Often, braces move the eye tooth into the gap, and the dentist reshapes it with tooth-coloured filling. Or you keep the gap, with a false tooth on a plate you can take out. When you stop growing, an implant or a bridge can fill it. An implant is a small post with a false tooth on top. A bridge is a false tooth glued to the next tooth. Your cleft team will help you choose.
+Some teams close the space instead. Braces move the eye tooth into the gap, and the dentist reshapes it. Your cleft team will help you choose.
 
 ## Stage 3 Japanese
 
-これは、数年後の同じ上あごです。
+これは、十代の後半の同じ上あごです。装置は外れて、歯はならんでいます。
 
-すき間があった所は、骨でつながっています。犬歯は新しい骨を通って、歯のならびまでおりてきました。出てこない犬歯もあり、その時は小さな手術が必要です。
+すき間があった所では、骨が歯をささえています。体が育ち終わったので、すき間をずっとうめることができます。
 
-歯につける装置で、歯をならべます。この手術を受けた人のほとんどが、この装置を使います。
+主に3つの方法があります。インプラントは、骨に入れた小さな柱に歯をつけます。ブリッジは、一まいの羽で、となりの歯に歯をつけます。または、取り外しできる入れ歯で歯をつけます。
 
-はえてこなかった歯の所には、すき間がのこります。多くは、装置で犬歯をすき間に動かし、歯の色のつめもので形を整えます。すき間をのこして、取り外しできる入れ歯を使うこともあります。体が育ち終わったら、インプラントかブリッジでうめられます。インプラントは、骨に入れた小さな柱に歯をつけます。ブリッジは、となりの歯に歯をつけます。どの方法が合うかは、口の割れ目のチームと話し合います。
+すき間をとじるチームもあります。装置で犬歯をすき間に動かし、形を整えます。どの方法が合うかは、口の割れ目のチームと話し合います。

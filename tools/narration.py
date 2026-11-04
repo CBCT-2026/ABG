@@ -14,11 +14,12 @@ EXTRA = {
  'implant': dict(en=['Implant', 'with a crown'], ja=['インプラント', 'クラウン']),
  'bridge':  dict(en=['Bridge', 'one wing'], ja=['ブリッジ', '一まいの羽']),
  'plate':   dict(en=['Plate', 'false tooth you can take out'], ja=['入れ歯', '取り外しできる']),
+ 'false':   dict(en=['False tooth', 'on the wire'], ja=['つくり物の歯', 'ワイヤーにつけた']),
 }
 SCENES = {
  1: [('intro', []), ('gum', ['gum']), ('missing', ['missing', 'central']), ('canine', ['window']), ('graft', ['gap'])],
- 2: [('intro', []), ('graft', ['graft']), ('canine', ['canine']), ('xray', ['graft']), ('hip', [])],
- 3: [('intro', []), ('canine', ['canine', 'graft']), ('braces', ['braces']), ('options', ['implant', 'bridge', 'plate'])],
+ 2: [('intro', []), ('canine', ['canine', 'graft']), ('braces', ['braces', 'false']), ('after', ['graft'])],
+ 3: [('intro', []), ('graft', ['graft']), ('options', ['implant', 'bridge', 'plate']), ('close', ['canine'])],
 }
 UI = json.load(open('content/ui.json'))
 VOICE = {'en': 'bf_emma', 'ja': 'jf_alpha'}  # Kokoro-82M voices used in the wisdom tooth study

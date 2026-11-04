@@ -234,29 +234,33 @@ def redirect(to):
 SHEET_SWAP = {
  ('pre-op', 'en'): [('Tap <b>Take off the gum</b> to see the gap in the bone.', 'The pictures show the jaw with and without the gum.')],
  ('pre-op', 'ja'): [('「歯ぐきを外す」をおすと、骨のすき間が見えます。', '図は、歯ぐきがある時と外した時の上あごです。')],
- ('long-term', 'en'): [('The model has parts you can swap to show each choice. The braces clip on and off.', 'The pictures show each choice.')],
- ('long-term', 'ja'): [('模型は、部品をつけかえて、それぞれの方法を見せられます。そうちも、つけたり外したりできます。', '図は、それぞれの方法を見せています。')],
+ ('short-term', 'en'): [('The braces on the model clip on and off.', 'The pictures show the jaw with and without the braces.')],
+ ('short-term', 'ja'): [('模型の装置は、つけたり外したりできます。', '図は、装置がある時と外した時の上あごです。')],
+ ('long-term', 'en'): [('The model has parts you can swap to show each choice.', 'The pictures show each choice.')],
+ ('long-term', 'ja'): [('模型は、部品をつけかえて、それぞれの方法を見せられます。', '図は、それぞれの方法を見せています。')],
 }
 # Sentences about the 3D print's parts, which the web page can't do: left out of the web page.
 WEB_SWAP = {
- ('long-term', 'en'): [('  <p>The model has parts you can swap to show each choice. The braces clip on and off.</p>\n', '')],
- ('long-term', 'ja'): [('  <p>模型は、部品をつけかえて、それぞれの方法を見せられます。そうちも、つけたり外したりできます。</p>\n', '')],
+ ('short-term', 'en'): [('  <p>The braces on the model clip on and off.</p>\n', '')],
+ ('short-term', 'ja'): [('  <p>模型の装置は、つけたり外したりできます。</p>\n', '')],
+ ('long-term', 'en'): [('  <p>The model has parts you can swap to show each choice.</p>\n', '')],
+ ('long-term', 'ja'): [('  <p>模型は、部品をつけかえて、それぞれの方法を見せられます。</p>\n', '')],
 }
 # Pictures per stage: (image file or None for a placeholder, English caption, Japanese caption).
-# Stage 1 pictures come from tools/sheet/render.js. Stages 2 and 3 are placeholders until their models are built.
+# Stage 1 pictures come from tools/sheet/render.js. Stages 2 and 3 are placeholders until their new models are rendered.
 SHEET_FIGS = {
  'pre-op': [('sheet-front-gum-{lang}.png', 'Whole jaw, with the gum', '上あご全体（歯ぐきあり）'),
             ('sheet-front-bone-{lang}.png', 'Gum taken off: the gap in the bone', '歯ぐきを外した所：骨のすき間'),
             ('sheet-below-{lang}.png', 'From below: the roof of the mouth', '下から見た所：上あご'),
             ('sheet-left-{lang}.png', 'Left side: the eye tooth window', '左側：犬歯の窓')],
- 'short-term': [(None, 'Whole jaw: new bone fills the gap', '上あご全体：新しい骨がすき間をうめる'),
-                (None, 'Gum taken off: new bone in the gap', '歯ぐきを外した所：すき間の新しい骨'),
-                (None, 'From below: the healed gum', '下から見た所：治った歯ぐき'),
-                (None, 'Left side: the eye tooth above the new bone', '左側：新しい骨の上の犬歯')],
- 'long-term': [(None, 'Whole jaw: eye tooth through, braces on', '上あご全体：犬歯が出て、そうちをつけた所'),
-               (None, 'Implant with a crown', 'インプラントとクラウン'),
+ 'short-term': [(None, 'Whole jaw: braces on', '上あご全体：装置をつけた所'),
+                (None, 'Braces taken off: the false tooth on the wire', '装置を外した所：ワイヤーのつくり物の歯'),
+                (None, 'From below: the roof of the mouth', '下から見た所：上あご'),
+                (None, 'Left side: the eye tooth in the row of teeth', '左側：歯のならびに出た犬歯')],
+ 'long-term': [(None, 'Implant with a crown', 'インプラントとクラウン'),
                (None, 'Bridge with one wing', '一まいの羽のブリッジ'),
-               (None, 'Plate with a false tooth', '取り外しできる入れ歯')],
+               (None, 'Plate with a false tooth', '取り外しできる入れ歯'),
+               (None, 'Left side: the eye tooth in the row of teeth', '左側：歯のならびに出た犬歯')],
 }
 SHEET_UI = {
  'en': dict(ph='PLACEHOLDER: picture of the {stage} model', how='Render with tools/sheet/render.js once the model is built.',
