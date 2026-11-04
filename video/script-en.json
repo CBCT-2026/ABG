@@ -28,17 +28,29 @@
    "Roof of the mouth",
    "palate"
   ],
-  "canine": [
-   "Eye tooth",
-   "canine"
-  ],
   "graft": [
    "New bone",
    "bone graft"
   ],
+  "healed": [
+   "New bone",
+   "healed graft"
+  ],
+  "canine": [
+   "Eye tooth",
+   "canine"
+  ],
   "braces": [
    "Braces",
    "fixed braces"
+  ],
+  "false": [
+   "False tooth",
+   "on the wire"
+  ],
+  "space": [
+   "Missing tooth",
+   "pick an option below"
   ],
   "implant": [
    "Implant",
@@ -63,7 +75,7 @@
      "labels": [],
      "sentences": [
       "This is the upper jaw of a child, about 9 to 10 years old.",
-      "The child was born with a split in the lip and gum on the left, called a cleft."
+      "The child was born with a split in the lip, gum and roof of the mouth on the left, called a cleft."
      ]
     },
     {
@@ -94,6 +106,7 @@
      ],
      "sentences": [
       "High in the bone, the adult eye tooth waits to come down.",
+      "A window on the left side shows it.",
       "It needs bone to grow into."
      ]
     },
@@ -112,67 +125,14 @@
   },
   {
    "stage": 2,
-   "title": "Stage 2: 3 months after",
+   "title": "Stage 2: During braces",
    "paragraphs": [
     {
      "scene": "intro",
      "labels": [],
      "sentences": [
-      "This is the same jaw, about 3 months after the bone graft."
-     ]
-    },
-    {
-     "scene": "graft",
-     "labels": [
-      "graft"
-     ],
-     "sentences": [
-      "New bone now fills the gap, from the floor of the nose down to the gum.",
-      "It joins the two parts of the upper jaw.",
-      "The gum has healed over it.",
-      "If the wound opens early on, you can lose some of the graft."
-     ]
-    },
-    {
-     "scene": "canine",
-     "labels": [
-      "canine"
-     ],
-     "sentences": [
-      "The eye tooth is still in the bone.",
-      "Over the next months, it moves down toward the new bone."
-     ]
-    },
-    {
-     "scene": "xray",
-     "labels": [
-      "graft"
-     ],
-     "sentences": [
-      "An X-ray at about 3 to 6 months shows how well the new bone has taken.",
-      "Some of it shrinks over time.",
-      "Teeth that move into it help keep the bone."
-     ]
-    },
-    {
-     "scene": "hip",
-     "labels": [],
-     "sentences": [
-      "Your hip can be sore for a while after surgery.",
-      "In one study, children went back to school about 2 weeks after surgery."
-     ]
-    }
-   ]
-  },
-  {
-   "stage": 3,
-   "title": "Stage 3: Years later",
-   "paragraphs": [
-    {
-     "scene": "intro",
-     "labels": [],
-     "sentences": [
-      "This is the same jaw a few years later."
+      "This is the same jaw, about 2 to 3 years after the bone graft.",
+      "The child is now about 12 to 13 years old."
      ]
     },
     {
@@ -182,19 +142,46 @@
       "graft"
      ],
      "sentences": [
-      "Bone now joins the two parts of the jaw.",
-      "The eye tooth came down through the new bone into the row of teeth.",
-      "Some eye teeth get stuck and need a small operation."
+      "Under the pink gum, the new bone is the slightly yellow, rougher part next to the front tooth.",
+      "It joins the two parts of the upper jaw.",
+      "The eye tooth came down through it into the row of teeth."
      ]
     },
     {
      "scene": "braces",
      "labels": [
-      "braces"
+      "braces",
+      "false"
      ],
      "sentences": [
-      "Fixed braces line up the teeth.",
-      "Almost everyone who has this graft needs them."
+      "The silver wire on the teeth belongs to the braces.",
+      "Braces line up the teeth.",
+      "Almost everyone who has this graft needs them.",
+      "The white false tooth on the wire fills the gap where the small tooth never grew."
+     ]
+    }
+   ]
+  },
+  {
+   "stage": 3,
+   "title": "Stage 3: Braces off",
+   "paragraphs": [
+    {
+     "scene": "intro",
+     "labels": [],
+     "sentences": [
+      "This is the same jaw in the later teens.",
+      "The braces are off, and the teeth are in line."
+     ]
+    },
+    {
+     "scene": "graft",
+     "labels": [
+      "graft"
+     ],
+     "sentences": [
+      "Under the pink gum, the slightly yellow new bone holds the teeth where the gap was.",
+      "Growth has stopped, so your dentist can now fill the gap for good."
      ]
     },
     {
@@ -205,12 +192,18 @@
       "plate"
      ],
      "sentences": [
-      "The tooth that never grew leaves a gap.",
-      "Often, braces move the eye tooth into the gap, and the dentist reshapes it with tooth-coloured filling.",
-      "Or you keep the gap, with a false tooth on a plate you can take out.",
-      "When you stop growing, an implant or a bridge can fill it.",
-      "An implant is a small post with a false tooth on top.",
-      "A bridge is a false tooth glued to the next tooth.",
+      "The parts in the gap swap to show three main ways.",
+      "An implant is a small post in the new bone with a false tooth on top.",
+      "A bridge is a false tooth with one wing glued to the back of the front tooth.",
+      "Or a plate you can take out holds a false tooth."
+     ]
+    },
+    {
+     "scene": "close",
+     "labels": [],
+     "sentences": [
+      "Some teams close the space instead.",
+      "Braces move the eye tooth into the gap, and the dentist reshapes it.",
       "Your cleft team will help you choose."
      ]
     }

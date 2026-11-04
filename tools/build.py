@@ -257,35 +257,39 @@ def redirect(to):
 SHEET_SWAP = {
  ('pre-op', 'en'): [('Tap <b>Take off the gum</b> to see the gap in the bone.', 'The pictures show the jaw with and without the gum.')],
  ('pre-op', 'ja'): [('「歯ぐきを外す」をおすと、骨のすき間が見えます。', '図は、歯ぐきがある時と外した時の上あごです。')],
- ('long-term', 'en'): [('The model has parts you can swap to show each choice. The braces clip on and off.', 'The pictures show each choice.')],
- ('long-term', 'ja'): [('模型は、部品をつけかえて、それぞれの方法を見せられます。そうちも、つけたり外したりできます。', '図は、それぞれの方法を見せています。')],
+ ('short-term', 'en'): [('The braces on the model clip on and off.', 'The pictures show the jaw with and without the braces.')],
+ ('short-term', 'ja'): [('模型の装置は、つけたり外したりできます。', '図は、装置がある時と外した時の上あごです。')],
+ ('long-term', 'en'): [('The model has parts you can swap to show each choice.', 'The pictures show each choice.')],
+ ('long-term', 'ja'): [('模型は、部品をつけかえて、それぞれの方法を見せられます。', '図は、それぞれの方法を見せています。')],
 }
 # Sentences about the 3D print's parts, which the web page can't do: left out of the web page.
 WEB_SWAP = {
- ('long-term', 'en'): [('  <p>The model has parts you can swap to show each choice. The braces clip on and off.</p>\n', '')],
- ('long-term', 'ja'): [('  <p>模型は、部品をつけかえて、それぞれの方法を見せられます。そうちも、つけたり外したりできます。</p>\n', '')],
+ ('short-term', 'en'): [('  <p>The braces on the model clip on and off.</p>\n', '')],
+ ('short-term', 'ja'): [('  <p>模型の装置は、つけたり外したりできます。</p>\n', '')],
+ ('long-term', 'en'): [('  <p>The model has parts you can swap to show each choice.</p>\n', '')],
+ ('long-term', 'ja'): [('  <p>模型は、部品をつけかえて、それぞれの方法を見せられます。</p>\n', '')],
 }
 # Pictures per stage: (image file or None for a placeholder, English caption, Japanese caption).
-# Stage 1 pictures come from tools/sheet/render.js. Stages 2 and 3 are placeholders until their models are built.
+# All pictures come from tools/sheet/render.js (VIEWS there), rendered from the stage models.
 SHEET_FIGS = {
  'pre-op': [('sheet-front-gum-{lang}.png', 'Whole jaw, with the gum', '上あご全体（歯ぐきあり）'),
             ('sheet-front-bone-{lang}.png', 'Gum taken off: the gap in the bone', '歯ぐきを外した所：骨のすき間'),
             ('sheet-below-{lang}.png', 'From below: the roof of the mouth', '下から見た所：上あご'),
             ('sheet-left-{lang}.png', 'Left side: the eye tooth window', '左側：犬歯の窓')],
- 'short-term': [(None, 'Whole jaw: new bone fills the gap', '上あご全体：新しい骨がすき間をうめる'),
-                (None, 'Gum taken off: new bone in the gap', '歯ぐきを外した所：すき間の新しい骨'),
-                (None, 'From below: the healed gum', '下から見た所：治った歯ぐき'),
-                (None, 'Left side: the eye tooth above the new bone', '左側：新しい骨の上の犬歯')],
- 'long-term': [(None, 'Whole jaw: eye tooth through, braces on', '上あご全体：犬歯が出て、そうちをつけた所'),
-               (None, 'Implant with a crown', 'インプラントとクラウン'),
-               (None, 'Bridge with one wing', '一まいの羽のブリッジ'),
-               (None, 'Plate with a false tooth', '取り外しできる入れ歯')],
+ 'short-term': [('sheet-s2-braces-{lang}.png', 'Whole jaw: braces on, with the false tooth', '上あご全体：装置とつくり物の歯'),
+                ('sheet-s2-off-{lang}.png', 'Braces taken off: the gap where the small tooth never grew', '装置を外した所：はえてこなかった歯のすき間'),
+                ('sheet-s2-bone-{lang}.png', 'Gum taken off: the new bone and the eye tooth', '歯ぐきを外した所：新しい骨と犬歯'),
+                ('sheet-s2-below-{lang}.png', 'From below: the roof of the mouth and the braces', '下から見た所：上あごと装置')],
+ 'long-term': [('sheet-s3-implant-{lang}.png', 'Implant with a crown', 'インプラントとクラウン'),
+               ('sheet-s3-bridge-{lang}.png', 'Bridge with one wing', '一まいの羽のブリッジ'),
+               ('sheet-s3-plate-{lang}.png', 'Plate with a false tooth', '取り外しできる入れ歯'),
+               ('sheet-s3-bone-{lang}.png', 'Gum taken off: the new bone where the gap was', '歯ぐきを外した所：すき間にできた新しい骨')],
 }
 SHEET_UI = {
  'en': dict(ph='PLACEHOLDER: picture of the {stage} model', how='Render with tools/sheet/render.js once the model is built.',
-            note='Pictures of the study model. The first model is a placeholder.', footer='This sheet is for a study at Aichi Gakuin University and Nagoya University. Version 0.1, 22 October 2026.'),
+            note='Pictures of the study model.', footer='This sheet is for a study at Aichi Gakuin University and Nagoya University. Version 0.2, 4 November 2026.'),
  'ja': dict(ph='仮の図：{stage}の模型の図', how='模型ができたら tools/sheet/render.js で作ります。',
-            note='研究用の模型の図です。', footer='このシートは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。'),
+            note='研究用の模型の図です。', footer='このシートは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.2、2026年11月4日。'),
 }
 
 def sheet_page(lang, i, stage):
@@ -314,7 +318,7 @@ def sheet_page(lang, i, stage):
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="{up}sheet/sheet.css">
 </head>
-<body class="sheet">
+<body class="sheet {stage}">
 <main>
   <header class="sheet-head">
     <div class="titles"><p class="stage">{t[f'stage{n}n']}: {t[f'st{n}']}</p><h1>{t['title']}</h1></div>
