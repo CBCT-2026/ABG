@@ -270,26 +270,26 @@ WEB_SWAP = {
  ('long-term', 'ja'): [('  <p>模型は、部品をつけかえて、それぞれの方法を見せられます。</p>\n', '')],
 }
 # Pictures per stage: (image file or None for a placeholder, English caption, Japanese caption).
-# Stage 1 pictures come from tools/sheet/render.js. Stages 2 and 3 are placeholders until their new models are rendered.
+# All pictures come from tools/sheet/render.js (VIEWS there), rendered from the stage models.
 SHEET_FIGS = {
  'pre-op': [('sheet-front-gum-{lang}.png', 'Whole jaw, with the gum', '上あご全体（歯ぐきあり）'),
             ('sheet-front-bone-{lang}.png', 'Gum taken off: the gap in the bone', '歯ぐきを外した所：骨のすき間'),
             ('sheet-below-{lang}.png', 'From below: the roof of the mouth', '下から見た所：上あご'),
             ('sheet-left-{lang}.png', 'Left side: the eye tooth window', '左側：犬歯の窓')],
- 'short-term': [(None, 'Whole jaw: braces on, with the false tooth', '上あご全体：装置とつくり物の歯'),
-                (None, 'Braces taken off: the gap where the small tooth never grew', '装置を外した所：はえてこなかった歯のすき間'),
-                (None, 'From below: the roof of the mouth', '下から見た所：上あご'),
-                (None, 'Left side: the eye tooth in the row of teeth', '左側：歯のならびに出た犬歯')],
- 'long-term': [(None, 'Implant with a crown', 'インプラントとクラウン'),
-               (None, 'Bridge with one wing', '一まいの羽のブリッジ'),
-               (None, 'Plate with a false tooth', '取り外しできる入れ歯'),
-               (None, 'Left side: the eye tooth in the row of teeth', '左側：歯のならびに出た犬歯')],
+ 'short-term': [('sheet-s2-braces-{lang}.png', 'Whole jaw: braces on, with the false tooth', '上あご全体：装置とつくり物の歯'),
+                ('sheet-s2-off-{lang}.png', 'Braces taken off: the gap where the small tooth never grew', '装置を外した所：はえてこなかった歯のすき間'),
+                ('sheet-s2-bone-{lang}.png', 'Gum taken off: the new bone and the eye tooth', '歯ぐきを外した所：新しい骨と犬歯'),
+                ('sheet-s2-below-{lang}.png', 'From below: the roof of the mouth and the braces', '下から見た所：上あごと装置')],
+ 'long-term': [('sheet-s3-implant-{lang}.png', 'Implant with a crown', 'インプラントとクラウン'),
+               ('sheet-s3-bridge-{lang}.png', 'Bridge with one wing', '一まいの羽のブリッジ'),
+               ('sheet-s3-plate-{lang}.png', 'Plate with a false tooth', '取り外しできる入れ歯'),
+               ('sheet-s3-bone-{lang}.png', 'Gum taken off: the new bone where the gap was', '歯ぐきを外した所：すき間にできた新しい骨')],
 }
 SHEET_UI = {
  'en': dict(ph='PLACEHOLDER: picture of the {stage} model', how='Render with tools/sheet/render.js once the model is built.',
-            note='Pictures of the study model. The first model is a placeholder.', footer='This sheet is for a study at Aichi Gakuin University and Nagoya University. Version 0.1, 22 October 2026.'),
+            note='Pictures of the study model.', footer='This sheet is for a study at Aichi Gakuin University and Nagoya University. Version 0.2, 4 November 2026.'),
  'ja': dict(ph='仮の図：{stage}の模型の図', how='模型ができたら tools/sheet/render.js で作ります。',
-            note='研究用の模型の図です。', footer='このシートは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。'),
+            note='研究用の模型の図です。', footer='このシートは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.2、2026年11月4日。'),
 }
 
 def sheet_page(lang, i, stage):
@@ -318,7 +318,7 @@ def sheet_page(lang, i, stage):
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="{up}sheet/sheet.css">
 </head>
-<body class="sheet">
+<body class="sheet {stage}">
 <main>
   <header class="sheet-head">
     <div class="titles"><p class="stage">{t[f'stage{n}n']}: {t[f'st{n}']}</p><h1>{t['title']}</h1></div>

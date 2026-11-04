@@ -18,7 +18,7 @@ EXTRA = {
 }
 SCENES = {
  1: [('intro', []), ('gum', ['gum']), ('missing', ['missing', 'central']), ('canine', ['window']), ('graft', ['gap'])],
- 2: [('intro', []), ('canine', ['canine', 'graft']), ('braces', ['braces', 'false']), ('after', ['graft'])],
+ 2: [('intro', []), ('canine', ['canine', 'graft']), ('braces', ['braces', 'false'])],
  3: [('intro', []), ('graft', ['graft']), ('options', ['implant', 'bridge', 'plate']), ('close', [])],
 }
 UI = json.load(open('content/ui.json'))

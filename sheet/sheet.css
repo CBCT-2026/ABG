@@ -45,7 +45,9 @@ h2 { color: var(--accent); }
   .important { margin: 2.5mm 0; padding: 2mm 4mm; font-size: 10.5pt; }
   .visual { gap: 2.5mm; margin-bottom: 2mm; }
   .visual img, .visual .ph { height: 56mm; }
-  .visual.n4 img, .visual.n4 .ph { height: 58mm; }
+  .visual.n4 img, .visual.n4 .ph { height: 56mm; }
+  .pre-op .visual.n4 img, .pre-op .visual.n4 .ph { height: 52mm; } /* stage 1 has the most text and sources */
+  .pre-op .refs { font-size: 5.4pt; line-height: 1.25; } .pre-op .refs ol { line-height: 1.25; }
   .visual figcaption { font-size: 8.5pt; padding: .5mm 2mm 1mm; }
   .text { column-count: 2; column-gap: 6mm; flex: 1 1 auto; }
   .text section { padding: 0 0 1.6mm; break-inside: avoid; }

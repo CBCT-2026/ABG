@@ -22,7 +22,7 @@ para(doc, 'Version 0.3, 4 November 2026. One part per stage, each spoken in 60 s
      'words as subtitles and the line labels in the right column, with the same names as the AR web page and the 2D '
      'information sheet. Track Changes is on: please type edits and add comments directly.')
 para(doc, 'Every sentence comes from, or shortens, the web page text for that stage (cbct-2026.github.io/ABG), with the same '
-     'sources. Measured with the computer voice: English 36 to 48 s, Japanese 42 to 54 s per stage. To fit 60 seconds, '
+     'sources. Measured with the computer voice: English 33 to 47 s, Japanese 38 to 54 s per stage. To fit 60 seconds, '
      'it leaves out: the medical names agenesis and lateral incisor, the best root stage for timing, the stitches, and '
      'the removable plate details. Source text: content/narration.md in the ABG repo.', color=NOTE, size=9)
 for ce, cj in zip(en['chapters'], ja['chapters']):

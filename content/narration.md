@@ -12,7 +12,7 @@ Under the pink gum, there is a gap in the bone that holds the teeth. Its medical
 
 The small tooth next to the left front tooth never grew. About half of children with a cleft do not have this tooth.
 
-High in the bone, the adult eye tooth waits to come down. It needs bone to grow into.
+High in the bone, the adult eye tooth waits to come down. A window on the left side shows it. It needs bone to grow into.
 
 At about 8 to 11 years old, a surgeon fills the gap with bone, most often from the hip. This is a bone graft. It joins the jaw, holds up the teeth and nose, and closes any hole into the nose.
 
@@ -24,7 +24,7 @@ At about 8 to 11 years old, a surgeon fills the gap with bone, most often from t
 
 左の前歯のとなりの小さい歯は、はえてきませんでした。口の割れ目がある子どもの約半数は、この歯がありません。
 
-骨の高い所では、大人の犬歯が、おりてくるのを待っています。おりてくるには、骨が必要です。
+骨の高い所では、大人の犬歯が、おりてくるのを待っています。左側の窓から見えます。おりてくるには、骨が必要です。
 
 そこで8～11才ごろに、外科医が、多くの場合こしの骨をとって、すき間をうめます。これを骨移植といいます。上あごをつなぎ、歯と鼻をささえ、鼻へのあなをふさぎます。
 
@@ -32,38 +32,34 @@ At about 8 to 11 years old, a surgeon fills the gap with bone, most often from t
 
 This is the same jaw, about 2 to 3 years after the bone graft. The child is now about 12 to 13 years old.
 
-Bone now joins the two parts of the upper jaw. The eye tooth came down through the new bone into the row of teeth. Some eye teeth get stuck and need a small operation.
+Under the pink gum, the new bone is the slightly yellow, rougher part next to the front tooth. It joins the two parts of the upper jaw. The eye tooth came down through it into the row of teeth.
 
-Fixed braces line up the teeth. Almost everyone who has this graft needs them. A false tooth on the wire fills the gap where the small tooth never grew.
-
-Soon after the operation, the gum healed over the graft. If the wound opens early on, you can lose some of the graft. An X-ray at about 3 to 6 months shows how well the new bone has taken. Your hip can be sore for a while. In one study, children went back to school about 2 weeks after surgery.
+The silver wire on the teeth belongs to the braces. Braces line up the teeth. Almost everyone who has this graft needs them. The white false tooth on the wire fills the gap where the small tooth never grew.
 
 ## Stage 2 Japanese
 
 これは、骨移植から約2～3年後の同じ上あごです。子どもは今、12～13才ごろです。
 
-上あごの2つの部分は、骨でつながっています。犬歯は新しい骨を通って、歯のならびまでおりてきました。出てこない犬歯もあり、その時は小さな手術が必要です。
+ピンクの歯ぐきの下で、前歯のとなりの、少し黄色くてざらざらした部分が新しい骨です。上あごの2つの部分をつないでいます。犬歯はこの骨を通って、歯のならびまでおりてきました。
 
-歯につける装置で、歯をならべます。この骨移植を受けた人のほぼ全員が使います。はえてこなかった小さい歯のすき間には、ワイヤーにつけたつくり物の歯が入っています。
-
-手術の後、歯ぐきは治りました。すぐ後に傷が開くと、骨が少しへることがあります。約3～6か月後のレントゲンで、骨のつき方を見ます。こしは、しばらくいたむことがあります。ある研究では、子どもは約2週間後に学校にもどりました。
+銀色のワイヤーは、歯につける装置です。歯をならべます。この骨移植を受けた人のほぼ全員が使います。はえてこなかった小さい歯のすき間には、ワイヤーにつけた白いつくり物の歯が入っています。
 
 ## Stage 3 English
 
-This is the same jaw in the later teens. The braces are off.
+This is the same jaw in the later teens. The braces are off, and the teeth are in line.
 
-Bone holds the teeth where the gap was. Growth has stopped, so your dentist can now fill the gap for good.
+Under the pink gum, the slightly yellow new bone holds the teeth where the gap was. Growth has stopped, so your dentist can now fill the gap for good.
 
-There are three main ways. An implant is a small post in the bone with a false tooth on top. A bridge is a false tooth with one wing glued to the tooth next to it. Or a plate you can take out holds a false tooth.
+The parts in the gap swap to show three main ways. An implant is a small post in the new bone with a false tooth on top. A bridge is a false tooth with one wing glued to the back of the front tooth. Or a plate you can take out holds a false tooth.
 
 Some teams close the space instead. Braces move the eye tooth into the gap, and the dentist reshapes it. Your cleft team will help you choose.
 
 ## Stage 3 Japanese
 
-これは、十代の後半の同じ上あごです。装置は外れています。
+これは、十代の後半の同じ上あごです。装置は外れて、歯はならんでいます。
 
-すき間があった所では、骨が歯をささえています。体が育ち終わったので、すき間をずっとうめることができます。
+ピンクの歯ぐきの下の、少し黄色い新しい骨が、すき間があった所で歯をささえています。体が育ち終わったので、すき間をずっとうめることができます。
 
-主に3つの方法があります。インプラントは、骨にうめる小さなねじに歯をつけます。ブリッジは、一まいの羽で、となりの歯に歯をつけます。または、取り外しできる入れ歯で歯をつけます。
+すき間の部品をつけかえて、主な3つの方法を見せます。インプラントは、新しい骨にうめる小さなねじに歯をつけます。ブリッジは、一まいの羽を前歯のうらにはって、歯をつけます。または、取り外しできる入れ歯で歯をつけます。
 
 すき間をとじるチームもあります。装置で犬歯をすき間に動かし、形を整えます。どの方法が合うかは、口の割れ目のチームと話し合います。

@@ -28,17 +28,29 @@
    "Roof of the mouth",
    "palate"
   ],
-  "canine": [
-   "Eye tooth",
-   "canine"
-  ],
   "graft": [
    "New bone",
    "bone graft"
   ],
+  "healed": [
+   "New bone",
+   "healed graft"
+  ],
+  "canine": [
+   "Eye tooth",
+   "canine"
+  ],
   "braces": [
    "Braces",
    "fixed braces"
+  ],
+  "false": [
+   "False tooth",
+   "on the wire"
+  ],
+  "space": [
+   "Missing tooth",
+   "pick an option below"
   ],
   "implant": [
    "Implant",
@@ -51,10 +63,6 @@
   "plate": [
    "Plate",
    "false tooth you can take out"
-  ],
-  "false": [
-   "False tooth",
-   "on the wire"
   ]
  },
  "chapters": [
@@ -98,6 +106,7 @@
      ],
      "sentences": [
       "High in the bone, the adult eye tooth waits to come down.",
+      "A window on the left side shows it.",
       "It needs bone to grow into."
      ]
     },
@@ -133,9 +142,9 @@
       "graft"
      ],
      "sentences": [
-      "Bone now joins the two parts of the upper jaw.",
-      "The eye tooth came down through the new bone into the row of teeth.",
-      "Some eye teeth get stuck and need a small operation."
+      "Under the pink gum, the new bone is the slightly yellow, rougher part next to the front tooth.",
+      "It joins the two parts of the upper jaw.",
+      "The eye tooth came down through it into the row of teeth."
      ]
     },
     {
@@ -145,22 +154,10 @@
       "false"
      ],
      "sentences": [
-      "Fixed braces line up the teeth.",
+      "The silver wire on the teeth belongs to the braces.",
+      "Braces line up the teeth.",
       "Almost everyone who has this graft needs them.",
-      "A false tooth on the wire fills the gap where the small tooth never grew."
-     ]
-    },
-    {
-     "scene": "after",
-     "labels": [
-      "graft"
-     ],
-     "sentences": [
-      "Soon after the operation, the gum healed over the graft.",
-      "If the wound opens early on, you can lose some of the graft.",
-      "An X-ray at about 3 to 6 months shows how well the new bone has taken.",
-      "Your hip can be sore for a while.",
-      "In one study, children went back to school about 2 weeks after surgery."
+      "The white false tooth on the wire fills the gap where the small tooth never grew."
      ]
     }
    ]
@@ -174,7 +171,7 @@
      "labels": [],
      "sentences": [
       "This is the same jaw in the later teens.",
-      "The braces are off."
+      "The braces are off, and the teeth are in line."
      ]
     },
     {
@@ -183,7 +180,7 @@
       "graft"
      ],
      "sentences": [
-      "Bone holds the teeth where the gap was.",
+      "Under the pink gum, the slightly yellow new bone holds the teeth where the gap was.",
       "Growth has stopped, so your dentist can now fill the gap for good."
      ]
     },
@@ -195,9 +192,9 @@
       "plate"
      ],
      "sentences": [
-      "There are three main ways.",
-      "An implant is a small post in the bone with a false tooth on top.",
-      "A bridge is a false tooth with one wing glued to the tooth next to it.",
+      "The parts in the gap swap to show three main ways.",
+      "An implant is a small post in the new bone with a false tooth on top.",
+      "A bridge is a false tooth with one wing glued to the back of the front tooth.",
       "Or a plate you can take out holds a false tooth."
      ]
     },
