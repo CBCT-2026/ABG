@@ -20,8 +20,8 @@ const EXTRA = {
 const OPTIONS = ['option-none', 'option-implant', 'option-bridge', 'option-denture'];
 const S1 = 'abg-1-pre-op', S2 = 'abg-2-during-braces', S3 = 'abg-3-long-term';
 const VIEWS = [
-  { name: 'front-gum', model: S1, orbit: '0deg 80deg auto', gum: true, labels: ['gum', 'central', 'missing'] },
-  { name: 'front-bone', model: S1, orbit: '0deg 80deg auto', gum: false, labels: ['gap', 'central', 'missing'] },
+  { name: 'front-gum', model: S1, orbit: '0deg 80deg auto', gum: true, labels: ['gum', 'central', 'missing'], tweak: { central: { side: 'left', len: 40 } } },
+  { name: 'front-bone', model: S1, orbit: '0deg 80deg auto', gum: false, labels: ['gap', 'central', 'missing'], tweak: { central: { side: 'left', len: 40 } } },
   { name: 'below', model: S1, orbit: '0deg 165deg auto', gum: true, labels: ['palate', 'central'], w: 640, h: 560 },
   { name: 'left', model: S1, orbit: '40deg 75deg 0.15m', target: '0.028m 0.006m 0.01m', gum: false, labels: ['window'], w: 640, h: 560 },
   { name: 's2-braces', model: S2, orbit: '0deg 80deg auto', gum: true, show: ['braces'], labels: ['braces'], extra: ['gap2'] },

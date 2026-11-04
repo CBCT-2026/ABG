@@ -14,7 +14,7 @@ The small tooth next to the left front tooth never grew. About half of children 
 
 High in the bone, the adult eye tooth waits to come down. A window on the left side shows it. It needs bone to grow into.
 
-At about 8 to 11 years old, a surgeon fills the gap with bone, most often from the hip. This is a bone graft. It joins the jaw, holds up the teeth and nose, and closes any hole into the nose.
+At about 8 to 11 years old, a surgeon fills the gap with bone, most often from the hip. This is a bone graft. It joins the jaw and holds up the teeth and nose.
 
 ## Stage 1 Japanese
 
@@ -26,7 +26,7 @@ At about 8 to 11 years old, a surgeon fills the gap with bone, most often from t
 
 骨の高い所では、大人の犬歯が、おりてくるのを待っています。左側の窓から見えます。おりてくるには、骨が必要です。
 
-そこで8～11才ごろに、外科医が、多くの場合こしの骨をとって、すき間をうめます。これを骨移植といいます。上あごをつなぎ、歯と鼻をささえ、鼻へのあなをふさぎます。
+そこで8～11才ごろに、外科医が、多くの場合こしの骨をとって、すき間をうめます。これを骨移植といいます。上あごをつなぎ、歯と鼻をささえます。
 
 ## Stage 2 English
 
