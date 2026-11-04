@@ -86,5 +86,93 @@
    "上あご",
    "こうがい"
   ]
+ },
+ "graft": {
+  "pos": "0.021m 0.009m 0.027m",
+  "normal": "0 0 1",
+  "side": "left",
+  "len": 24,
+  "when": "off-gum",
+  "en": [
+   "New bone",
+   "bone graft"
+  ],
+  "ja": [
+   "新しい骨",
+   "骨移植"
+  ]
+ },
+ "healed": {
+  "pos": "0.021m 0.009m 0.027m",
+  "normal": "0 0 1",
+  "side": "left",
+  "len": 24,
+  "when": "off-gum",
+  "en": [
+   "New bone",
+   "healed graft"
+  ],
+  "ja": [
+   "新しい骨",
+   "ついた骨"
+  ]
+ },
+ "canine": {
+  "pos": "0.030m -0.003m 0.027m",
+  "normal": "0 0 1",
+  "side": "up",
+  "len": 36,
+  "en": [
+   "Eye tooth",
+   "grew through the new bone"
+  ],
+  "ja": [
+   "犬歯",
+   "新しい骨を通って生えた"
+  ]
+ },
+ "braces": {
+  "pos": "-0.014m -0.006m 0.033m",
+  "normal": "0 0 1",
+  "side": "up",
+  "len": 50,
+  "when": "on-braces",
+  "en": [
+   "Braces",
+   "you can take them off"
+  ],
+  "ja": [
+   "矯正装置",
+   "外せます"
+  ]
+ },
+ "false": {
+  "pos": "0.021m -0.007m 0.031m",
+  "normal": "0 0 1",
+  "side": "down",
+  "len": 18,
+  "when": "on-braces",
+  "en": [
+   "False tooth on the wire",
+   "lateral incisor"
+  ],
+  "ja": [
+   "ワイヤーの仮の歯",
+   "側切歯"
+  ]
+ },
+ "space": {
+  "pos": "0.021m -0.004m 0.030m",
+  "normal": "0 0 1",
+  "side": "down",
+  "len": 18,
+  "en": [
+   "Missing tooth",
+   "pick an option below"
+  ],
+  "ja": [
+   "ない歯のスペース",
+   "下のボタンで選べます"
+  ]
  }
 }

@@ -112,8 +112,11 @@ if (mv) {
     const names = options.map(b => b.dataset.option).filter(Boolean);
     toggles.forEach(b => { b.addEventListener('click', () => {
       const on = b.getAttribute('aria-pressed') !== 'true';
-      b.setAttribute('aria-pressed', on); b.textContent = on ? b.dataset.on : b.dataset.off; show(b.dataset.part, on); }); });
+      b.setAttribute('aria-pressed', on); b.textContent = on ? b.dataset.on : b.dataset.off; show(b.dataset.part, on);
+      mv.classList.toggle(b.dataset.part + '-off', !on); }); });
     names.forEach(n => show(n, false));
+    const first = options.find(b => b.getAttribute('aria-pressed') === 'true');
+    if (first && first.dataset.option) show(first.dataset.option, true);
     options.forEach(b => { b.addEventListener('click', () => {
       options.forEach(x => x.setAttribute('aria-pressed', x === b));
       names.forEach(n => show(n, n === b.dataset.option)); }); });
