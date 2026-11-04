@@ -5,7 +5,7 @@ Files (Desktop)
 - ABG-stage-N.blend / .glb / _draco.glb, ABG-stage-N-STL\, ABG-stage-N-renders\  (N = 1, 2, 3)
 - Web copies (metres, +Y up, Draco, about 110-135k triangles each, no animations):
   abg-1-pre-op.glb      nodes and materials: bone, teeth, soft-tissue, canine
-  abg-2-short-term.glb  nodes and materials: bone, teeth, graft, soft-tissue, braces (incl. false 22)
+  abg-2-short-term.glb  nodes and materials: bone, teeth, graft, soft-tissue, braces (no pontic)
   abg-3-long-term.glb   nodes and materials: bone, teeth, graft, soft-tissue, option-implant,
                         option-bridge, option-denture, option-none (all in seated position)
   soft-tissue, braces, option-implant/bridge/denture carry their part colours as vertex colours
@@ -23,11 +23,11 @@ Stages
   formed with an open apex, crown seen through the labial window.
 - Stage 2, about 2-3 years after the graft, during fixed orthodontics (age about 12-13): graft
   integrated (full height), 23 erupted through the graft about 1 mm short of 13, second molars
-  partly erupted; 21 part-derotated; removable braces strip with a false 22 on a flat archwire.
+  partly erupted; 21 part-derotated; removable braces strip (brackets 13-16, 11/12, 21-26, flat archwire straight across the open 22 space, no pontic).
 - Stage 3, braces off (16+): arch aligned, canine window closed, ridge at 22 slightly lower and
   narrower, empty-space default = gum-coloured ridge plug (option-none); options on one keyed seat:
   b implant + crown (visible titanium collar), c one-wing resin-bonded (Maryland) bridge on 21,
-  d Hawley-type removable partial denture (Adams clasps 16/26, labial bow).
+  d single-tooth removable denture: small palatal plate with the 22 pontic and two hidden palatal ball clasps (11/21 and 23/24 embrasures); nothing but the tooth shows from the front.
 
 Parts and colours (print)
 - Body (one piece, PLA bone colour, plate-down): bone + teeth + base plate; Stage 1 also the
@@ -66,3 +66,11 @@ Licence and credit
 - Tooth geometry derived from BodyParts3D, (c) The Database Center for Life Science, CC BY-SA 2.1 JP.
   Credit wherever the models or images are shown. Derived models carry the same licence.
 - Maxilla base adapted by hand in Blender from Luke's pre-op model (abg-pre-op_v6).
+
+v3.3 notes
+- Gum line (Stages 2-3): exposed clinical crowns, model mm (life x 1.5): centrals 15.6, laterals 13.5, canines 15.6,
+  premolars 12.0, first/second molars 9.8 (Stage 2 second molars 3.0, partly erupted). Bone crest 1.7 mm apical to the
+  margin; zenith 0.6 mm distal on centrals and canines; papillae fill the embrasures up to ~5.5 mm coronal of the margins.
+- Stage 3 implant: one coaxial assembly on the 22 crown axis; abutment collar flares from the Ø4.6 platform to the crown
+  outline at the gum margin, the crown is cut at the same margin plane (no step).
+- Build scripts: Desktop\ABG-scripts (each step runs in a background Blender: python run_step.py in.blend step.py out.blend).
