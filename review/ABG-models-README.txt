@@ -84,3 +84,20 @@ v3.4 notes (Stage 1)
   Only openings: the two pin holes.
 - Stage 1 renders now include a palatal view (overlay on/off) and an into-cleft view.
 - Stages 2 and 3: palatal bone checked; there is no pin-socket dimple (the pins sit flush), so these are unchanged.
+
+Stage 3b - canine substitution (left), alternative to Stage 3 options
+- Files: ABG-stage-3b-substitution.blend, ABG-stage-3b.glb / _draco.glb, ABG-stage-3b-STL\, ABG-stage-3b-renders\
+  (front, both 3/4, occlusal; overlay on/off). Web: abg-3b-substitution.glb (nodes/materials bone, teeth, graft, soft-tissue).
+- Built from final Stage 3; right side unchanged. No options, no appliances, no implant seat.
+- 23 moved mesially into the 22 space, contact with 21 (0.1 mm), reshaped as a lateral: cusp reduced to a flat incisal
+  edge with rounded corners, labial prominence and cingulum reduced (labio-palatal x0.62 at the edge to x0.87 cervically),
+  mesio-distal x0.90; incisal edge level with the right lateral (12). Gum margin set midway between 21 and 24
+  (exposed crown 13.1 model mm; 21 15.6, 24 12.0).
+- 24 in the canine position, rotated 12 deg mesio-labially; 25, 26, 27 mesialised about 11 model mm each (one tooth
+  unit; molars finish in a Class II relationship on this side); all contacts closed (0.1 mm).
+- Gum margins and papillae follow the new tooth positions; continuous scalloped crest; root cover shells; slits between and
+  behind the second molars.
+- Graft: same removable plug and colour (#C9A86A), remodelled. It is the bone around and labial of the moved 23 root
+  (0.3 mm clearance round the root), flush with the bone surface, and slides out labially along the same tapered
+  socket. Everything palatal of the roots stays as bone.
+- Overlay: same TPU design, pins, insertion path (0, 0.6, 0.8) and base plate.
