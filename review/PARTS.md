@@ -1,54 +1,50 @@
-# ABG models: parts per stage
+# ABG models v3: parts per stage
 
-All models are about **1.5 x life size** (bone about 97 mm wide). STL files are in mm; GLB files are in metres (+Y up).
-Blender axes used below: Z = tooth long axis (crowns point to -Z, the base plate is at +Z), Y = palatal, X = patient's left (cleft side).
-All measurements are at model scale.
+Scale about **1.5 x life**. STL in mm, GLB in metres (+Y up). Blender axes: Z = tooth long axis (crowns at -Z, base plate at +Z), Y = palatal, X = patient's left (cleft side). All values are model mm.
 
-The `ABG-stage-N_draco.glb` files contain every part in its seated position, with the overlay and all options shown together.
-Renders: `stageN-ABG-stage-N_<view>_<state>.png` (front, left three-quarter, occlusal; Stage 1 also into-cleft).
+`ABG-stage-N_draco.glb` contains every part seated (all Stage 3 options at once). Renders: `stageN-ABG-stage-N_<view>_<state>.png`.
 
-## Common to all stages
+## All stages
 
-| Part | Material | Fixed / removable | Path | Clearance and grip |
+| Part | Material | Loose? | Path | Fit |
 |---|---|---|---|---|
-| Maxilla + teeth (+ graft) | rigid | fixed print | n/a | n/a |
-| Base plate | rigid | fixed | n/a | same footprint for all stages |
-| Soft-tissue overlay | TPU 95A, 100 % infill, 2-3 walls | removable | inserted along **(0, 0.6, 0.8)**, removed the opposite way | 0.35 mm gap to bone; nothing presses on bone. Tooth necks: about 0.07 mm contact at rest and up to about 0.4 mm flex while passing. Gum 1.2 mm thick at tooth margins, 1.8 mm over bone and palate. Two locating pins, no magnets |
+| Body: bone + teeth + base plate (+ Stage 1 canine) | PLA | no, one piece | n/a | plate-down print |
+| Gum overlay | TPU 95A | yes | on along (0, 0.6, 0.8), off the opposite way | 0.35 mm gap to bone, ~0.07-0.13 mm contact at rest at the necks, walls ≥ 1.2 mm; 2 PLA pins Ø3 x 2 mm on the palate, holes +0.15 mm |
 
-## Stage 1: pre-graft, age 9-10, repaired UCLP (left)
+Overlay deflection needed on removal (max depth the gum must flex over each tooth while sliding off, all teeth, model mm):
 
-| Part | Fixed / removable | Path | Notes |
+| Stage | Incisors | Canines | Premolars / primary molars | First molars | Second molars | Bone |
+|---|---|---|---|---|---|---|
+| 1 | 2.0-2.7 | 3.5-4.0 | 3.6-4.1 | 4.4-4.6 | - | 0.3 |
+| 2 | 2.0-2.6 | 2.3-3.1 | 4.2-4.5 | 4.3-4.5 | 1.1-1.2 | 0.3 |
+| 3 | 2.0-2.6 | 3.1-3.3 | 4.2-4.5 | 4.3-4.5 | 5.7-6.0 | 0.3 |
+
+These are the interdental papillae and palatal cuffs passing the contact points and the crown bulge. Slits: behind 16/26 (Stage 1 also between all primary teeth); behind 17/27 and between 16/17, 26/27 (Stages 2-3).
+
+## Stage 1 (pre-graft, 9-10 y)
+- Body includes the unerupted 23 (fused, not removable; separate node only in the web file).
+- Overlay: flat skin over the canine window, opening at the anterior oronasal fistula.
+
+## Stage 2 (2-3 y after graft, braces, 12-13 y)
+| Part | Material | Path | Fit |
 |---|---|---|---|
-| Maxilla + mixed dentition | fixed | n/a | open alveolar cleft, small anterior oronasal opening (palatal side), premolar buds in bone |
-| 23 unerupted canine | separate print, sits in the labial window | n/a | visible through the window |
-| Overlay | removable | as above | flat skin over the canine window with no grip there, so the window stays empty; palatal scar line along the repaired cleft |
+| Graft plug | PLA contrast | out labially along (0.05, -1, 0) | 0.2 mm clearance, 3° taper, finger lip; path clear |
+| Braces strip (brackets, flat 2.0 x 1.2 mm wire, molar tubes, wire tails 2.2 mm, false 22) | PLA | clips off labially | bracket bases on the teeth; 0.1-0.7 mm snap over the premolars (retention) |
 
-## Stage 2: about 2-3 years after the graft, during fixed orthodontics (age about 12-13)
-
-| Part | Fixed / removable | Path | Clearance |
+## Stage 3 (braces off, 16+)
+| Part | Material | Path | Fit |
 |---|---|---|---|
-| Maxilla + teeth | fixed | n/a | 23 erupted beside the graft; second molars partly erupted and partly under the gum; canine window closed |
-| Graft (integrated) | fixed, or printed separately in another colour using the without-graft STL | n/a | seat bore filled |
-| Braces strip (brackets, archwire to the first-molar tubes, false 22 on the wire) | removable | out along **(0, -0.2, -1)** | contact with the overlay under 0.1 mm at rest; clear path out; no brackets on the erupting second molars |
-| Overlay | removable | as above | no hole at 22 |
-
-## Stage 3: braces off, age 16+
-
-| Part | Fixed / removable | Path | Clearance |
-|---|---|---|---|
-| Maxilla + teeth | fixed | n/a | canine window closed; empty 22 space by default |
-| Graft (healed) | fixed or separate print | n/a | contains the keyed (D-shaped) seat bore at 22 |
-| b. Implant body + abutment | removable, in the seat bore | out along (0, -0.2, -1) | clear |
-| b. Implant crown 22 | removable | out along (0, -0.2, -1) | 0.1 mm contact with the overlay at rest; clear path out |
-| c. One-wing resin-bonded (Maryland) bridge, wing on 21 | removable | out along (0, -0.2, -1) | 0.1 mm contact with the overlay at rest; clear path out |
-| d. Removable partial denture (palatal plate, clasps on 16 and 26) | removable | out along (0, -0.2, -1) | under 0.1 mm overlap at rest; clear path out |
-| Overlay | removable | as above | hole over the 22 seat |
-
-b, c and d share one seat and are shown one at a time.
+| Graft plug with the seat | PLA contrast | as Stage 2 | seat: double-D bore Ø3.2, flats 2.3 apart, 9 mm deep, spot-faced for the collar |
+| b Implant body + collar + post | PLA grey | along the seat axis (0, -0.196, -0.981) | 0.25 mm clearance, 2 crush ribs 0.12 mm, collar Ø4.6 stops on the graft; body ends 0.3 mm above the floor |
+| b Crown 22 | PLA white | off the post | 0.25 mm gap on the post, sits on the collar 1 mm below the gum margin |
+| option-none ridge plug | TPU / pink PLA | as implant | same peg; cap flush with the overlay |
+| c Maryland bridge | PLA | (0, 0.1, -0.995) | wing 1.3 mm on the palatal of 21, palatal connector; ≤0.07 mm drag on 21 |
+| d Hawley partial denture | pink PLA + painted wires | (0, 0, -1) | Ø1.8 Adams clasps 16/26 and labial bow; 0.1-0.4 mm undercut engagement (retention) |
 
 ## Known limits
-
-- Around the first and second molars, the overlay's gum flaps flex up to about 1.5 mm on removal. This was chosen instead of slots cut through the gum behind the molars. If a print is too tight, trim those flaps slightly. In Stage 2 the flaps over the partly erupted second molars are part of this.
-- The flat lateral bone wall at the canine region comes from the original pre-op v6 bone. After the window was closed (Stages 2 and 3), faint seam lines remain on it, visible only with the overlay off.
-- In Stage 1 with the overlay on, a small strip of bone may show on the palatal side of 12/53.
-- Tooth geometry derived from BodyParts3D, (c) The Database Center for Life Science, CC BY-SA 2.1 JP.
+- Overlay flaps must still flex 4-6 mm over the molars and premolars (table above); TPU 95A should do this with the slits, but test the cleft-side half first.
+- Seat is Ø3.2 (not Ø5.2): the graft is only 5.1-5.5 mm wide at the crest, so Ø3.2 with flats keeps walls ≥ 1.2 mm.
+- Maryland connector is palatal but a sliver may show in the 21/22 embrasure in some views.
+- Stage 1: one premolar bud tip may show as a dot on the labial bone with the overlay off.
+- Graft texture is web-only; use fuzzy skin when printing.
+- Tooth geometry from BodyParts3D, (c) The Database Center for Life Science, CC BY-SA 2.1 JP.
