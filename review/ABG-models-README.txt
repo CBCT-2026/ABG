@@ -17,7 +17,7 @@ Scale and units
 
 Stages
 - Stage 1, pre-graft, age 9-10, repaired UCLP (left): teardrop alveolar cleft (about 7.5 mm at the
-  crest, narrowing to the nasal floor), narrow residual palatal gap behind it, lesser segment slightly
+  crest, narrowing to the nasal floor), hard palate fully repaired and intact (routine case, no fistula), lesser segment slightly
   rotated and raised (small step at the cleft); mixed dentition with primary-form 53/63/54/64/55/65,
   lateral-size 12, rotated 21; 23 high over the 63 root at the cleft margin, about half its root
   formed with an open apex, crown seen through the labial window.
@@ -79,7 +79,7 @@ v3.4 notes (Stage 1)
 - Palate: one continuous bone plate. The round hole behind 22 and the small palatal dimples are closed; the alveolar
   cleft stays a notch through the alveolus only (no residual palatal opening). The unerupted 23 now sits 4 mm higher
   along its long axis, so its crown is fully inside bone on the palatal side and is seen only through the labial window.
-- Overlay: one closed TPU skin over the palate (no fistula hole), scar line kept. Over the canine window it continues
+- Overlay: one closed TPU skin over the palate (no fistula: routine case with intact palatal repair), scar line kept. Over the canine window it continues
   the neighbouring bone contour (convex, no crease), 2.4-5.0 mm thick; the inside bridges the window (no grip in it).
   Only openings: the two pin holes.
 - Stage 1 renders now include a palatal view (overlay on/off) and an into-cleft view.
