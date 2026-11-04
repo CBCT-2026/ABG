@@ -35,8 +35,10 @@ sc.export(out)
 G = pygltflib.GLTF2().load(out)
 node = [i for i, n in enumerate(G.nodes) if n.name == 'soft-tissue'][0]
 blob = G.binary_blob()
-off = np.array([0, -0.03, 0.008], 'f4'); times = np.array([0, 0.4, 1.4], 'f4')
-fwd = np.array([[0, 0, 0], [0, -0.004, 0.001], off], 'f4')
+# Each clip holds its final pose for a long tail, so pausing anywhere after 1.4 s keeps the part where it ended
+# (a clip that simply finishes would snap back to its first frame).
+off = np.array([0, -0.03, 0.008], 'f4'); times = np.array([0, 0.4, 1.4, 60], 'f4')
+fwd = np.array([[0, 0, 0], [0, -0.004, 0.001], off, off], 'f4')
 def add(arr, typ):
     global blob
     pad = (-len(blob)) % 4; blob += b'\0' * pad
@@ -46,7 +48,8 @@ def add(arr, typ):
     if typ == 'SCALAR': acc.min, acc.max = [float(arr.min())], [float(arr.max())]
     G.accessors.append(acc); return len(G.accessors) - 1
 t = add(times, 'SCALAR')
-for name, vals in (('remove', fwd), ('replace', fwd[::-1].copy())):
+back = np.array([off, [0, -0.004, 0.001], [0, 0, 0], [0, 0, 0]], 'f4')
+for name, vals in (('remove', fwd), ('replace', back)):
     v = add(vals, 'VEC3')
     G.animations.append(pygltflib.Animation(name=name,
         samplers=[pygltflib.AnimationSampler(input=t, output=v, interpolation='LINEAR')],
