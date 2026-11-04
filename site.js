@@ -97,6 +97,29 @@ if (mv) {
     });
   }
 
+  // Removable parts (Stage 2 braces; Stage 3 options for the missing tooth): each is a material in the model,
+  // shown or hidden by its alpha. The buttons appear only when the model has those materials.
+  const parts = document.getElementById('parts');
+  const mat = name => mv.model && mv.model.materials.find(m => m.name.replace(/\.\d+$/, '') === name);
+  function show(name, on) {
+    const m = mat(name); if (!m) return;
+    const c = m.pbrMetallicRoughness.baseColorFactor.slice(0, 3);
+    m.setAlphaMode(on ? 'OPAQUE' : 'BLEND'); m.pbrMetallicRoughness.setBaseColorFactor([...c, on ? 1 : 0]);
+  }
+  if (parts) mv.addEventListener('load', () => {
+    const toggles = [...parts.querySelectorAll('[data-part]')].filter(b => mat(b.dataset.part));
+    const options = [...parts.querySelectorAll('[data-option]')].filter(b => !b.dataset.option || mat(b.dataset.option));
+    const names = options.map(b => b.dataset.option).filter(Boolean);
+    toggles.forEach(b => { b.addEventListener('click', () => {
+      const on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', on); b.textContent = on ? b.dataset.on : b.dataset.off; show(b.dataset.part, on); }); });
+    names.forEach(n => show(n, false));
+    options.forEach(b => { b.addEventListener('click', () => {
+      options.forEach(x => x.setAttribute('aria-pressed', x === b));
+      names.forEach(n => show(n, n === b.dataset.option)); }); });
+    parts.hidden = !(toggles.length || names.length);
+  });
+
   // Show a plain message in the viewer box if 3D cannot be shown, instead of an empty box.
   const msg = document.documentElement.lang === 'ja'
     ? { gl: 'このブラウザでは3D表示（WebGL）が使えません。別のブラウザで開いてください。', load: '3Dモデルを読み込めませんでした。ページを再読み込みしてください。' }

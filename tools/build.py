@@ -101,6 +101,21 @@ def stage_page(lang, i, stage):
     prev = f'<a href="../{STAGES[i - 1]}/">← {t[f"st{n - 1}"]}</a>' if i > 0 else '<span></span>'
     nxt = f'<a href="../{STAGES[i + 1]}/">{t[f"st{n + 1}"]} →</a>' if i < 2 else '<span></span>'
     o = 'ja' if lang == 'en' else 'en'
+    # Removable parts in the model, switched by site.js through their material names (hidden until the model confirms them).
+    parts = ''
+    if stage == 'short-term':
+        parts = f'''
+  <div class="controls parts" id="parts" role="group" aria-label="{t['partsLabel']}" hidden>
+    <button type="button" data-part="braces" aria-pressed="true" data-on="{t['bracesOn']}" data-off="{t['bracesOff']}">{t['bracesOn']}</button>
+  </div>'''
+    elif stage == 'long-term':
+        parts = f'''
+  <div class="controls parts" id="parts" role="group" aria-label="{t['partsLabel']}" hidden>
+    <button type="button" data-option="" aria-pressed="true">{t['optNone']}</button>
+    <button type="button" data-option="option-implant" aria-pressed="false">{t['optImplant']}</button>
+    <button type="button" data-option="option-bridge" aria-pressed="false">{t['optBridge']}</button>
+    <button type="button" data-option="option-denture" aria-pressed="false">{t['optDenture']}</button>
+  </div>'''
     return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + model_head(up) + f'''<script type="module" src="{up}vendor/model-viewer/model-viewer.min.js"></script>
 </head>
 <body data-stage="{stage}">
@@ -125,7 +140,7 @@ def stage_page(lang, i, stage):
     <button type="button" data-orbit="40deg 75deg 0.11m" data-target="0.028m 0.006m 0.01m" aria-pressed="false">{t['vLeft']}</button>
     <button type="button" id="labels" aria-pressed="false" data-on="{t['hideLabels']}" data-off="{t['showLabels']}">{t['hideLabels']}</button>
     <button type="button" id="gum" class="gum" aria-pressed="false" data-off="{t['gumOff']}" data-on="{t['gumOn']}">{t['gumOff']}</button>
-  </div>
+  </div>{parts}
 
   <!-- TEXT: generated from content/{stage}-{lang}.html by tools/build.py. -->
 {text}
