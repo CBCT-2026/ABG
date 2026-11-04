@@ -14,12 +14,13 @@ EXTRA = {
  'implant': dict(en=['Implant', 'with a crown'], ja=['インプラント', 'クラウン']),
  'bridge':  dict(en=['Bridge', 'one wing'], ja=['ブリッジ', '一まいの羽']),
  'plate':   dict(en=['Plate', 'false tooth you can take out'], ja=['入れ歯', '取り外しできる']),
+ 'substitution': dict(en=['Eye tooth', 'moved into the gap'], ja=['犬歯', 'すき間に動かした']),
  'opengap': dict(en=['Gap', 'kept open by the braces'], ja=['すき間', '装置であけておく']),
 }
 SCENES = {
  1: [('intro', []), ('gum', ['gum']), ('missing', ['missing', 'central']), ('canine', ['window']), ('graft', ['gap'])],
  2: [('intro', []), ('canine', ['canine', 'graft']), ('braces', ['braces', 'opengap'])],
- 3: [('intro', []), ('graft', ['graft']), ('options', ['implant', 'bridge', 'plate']), ('close', [])],
+ 3: [('intro', []), ('graft', ['graft']), ('options', ['implant', 'bridge', 'plate']), ('close', ['substitution'])],
 }
 UI = json.load(open('content/ui.json'))
 VOICE = {'en': 'bf_emma', 'ja': 'jf_alpha'}  # Kokoro-82M voices used in the wisdom tooth study

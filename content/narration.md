@@ -52,7 +52,7 @@ Under the pink gum, the slightly yellow new bone holds the teeth where the gap w
 
 The parts in the gap swap to show three main ways. An implant is a small post in the new bone with a false tooth on top. A bridge is a false tooth with one wing glued to the back of the front tooth. Or a small plate you can take out sits behind the teeth and holds a false tooth with hidden clips.
 
-Some teams close the space instead. Braces move the eye tooth into the gap, and the dentist reshapes it. Your cleft team will help you choose.
+Some teams close the space instead. Braces move the eye tooth into the gap, and the dentist reshapes it. The second model shows this. Your cleft team will help you choose.
 
 ## Stage 3 Japanese
 
@@ -62,4 +62,4 @@ Some teams close the space instead. Braces move the eye tooth into the gap, and 
 
 すき間の部品をつけかえて、主な3つの方法を見せます。インプラントは、新しい骨にうめる小さなねじに歯をつけます。ブリッジは、一まいの羽を前歯のうらにはって、歯をつけます。または、歯のうらの取り外しできる小さな板に、見えない留め具で歯をつけます。
 
-すき間をとじるチームもあります。装置で犬歯をすき間に動かし、形を整えます。どの方法が合うかは、口の割れ目のチームと話し合います。
+すき間をとじるチームもあります。装置で犬歯をすき間に動かし、形を整えます。別の模型が、これを見せています。どの方法が合うかは、口の割れ目のチームと話し合います。

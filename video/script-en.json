@@ -48,6 +48,14 @@
    "False tooth on the wire",
    "lateral incisor"
   ],
+  "moved": [
+   "Eye tooth",
+   "moved into the gap and reshaped"
+  ],
+  "moved2": [
+   "Next tooth",
+   "moved forward to take its place"
+  ],
   "space": [
    "Missing tooth",
    "pick an option below"
@@ -63,6 +71,10 @@
   "plate": [
    "Plate",
    "false tooth you can take out"
+  ],
+  "substitution": [
+   "Eye tooth",
+   "moved into the gap"
   ],
   "opengap": [
    "Gap",
@@ -204,10 +216,13 @@
     },
     {
      "scene": "close",
-     "labels": [],
+     "labels": [
+      "substitution"
+     ],
      "sentences": [
       "Some teams close the space instead.",
       "Braces move the eye tooth into the gap, and the dentist reshapes it.",
+      "The second model shows this.",
       "Your cleft team will help you choose."
      ]
     }
