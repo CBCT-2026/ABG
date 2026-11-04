@@ -38,7 +38,12 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     camera-controls camera-orbit="0deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
     shadow-intensity="1" exposure="1.05" loading="eager">
     <button slot="ar-button" class="ar-btn">ARで見る（部屋におく）</button>
-    <div class="hotspot" slot="hotspot-1" data-position="-0.002m -0.012m 0.0316m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 40px"><span class="label">前歯<small>中切歯</small></span></div>
+    <div class="hotspot on-gum" slot="hotspot-1" data-position="0.034m 0.008m 0.0226m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="up" style="--len: 60px"><span class="label">歯ぐき<small>外せます</small></span></div>
+    <div class="hotspot off-gum" slot="hotspot-2" data-position="0.021m 0.010m 0.027m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="left" style="--len: 44px"><span class="label">新しい骨<small>ついた骨</small></span></div>
+    <div class="hotspot" slot="hotspot-3" data-position="0.030m -0.003m 0.027m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="up" style="--len: 76px"><span class="label">犬歯<small>新しい骨を通って生えた</small></span></div>
+    <div class="hotspot" slot="hotspot-4" data-position="0.021m -0.004m 0.030m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 18px"><span class="label">ない歯のスペース<small>下のボタンで選べます</small></span></div>
+    <div class="hotspot" slot="hotspot-5" data-position="-0.002m -0.012m 0.0316m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 40px"><span class="label">前歯<small>中切歯</small></span></div>
+    <div class="hotspot on-gum" slot="hotspot-6" data-position="0.008m 0.0073m -0.01m" data-normal="0 -1 0" data-visibility-attribute="visible" data-side="left" style="--len: 30px"><span class="label">上あご<small>こうがい</small></span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <p class="hint" id="hint" data-touch="指でなぞると、模型が回ります。指でつまむと、大きさが変わります。" data-mouse="ドラッグすると、模型が回ります。ホイールを回すと、大きさが変わります。">ドラッグすると、模型が回ります。ホイールを回すと、大きさが変わります。</p>
@@ -51,7 +56,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button type="button" id="gum" class="gum" aria-pressed="false" data-off="歯ぐきを外す" data-on="歯ぐきをもどす">歯ぐきを外す</button>
   </div>
   <div class="controls parts" id="parts" role="group" aria-label="模型に表示するもの" hidden>
-    <button type="button" data-option="" aria-pressed="true">すき間のまま</button>
+    <button type="button" data-option="option-none" aria-pressed="true">すき間のまま</button>
     <button type="button" data-option="option-implant" aria-pressed="false">インプラント</button>
     <button type="button" data-option="option-bridge" aria-pressed="false">ブリッジ</button>
     <button type="button" data-option="option-denture" aria-pressed="false">部分入れ歯</button>
