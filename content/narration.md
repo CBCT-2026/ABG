@@ -34,7 +34,7 @@ This is the same jaw, about 2 to 3 years after the bone graft. The child is now 
 
 Under the pink gum, the new bone is the slightly yellow, rougher part next to the front tooth. It joins the two parts of the upper jaw. The eye tooth came down through it into the row of teeth.
 
-The silver wire on the teeth belongs to the braces. Braces line up the teeth. Almost everyone who has this graft needs them. The white false tooth on the wire fills the gap where the small tooth never grew.
+The silver wire on the teeth belongs to the braces. Braces line up the teeth. Almost everyone who has this graft needs them. The wire runs across the gap where the small tooth never grew, and the braces keep this space open.
 
 ## Stage 2 Japanese
 
@@ -42,7 +42,7 @@ The silver wire on the teeth belongs to the braces. Braces line up the teeth. Al
 
 ピンクの歯ぐきの下で、前歯のとなりの、少し黄色くてざらざらした部分が新しい骨です。上あごの2つの部分をつないでいます。犬歯はこの骨を通って、歯のならびまでおりてきました。
 
-銀色のワイヤーは、歯につける装置です。歯をならべます。この骨移植を受けた人のほぼ全員が使います。はえてこなかった小さい歯のすき間には、ワイヤーにつけた白いつくり物の歯が入っています。
+銀色のワイヤーは、歯につける装置です。歯をならべます。この骨移植を受けた人のほぼ全員が使います。ワイヤーは、はえてこなかった小さい歯のすき間をまたぎ、装置がこのすき間をあけておきます。
 
 ## Stage 3 English
 
@@ -50,7 +50,7 @@ This is the same jaw in the later teens. The braces are off, and the teeth are i
 
 Under the pink gum, the slightly yellow new bone holds the teeth where the gap was. Growth has stopped, so your dentist can now fill the gap for good.
 
-The parts in the gap swap to show three main ways. An implant is a small post in the new bone with a false tooth on top. A bridge is a false tooth with one wing glued to the back of the front tooth. Or a plate you can take out holds a false tooth.
+The parts in the gap swap to show three main ways. An implant is a small post in the new bone with a false tooth on top. A bridge is a false tooth with one wing glued to the back of the front tooth. Or a small plate you can take out sits behind the teeth and holds a false tooth with hidden clips.
 
 Some teams close the space instead. Braces move the eye tooth into the gap, and the dentist reshapes it. Your cleft team will help you choose.
 
@@ -60,6 +60,6 @@ Some teams close the space instead. Braces move the eye tooth into the gap, and 
 
 ピンクの歯ぐきの下の、少し黄色い新しい骨が、すき間があった所で歯をささえています。体が育ち終わったので、すき間をずっとうめることができます。
 
-すき間の部品をつけかえて、主な3つの方法を見せます。インプラントは、新しい骨にうめる小さなねじに歯をつけます。ブリッジは、一まいの羽を前歯のうらにはって、歯をつけます。または、取り外しできる入れ歯で歯をつけます。
+すき間の部品をつけかえて、主な3つの方法を見せます。インプラントは、新しい骨にうめる小さなねじに歯をつけます。ブリッジは、一まいの羽を前歯のうらにはって、歯をつけます。または、歯のうらの取り外しできる小さな板に、見えない留め具で歯をつけます。
 
 すき間をとじるチームもあります。装置で犬歯をすき間に動かし、形を整えます。どの方法が合うかは、口の割れ目のチームと話し合います。

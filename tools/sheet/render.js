@@ -24,13 +24,13 @@ const VIEWS = [
   { name: 'front-bone', model: S1, orbit: '0deg 80deg auto', gum: false, labels: ['gap', 'central', 'missing'] },
   { name: 'below', model: S1, orbit: '0deg 165deg auto', gum: true, labels: ['palate', 'central'], w: 640, h: 560 },
   { name: 'left', model: S1, orbit: '40deg 75deg 0.15m', target: '0.028m 0.006m 0.01m', gum: false, labels: ['window'], w: 640, h: 560 },
-  { name: 's2-braces', model: S2, orbit: '0deg 80deg auto', gum: true, show: ['braces'], labels: ['braces', 'false', 'central'] },
+  { name: 's2-braces', model: S2, orbit: '0deg 80deg auto', gum: true, show: ['braces'], labels: ['braces'], extra: ['gap2'] },
   { name: 's2-off', model: S2, orbit: '0deg 80deg auto', gum: true, hide: ['braces'], labels: ['canine', 'central'], extra: ['gap2'], tweak: { central: { side: 'left', len: 40 } } },
   { name: 's2-bone', model: S2, orbit: '0deg 80deg auto', gum: false, hide: ['braces'], labels: ['graft', 'canine'], tweak: { graft: { len: 130 } } },
   { name: 's2-below', model: S2, orbit: '0deg 165deg auto', gum: true, show: ['braces'], labels: ['palate'], w: 640, h: 560 },
-  { name: 's3-implant', model: S3, orbit: '0deg 80deg auto', gum: true, option: 'option-implant', labels: ['central'], extra: ['implant'] },
-  { name: 's3-bridge', model: S3, orbit: '0deg 80deg auto', gum: true, option: 'option-bridge', labels: ['central'], extra: ['bridge'] },
-  { name: 's3-plate', model: S3, orbit: '0deg 80deg auto', gum: true, option: 'option-denture', labels: ['central'], extra: ['plate'] },
+  { name: 's3-implant', model: S3, orbit: '0deg 80deg auto', gum: true, option: 'option-implant', labels: ['central'], extra: ['implant'], tweak: { central: { side: 'left', len: 40 } } },
+  { name: 's3-bridge', model: S3, orbit: '0deg 80deg auto', gum: true, option: 'option-bridge', labels: ['central'], extra: ['bridge'], tweak: { central: { side: 'left', len: 40 } } },
+  { name: 's3-plate', model: S3, orbit: '0deg 80deg auto', gum: true, option: 'option-denture', labels: [], extra: ['plate'] },
   { name: 's3-bone', model: S3, orbit: '0deg 80deg auto', gum: false, hide: OPTIONS, labels: ['healed', 'canine'], tweak: { healed: { len: 130 } } },
 ];
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.glb': 'model/gltf-binary', '.png': 'image/png' };
