@@ -2,7 +2,7 @@
 Usage: python3 tools/prepare_model.py <export.glb> models/<name>.glb
 The export must not be Draco-compressed (decode first: npx @gltf-transform/cli@4.1.1 cp in.glb plain.glb).
 Keeps the meshes as exported and names the nodes and materials by part (bone, teeth, graft, soft-tissue, canine,
-braces, option-implant, option-bridge, option-denture); site.js finds the parts by material name. Parts with the
+braces, option-implant, option-bridge, option-denture, option-none); site.js finds the parts by material name. Parts with the
 site's fixed colours get them; parts that carry their own colours (braces, options) keep them. Adds the gum
 animations "remove" / "replace" (the soft-tissue node slides down off the jaw) that site.js plays.
 Then: npx @gltf-transform/cli@4.1.1 draco models/<name>.glb models/<name>.glb
@@ -13,8 +13,8 @@ src, out = sys.argv[1], sys.argv[2]
 def lin(h):
     v = np.array([int(h[i:i+2], 16) / 255 for i in (1, 3, 5)])
     return [float(x) for x in np.where(v <= 0.04045, v / 12.92, ((v + 0.055) / 1.055) ** 2.4)] + [1.0]
-FIXED = {'bone': ('#D3C29E', 0.9), 'teeth': ('#F3EFE4', 0.3), 'gum': ('#D9817F', 0.5), 'graft': ('#E3CFA6', 1.0), 'canine': ('#F3EFE4', 0.3)}
-OWN = ['option-implant', 'option-bridge', 'option-denture', 'braces']  # keep the colours from the export
+FIXED = {'bone': ('#D3C29E', 0.9), 'teeth': ('#F3EFE4', 0.3), 'gum': ('#D9817F', 0.5), 'graft': ('#C9A86A', 1.0), 'canine': ('#F3EFE4', 0.3)}
+OWN = ['option-implant', 'option-bridge', 'option-denture', 'option-none', 'braces']  # keep the colours from the export
 ALIAS = {'soft-tissue': 'gum', 'overlay': 'gum', 'maxilla': 'bone'}
 def classify(name):
     base = name.split('.')[0].lower()

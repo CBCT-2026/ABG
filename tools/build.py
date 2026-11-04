@@ -25,8 +25,16 @@ H = {
  'central': dict(pos='-0.002m -0.012m 0.0316m', normal='0 0 1', side='down', len=40, en=['Front tooth', 'central incisor'], ja=['前歯', '中切歯']),
  'missing': dict(pos='0.021m -0.010m 0.024m', normal='0 0 1', side='down', len=18, en=['Missing tooth', 'lateral incisor'], ja=['ない歯', '側切歯']),
  'palate':  dict(pos='0.008m 0.0073m -0.01m', normal='0 -1 0', side='left', len=30, when='on-gum', en=['Roof of the mouth', 'palate'], ja=['上あご', 'こうがい']),
+ 'graft':   dict(pos='0.021m 0.010m 0.027m', normal='0 0 1', side='left', len=44, when='off-gum', en=['New bone', 'bone graft'], ja=['新しい骨', '骨移植']),
+ 'healed':  dict(pos='0.021m 0.010m 0.027m', normal='0 0 1', side='left', len=44, when='off-gum', en=['New bone', 'healed graft'], ja=['新しい骨', 'ついた骨']),
+ 'canine':  dict(pos='0.030m -0.003m 0.027m', normal='0 0 1', side='up', len=76, en=['Eye tooth', 'grew through the new bone'], ja=['犬歯', '新しい骨を通って生えた']),
+ 'braces':  dict(pos='-0.014m -0.006m 0.033m', normal='0 0 1', side='up', len=50, when='on-braces', en=['Braces', 'you can take them off'], ja=['矯正装置', '外せます']),
+ 'false':   dict(pos='0.021m -0.007m 0.031m', normal='0 0 1', side='down', len=18, when='on-braces', en=['False tooth on the wire', 'lateral incisor'], ja=['ワイヤーの仮の歯', '側切歯']),
+ 'space':   dict(pos='0.021m -0.004m 0.030m', normal='0 0 1', side='down', len=18, en=['Missing tooth', 'pick an option below'], ja=['ない歯のスペース', '下のボタンで選べます']),
 }
-LABELS = {'pre-op': ['gum', 'gap', 'window', 'central', 'missing', 'palate'], 'short-term': ['central'], 'long-term': ['central']}
+LABELS = {'pre-op': ['gum', 'gap', 'window', 'central', 'missing', 'palate'],
+          'short-term': ['gum', 'graft', 'canine', 'braces', 'false', 'central', 'palate'],
+          'long-term': ['gum', 'healed', 'canine', 'space', 'central', 'palate']}
 
 def cite(text):
     order = []
@@ -111,7 +119,7 @@ def stage_page(lang, i, stage):
     elif stage == 'long-term':
         parts = f'''
   <div class="controls parts" id="parts" role="group" aria-label="{t['partsLabel']}" hidden>
-    <button type="button" data-option="" aria-pressed="true">{t['optNone']}</button>
+    <button type="button" data-option="option-none" aria-pressed="true">{t['optNone']}</button>
     <button type="button" data-option="option-implant" aria-pressed="false">{t['optImplant']}</button>
     <button type="button" data-option="option-bridge" aria-pressed="false">{t['optBridge']}</button>
     <button type="button" data-option="option-denture" aria-pressed="false">{t['optDenture']}</button>
