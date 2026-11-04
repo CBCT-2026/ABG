@@ -18,7 +18,7 @@ const EXTRA = {
   gap2: { at: 'space', en: ['Gap for the missing tooth', 'lateral incisor'], ja: ['ない歯のすき間', ''] },
 };
 const OPTIONS = ['option-none', 'option-implant', 'option-bridge', 'option-denture'];
-const S1 = 'abg-1-pre-op', S2 = 'abg-2-short-term', S3 = 'abg-3-long-term';
+const S1 = 'abg-1-pre-op', S2 = 'abg-2-during-braces', S3 = 'abg-3-long-term';
 const VIEWS = [
   { name: 'front-gum', model: S1, orbit: '0deg 80deg auto', gum: true, labels: ['gum', 'central', 'missing'] },
   { name: 'front-bone', model: S1, orbit: '0deg 80deg auto', gum: false, labels: ['gap', 'central', 'missing'] },

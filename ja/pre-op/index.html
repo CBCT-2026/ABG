@@ -30,7 +30,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
 
 <main>
   <h1>歯ぐきの骨のすき間をうめる手術：3つの段階</h1>
-  <ol class="steps" aria-label="段階"><li><a href="../pre-op/" aria-current="page"><span>段階1</span><b>手術の前</b></a></li><li><a href="../short-term/"><span>段階2</span><b>装置をつけている時</b></a></li><li><a href="../long-term/"><span>段階3</span><b>装置を外した後</b></a></li></ol>
+  <ol class="steps" aria-label="段階"><li><a href="../pre-op/" aria-current="page"><span>段階1</span><b>手術の前</b></a></li><li><a href="../during-braces/"><span>段階2</span><b>装置をつけている時</b></a></li><li><a href="../long-term/"><span>段階3</span><b>装置を外した後</b></a></li></ol>
   <!-- MODEL: set per stage in MODELS (tools/build.py). See README. -->
   <model-viewer id="mv" src="../../models/abg-1-pre-op.glb" ios-src="../../models/abg-1-pre-op.usdz" poster="../../models/abg-1-pre-op-poster.webp"
     alt="左側の骨にすき間があり、前歯のとなりの歯がなく、外せるピンクの歯ぐきがある子どもの上あごの3D模型"
@@ -125,12 +125,12 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
   </ol>
 </details>
   </section>
-  <nav class="next" aria-label="段階"><span></span><a href="../short-term/">装置をつけている時 →</a></nav>
+  <nav class="next" aria-label="段階"><span></span><a href="../during-braces/">装置をつけている時 →</a></nav>
   <p class="restart"><button type="button" id="restart" class="again" data-home="../pre-op/">はじめからもう一度</button></p>
   <p class="disclaimer">このページは、愛知学院大学と名古屋大学の研究のためのものです。バージョン0.1、2026年10月22日。</p>
   <div class="timer" id="timer" hidden><span>のこり時間</span> <b id="timer-left"></b></div>
   <div class="timeup gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-msg" hidden><div class="done-card"><h2 class="done-title">段階1: 手術の前</h2><p id="gate-msg">じゅんびができたら、スタートをおしてください。</p><button type="button" class="start" id="start">スタート</button></div></div>
-  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><div class="done-card"><svg class="tick" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25l7 7 13-15"/></svg><h2 class="done-title">段階1、おわり</h2><p id="timeup-msg">この段階の時間は終わりです。</p><a class="next-stage" href="../short-term/">次の段階へ →</a></div></div>
+  <div class="timeup" id="timeup" role="alertdialog" aria-modal="true" aria-labelledby="timeup-msg" hidden><div class="done-card"><svg class="tick" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M14 25l7 7 13-15"/></svg><h2 class="done-title">段階1、おわり</h2><p id="timeup-msg">この段階の時間は終わりです。</p><a class="next-stage" href="../during-braces/">次の段階へ →</a></div></div>
 </main>
 <script src="../../site.js"></script>
 </body>

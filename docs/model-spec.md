@@ -8,7 +8,7 @@ Clinical content (ages, teeth, sources) is in [clinical-check.md](clinical-check
 | Stage | Web (Draco, under 5 MB) | iPhone AR | Print |
 |---|---|---|---|
 | 1. Pre-op | `models/abg-pre-op.glb` | `models/abg-pre-op.usdz` | STL per part |
-| 2. Short-term post-op | `models/abg-short-term.glb` | `models/abg-short-term.usdz` | STL per part |
+| 2. Short-term post-op | `models/abg-2-during-braces.glb` | `models/abg-2-during-braces.usdz` | STL per part |
 | 3. Long-term post-op, canine as lateral incisor (crown) | `models/abg-long-term-canine.glb` | `models/abg-long-term-canine.usdz` | STL per part |
 | 3. Long-term post-op, implant | `models/abg-long-term-implant.glb` | `models/abg-long-term-implant.usdz` | STL per part |
 | 3. Long-term post-op, cantilever bridge | `models/abg-long-term-bridge.glb` | `models/abg-long-term-bridge.usdz` | STL per part |
@@ -74,7 +74,7 @@ See the table in [clinical-check.md](clinical-check.md#teeth-each-model-should-s
 
 Made in Blender (scripts in `/mnt/project-files/models/<stage>/scripts/`) from the pre-op v4 model, so all stages share the same bone and front teeth:
 
-- `models/short-term/v1`: pre-op bone and soft tissue cover; graft fills the alveolar cleft and the front of the palate (a gap stays further back); baby canine 63 taken out; canine 23 a little lower.
+- `models/during-braces/v1`: pre-op bone and soft tissue cover; graft fills the alveolar cleft and the front of the palate (a gap stays further back); baby canine 63 taken out; canine 23 a little lower.
 - `models/long-term/v1`: adult teeth from the pre-op v2 scan (full roots), 17 and 27 added, graft blended into the bone (bone colour), canine window filled. Three files: canine, implant, bridge.
 - `models/pre-op/v5`: v4 plus one 11-second animation, `reveal`: the gum cover moves off and away (0 to 2.5 s), the bone gap is shown (2.5 to 5.5 s), the canine grows a little twice to draw the eye (5.5 to 9.5 s), and the cover comes back (9.5 to 11 s). On the page, the play button adds step captions, turns the model to the canine and makes the bone see-through during step 3. The USDZ has the same movement, so iPhone AR plays it in a loop (no captions or see-through bone in AR).
 - Print files are in each folder's `print/`. Previews in `previews/`.
