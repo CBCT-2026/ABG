@@ -33,7 +33,7 @@ H = {
  'space':   dict(pos='0.021m -0.004m 0.030m', normal='0 0 1', side='down', len=18, en=['Missing tooth', 'pick an option below'], ja=['ない歯のスペース', '下のボタンで選べます']),
 }
 LABELS = {'pre-op': ['gum', 'gap', 'window', 'central', 'missing', 'palate'],
-          'short-term': ['gum', 'graft', 'canine', 'braces', 'false', 'central', 'palate'],
+          'short-term': ['gum', 'graft', 'canine', 'braces', 'central', 'palate'],
           'long-term': ['gum', 'healed', 'canine', 'space', 'central', 'palate']}
 
 def cite(text):
