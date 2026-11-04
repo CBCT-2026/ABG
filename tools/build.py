@@ -276,7 +276,7 @@ SHEET_FIGS = {
             ('sheet-front-bone-{lang}.png', 'Gum taken off: the gap in the bone', '歯ぐきを外した所：骨のすき間'),
             ('sheet-below-{lang}.png', 'From below: the roof of the mouth', '下から見た所：上あご'),
             ('sheet-left-{lang}.png', 'Left side: the eye tooth window', '左側：犬歯の窓')],
- 'short-term': [('sheet-s2-braces-{lang}.png', 'Whole jaw: braces on, with the false tooth', '上あご全体：装置とつくり物の歯'),
+ 'short-term': [('sheet-s2-braces-{lang}.png', 'Whole jaw: braces on, with the gap kept open', '上あご全体：装置とあけておくすき間'),
                 ('sheet-s2-off-{lang}.png', 'Braces taken off: the gap where the small tooth never grew', '装置を外した所：はえてこなかった歯のすき間'),
                 ('sheet-s2-bone-{lang}.png', 'Gum taken off: the new bone and the eye tooth', '歯ぐきを外した所：新しい骨と犬歯'),
                 ('sheet-s2-below-{lang}.png', 'From below: the roof of the mouth and the braces', '下から見た所：上あごと装置')],

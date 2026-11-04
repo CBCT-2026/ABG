@@ -45,8 +45,8 @@
    "fixed braces"
   ],
   "false": [
-   "False tooth",
-   "on the wire"
+   "False tooth on the wire",
+   "lateral incisor"
   ],
   "space": [
    "Missing tooth",
@@ -63,6 +63,10 @@
   "plate": [
    "Plate",
    "false tooth you can take out"
+  ],
+  "opengap": [
+   "Gap",
+   "kept open by the braces"
   ]
  },
  "chapters": [
@@ -151,13 +155,13 @@
      "scene": "braces",
      "labels": [
       "braces",
-      "false"
+      "opengap"
      ],
      "sentences": [
       "The silver wire on the teeth belongs to the braces.",
       "Braces line up the teeth.",
       "Almost everyone who has this graft needs them.",
-      "The white false tooth on the wire fills the gap where the small tooth never grew."
+      "The wire runs across the gap where the small tooth never grew, and the braces keep this space open."
      ]
     }
    ]
@@ -195,7 +199,7 @@
       "The parts in the gap swap to show three main ways.",
       "An implant is a small post in the new bone with a false tooth on top.",
       "A bridge is a false tooth with one wing glued to the back of the front tooth.",
-      "Or a plate you can take out holds a false tooth."
+      "Or a small plate you can take out sits behind the teeth and holds a false tooth with hidden clips."
      ]
     },
     {
