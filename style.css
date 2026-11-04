@@ -61,6 +61,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outlin
 model-viewer.labels-off .hotspot { display: none; }
 model-viewer.gum-off .hotspot.on-gum, model-viewer:not(.gum-off) .hotspot.off-gum { display: none; }
 model-viewer.braces-off .hotspot.on-braces { display: none; }
+model-viewer.sub .hotspot.on-main, model-viewer:not(.sub) .hotspot.on-sub { display: none; }
 .hotspot::after { content: ""; position: absolute; background: #1b1d21; box-shadow: 0 0 0 1px rgba(255,255,255,.85); }
 .hotspot .label { position: absolute; white-space: nowrap; text-align: center; background: rgba(255,255,255,.92); color: #1b1d21;
   border: 1px solid #1b1d21; border-radius: 4px; padding: 2px 6px; font: 700 13px/1.15 system-ui, -apple-system, "Hiragino Sans", sans-serif; }

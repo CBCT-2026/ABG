@@ -10,6 +10,7 @@ REFS = json.load(open('content/references.json'))
 STAGES = ['pre-op', 'during-braces', 'long-term']
 MODEL = 'abg-placeholder'  # placeholder for stages whose model is not built yet
 MODELS = {'pre-op': 'abg-1-pre-op', 'during-braces': 'abg-2-during-braces', 'long-term': 'abg-3-long-term'}  # stage -> models/<name>.glb
+SUB = 'abg-3b-substitution'  # second Stage 3 model (space closed, eye tooth moved into the gap); the last Stage 3 button swaps to it
 LANGS = ['en', 'ja']
 SITE_URL = 'https://cbct-2026.github.io/ABG/'  # the QR code on the home page opens this (make it with tools/make_qr.py)
 # Microsoft Forms for the study (information sheet + survey). Paste each link here, then run this script again.
@@ -27,14 +28,16 @@ H = {
  'palate':  dict(pos='0.008m 0.0073m -0.01m', normal='0 -1 0', side='left', len=30, when='on-gum', en=['Roof of the mouth', 'palate'], ja=['上あご', 'こうがい']),
  'graft':   dict(pos='0.021m 0.010m 0.027m', normal='0 0 1', side='left', len=44, when='off-gum', en=['New bone', 'bone graft'], ja=['新しい骨', '骨移植']),
  'healed':  dict(pos='0.021m 0.010m 0.027m', normal='0 0 1', side='left', len=44, when='off-gum', en=['New bone', 'healed graft'], ja=['新しい骨', 'ついた骨']),
- 'canine':  dict(pos='0.030m -0.003m 0.027m', normal='0 0 1', side='up', len=76, en=['Eye tooth', 'grew through the new bone'], ja=['犬歯', '新しい骨を通って生えた']),
+ 'canine':  dict(pos='0.030m -0.003m 0.027m', normal='0 0 1', side='up', len=76, when='on-main', en=['Eye tooth', 'grew through the new bone'], ja=['犬歯', '新しい骨を通って生えた']),
  'braces':  dict(pos='-0.014m -0.006m 0.033m', normal='0 0 1', side='up', len=50, when='on-braces', en=['Braces', 'you can take them off'], ja=['矯正装置', '外せます']),
  'false':   dict(pos='0.021m -0.007m 0.031m', normal='0 0 1', side='down', len=18, when='on-braces', en=['False tooth on the wire', 'lateral incisor'], ja=['ワイヤーの仮の歯', '側切歯']),
- 'space':   dict(pos='0.021m -0.004m 0.030m', normal='0 0 1', side='down', len=18, en=['Missing tooth', 'pick an option below'], ja=['ない歯のスペース', '下のボタンで選べます']),
+ 'moved':   dict(pos='0.021m -0.004m 0.030m', normal='0 0 1', side='down', len=18, when='on-sub', en=['Eye tooth', 'moved into the gap and reshaped'], ja=['犬歯', 'すき間に動かして形を整えた']),
+ 'moved2':  dict(pos='0.030m -0.003m 0.027m', normal='0 0 1', side='up', len=56, when='on-sub', en=['Next tooth', 'moved forward to take its place'], ja=['となりの歯', '前に動かして犬歯の代わりに']),
+ 'space':   dict(pos='0.021m -0.004m 0.030m', normal='0 0 1', side='down', len=18, when='on-main', en=['Missing tooth', 'pick an option below'], ja=['ない歯のスペース', '下のボタンで選べます']),
 }
 LABELS = {'pre-op': ['gum', 'gap', 'window', 'central', 'missing', 'palate'],
           'during-braces': ['gum', 'graft', 'canine', 'braces', 'central', 'palate'],
-          'long-term': ['gum', 'healed', 'canine', 'space', 'central', 'palate']}
+          'long-term': ['gum', 'healed', 'canine', 'space', 'central', 'palate', 'moved', 'moved2']}
 
 def cite(text):
     order = []
@@ -123,6 +126,7 @@ def stage_page(lang, i, stage):
     <button type="button" data-option="option-implant" aria-pressed="false">{t['optImplant']}</button>
     <button type="button" data-option="option-bridge" aria-pressed="false">{t['optBridge']}</button>
     <button type="button" data-option="option-denture" aria-pressed="false">{t['optDenture']}</button>
+    <button type="button" data-option="substitution" aria-pressed="false" data-src="{up}models/{SUB}.glb" data-ios="{up}models/{SUB}.usdz" data-poster="{up}models/{SUB}-poster.webp">{t['optSub']}</button>
   </div>'''
     return head(lang, f'{t["title"]} · {t[f"st{n}"]}', up, t[f'alt{n}']) + model_head(up) + f'''<script type="module" src="{up}vendor/model-viewer/model-viewer.min.js"></script>
 </head>
@@ -259,8 +263,8 @@ SHEET_SWAP = {
  ('pre-op', 'ja'): [('「歯ぐきを外す」をおすと、骨のすき間が見えます。', '図は、歯ぐきがある時と外した時の上あごです。')],
  ('during-braces', 'en'): [('The braces on the model clip on and off.', 'The pictures show the jaw with and without the braces.')],
  ('during-braces', 'ja'): [('模型の装置は、つけたり外したりできます。', '図は、装置がある時と外した時の上あごです。')],
- ('long-term', 'en'): [('The model has parts you can swap to show each choice.', 'The pictures show each choice.')],
- ('long-term', 'ja'): [('模型は、部品をつけかえて、それぞれの方法を見せられます。', '図は、それぞれの方法を見せています。')],
+ ('long-term', 'en'): [('The model has parts you can swap to show each choice.', 'The pictures show each choice.'), ('The last button shows this plan on the model.', 'The last picture shows this plan.')],
+ ('long-term', 'ja'): [('模型は、部品をつけかえて、それぞれの方法を見せられます。', '図は、それぞれの方法を見せています。'), ('いちばん右のボタンで、模型にこの方法を見せられます。', 'いちばん下の図が、この方法です。')],
 }
 # Sentences about the 3D print's parts, which the web page can't do: left out of the web page.
 WEB_SWAP = {
@@ -283,7 +287,8 @@ SHEET_FIGS = {
  'long-term': [('sheet-s3-implant-{lang}.png', 'Implant with a crown', 'インプラントとクラウン'),
                ('sheet-s3-bridge-{lang}.png', 'Bridge with one wing', '一まいの羽のブリッジ'),
                ('sheet-s3-plate-{lang}.png', 'Plate with a false tooth', '取り外しできる入れ歯'),
-               ('sheet-s3-bone-{lang}.png', 'Gum taken off: the new bone where the gap was', '歯ぐきを外した所：すき間にできた新しい骨')],
+               ('sheet-s3-bone-{lang}.png', 'Gum taken off: the new bone where the gap was', '歯ぐきを外した所：すき間にできた新しい骨'),
+               ('sheet-s3-sub-{lang}.png', 'Space closed: the eye tooth moved into the gap', 'すき間をとじた所：犬歯をすき間に動かした')],
 }
 SHEET_UI = {
  'en': dict(ph='PLACEHOLDER: picture of the {stage} model', how='Render with tools/sheet/render.js once the model is built.',

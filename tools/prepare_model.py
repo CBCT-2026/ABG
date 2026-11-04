@@ -30,6 +30,8 @@ assert not any('KHR_draco_mesh_compression' in (p.extensions or {}) for m in G.m
 used = {}
 for node in G.nodes:
     if node.mesh is None: continue
+    if 'option-substitution' in (node.name or '').lower():  # the substitution arch ships as its own file (models/abg-3b-substitution.glb)
+        node.mesh = None; continue
     key = classify(node.name or G.meshes[node.mesh].name or '')
     node.name = 'soft-tissue' if key == 'gum' else key
     G.meshes[node.mesh].name = node.name

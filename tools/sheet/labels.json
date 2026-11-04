@@ -122,6 +122,7 @@
   "normal": "0 0 1",
   "side": "up",
   "len": 76,
+  "when": "on-main",
   "en": [
    "Eye tooth",
    "grew through the new bone"
@@ -161,11 +162,42 @@
    "側切歯"
   ]
  },
+ "moved": {
+  "pos": "0.021m -0.004m 0.030m",
+  "normal": "0 0 1",
+  "side": "down",
+  "len": 18,
+  "when": "on-sub",
+  "en": [
+   "Eye tooth",
+   "moved into the gap and reshaped"
+  ],
+  "ja": [
+   "犬歯",
+   "すき間に動かして形を整えた"
+  ]
+ },
+ "moved2": {
+  "pos": "0.030m -0.003m 0.027m",
+  "normal": "0 0 1",
+  "side": "up",
+  "len": 56,
+  "when": "on-sub",
+  "en": [
+   "Next tooth",
+   "moved forward to take its place"
+  ],
+  "ja": [
+   "となりの歯",
+   "前に動かして犬歯の代わりに"
+  ]
+ },
  "space": {
   "pos": "0.021m -0.004m 0.030m",
   "normal": "0 0 1",
   "side": "down",
   "len": 18,
+  "when": "on-main",
   "en": [
    "Missing tooth",
    "pick an option below"

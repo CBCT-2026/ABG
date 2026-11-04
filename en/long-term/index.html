@@ -40,10 +40,12 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button slot="ar-button" class="ar-btn">View in AR (place in the room)</button>
     <div class="hotspot on-gum" slot="hotspot-1" data-position="0.034m 0.008m 0.0226m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="up" style="--len: 60px"><span class="label">Gum<small>you can take it off</small></span></div>
     <div class="hotspot off-gum" slot="hotspot-2" data-position="0.021m 0.010m 0.027m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="left" style="--len: 44px"><span class="label">New bone<small>healed graft</small></span></div>
-    <div class="hotspot" slot="hotspot-3" data-position="0.030m -0.003m 0.027m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="up" style="--len: 76px"><span class="label">Eye tooth<small>grew through the new bone</small></span></div>
-    <div class="hotspot" slot="hotspot-4" data-position="0.021m -0.004m 0.030m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 18px"><span class="label">Missing tooth<small>pick an option below</small></span></div>
+    <div class="hotspot on-main" slot="hotspot-3" data-position="0.030m -0.003m 0.027m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="up" style="--len: 76px"><span class="label">Eye tooth<small>grew through the new bone</small></span></div>
+    <div class="hotspot on-main" slot="hotspot-4" data-position="0.021m -0.004m 0.030m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 18px"><span class="label">Missing tooth<small>pick an option below</small></span></div>
     <div class="hotspot" slot="hotspot-5" data-position="-0.002m -0.012m 0.0316m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 40px"><span class="label">Front tooth<small>central incisor</small></span></div>
     <div class="hotspot on-gum" slot="hotspot-6" data-position="0.008m 0.0073m -0.01m" data-normal="0 -1 0" data-visibility-attribute="visible" data-side="left" style="--len: 30px"><span class="label">Roof of the mouth<small>palate</small></span></div>
+    <div class="hotspot on-sub" slot="hotspot-7" data-position="0.021m -0.004m 0.030m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="down" style="--len: 18px"><span class="label">Eye tooth<small>moved into the gap and reshaped</small></span></div>
+    <div class="hotspot on-sub" slot="hotspot-8" data-position="0.030m -0.003m 0.027m" data-normal="0 0 1" data-visibility-attribute="visible" data-side="up" style="--len: 56px"><span class="label">Next tooth<small>moved forward to take its place</small></span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
   <p class="hint" id="hint" data-touch="Swipe to turn the model. Pinch to make it bigger or smaller." data-mouse="Drag to turn the model. Scroll to make it bigger or smaller.">Drag to turn the model. Scroll to make it bigger or smaller.</p>
@@ -60,6 +62,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button type="button" data-option="option-implant" aria-pressed="false">Implant</button>
     <button type="button" data-option="option-bridge" aria-pressed="false">Bridge</button>
     <button type="button" data-option="option-denture" aria-pressed="false">Partial denture</button>
+    <button type="button" data-option="substitution" aria-pressed="false" data-src="../../models/abg-3b-substitution.glb" data-ios="../../models/abg-3b-substitution.usdz" data-poster="../../models/abg-3b-substitution-poster.webp">Move the eye tooth</button>
   </div>
 
   <!-- TEXT: generated from content/long-term-en.html by tools/build.py. -->
@@ -75,13 +78,13 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
 
 <section>
   <h2>Ways to fill the gap</h2>
-  <p>There are three main ways:<sup class="cite"><a href="#ref-3">3</a></sup></p>
+  <p>There are three main ways to fill the gap:<sup class="cite"><a href="#ref-3">3</a></sup></p>
   <ul>
     <li>an <b>implant</b>: a small post in the new bone with a false tooth (a <b>crown</b>) on top<sup class="cite"><a href="#ref-4">4</a></sup></li>
     <li>a <b>bridge</b>: a false tooth with one wing glued to the back of the front tooth</li>
     <li>a <b>plate you can take out</b> (a partial denture). The small plate sits behind the teeth and holds the false tooth with hidden clips.</li>
   </ul>
-  <p>Some teams close the space instead. Braces move the eye tooth into the place of the missing tooth. Then the dentist reshapes it so it looks like the missing tooth. Many teams use this plan for children with a cleft. The model does not show this plan.<sup class="cite"><a href="#ref-5">5</a></sup><sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-6">6</a></sup><sup class="cite"><a href="#ref-7">7</a></sup></p>
+  <p>Some teams close the space instead. Braces move the eye tooth into the place of the missing tooth. Then the dentist reshapes it so it looks like the missing tooth. Many teams use this plan for children with a cleft. The last button shows this plan on the model.<sup class="cite"><a href="#ref-5">5</a></sup><sup class="cite"><a href="#ref-1">1</a></sup><sup class="cite"><a href="#ref-6">6</a></sup><sup class="cite"><a href="#ref-7">7</a></sup></p>
   <p>Your cleft team will talk with you about which plan suits you.<sup class="cite"><a href="#ref-3">3</a></sup></p>
 </section>
 
