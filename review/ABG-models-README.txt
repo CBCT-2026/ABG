@@ -74,3 +74,13 @@ v3.3 notes
 - Stage 3 implant: one coaxial assembly on the 22 crown axis; abutment collar flares from the Ø4.6 platform to the crown
   outline at the gum margin, the crown is cut at the same margin plane (no step).
 - Build scripts: Desktop\ABG-scripts (each step runs in a background Blender: python run_step.py in.blend step.py out.blend).
+
+v3.4 notes (Stage 1)
+- Palate: one continuous bone plate. The round hole behind 22 and the small palatal dimples are closed; the alveolar
+  cleft stays a notch through the alveolus only (no residual palatal opening). The unerupted 23 now sits 4 mm higher
+  along its long axis, so its crown is fully inside bone on the palatal side and is seen only through the labial window.
+- Overlay: one closed TPU skin over the palate (no fistula hole), scar line kept. Over the canine window it continues
+  the neighbouring bone contour (convex, no crease), 2.4-5.0 mm thick; the inside bridges the window (no grip in it).
+  Only openings: the two pin holes.
+- Stage 1 renders now include a palatal view (overlay on/off) and an into-cleft view.
+- Stages 2 and 3: palatal bone checked; there is no pin-socket dimple (the pins sit flush), so these are unchanged.
