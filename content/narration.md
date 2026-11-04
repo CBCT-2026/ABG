@@ -1,6 +1,6 @@
 # Narration script: 3D printed model and narrated video
 
-One part per stage, spoken by a computer (text-to-speech) voice. While participants look at the 3D printed model, the narration plays as audio only from Luke's phone or the study device (Luke, 22 October 2026). The narrated video uses the same words as subtitles, with the same line labels as the AR web page and the 2D information sheet. No card, stickers or labels go with the print, so the script points to parts by colour and position.
+One part per stage, spoken by a computer (text-to-speech) voice. While participants look at the 3D printed model, the narration plays as audio only from Luke's phone or the study device (Luke, 22 October 2026). The narrated video uses the same words as subtitles, with the same line labels as the AR web page and the 2D information sheet. No card, stickers or labels go with the print; the narration names each part, and the video adds line labels.
 
 Every sentence is taken from, or shortens, the web page text for that stage, with the same sources (content/references.json). Each part aims at 60 seconds or less (each material gets a fixed 60 s per stage). Japanese needs a native-speaker check before recording.
 
@@ -44,13 +44,13 @@ Soon after the operation, the gum healed over the graft. If the wound opens earl
 
 上あごの2つの部分は、骨でつながっています。犬歯は新しい骨を通って、歯のならびまでおりてきました。出てこない犬歯もあり、その時は小さな手術が必要です。
 
-歯につける装置で、歯をならべます。この手術を受けた人のほとんどが使います。はえてこなかった小さい歯のすき間には、ワイヤーにつけたつくり物の歯が入っています。
+歯につける装置で、歯をならべます。この骨移植を受けた人のほぼ全員が使います。はえてこなかった小さい歯のすき間には、ワイヤーにつけたつくり物の歯が入っています。
 
 手術の後、歯ぐきは治りました。すぐ後に傷が開くと、骨が少しへることがあります。約3～6か月後のレントゲンで、骨のつき方を見ます。こしは、しばらくいたむことがあります。ある研究では、子どもは約2週間後に学校にもどりました。
 
 ## Stage 3 English
 
-This is the same jaw in the later teens. The braces are off, and the teeth are in line.
+This is the same jaw in the later teens. The braces are off.
 
 Bone holds the teeth where the gap was. Growth has stopped, so your dentist can now fill the gap for good.
 
@@ -60,10 +60,10 @@ Some teams close the space instead. Braces move the eye tooth into the gap, and 
 
 ## Stage 3 Japanese
 
-これは、十代の後半の同じ上あごです。装置は外れて、歯はならんでいます。
+これは、十代の後半の同じ上あごです。装置は外れています。
 
 すき間があった所では、骨が歯をささえています。体が育ち終わったので、すき間をずっとうめることができます。
 
-主に3つの方法があります。インプラントは、骨に入れた小さな柱に歯をつけます。ブリッジは、一まいの羽で、となりの歯に歯をつけます。または、取り外しできる入れ歯で歯をつけます。
+主に3つの方法があります。インプラントは、骨にうめる小さなねじに歯をつけます。ブリッジは、一まいの羽で、となりの歯に歯をつけます。または、取り外しできる入れ歯で歯をつけます。
 
 すき間をとじるチームもあります。装置で犬歯をすき間に動かし、形を整えます。どの方法が合うかは、口の割れ目のチームと話し合います。

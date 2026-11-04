@@ -19,7 +19,7 @@ EXTRA = {
 SCENES = {
  1: [('intro', []), ('gum', ['gum']), ('missing', ['missing', 'central']), ('canine', ['window']), ('graft', ['gap'])],
  2: [('intro', []), ('canine', ['canine', 'graft']), ('braces', ['braces', 'false']), ('after', ['graft'])],
- 3: [('intro', []), ('graft', ['graft']), ('options', ['implant', 'bridge', 'plate']), ('close', ['canine'])],
+ 3: [('intro', []), ('graft', ['graft']), ('options', ['implant', 'bridge', 'plate']), ('close', [])],
 }
 UI = json.load(open('content/ui.json'))
 VOICE = {'en': 'bf_emma', 'ja': 'jf_alpha'}  # Kokoro-82M voices used in the wisdom tooth study

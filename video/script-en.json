@@ -174,7 +174,7 @@
      "labels": [],
      "sentences": [
       "This is the same jaw in the later teens.",
-      "The braces are off, and the teeth are in line."
+      "The braces are off."
      ]
     },
     {
@@ -203,9 +203,7 @@
     },
     {
      "scene": "close",
-     "labels": [
-      "canine"
-     ],
+     "labels": [],
      "sentences": [
       "Some teams close the space instead.",
       "Braces move the eye tooth into the gap, and the dentist reshapes it.",
