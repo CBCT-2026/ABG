@@ -9,7 +9,7 @@ UI = json.load(open('content/ui.json'))
 REFS = json.load(open('content/references.json'))
 STAGES = ['pre-op', 'short-term', 'long-term']
 MODEL = 'abg-placeholder'  # placeholder for stages whose model is not built yet
-MODELS = {'pre-op': MODEL, 'short-term': 'abg-short-term', 'long-term': MODEL}  # stage -> models/<name>.glb
+MODELS = {'pre-op': 'abg-1-pre-op', 'short-term': 'abg-2-short-term', 'long-term': 'abg-3-long-term'}  # stage -> models/<name>.glb
 LANGS = ['en', 'ja']
 SITE_URL = 'https://cbct-2026.github.io/ABG/'  # the QR code on the home page opens this (make it with tools/make_qr.py)
 # Microsoft Forms for the study (information sheet + survey). Paste each link here, then run this script again.
