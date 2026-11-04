@@ -50,6 +50,12 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../../vendor/draco/',
     <button type="button" id="labels" aria-pressed="false" data-on="名前をかくす" data-off="名前を出す">名前をかくす</button>
     <button type="button" id="gum" class="gum" aria-pressed="false" data-off="歯ぐきを外す" data-on="歯ぐきをもどす">歯ぐきを外す</button>
   </div>
+  <div class="controls parts" id="parts" role="group" aria-label="模型に表示するもの" hidden>
+    <button type="button" data-option="" aria-pressed="true">すき間のまま</button>
+    <button type="button" data-option="option-implant" aria-pressed="false">インプラント</button>
+    <button type="button" data-option="option-bridge" aria-pressed="false">ブリッジ</button>
+    <button type="button" data-option="option-denture" aria-pressed="false">部分入れ歯</button>
+  </div>
 
   <!-- TEXT: generated from content/long-term-ja.html by tools/build.py. -->
 <section class="important">

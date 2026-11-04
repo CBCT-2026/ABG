@@ -44,7 +44,14 @@
   "ready": "Tap Start when you are ready.",
   "start": "Start",
   "stageDone": "Stage {n} done",
-  "thanks": "Thank you!"
+  "thanks": "Thank you!",
+  "partsLabel": "Show on the model",
+  "bracesOn": "Braces on",
+  "bracesOff": "Braces off",
+  "optNone": "Empty space",
+  "optImplant": "Implant",
+  "optBridge": "Bridge",
+  "optDenture": "Partial denture"
  },
  "ja": {
   "title": "歯ぐきの骨のすき間をうめる手術：3つの段階",
@@ -91,6 +98,13 @@
   "ready": "じゅんびができたら、スタートをおしてください。",
   "start": "スタート",
   "stageDone": "段階{n}、おわり",
-  "thanks": "ありがとうございました！"
+  "thanks": "ありがとうございました！",
+  "partsLabel": "模型に表示するもの",
+  "bracesOn": "矯正装置あり",
+  "bracesOff": "矯正装置なし",
+  "optNone": "すき間のまま",
+  "optImplant": "インプラント",
+  "optBridge": "ブリッジ",
+  "optDenture": "部分入れ歯"
  }
 }
