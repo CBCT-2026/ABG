@@ -13,7 +13,7 @@ src, out = sys.argv[1], sys.argv[2]
 def lin(h):
     v = np.array([int(h[i:i+2], 16) / 255 for i in (1, 3, 5)])
     return [float(x) for x in np.where(v <= 0.04045, v / 12.92, ((v + 0.055) / 1.055) ** 2.4)] + [1.0]
-FIXED = {'bone': ('#D3C29E', 0.9), 'teeth': ('#F3EFE4', 0.3), 'gum': ('#D9817F', 0.5), 'graft': ('#E3CFA6', 1.0), 'canine': ('#F3EFE4', 0.3)}
+FIXED = {'bone': ('#D3C29E', 0.9), 'teeth': ('#F3EFE4', 0.3), 'gum': ('#D9817F', 0.5), 'graft': ('#C9A86A', 1.0), 'canine': ('#F3EFE4', 0.3)}
 OWN = ['option-implant', 'option-bridge', 'option-denture', 'option-none', 'braces']  # keep the colours from the export
 ALIAS = {'soft-tissue': 'gum', 'overlay': 'gum', 'maxilla': 'bone'}
 def classify(name):

@@ -88,10 +88,10 @@
   ]
  },
  "graft": {
-  "pos": "0.021m 0.009m 0.027m",
+  "pos": "0.021m 0.010m 0.027m",
   "normal": "0 0 1",
   "side": "left",
-  "len": 24,
+  "len": 44,
   "when": "off-gum",
   "en": [
    "New bone",
@@ -103,10 +103,10 @@
   ]
  },
  "healed": {
-  "pos": "0.021m 0.009m 0.027m",
+  "pos": "0.021m 0.010m 0.027m",
   "normal": "0 0 1",
   "side": "left",
-  "len": 24,
+  "len": 44,
   "when": "off-gum",
   "en": [
    "New bone",
@@ -121,7 +121,7 @@
   "pos": "0.030m -0.003m 0.027m",
   "normal": "0 0 1",
   "side": "up",
-  "len": 36,
+  "len": 76,
   "en": [
    "Eye tooth",
    "grew through the new bone"
