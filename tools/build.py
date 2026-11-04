@@ -7,9 +7,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 UI = json.load(open('content/ui.json'))
 REFS = json.load(open('content/references.json'))
-STAGES = ['pre-op', 'short-term', 'long-term']
+STAGES = ['pre-op', 'during-braces', 'long-term']
 MODEL = 'abg-placeholder'  # placeholder for stages whose model is not built yet
-MODELS = {'pre-op': 'abg-1-pre-op', 'short-term': 'abg-2-short-term', 'long-term': 'abg-3-long-term'}  # stage -> models/<name>.glb
+MODELS = {'pre-op': 'abg-1-pre-op', 'during-braces': 'abg-2-during-braces', 'long-term': 'abg-3-long-term'}  # stage -> models/<name>.glb
 LANGS = ['en', 'ja']
 SITE_URL = 'https://cbct-2026.github.io/ABG/'  # the QR code on the home page opens this (make it with tools/make_qr.py)
 # Microsoft Forms for the study (information sheet + survey). Paste each link here, then run this script again.
@@ -33,7 +33,7 @@ H = {
  'space':   dict(pos='0.021m -0.004m 0.030m', normal='0 0 1', side='down', len=18, en=['Missing tooth', 'pick an option below'], ja=['ない歯のスペース', '下のボタンで選べます']),
 }
 LABELS = {'pre-op': ['gum', 'gap', 'window', 'central', 'missing', 'palate'],
-          'short-term': ['gum', 'graft', 'canine', 'braces', 'central', 'palate'],
+          'during-braces': ['gum', 'graft', 'canine', 'braces', 'central', 'palate'],
           'long-term': ['gum', 'healed', 'canine', 'space', 'central', 'palate']}
 
 def cite(text):
@@ -111,7 +111,7 @@ def stage_page(lang, i, stage):
     o = 'ja' if lang == 'en' else 'en'
     # Removable parts in the model, switched by site.js through their material names (hidden until the model confirms them).
     parts = ''
-    if stage == 'short-term':
+    if stage == 'during-braces':
         parts = f'''
   <div class="controls parts" id="parts" role="group" aria-label="{t['partsLabel']}" hidden>
     <button type="button" data-part="braces" aria-pressed="true" data-on="{t['bracesOn']}" data-off="{t['bracesOff']}">{t['bracesOn']}</button>
@@ -257,15 +257,15 @@ def redirect(to):
 SHEET_SWAP = {
  ('pre-op', 'en'): [('Tap <b>Take off the gum</b> to see the gap in the bone.', 'The pictures show the jaw with and without the gum.')],
  ('pre-op', 'ja'): [('「歯ぐきを外す」をおすと、骨のすき間が見えます。', '図は、歯ぐきがある時と外した時の上あごです。')],
- ('short-term', 'en'): [('The braces on the model clip on and off.', 'The pictures show the jaw with and without the braces.')],
- ('short-term', 'ja'): [('模型の装置は、つけたり外したりできます。', '図は、装置がある時と外した時の上あごです。')],
+ ('during-braces', 'en'): [('The braces on the model clip on and off.', 'The pictures show the jaw with and without the braces.')],
+ ('during-braces', 'ja'): [('模型の装置は、つけたり外したりできます。', '図は、装置がある時と外した時の上あごです。')],
  ('long-term', 'en'): [('The model has parts you can swap to show each choice.', 'The pictures show each choice.')],
  ('long-term', 'ja'): [('模型は、部品をつけかえて、それぞれの方法を見せられます。', '図は、それぞれの方法を見せています。')],
 }
 # Sentences about the 3D print's parts, which the web page can't do: left out of the web page.
 WEB_SWAP = {
- ('short-term', 'en'): [('  <p>The braces on the model clip on and off.</p>\n', '')],
- ('short-term', 'ja'): [('  <p>模型の装置は、つけたり外したりできます。</p>\n', '')],
+ ('during-braces', 'en'): [('  <p>The braces on the model clip on and off.</p>\n', '')],
+ ('during-braces', 'ja'): [('  <p>模型の装置は、つけたり外したりできます。</p>\n', '')],
  ('long-term', 'en'): [('  <p>The model has parts you can swap to show each choice.</p>\n', '')],
  ('long-term', 'ja'): [('  <p>模型は、部品をつけかえて、それぞれの方法を見せられます。</p>\n', '')],
 }
@@ -276,7 +276,7 @@ SHEET_FIGS = {
             ('sheet-front-bone-{lang}.png', 'Gum taken off: the gap in the bone', '歯ぐきを外した所：骨のすき間'),
             ('sheet-below-{lang}.png', 'From below: the roof of the mouth', '下から見た所：上あご'),
             ('sheet-left-{lang}.png', 'Left side: the eye tooth window', '左側：犬歯の窓')],
- 'short-term': [('sheet-s2-braces-{lang}.png', 'Whole jaw: braces on, with the gap kept open', '上あご全体：装置とあけておくすき間'),
+ 'during-braces': [('sheet-s2-braces-{lang}.png', 'Whole jaw: braces on, with the gap kept open', '上あご全体：装置とあけておくすき間'),
                 ('sheet-s2-off-{lang}.png', 'Braces taken off: the gap where the small tooth never grew', '装置を外した所：はえてこなかった歯のすき間'),
                 ('sheet-s2-bone-{lang}.png', 'Gum taken off: the new bone and the eye tooth', '歯ぐきを外した所：新しい骨と犬歯'),
                 ('sheet-s2-below-{lang}.png', 'From below: the roof of the mouth and the braces', '下から見た所：上あごと装置')],
@@ -359,5 +359,11 @@ for lang in LANGS:
 for lang in LANGS:
     for i, s in enumerate(STAGES):
         write(f'sheet/{lang}/{s}/index.html', sheet_page(lang, i, s))
+# Old stage URLs forward to the renamed pages, so printed links keep working.
+REDIRECTS = {'short-term': 'during-braces'}
+for lang in ('en', 'ja'):
+    for old, new in REDIRECTS.items():
+        write(f'{lang}/{old}/index.html', f'<!doctype html>\n<html lang="{lang}"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../{new}/"><link rel="canonical" href="../{new}/"><title>→ {new}</title></head><body><a href="../{new}/">../{new}/</a></body></html>\n')
+        write(f'sheet/{lang}/{old}/index.html', f'<!doctype html>\n<html lang="{lang}"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../{new}/"><link rel="canonical" href="../{new}/"><title>→ {new}</title></head><body><a href="../{new}/">../{new}/</a></body></html>\n')
 write('tools/sheet/labels.json', json.dumps(H, ensure_ascii=False, indent=1) + '\n')
 print('built')

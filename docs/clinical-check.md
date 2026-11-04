@@ -62,7 +62,7 @@ Default clearances for a fit that holds but can be taken off by hand:
 | Minimum wall around a socket | 1.2 mm | 1.6 mm |
 
 - Soft tissue overlay (pre-op): print in flexible resin or TPU at 1.5 to 2 mm thick; locate with 2 or 3 pegs into the palate, not glue.
-- Graft piece (short-term): dovetail sliding up into the cleft from below, in a lighter or different bone colour.
+- Graft piece (Stage 2, during braces): dovetail sliding up into the cleft from below, in a lighter or different bone colour.
 - Canine crown (long-term): friction cap over a reduced canine stump with a D-shaped key so it only fits one way.
 - Long-term options: removable cleft-side segment on a dovetail. Segment A has the canine in the lateral incisor place with the crown cap; segment B keeps the space open and takes either the implant (post friction fit in a D-shaped socket, crown cap on the post) or the bridge (pontic with one palatal wing clipping onto the central incisor). Details in model-spec.md.
 - Print one test coupon per material first; clearances vary between printers.

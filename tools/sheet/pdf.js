@@ -3,7 +3,7 @@
 const { chromium } = require('playwright');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '../..');
-const STAGES = ['pre-op', 'short-term', 'long-term'];
+const STAGES = ['pre-op', 'during-braces', 'long-term'];
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
