@@ -8,7 +8,8 @@ os.chdir(ROOT)
 UI = json.load(open('content/ui.json'))
 REFS = json.load(open('content/references.json'))
 STAGES = ['pre-op', 'short-term', 'long-term']
-MODEL = 'abg-placeholder'  # one placeholder model on every stage until the stage models are built
+MODEL = 'abg-placeholder'  # placeholder for stages whose model is not built yet
+MODELS = {'pre-op': MODEL, 'short-term': 'abg-short-term', 'long-term': MODEL}  # stage -> models/<name>.glb
 LANGS = ['en', 'ja']
 SITE_URL = 'https://cbct-2026.github.io/ABG/'  # the QR code on the home page opens this (make it with tools/make_qr.py)
 # Microsoft Forms for the study (information sheet + survey). Paste each link here, then run this script again.
@@ -93,7 +94,10 @@ def stage_page(lang, i, stage):
         cls = 'hotspot' + (' ' + h['when'] if h.get('when') else '')
         small = f'<small>{h[lang][1]}</small>' if h[lang][1] else ''
         spots += f'\n    <div class="{cls}" slot="hotspot-{k + 1}" data-position="{h["pos"]}" data-normal="{h["normal"]}" data-visibility-attribute="visible" data-side="{h["side"]}" style="--len: {h["len"]}px"><span class="label">{h[lang][0]}{small}</span></div>'
-    placeholder = '' if n == 1 else f'\n    <div class="placeholder"><span>{t["placeholder"]}</span></div>'
+    model = MODELS[stage]
+    placeholder = '' if (n == 1 or model != MODEL) else f'\n    <div class="placeholder"><span>{t["placeholder"]}</span></div>'
+    ios = f' ios-src="{up}models/{model}.usdz"' if os.path.exists(f'models/{model}.usdz') else ''
+    poster = f' poster="{up}models/{model}-poster.webp"' if os.path.exists(f'models/{model}-poster.webp') else ''
     prev = f'<a href="../{STAGES[i - 1]}/">← {t[f"st{n - 1}"]}</a>' if i > 0 else '<span></span>'
     nxt = f'<a href="../{STAGES[i + 1]}/">{t[f"st{n + 1}"]} →</a>' if i < 2 else '<span></span>'
     o = 'ja' if lang == 'en' else 'en'
@@ -104,8 +108,8 @@ def stage_page(lang, i, stage):
 <main>
   <h1>{t['title']}</h1>
   {steps(lang, stage, '../')}
-  <!-- MODEL: placeholder on every stage until the stage models are built. See README. -->
-  <model-viewer id="mv" src="{up}models/{MODEL}.glb" ios-src="{up}models/{MODEL}.usdz" poster="{up}models/{MODEL}-poster.webp"
+  <!-- MODEL: set per stage in MODELS (tools/build.py). See README. -->
+  <model-viewer id="mv" src="{up}models/{model}.glb"{ios}{poster}
     alt="{html.escape(t[f'alt{n}'])}"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
     camera-controls camera-orbit="0deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
