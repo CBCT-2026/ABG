@@ -18,7 +18,7 @@ const EXTRA = {
   gap2: { at: 'space', en: ['Gap for the missing tooth', 'lateral incisor'], ja: ['ない歯のすき間', ''] },
 };
 const OPTIONS = ['option-none', 'option-implant', 'option-bridge', 'option-denture'];
-const S1 = 'abg-1-pre-op', S2 = 'abg-2-during-braces', S3 = 'abg-3-long-term';
+const S1 = 'abg-1-pre-op', S2 = 'abg-2-during-braces', S3 = 'abg-3-long-term', S3B = 'abg-3b-substitution';
 const VIEWS = [
   { name: 'front-gum', model: S1, orbit: '0deg 80deg auto', gum: true, labels: ['gum', 'central', 'missing'], tweak: { central: { side: 'left', len: 40 } } },
   { name: 'front-bone', model: S1, orbit: '0deg 80deg auto', gum: false, labels: ['gap', 'central', 'missing'], tweak: { central: { side: 'left', len: 40 } } },
@@ -32,6 +32,7 @@ const VIEWS = [
   { name: 's3-bridge', model: S3, orbit: '0deg 80deg auto', gum: true, option: 'option-bridge', labels: ['central'], extra: ['bridge'], tweak: { central: { side: 'left', len: 40 } } },
   { name: 's3-plate', model: S3, orbit: '0deg 80deg auto', gum: true, option: 'option-denture', labels: [], extra: ['plate'] },
   { name: 's3-bone', model: S3, orbit: '0deg 80deg auto', gum: false, hide: OPTIONS, labels: ['healed', 'canine'], tweak: { healed: { len: 130 } } },
+  { name: 's3-sub', model: S3B, orbit: '0deg 80deg auto', gum: true, labels: ['moved', 'moved2', 'central'], tweak: { central: { side: 'left', len: 40 }, moved2: { len: 40 } } },
 ];
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.glb': 'model/gltf-binary', '.png': 'image/png' };
 const server = http.createServer((req, res) => {

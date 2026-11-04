@@ -19,6 +19,7 @@ h2 { color: var(--accent); }
 .important p { margin: 0; text-align: center; text-align-last: center; }
 .visual { display: grid; gap: 8px; grid-template-columns: 1fr 1fr; }
 .visual.n3 { grid-template-columns: 1.25fr 1fr 1fr; } .visual.n4 { grid-template-columns: repeat(4, 1fr); }
+.visual.n5 { grid-template-columns: repeat(6, 1fr); } .visual.n5 figure { grid-column: span 2; } .visual.n5 figure:nth-child(n+4) { grid-column: span 3; }
 .visual figure { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; background: #fff; }
 .visual img { width: 100%; object-fit: contain; display: block; min-height: 0; flex: 1 1 auto; }
 .visual figcaption { font-size: 13px; font-weight: 600; color: var(--accent); padding: 2px 8px 5px; }

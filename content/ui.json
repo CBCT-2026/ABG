@@ -51,7 +51,8 @@
   "optNone": "Empty space",
   "optImplant": "Implant",
   "optBridge": "Bridge",
-  "optDenture": "Partial denture"
+  "optDenture": "Partial denture",
+  "optSub": "Move the eye tooth"
  },
  "ja": {
   "title": "歯ぐきの骨のすき間をうめる手術：3つの段階",
@@ -105,6 +106,7 @@
   "optNone": "すき間のまま",
   "optImplant": "インプラント",
   "optBridge": "ブリッジ",
-  "optDenture": "部分入れ歯"
+  "optDenture": "部分入れ歯",
+  "optSub": "犬歯を動かす"
  }
 }

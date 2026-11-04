@@ -99,6 +99,8 @@ if (mv) {
 
   // Removable parts (Stage 2 braces; Stage 3 options for the missing tooth): each is a material in the model,
   // shown or hidden by its alpha. The buttons appear only when the model has those materials.
+  // A button with data-src is a second model (Stage 3: the eye tooth moved into the gap); choosing it swaps the
+  // model file, and any other choice swaps the main model back. The gum goes back on with each swap.
   const parts = document.getElementById('parts');
   const mat = name => mv.model && mv.model.materials.find(m => m.name.replace(/\.\d+$/, '') === name);
   function show(name, on) {
@@ -106,22 +108,45 @@ if (mv) {
     const c = m.pbrMetallicRoughness.baseColorFactor.slice(0, 3);
     m.setAlphaMode(on ? 'OPAQUE' : 'BLEND'); m.pbrMetallicRoughness.setBaseColorFactor([...c, on ? 1 : 0]);
   }
-  if (parts) mv.addEventListener('load', () => {
-    const toggles = [...parts.querySelectorAll('[data-part]')].filter(b => mat(b.dataset.part));
-    const options = [...parts.querySelectorAll('[data-option]')].filter(b => !b.dataset.option || mat(b.dataset.option));
-    const names = options.map(b => b.dataset.option).filter(Boolean);
-    toggles.forEach(b => { b.addEventListener('click', () => {
+  if (parts) {
+    const main = { src: mv.getAttribute('src'), ios: mv.getAttribute('ios-src'), poster: mv.getAttribute('poster') };
+    const all = [...parts.querySelectorAll('[data-option]')];
+    let toggles = [], options = [], names = [];
+    const pressed = () => all.find(b => b.getAttribute('aria-pressed') === 'true');
+    const apply = () => { names.forEach(n => show(n, false)); const b = pressed(); if (b && b.dataset.option && !b.dataset.src) show(b.dataset.option, true); };
+    const swap = (src, ios, poster) => {
+      if (mv.getAttribute('src') === src) return;
+      gumOff = false; mv.classList.remove('gum-off');
+      if (gum) { gum.setAttribute('aria-pressed', 'false'); gum.textContent = gum.dataset.off; gum.disabled = true; }
+      if (ios) mv.setAttribute('ios-src', ios); else mv.removeAttribute('ios-src');
+      if (poster) mv.setAttribute('poster', poster); else mv.removeAttribute('poster');
+      mv.setAttribute('src', src);
+    };
+    let first = true;
+    mv.addEventListener('load', () => {
+      const sub = !!(pressed() && pressed().dataset.src);
+      mv.classList.toggle('sub', sub);
+      if (first) {  // the main model decides which buttons exist; the second model has none of the option parts
+        first = false;
+        toggles = [...parts.querySelectorAll('[data-part]')].filter(b => mat(b.dataset.part));
+        options = all.filter(b => b.dataset.src || !b.dataset.option || mat(b.dataset.option));
+        names = options.map(b => b.dataset.src ? '' : b.dataset.option).filter(Boolean);
+        all.forEach(b => { b.hidden = !options.includes(b); });
+        parts.hidden = !(toggles.length || options.length > 1);
+      }
+      apply();
+    });
+    parts.querySelectorAll('[data-part]').forEach(b => b.addEventListener('click', () => {
       const on = b.getAttribute('aria-pressed') !== 'true';
       b.setAttribute('aria-pressed', on); b.textContent = on ? b.dataset.on : b.dataset.off; show(b.dataset.part, on);
-      mv.classList.toggle(b.dataset.part + '-off', !on); }); });
-    names.forEach(n => show(n, false));
-    const first = options.find(b => b.getAttribute('aria-pressed') === 'true');
-    if (first && first.dataset.option) show(first.dataset.option, true);
-    options.forEach(b => { b.addEventListener('click', () => {
-      options.forEach(x => x.setAttribute('aria-pressed', x === b));
-      names.forEach(n => show(n, n === b.dataset.option)); }); });
-    parts.hidden = !(toggles.length || names.length);
-  });
+      mv.classList.toggle(b.dataset.part + '-off', !on); }));
+    all.forEach(b => b.addEventListener('click', () => {
+      if (busy) return;
+      all.forEach(x => x.setAttribute('aria-pressed', x === b));
+      if (b.dataset.src) swap(b.dataset.src, b.dataset.ios, b.dataset.poster);
+      else { swap(main.src, main.ios, main.poster); apply(); }
+    }));
+  }
 
   // Show a plain message in the viewer box if 3D cannot be shown, instead of an empty box.
   const msg = document.documentElement.lang === 'ja'
