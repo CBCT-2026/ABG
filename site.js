@@ -62,14 +62,17 @@ if (mv) {
         m.pbrMetallicRoughness.setBaseColorFactor([...c, from + (to - from) * k]);
         if (k < 1) requestAnimationFrame(step); else { if (to === 1) m.setAlphaMode('OPAQUE'); res(); } })(t0); });
   }
+  // Each clip moves the gum over 1.4 s and then holds its final pose (a long tail in the model), so pausing at
+  // 1.5 s leaves the part exactly where the clip ends. Waiting for the clip to finish is not reliable: a finished
+  // clip snaps back to its first frame, which left the gum not fully seated.
+  mv.animationCrossfadeDuration = 0;
   function playClip(name) {
-    return new Promise(res => {
-      mv.animationName = name; mv.currentTime = 0;
-      let done = false;
-      const end = () => { if (!done) { done = true; mv.pause(); mv.currentTime = mv.duration; res(); } };
-      mv.addEventListener('finished', end, { once: true });
-      setTimeout(end, 1700);
-      mv.play({ repetitions: 1 });
+    return new Promise(async res => {
+      mv.animationName = name;
+      await mv.updateComplete;  // the clip switch is applied asynchronously; only then does currentTime address it
+      mv.currentTime = 0;
+      mv.play();
+      setTimeout(() => { mv.pause(); res(); }, 1500);
     });
   }
   if (gum) {
