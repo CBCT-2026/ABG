@@ -6,7 +6,7 @@ Every sentence is taken from, or shortens, the web page text for that stage, wit
 
 ## Stage 1 English
 
-This is the upper jaw of a child, about 9 to 10 years old. The child was born with a split in the lip and gum on the left, called a cleft.
+This is the upper jaw of a child, about 9 to 10 years old. The child was born with a split in the lip, gum and roof of the mouth on the left, called a cleft.
 
 Under the pink gum, there is a gap in the bone that holds the teeth. Its medical name is the alveolar cleft.
 
@@ -18,7 +18,7 @@ At about 8 to 11 years old, a surgeon fills the gap with bone, most often from t
 
 ## Stage 1 Japanese
 
-これは、9～10才ごろの子どもの上あごです。生まれつき、左側のくちびると歯ぐきが割れています。これを口の割れ目といいます。
+これは、9～10才ごろの子どもの上あごです。生まれつき、左側のくちびると歯ぐきと上あごが割れています。これを口の割れ目といいます。
 
 ピンクの歯ぐきの下で、歯をささえる骨にすき間があります。医学の名前は、がくれつです。
 
